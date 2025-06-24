@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+    trainer:
+        environment:
+            - DISABLE_TRANSFORMERS_SDPA=1
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: llm-trainer
+        container_name: llm-finetune
+        volumes:
+            - C:/Users/pc/.cache/huggingface:/root/.cache/huggingface
+            - ./:/workspace
+        working_dir: /workspace
+        command: python scripts/train.py
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          count: all
+                          capabilities: [gpu]
+        tty: true
+        shm_size: "2gb"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            stack: 67108864

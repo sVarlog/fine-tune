@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.log
+
+# Envs
+.env
+.env.*
+env/
+venv/
+
+# Datasets & Outputs
+data/
+output/
+merged-models/
+*.gguf
+
+# Hugging Face cache
+/root/.cache/
+~/.cache/
+C:/Users/pc/.cache/huggingface/
+
+# VSCode
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
