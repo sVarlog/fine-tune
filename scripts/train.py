@@ -4,13 +4,11 @@ from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM, Traini
 from peft import get_peft_model, LoraConfig, prepare_model_for_kbit_training
 from datasets import load_dataset
 from accelerate import init_empty_weights, infer_auto_device_map
+from config.config import MODEL_NAME
 
 def log(msg):
     print(f"\n🔧 {msg}\n{'='*60}")
 
-# Paths
-# MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B" 
-MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" 
 DATA_PATH = "data/train.jsonl"
 OUTPUT_DIR = f"output/{MODEL_NAME}/"
 
@@ -63,23 +61,23 @@ model = get_peft_model(model, lora_config)
 
 # Training setup
 training_args = TrainingArguments(
-    output_dir=OUTPUT_DIR,
-    label_names=["labels"],
-    per_device_train_batch_size=1,
-    gradient_accumulation_steps=8,
-    warmup_steps=10,
-    max_steps=100,
-    learning_rate=2e-4,
-    logging_dir=f"{OUTPUT_DIR}/logs",
-    logging_steps=10,
-    save_steps=50,
-    save_total_limit=1,
-    bf16=True,
-    optim="paged_adamw_8bit",
-    lr_scheduler_type="cosine",
-    report_to="none",                # ⬅️ disable wandb or other integrations
-    disable_tqdm=False,              # ⬅️ ensure progress bar is visible
-    gradient_checkpointing=True,
+    output_dir=OUTPUT_DIR,  # Directory to save model checkpoints and logs
+    label_names=["labels"],  # Names of labels used in the dataset
+    per_device_train_batch_size=1,  # Use a smaller batch size to fit larger models into memory
+    gradient_accumulation_steps=8,  # Increase accumulation steps to simulate larger batch sizes
+    warmup_steps=50,  # Increase warmup steps for smoother learning rate adjustment
+    max_steps=80,  # Reduce total steps for faster training
+    learning_rate=2e-4,  # Lower learning rate for stable convergence
+    logging_dir=f"{OUTPUT_DIR}/logs",  # Directory for logging training metrics
+    logging_steps=10,  # Log metrics frequently for better monitoring
+    save_steps=50,  # Save checkpoints more frequently to avoid losing progress
+    save_total_limit=3,  # Keep up to 3 checkpoints to save disk space
+    bf16=True,  # Use bfloat16 for faster computation and lower memory usage
+    optim="paged_adamw_8bit",  # Use 8-bit optimizer for memory efficiency
+    lr_scheduler_type="cosine",  # Use cosine scheduler for smooth learning rate decay
+    report_to="none",  # Disable external reporting integrations
+    disable_tqdm=False,  # Keep progress bar visible
+    gradient_checkpointing=True,  # Enable gradient checkpointing to save memory
 )
 
 for name, param in model.named_parameters():
