@@ -4,6 +4,7 @@ services:
     trainer:
         environment:
             - DISABLE_TRANSFORMERS_SDPA=1
+            - PYTHONPATH=/workspace
         build:
             context: .
             dockerfile: Dockerfile
@@ -12,6 +13,7 @@ services:
         volumes:
             - C:/Users/pc/.cache/huggingface:/root/.cache/huggingface
             - ./:/workspace
+            - ./config:/workspace/config
         working_dir: /workspace
         command: python scripts/train.py
         deploy:
