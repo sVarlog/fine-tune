@@ -19,9 +19,16 @@ tools/llama/              # Local copy of llama.cpp Python
 config/
 ├── config.py             # Centralized configuration for paths and settings
 ├── lora_config.json      # Configuration for LoRA fine-tuning
-data/
-├── train.jsonl           # Training dataset
-├── fine_tune_examples_chunk1_250.jsonl # Example dataset
+datasets/
+├── ai/
+│   ├── questions.json
+│   └── dataset.jsonl
+├── business/
+├── finance/
+├── ethics/
+├── ...                   # Other domains
+├── data.jsonl            # Combined dataset built from all folders
+├── build_dataset.py      # Merges all datasets dynamically
 merged-models/
 ├── deepseek-merged/      # Directory for merged models
 output/
@@ -32,77 +39,147 @@ output/
 
 ## 🚀 Usage
 
-### 1. Train the model
+### 1. Build the training dataset
 
 ```bash
-docker-compose run trainer
+python datasets/build_dataset.py
 ```
 
-Ensure `data/train.jsonl` and `config/lora_config.json` exist.
+This will merge all `dataset.jsonl` files from domain folders into `datasets/data.jsonl`.
 
-### 2. Merge adapter with base model
+### 2. Train the model
+
+```bash
+docker-compose up trainer
+```
+
+Ensure `datasets/data.jsonl` and `config/lora_config.json` exist.
+
+### 3. Merge adapter with base model
 
 ```bash
 python scripts/merge_adapter.py
 ```
 
-Paths like `BASE_MODEL_PATH`, `ADAPTER_PATH`, and `MERGED_MODEL_PATH` are managed in `config/config.py`. Update `config.py` to modify these paths.
+Paths like `BASE_MODEL_PATH`, `ADAPTER_PATH`, and `MERGED_MODEL_PATH` are managed in `config/config.py`.
 
-### 3. Convert to GGUF
+### 4. Convert to GGUF
 
 ```bash
 bash scripts/convert_to_gguf.sh
 ```
 
-Output file will be saved to:
+Output file will be saved to the latest merging directory:
 
 ```
-merged-models/deepseek-merged/gguf-output/deepseek-q4.gguf
+merged-models/deepseek-merged/merging-n/gguf-output/deepseek-q4.gguf
 ```
+
+If a file with the same name already exists, a unique suffix will be added to the filename to avoid overwriting.
 
 ---
 
-## 🐳 Docker
+## 👁️ Dataset Format
 
-This project uses `nvidia/cuda` and supports training inside Docker with GPU acceleration via Docker Compose. The container shares Hugging Face cache and project code from the host.
+Each training sample follows a strict reasoning-output structure:
+
+```json
+{
+    "question": "Why is transparency important in AI?",
+    "response": "<think>Transparency helps detect bias, improve trust, and enable accountability...</think><output>Transparency is key to ethical and trustworthy AI systems.</output>"
+}
+```
+
+-   `<think>` contains structured reasoning
+-   `<output>` gives a short, clear final answer
+
+This format enforces consistency and helps reduce hallucinations. It is designed for use in structured UI output and instruction-following agents.
+
+### Domains Covered
+
+-   AI
+-   Business
+-   Finance
+-   Ethics
+-   Global Trends
+-   Marketing
+-   Productivity
+-   Psychology
+-   Strategy
+-   Tech
+
+Each folder contains:
+
+-   `questions.json` - raw questions
+-   `dataset.jsonl` - generated training pairs
+
+---
+
+## 🛠️ Docker
+
+This project uses `nvidia/cuda` and supports training inside Docker with GPU acceleration via Docker Compose.
 
 ### Volumes
 
--   **Model Volume**: Ensure the Hugging Face cache directory is mounted as a volume. Example:
-    ```yaml
-    volumes:
-        - C:/Users/pc/.cache/huggingface:/root/.cache/huggingface
-        - ./:/workspace
-    ```
+Ensure the Hugging Face cache and project code are mounted correctly:
 
-### What to Do If There's No Volume
+```yaml
+volumes:
+    - C:/Users/pc/.cache/huggingface:/root/.cache/huggingface
+    - ./:/workspace
+```
 
-If the model volume is not mounted:
+### If Model Is Not Found:
 
-1. Verify the `docker-compose.yml` file includes the correct volume mapping.
-2. Check Docker Desktop settings to ensure the drive containing the cache directory is shared.
-3. If the model is missing, download it manually using Hugging Face's `transformers` library:
+1. Check that `docker-compose.yml` maps your cache directory.
+2. Share the host drive in Docker Desktop settings.
+3. Manually download the model using:
 
-    ```python
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-    from config.config import BASE_MODEL_PATH
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from config.config import BASE_MODEL_PATH
 
-    model = AutoModelForCausalLM.from_pretrained(BASE_MODEL_PATH)
-    tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL_PATH)
-    ```
+model = AutoModelForCausalLM.from_pretrained(BASE_MODEL_PATH)
+tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL_PATH)
+```
 
 ---
 
-## 📦 Requirements (outside Docker)
+## 📆 Recommended Fine-Tuning Config (RTX 5090)
 
-If you're running locally, install:
+| Model Size | Epochs | Batch Size | Accum. Steps | Learning Rate | Notes                      |
+| ---------- | ------ | ---------- | ------------ | ------------- | -------------------------- |
+| 7B         | 3-5    | 2-4        | 16           | 1e-4 – 2e-4   | Fast, fits with QLoRA      |
+| 32B        | 2-4    | 1-2        | 16           | 1e-4          | Use `bf16` + checkpointing |
+
+Make sure to monitor GPU memory and training loss with long context windows.
+
+---
+
+## 📆 Requirements (if running outside Docker)
 
 ```bash
 pip install -r requirements.txt
 ```
 
-If you use the local version of `transformers-to-gguf.py`, also install:
+If using local `transformers-to-gguf.py`, install:
 
 ```bash
 pip install ./tools/llama/gguf-py
 ```
+
+---
+
+## ✨ Contributing
+
+Feel free to extend domain coverage or add new response formats. This repo is designed to be modular and extensible for future agent-like assistants.
+
+---
+
+## 🎉 Results
+
+Trained models show reduced hallucinations and maintain structure across multiple domains with `<think>` and `<output>` response blocks.
+
+For structured UI generation, this format helps ensure alignment and response reliability.
+
+---

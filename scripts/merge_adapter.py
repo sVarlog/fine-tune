@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
 from pathlib import Path
 import json, os
-from config.config import BASE_MODEL_PATH, CHECKPOINT_STEP, MERGED_MODEL_PATH, ADAPTER_PATH, ALLOWED_KEYS
+from config.config import BASE_MODEL_PATH, MERGED_MODEL_PATH, ADAPTER_PATH, ALLOWED_KEYS
 
 def log(title):
     print(f"\n🔧 {title}\n{'=' * 60}")
@@ -30,7 +30,20 @@ log("Merging LoRA into base model...")
 model = model.merge_and_unload()
 
 log("Saving merged model...")
+# Base merged model path
+merged_model_dir = Path("merged-models/deepseek-merged")
+
+# Ensure the base merged model directory exists
+merged_model_dir.mkdir(parents=True, exist_ok=True)
+
+# Find the next available merging directory
+existing_dirs = [d for d in os.listdir(merged_model_dir) if d.startswith("merging-")]
+next_merging_num = len(existing_dirs) + 1
+MERGED_MODEL_PATH = merged_model_dir / f"merging-{next_merging_num}/"
+
+# Create the directory
 MERGED_MODEL_PATH.mkdir(parents=True, exist_ok=True)
+
 model.save_pretrained(MERGED_MODEL_PATH)
 AutoTokenizer.from_pretrained(BASE_MODEL_PATH).save_pretrained(MERGED_MODEL_PATH)
 print(f"✅ Merged model saved to: {MERGED_MODEL_PATH.resolve()}")
