@@ -1,120 +1,302 @@
+import os
+import json
+from time import time
 import torch
-import os, json
 from pathlib import Path
-from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer, BitsAndBytesConfig
-from peft import get_peft_model, LoraConfig, prepare_model_for_kbit_training
 from datasets import load_dataset
-from accelerate import init_empty_weights, infer_auto_device_map
+from transformers import (
+    logging, AutoConfig, AutoTokenizer, AutoModelForCausalLM,
+    TrainingArguments, Trainer, TrainerCallback, BitsAndBytesConfig
+)
+from peft import get_peft_model, LoraConfig, prepare_model_for_kbit_training
 from config.config import MODEL_NAME
 
-def log(msg):
-    print(f"\n🔧 {msg}\n{'='*60}")
-
 DATA_PATH = "datasets/data.jsonl"
-output_dir = Path(f"output/{MODEL_NAME}")
+OUTPUT_BASE_DIR = Path(f"output/{MODEL_NAME}")
+LORA_CONFIG_PATH = "config/lora_config.json"
 
-# Find the next available training directory
-existing_dirs = [d for d in os.listdir(output_dir) if d.startswith("training-")]
-next_training_num = len(existing_dirs) + 1
-OUTPUT_DIR = output_dir / f"training-{next_training_num}/"
+def log(msg):
+    print(f"\n🔧 {msg}\n{'=' * 60}")
 
-# Create the directory
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+def prepare_output_dir() -> Path:
+    existing_dirs = [d for d in os.listdir(OUTPUT_BASE_DIR) if d.startswith("training-")]
+    next_training_num = len(existing_dirs) + 1
+    output_dir = OUTPUT_BASE_DIR / f"training-{next_training_num}"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    return output_dir
 
-log("Loading tokenizer...")
-# Tokenizer + Dataset
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
+def load_and_prepare_tokenizer():
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
+    tokenizer.add_special_tokens({
+    "additional_special_tokens": ["<think>", "</think>", "<output>", "</output>"],
+    "bos_token": "<|im_start|>",
+    "eos_token": "<|im_end|>",
+    "pad_token": "<|im_end|>"  # optional, fallback
+})
 
-log("Loading dataset...")
-assert os.path.exists(DATA_PATH), f"Data file not found at {DATA_PATH}" # Ensure the data file exists
-dataset = load_dataset("json", data_files=DATA_PATH, split="train")
+    print(tokenizer.chat_template)
+    return tokenizer
 
-log("Tokenizing dataset...")
-def tokenize(example):
+def tokenize_function(example, tokenizer):
     prompt = example["question"]
     response = example["response"]
 
-    SYSTEM_PROMPT = """
-    You are a structured assistant. Respond in exactly two parts using the following format:
+    assert "<think>" in response and "</think>" in response, "❌ Missing <think> tags"
+    assert "<output>" in response and "</output>" in response, "❌ Missing <output> tags"
 
-    <think>
-    [Your internal reasoning here]
-    </think>
-    <output>
-    [Your final answer here]
-    </output>
-    """.strip()
-    
-    text = f"<|im_start|>system\n{SYSTEM_PROMPT}<|im_end|>\n" + \
-           f"<|im_start|>user\n{prompt}<|im_end|>\n" + \
-           f"<|im_start|>assistant\n{response}<|im_end|>\n"
+    messages = [
+        {"role": "user", "content": prompt},
+        {"role": "assistant", "content": response}
+    ]
 
-    tokenized = tokenizer(text, padding="max_length", max_length=2048, truncation=True)
+    try:
+        chat_text = tokenizer.apply_chat_template(messages, tokenize=False)
+    except Exception as e:
+        raise ValueError(f"Template rendering failed: {e}\nInput: {messages}")
+
+    tokenized = tokenizer(chat_text, padding="max_length", max_length=2048, truncation=True)
     tokenized["labels"] = tokenized["input_ids"].copy()
+    
     return tokenized
 
-dataset = dataset.map(tokenize, remove_columns=["question", "response"])
+def load_and_tokenize_dataset(tokenizer):
+    assert os.path.exists(DATA_PATH), f"Data file not found at {DATA_PATH}"
+    
+    dataset = load_dataset("json", data_files=DATA_PATH, split="train")
+    dataset = dataset.map(lambda x: tokenize_function(x, tokenizer), remove_columns=["question", "response"])
+    
+    return dataset
 
-config = AutoConfig.from_pretrained(MODEL_NAME, trust_remote_code=True)
+def load_model_and_prepare_for_qora(tokenizer):
+    start = time()
 
-log("Loading model with low_cpu_mem_usage + auto device map...")
+    log("Loading AutoConfig...")
+    config = AutoConfig.from_pretrained(MODEL_NAME, trust_remote_code=True)
+    
+    log("Setting up BitsAndBytesConfig...")
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.float16,
+        bnb_4bit_quant_type="nf4",
+        llm_int8_threshold=6.0,
+    )
 
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_compute_dtype=torch.float16,
-    bnb_4bit_quant_type="nf4",
-    llm_int8_threshold=6.0,
-)
+    log(f"Loading base model: {MODEL_NAME}")
 
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_NAME,
-    config=config,
-    trust_remote_code=True,
-    torch_dtype=torch.float16,
-    device_map="auto",
-    low_cpu_mem_usage=True,
-    quantization_config=bnb_config,
-)
+    logging.set_verbosity_info()
+    model = AutoModelForCausalLM.from_pretrained(
+        MODEL_NAME,
+        config=config,
+        trust_remote_code=True,
+        torch_dtype=torch.float16,
+        device_map="auto",
+        low_cpu_mem_usage=True,
+        quantization_config=bnb_config,
+    )
 
-# Prepare model for QLoRA
-log("Preparing model for QLoRA...")
-model = prepare_model_for_kbit_training(model)
-assert os.path.exists("config/lora_config.json") # Ensure the LoRA config file exists
-with open("config/lora_config.json") as f:
-    lora_config = LoraConfig(**json.load(f))
-model = get_peft_model(model, lora_config)
+    log("Resizing token embeddings...")
+    model.resize_token_embeddings(len(tokenizer))
 
-# Training setup
-training_args = TrainingArguments(
-    output_dir=OUTPUT_DIR,
-    per_device_train_batch_size=2,  # Can increase to 4 for 7B if memory allows
-    gradient_accumulation_steps=16,  # Simulates 32 batch size
-    num_train_epochs=6,  # Recommended: 3–5 epochs for small/medium datasets
-    # max_steps=1000,  # Set max steps for faster testing
-    learning_rate=2e-4,  # Higher is better with LoRA adapters + QLoRA (1e-4 or 2e-4 works well)
-    warmup_ratio=0.05,  # Scales with dataset size; 5–6% is smoother than fixed steps
-    logging_dir=f"{OUTPUT_DIR}/logs",
-    logging_steps=10,
-    save_strategy="epoch",  # Save once per epoch (to avoid overhead)
-    save_total_limit=2,  # Limit checkpoints
-    bf16=True,  # RTX 5090 supports bf16 — use it
-    optim="paged_adamw_8bit",  # 8-bit optimizer + memory efficiency
-    lr_scheduler_type="cosine",
-    report_to="none",
-    disable_tqdm=False,
-    gradient_checkpointing=True,  # Saves memory (~30–40% lower)
-    ddp_find_unused_parameters=False,  # Fine for single-GPU
-)
+    log("Preparing model for QLoRA...")
+    model = prepare_model_for_kbit_training(model)
 
-for name, param in model.named_parameters():
-    if param.device.type == "meta":
-        raise RuntimeError(f"Parameter {name} is still on meta device!")
+    assert os.path.exists(LORA_CONFIG_PATH), "Missing LoRA config"
+    
+    log(f"Loading LoRA config from: {LORA_CONFIG_PATH}")
+    with open(LORA_CONFIG_PATH) as f:
+        lora_config = LoraConfig(**json.load(f))
 
-import torch.utils.checkpoint
-torch.utils.checkpoint._use_reentrant = False
+    log("Wrapping model with LoRA adapter...")
+    final_model = get_peft_model(model, lora_config)
 
-# Start training
-log("Starting training loop...")
-model.config.use_cache = False
-trainer = Trainer(model=model, args=training_args, train_dataset=dataset)
-trainer.train()
+    end = time()
+    log(f"✅ Model loaded and prepared in {end - start:.2f} seconds")
+
+    return final_model
+
+def save_chat_jinja2(tokenizer, output_dir: Path):
+    template_src = Path("templates/chat_template.jinja")
+    assert template_src.exists(), f"Template missing at: {template_src}"
+
+    # Load and assign template into tokenizer object
+    with open(template_src, "r", encoding="utf-8") as f:
+        template_text = f.read()
+
+    tokenizer.chat_template = template_text
+
+    # ✅ Ensure `chat_template` is saved inside tokenizer_config.json
+    tokenizer.init_kwargs["chat_template"] = template_text
+
+    # Save tokenizer (will now include chat_template in tokenizer_config.json)
+    tokenizer.save_pretrained(output_dir)
+
+    # Optional: Copy original jinja as reference
+    template_dst = output_dir / "chat_template.jinja"
+    template_dst.write_text(template_text, encoding="utf-8")
+
+class EvalCallback(TrainerCallback):
+    def __init__(self, tokenizer, interval):
+        self.tokenizer = tokenizer
+        self.interval = interval
+
+    def on_step_end(self, args, state, control, **kwargs):
+        if state.global_step % self.interval != 0:
+            return
+
+        prompt = [{"role": "user", "content": "What is the capital of France?"}]
+        try:
+            text = self.tokenizer.apply_chat_template(prompt, tokenize=False, add_generation_prompt=True)
+        except Exception as e:
+            print(f"⚠️ Template failed: {e}")
+            return
+
+        inputs = self.tokenizer(text, return_tensors="pt").to(kwargs["model"].device)
+
+        with torch.no_grad():
+            output = kwargs["model"].generate(
+                **inputs,
+                max_new_tokens=256,
+                do_sample=False,
+                eos_token_id=self.tokenizer.convert_tokens_to_ids("<|im_end|>")
+            )
+
+        decoded = self.tokenizer.decode(output[0], skip_special_tokens=False)
+        print(f"\n🧪 Eval @ step {state.global_step}:\n{decoded}\n")
+
+def train_model(model, tokenizer, dataset, output_dir):
+    log("Configuring training arguments...")
+
+    training_args = TrainingArguments(
+        output_dir=output_dir,
+        per_device_train_batch_size=2,
+        gradient_accumulation_steps=16,
+        max_steps=10,  # For quick test runs — change to num_train_epochs later
+        # num_train_epochs=6,
+        learning_rate=2e-4,
+        warmup_ratio=0.05,
+        logging_dir=f"{output_dir}/logs",
+        logging_steps=10,
+        save_strategy="epoch",
+        save_total_limit=10,
+        bf16=True,
+        optim="paged_adamw_8bit",
+        lr_scheduler_type="cosine",
+        report_to="none",
+        disable_tqdm=False,
+        gradient_checkpointing=True,
+        ddp_find_unused_parameters=False,
+    )
+
+    log("Checking model parameters for meta device...")
+    for name, param in model.named_parameters():
+        if param.device.type == "meta":
+            raise RuntimeError(f"❌ Parameter {name} is still on meta device!")
+
+    log("Disabling reentrant checkpointing...")
+    torch.utils.checkpoint._use_reentrant = False
+
+    log("Disabling use_cache for training...")
+    model.config.use_cache = False
+
+    log("Instantiating Trainer...")
+
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        train_dataset=dataset,
+        tokenizer=tokenizer,  # Helps avoid tokenizer warnings
+        callbacks=[EvalCallback(tokenizer, interval=20)]
+    )
+
+    save_chat_jinja2(tokenizer, output_dir)
+
+    log("🔥 Starting training loop...")
+    trainer.train()
+
+    log("Saving final model and tokenizer...")
+    model.save_pretrained(output_dir)
+
+    log("Saving tokenizer...")
+    tokenizer.save_pretrained(output_dir)
+
+    log("✅ Training complete.")
+
+def test_training():
+    from peft import PeftModel
+
+    BASE_MODEL = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+    ADAPTER_PATH = "output/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B/training-5/checkpoint-10"
+
+    log("Loading base model and tokenizer for testing...")
+    
+    # Load tokenizer from training dir — with special tokens and correct vocab size
+    tokenizer = AutoTokenizer.from_pretrained(ADAPTER_PATH, trust_remote_code=True)
+
+    # Make sure chat_template is explicitly loaded AND assigned
+    chat_template_path = Path(ADAPTER_PATH).parent / "chat_template.jinja"
+    assert chat_template_path.exists(), f"Template missing at: {chat_template_path}"
+
+    with open(chat_template_path, "r", encoding="utf-8") as f:
+        tokenizer.chat_template = f.read()
+
+    # ✅ FORCE tokenizer config refresh to reflect it
+    tokenizer.init_kwargs["chat_template"] = tokenizer.chat_template
+
+    # Load base model (HuggingFace)
+    model = AutoModelForCausalLM.from_pretrained(BASE_MODEL, torch_dtype=torch.float16, device_map="auto")
+
+    # Resize embedding **before** applying adapter (to match trained dimensions)
+    model.resize_token_embeddings(len(tokenizer))
+
+    # Load adapter — now it works!
+    model = PeftModel.from_pretrained(model, ADAPTER_PATH, is_trainable=False)
+
+    prompt_text = tokenizer.apply_chat_template(
+        [{"role": "user", "content": "What is the capital of France?"}],
+        tokenize=False,
+        add_generation_prompt=True,
+    )
+
+    print("🔍 Final input prompt:")
+    print(prompt_text)
+    
+    inputs = tokenizer(prompt_text, return_tensors="pt").to(model.device)
+
+    with torch.no_grad():
+        output = model.generate(
+            **inputs, 
+            max_new_tokens=256, 
+            do_sample=False,
+            eos_token_id=tokenizer.convert_tokens_to_ids("<|im_end|>")
+        )
+
+    print(tokenizer.special_tokens_map)
+    print(tokenizer.convert_tokens_to_ids(["<|im_start|>", "<think>", "<output>", "<|im_end|>"]))
+
+    generated = tokenizer.decode(output[0], skip_special_tokens=False)
+    # assert "<think>" in generated and "<output>" in generated, "Missing tags in generation"
+
+    print("\nGenerated response:")
+    print(generated)
+
+def main():
+    log("Preparing output directory")
+    output_dir = prepare_output_dir()
+
+    log("Loading tokenizer and adding special tags")
+    tokenizer = load_and_prepare_tokenizer()
+
+    log("Loading and tokenizing dataset")
+    dataset = load_and_tokenize_dataset(tokenizer)
+
+    log("Loading model and applying LoRA")
+    model = load_model_and_prepare_for_qora(tokenizer)
+
+    log("Training model")
+    train_model(model, tokenizer, dataset, output_dir)
+
+    log('Testing training with a small dataset')
+    test_training()
+
+if __name__ == "__main__":
+    main()

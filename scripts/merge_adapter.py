@@ -45,5 +45,6 @@ MERGED_MODEL_PATH = merged_model_dir / f"merging-{next_merging_num}/"
 MERGED_MODEL_PATH.mkdir(parents=True, exist_ok=True)
 
 model.save_pretrained(MERGED_MODEL_PATH)
-AutoTokenizer.from_pretrained(BASE_MODEL_PATH).save_pretrained(MERGED_MODEL_PATH)
+# AutoTokenizer.from_pretrained(BASE_MODEL_PATH).save_pretrained(MERGED_MODEL_PATH)
+AutoTokenizer.from_pretrained(ADAPTER_PATH).save_pretrained(MERGED_MODEL_PATH)
 print(f"✅ Merged model saved to: {MERGED_MODEL_PATH.resolve()}")
