@@ -24,6 +24,9 @@ log("Loading base model...")
 base_model = AutoModelForCausalLM.from_pretrained(BASE_MODEL_PATH, trust_remote_code=True)
 
 log("Loading adapter weights...")
+# Resize token embeddings to match the adapter's vocabulary size
+adapter_tokenizer = AutoTokenizer.from_pretrained(ADAPTER_PATH)
+base_model.resize_token_embeddings(len(adapter_tokenizer))
 model = PeftModel.from_pretrained(base_model, str(ADAPTER_PATH))
 
 log("Merging LoRA into base model...")

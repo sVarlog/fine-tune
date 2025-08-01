@@ -1,3 +1,4 @@
+import re
 import os
 import json
 from time import time
@@ -11,6 +12,8 @@ from transformers import (
 )
 from peft import get_peft_model, LoraConfig, prepare_model_for_kbit_training
 from config.config import MODEL_NAME
+
+SYSTEM_PROMPT = "You are a structured assistant. Respond in exactly two parts using the format:\n<think>[Your reasoning]</think>\n<output>[Your answer]</output>"
 
 DATA_PATH = "datasets/data.jsonl"
 OUTPUT_BASE_DIR = Path(f"output/{MODEL_NAME}")
@@ -150,29 +153,19 @@ def save_chat_jinja2(tokenizer, output_dir: Path):
     with open(template_src, "r", encoding="utf-8") as f:
         template_text = f.read()
 
-    print("TEMPLATE TEXT:")
-    print(template_text)
-
     tokenizer.chat_template = template_text
+    tokenizer.init_kwargs["chat_template"] = template_text  # ✅ ensures it's saved
 
-    # ✅ Directly update tokenizer config dict
-    tokenizer_config_path = output_dir / "tokenizer_config.json"
     tokenizer.save_pretrained(output_dir)
 
-    # Reopen and patch the file directly after saving
-    if tokenizer_config_path.exists():
-        with open(tokenizer_config_path, "r", encoding="utf-8") as f:
-            config = json.load(f)
-
-        config["chat_template"] = template_text
-
-        with open(tokenizer_config_path, "w", encoding="utf-8") as f:
-            json.dump(config, f, indent=2)
-    else:
-        raise FileNotFoundError(f"Expected {tokenizer_config_path} not found!")
-
 def is_structured_output(text: str) -> bool:
-    return all(tag in text for tag in ["<think>", "</think>", "<output>", "</output>"])
+    # Extract only the assistant block (between <|im_start|>assistant and <|im_end|>)
+    match = re.search(r"<\|im_start\|>assistant\s*(.*?)<\|im_end\|>", text, re.DOTALL)
+    if not match:
+        return False
+
+    assistant_text = match.group(1)
+    return all(tag in assistant_text for tag in ["<think>", "</think>", "<output>", "</output>"])
 
 class EvalCallback(TrainerCallback):
     def __init__(self, tokenizer, interval):
@@ -184,13 +177,18 @@ class EvalCallback(TrainerCallback):
             return
 
         messages = [
-            {"role": "system", "content": "You are a structured assistant. Respond in exactly two parts using the format:\n<think>[Your reasoning]</think>\n<output>[Your answer]</output>"},
+            {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": "What is the capital of France?"}
         ]
 
-        prompt_text, tokenized = format_and_tokenize(messages, self.tokenizer)
+        prompt_text, tokenized = format_and_tokenize(
+            messages, 
+            self.tokenizer,
+            return_tensors=True,
+            add_generation_prompt=True  # probably needed for inference
+        )
 
-        if not prompt_text.strip().endswith("<|im_start|>assistant") and "<|im_start|>assistant\n" not in prompt_text:
+        if "<|im_start|>assistant" not in prompt_text:
             print("⚠️ Generation prompt is not correctly appended.")
 
         inputs = {k: v.to(kwargs["model"].device) for k, v in tokenized.items()}
@@ -210,74 +208,68 @@ class EvalCallback(TrainerCallback):
         print("Is structured output:", is_structured_output(decoded))
 
 def train_model(model, tokenizer, dataset, output_dir):
-    for row in dataset:
-	    print(tokenizer.decode(row["input_ids"]))
+    log("Configuring training arguments...")
 
-    
-    print(len(dataset))
-    # log("Configuring training arguments...")
+    training_args = TrainingArguments(
+        output_dir=output_dir,
+        per_device_train_batch_size=2,
+        gradient_accumulation_steps=16,
+        # max_steps=20,  # For quick test runs — change to num_train_epochs later
+        num_train_epochs=10,
+        learning_rate=2e-4,
+        warmup_ratio=0.05,
+        logging_dir=f"{output_dir}/logs",
+        logging_steps=10,
+        save_strategy="epoch",
+        save_total_limit=10,
+        bf16=True,
+        optim="paged_adamw_8bit",
+        lr_scheduler_type="cosine",
+        report_to="none",
+        disable_tqdm=False,
+        gradient_checkpointing=True,
+        ddp_find_unused_parameters=False,
+    )
 
-    # training_args = TrainingArguments(
-    #     output_dir=output_dir,
-    #     per_device_train_batch_size=2,
-    #     gradient_accumulation_steps=16,
-    #     # max_steps=20,  # For quick test runs — change to num_train_epochs later
-    #     num_train_epochs=8,
-    #     learning_rate=2e-4,
-    #     warmup_ratio=0.05,
-    #     logging_dir=f"{output_dir}/logs",
-    #     logging_steps=10,
-    #     save_strategy="epoch",
-    #     save_total_limit=10,
-    #     bf16=True,
-    #     optim="paged_adamw_8bit",
-    #     lr_scheduler_type="cosine",
-    #     report_to="none",
-    #     disable_tqdm=False,
-    #     gradient_checkpointing=True,
-    #     ddp_find_unused_parameters=False,
-    # )
+    log("Checking model parameters for meta device...")
+    for name, param in model.named_parameters():
+        if param.device.type == "meta":
+            raise RuntimeError(f"❌ Parameter {name} is still on meta device!")
 
-    # log("Checking model parameters for meta device...")
-    # for name, param in model.named_parameters():
-    #     if param.device.type == "meta":
-    #         raise RuntimeError(f"❌ Parameter {name} is still on meta device!")
+    log("Disabling reentrant checkpointing...")
+    torch.utils.checkpoint._use_reentrant = False
 
-    # log("Disabling reentrant checkpointing...")
-    # torch.utils.checkpoint._use_reentrant = False
+    log("Disabling use_cache for training...")
+    model.config.use_cache = False
 
-    # log("Disabling use_cache for training...")
-    # model.config.use_cache = False
+    log("Instantiating Trainer...")
 
-    # log("Instantiating Trainer...")
+    data_collator = DataCollatorForSeq2Seq(tokenizer, pad_to_multiple_of=8, label_pad_token_id=-100)
 
-    # data_collator = DataCollatorForSeq2Seq(tokenizer, pad_to_multiple_of=8, label_pad_token_id=-100)
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        train_dataset=dataset,
+        callbacks=[EvalCallback(tokenizer, interval=20)],
+        data_collator=data_collator,
+    )
 
-    # trainer = Trainer(
-    #     model=model,
-    #     args=training_args,
-    #     train_dataset=dataset,
-    #     tokenizer=tokenizer,  # Helps avoid tokenizer warnings
-    #     callbacks=[EvalCallback(tokenizer, interval=20)],
-    #     data_collator=data_collator,
-    # )
+    log("🔥 Starting training loop...")
+    trainer.train()
 
-    # log("🔥 Starting training loop...")
-    # trainer.train()
+    log("Saving final model and tokenizer...")
+    model.save_pretrained(output_dir)
 
-    # log("Saving final model and tokenizer...")
-    # model.save_pretrained(output_dir)
+    log("Saving tokenizer...")
+    tokenizer.save_pretrained(output_dir)
 
-    # log("Saving tokenizer...")
-    # tokenizer.save_pretrained(output_dir)
-
-    # log("✅ Training complete.")
+    log("✅ Training complete.")
 
 def test_training():
     from peft import PeftModel
 
     BASE_MODEL = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
-    ADAPTER_PATH = "output/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B/training-3/checkpoint-352"
+    ADAPTER_PATH = "output/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B/training-4/checkpoint-440"
 
     log("Loading base model and tokenizer for testing...")
 
@@ -291,65 +283,75 @@ def test_training():
     model.resize_token_embeddings(len(tokenizer))
     model = PeftModel.from_pretrained(model, ADAPTER_PATH, is_trainable=False)
 
-    messages = [
-        {"role": "system", "content": "You are a structured assistant. Respond in exactly two parts using the format:\n<think>...</think>\n<output>...</output>"},
-        {"role": "user", "content": "What is the capital of France?"}
+    examples = [
+        "What is the capital of France?",
+        "Who wrote 'To Kill a Mockingbird'?",
+        "Explain the theory of relativity in simple terms.",
+        "What is the boiling point of water?",
+        "How do airplanes fly?"
     ]
 
-    prompt_text, tokenized = format_and_tokenize(messages, tokenizer, return_tensors=True, add_generation_prompt=True)
+    for i, question in enumerate(examples, start=1):
+        log(f"Processing example {i}: {question}")
 
-    print("🔍 Final input prompt:")
-    print(prompt_text)
+        messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": question}
+        ]
 
-    assert prompt_text.strip().endswith("<|im_start|>assistant"), "Missing assistant prompt trigger"
+        prompt_text, tokenized = format_and_tokenize(messages, tokenizer, return_tensors=True, add_generation_prompt=True)
 
-    inputs = {k: v.to(model.device) for k, v in tokenized.items()}
+        # print("🔍 Final input prompt:")
+        # print(prompt_text)
 
-    with torch.no_grad():
-        output = model.generate(
-            **inputs,
-            max_new_tokens=256,
-            do_sample=False,
-            temperature=0.0,
-            top_k=1,
-            eos_token_id=tokenizer.convert_tokens_to_ids("<|im_end|>")
-        )
+        assert prompt_text.strip().endswith("<|im_start|>assistant"), "Missing assistant prompt trigger"
 
-    print(tokenizer.special_tokens_map)
-    print(tokenizer.convert_tokens_to_ids(["<|im_start|>", "<think>", "<output>", "<|im_end|>"]))
+        inputs = {k: v.to(model.device) for k, v in tokenized.items()}
 
-    generated = tokenizer.decode(output[0], skip_special_tokens=False)
+        with torch.no_grad():
+            output = model.generate(
+                **inputs,
+                max_new_tokens=256,
+                do_sample=False,
+                temperature=0.7,
+                top_k=0,
+                eos_token_id=tokenizer.convert_tokens_to_ids("<|im_end|>")
+            )
 
-    print("Is structured output:", is_structured_output(generated))
+        generated = tokenizer.decode(output[0], skip_special_tokens=False)
 
-    print("\nGenerated response:")
-    print(generated)
-    
+        print("Is structured output:", is_structured_output(generated))
+
+        print("\nGenerated response:")
+        print(generated)
+
+        print("=" * 60)
+
 def main():
-    log("Preparing output directory")
-    output_dir = prepare_output_dir()
+    # log("Preparing output directory")
+    # output_dir = prepare_output_dir()
 
-    log("Loading tokenizer and adding special tags")
-    tokenizer = load_and_prepare_tokenizer()
+    # log("Loading tokenizer and adding special tags")
+    # tokenizer = load_and_prepare_tokenizer()
 
-    log("Saving chat template to tokenizer")
-    save_chat_jinja2(tokenizer, output_dir)
+    # log("Saving chat template to tokenizer")
+    # save_chat_jinja2(tokenizer, output_dir)
 
-    log("Loading and tokenizing dataset")
-    dataset = load_and_tokenize_dataset(tokenizer)
+    # log("Loading and tokenizing dataset")
+    # dataset = load_and_tokenize_dataset(tokenizer)
 
-    log("Loading model and applying LoRA")
-    model = load_model_and_prepare_for_qora(tokenizer)
+    # log("Loading model and applying LoRA")
+    # model = load_model_and_prepare_for_qora(tokenizer)
 
-    print("=== Final Chat Template ===")
-    print(tokenizer.chat_template)
-    print("===========================")
+    # print("=== Final Chat Template ===")
+    # print(tokenizer.chat_template)
+    # print("===========================")
 
-    log("Training model")
-    train_model(model, tokenizer, dataset, output_dir)
+    # log("Training model")
+    # train_model(model, tokenizer, dataset, output_dir)
 
-    # log('Testing training with a small dataset')
-    # test_training()
+    log('Testing training with a small dataset')
+    test_training()
 
 if __name__ == "__main__":
     main()
