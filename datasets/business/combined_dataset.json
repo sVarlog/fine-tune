@@ -3498,5 +3498,705 @@
         "question": "How do digital tools transform project management?",
         "think": "Digital platforms enable real-time collaboration, transparency, and data-driven tracking of tasks and results.",
         "output": "Digital tools make projects faster, clearer, and more effective."
+    },
+    {
+        "id": 501,
+        "topic": "business",
+        "question": "Why is customer feedback essential for continuous improvement?",
+        "think": "Feedback identifies areas for improvement, validates new ideas, and helps prevent costly mistakes.",
+        "output": "Customer input drives innovation and product refinement."
+    },
+    {
+        "id": 502,
+        "topic": "business",
+        "question": "How do companies manage brand reputation during a crisis?",
+        "think": "Act fast, communicate transparently, and demonstrate accountability. Proactive crisis plans help limit damage.",
+        "output": "Quick, honest action protects reputation and trust."
+    },
+    {
+        "id": 503,
+        "topic": "business",
+        "question": "What is the role of artificial intelligence in business process automation?",
+        "think": "AI automates repetitive tasks, analyzes big data, and supports decision-making—freeing staff for higher-level work.",
+        "output": "AI boosts productivity and enables smarter automation."
+    },
+    {
+        "id": 504,
+        "topic": "business",
+        "question": "Why do organizations conduct regular competitive analysis?",
+        "think": "Regular analysis spots new threats, shifting trends, and emerging opportunities in the market.",
+        "output": "Staying aware keeps companies ahead of the competition."
+    },
+    {
+        "id": 505,
+        "topic": "business",
+        "question": "How can companies create effective cross-border marketing strategies?",
+        "think": "Adapt messaging to local cultures, use local partners, and comply with regional laws for maximum impact.",
+        "output": "Localization and partnerships are key for cross-border success."
+    },
+    {
+        "id": 506,
+        "topic": "business",
+        "question": "What are the key challenges of digital transformation for legacy businesses?",
+        "think": "Legacy systems, resistance to change, and skills gaps slow digital transformation. Culture change is often hardest.",
+        "output": "Update systems and mindsets to succeed in digital transitions."
+    },
+    {
+        "id": 507,
+        "topic": "business",
+        "question": "How do businesses use value chain analysis to improve efficiency?",
+        "think": "Mapping each step from input to output reveals bottlenecks and waste. Improvements boost margin and speed.",
+        "output": "Analyze the value chain to optimize processes and reduce costs."
+    },
+    {
+        "id": 508,
+        "topic": "business",
+        "question": "Why is scenario planning important for strategic resilience?",
+        "think": "It prepares companies for best, worst, and most likely futures, making plans more robust to change.",
+        "output": "Scenario planning builds readiness for uncertainty."
+    },
+    {
+        "id": 509,
+        "topic": "business",
+        "question": "How does customer empowerment influence product development?",
+        "think": "Empowered customers co-create, give feedback, and drive innovation through active participation.",
+        "output": "Customer empowerment leads to better, more relevant products."
+    },
+    {
+        "id": 510,
+        "topic": "business",
+        "question": "How do companies measure the effectiveness of employee engagement programs?",
+        "think": "Track turnover, absenteeism, productivity, and satisfaction survey results before and after programs launch.",
+        "output": "Compare key metrics to evaluate engagement program impact."
+    },
+    {
+        "id": 511,
+        "topic": "business",
+        "question": "What is the impact of omni-channel retailing on customer experience?",
+        "think": "Omni-channel lets customers shop anywhere, anytime, with seamless handoff between platforms.",
+        "output": "Omni-channel improves convenience and satisfaction."
+    },
+    {
+        "id": 512,
+        "topic": "business",
+        "question": "How can organizations promote ethical decision-making?",
+        "think": "Ethics training, clear policies, and open dialogue help staff make principled choices under pressure.",
+        "output": "Promote ethics by embedding values and discussing dilemmas."
+    },
+    {
+        "id": 513,
+        "topic": "business",
+        "question": "Why is continuous innovation critical in fast-moving industries?",
+        "think": "Rapid change makes yesterday’s advantage obsolete. Ongoing innovation keeps companies ahead.",
+        "output": "Keep innovating to stay relevant and lead the market."
+    },
+    {
+        "id": 514,
+        "topic": "business",
+        "question": "How does dynamic pricing benefit businesses?",
+        "think": "It maximizes revenue by adjusting prices to demand, competition, or inventory in real time.",
+        "output": "Dynamic pricing increases profit and market responsiveness."
+    },
+    {
+        "id": 515,
+        "topic": "business",
+        "question": "How can businesses foster intrapreneurship?",
+        "think": "Encourage risk-taking, give autonomy, and reward new ideas. Leaders should support experimentation.",
+        "output": "Intrapreneurship unlocks innovation and staff engagement."
+    },
+    {
+        "id": 516,
+        "topic": "business",
+        "question": "What are the risks of overreliance on a single revenue stream?",
+        "think": "Loss of that stream can threaten survival. Diversification improves stability and growth.",
+        "output": "Relying on one source is risky—spread your bets for resilience."
+    },
+    {
+        "id": 517,
+        "topic": "business",
+        "question": "Why is a clear brand promise important?",
+        "think": "A clear promise sets customer expectations and differentiates your business in a crowded market.",
+        "output": "Brand promise guides experience and builds trust."
+    },
+    {
+        "id": 518,
+        "topic": "business",
+        "question": "How does cross-training benefit small businesses?",
+        "think": "Staff can cover multiple roles, making teams more flexible and resilient to absences or turnover.",
+        "output": "Cross-training boosts agility and smooths operations."
+    },
+    {
+        "id": 519,
+        "topic": "business",
+        "question": "What is the value of external advisory boards?",
+        "think": "Advisors offer expertise, fresh perspective, and networks, helping businesses avoid mistakes and spot opportunities.",
+        "output": "External advisors add strategic guidance and credibility."
+    },
+    {
+        "id": 520,
+        "topic": "business",
+        "question": "How do companies use key performance indicators (KPIs) for growth?",
+        "think": "KPIs track progress on important goals, focusing teams and triggering corrective action when needed.",
+        "output": "KPIs drive growth by clarifying and measuring success."
+    },
+    {
+        "id": 521,
+        "topic": "business",
+        "question": "Why is strategic planning a continuous process?",
+        "think": "Markets, technology, and competition evolve quickly. Ongoing planning allows companies to adjust course and seize new opportunities.",
+        "output": "Continuous strategy keeps businesses adaptable and proactive."
+    },
+    {
+        "id": 522,
+        "topic": "business",
+        "question": "How do companies manage international compliance requirements?",
+        "think": "They monitor local laws, standardize global policies, and train staff for each jurisdiction.",
+        "output": "Strong compliance teams and local partners reduce risk."
+    },
+    {
+        "id": 523,
+        "topic": "business",
+        "question": "What is the impact of remote collaboration tools on productivity?",
+        "think": "These tools enable teams to work together efficiently from anywhere, speeding up projects and reducing travel costs.",
+        "output": "Remote tools boost productivity and enable global teamwork."
+    },
+    {
+        "id": 524,
+        "topic": "business",
+        "question": "How can companies prevent mission drift?",
+        "think": "Regularly revisit the mission, align new initiatives with it, and communicate it to all stakeholders.",
+        "output": "Stay focused by grounding decisions in your core mission."
+    },
+    {
+        "id": 525,
+        "topic": "business",
+        "question": "Why is financial forecasting essential for scaling businesses?",
+        "think": "Forecasts reveal funding needs, support hiring plans, and guide investment in growth.",
+        "output": "Accurate forecasts ensure resources are in place for scaling."
+    },
+    {
+        "id": 526,
+        "topic": "business",
+        "question": "How does organizational culture influence performance?",
+        "think": "Supportive cultures boost morale and productivity, while toxic ones create turnover and poor results.",
+        "output": "Culture shapes how teams collaborate and succeed."
+    },
+    {
+        "id": 527,
+        "topic": "business",
+        "question": "What are the risks of rapid expansion?",
+        "think": "Growing too fast strains cash flow, dilutes culture, and may lower quality. Discipline is crucial.",
+        "output": "Rapid expansion without control can backfire and damage reputation."
+    },
+    {
+        "id": 528,
+        "topic": "business",
+        "question": "How do businesses use Net Promoter Score (NPS)?",
+        "think": "NPS gauges customer loyalty and predicts growth. Tracking scores over time highlights strengths and weaknesses.",
+        "output": "NPS guides customer experience improvements."
+    },
+    {
+        "id": 529,
+        "topic": "business",
+        "question": "Why is transparency important during organizational change?",
+        "think": "Openness reduces rumors and fear, builds trust, and helps employees adapt more easily.",
+        "output": "Transparent change management eases transitions and keeps teams united."
+    },
+    {
+        "id": 530,
+        "topic": "business",
+        "question": "How can businesses optimize pricing strategies?",
+        "think": "Analyze costs, competitors, customer value, and elasticity. Test prices and monitor results to refine over time.",
+        "output": "Regular pricing reviews maximize profit and competitiveness."
+    },
+    {
+        "id": 531,
+        "topic": "business",
+        "question": "What is the benefit of regular performance reviews?",
+        "think": "Performance reviews give feedback, set goals, and drive professional growth. They help identify and address issues early.",
+        "output": "Reviews keep teams aligned and improve individual outcomes."
+    },
+    {
+        "id": 532,
+        "topic": "business",
+        "question": "How do companies manage multicultural teams successfully?",
+        "think": "Encourage respect, embrace different perspectives, and provide cultural awareness training.",
+        "output": "Strong communication and inclusion make multicultural teams thrive."
+    },
+    {
+        "id": 533,
+        "topic": "business",
+        "question": "Why is speed to market important in tech industries?",
+        "think": "Tech moves fast. Early movers capture mindshare and revenue before competitors catch up.",
+        "output": "Faster launches mean more market share and innovation leadership."
+    },
+    {
+        "id": 534,
+        "topic": "business",
+        "question": "How do businesses evaluate new supplier partnerships?",
+        "think": "Assess reliability, cost, quality, and alignment with company values. Pilot projects and references help.",
+        "output": "Choose suppliers based on performance, trust, and shared standards."
+    },
+    {
+        "id": 535,
+        "topic": "business",
+        "question": "How can a strong board of directors add value to a company?",
+        "think": "Boards provide oversight, strategic guidance, and networks. Diverse boards bring broader expertise.",
+        "output": "A good board boosts strategy, accountability, and growth."
+    },
+    {
+        "id": 536,
+        "topic": "business",
+        "question": "Why is it important to monitor customer churn?",
+        "think": "Rising churn signals problems with product, support, or competition. Tracking churn allows early intervention.",
+        "output": "Monitoring churn protects revenue and uncovers improvement areas."
+    },
+    {
+        "id": 537,
+        "topic": "business",
+        "question": "How do employee engagement programs impact company performance?",
+        "think": "Engaged employees work harder, innovate more, and stay longer. Programs boost morale and retention.",
+        "output": "Strong engagement drives productivity and loyalty."
+    },
+    {
+        "id": 538,
+        "topic": "business",
+        "question": "What is the value of having a crisis communication plan?",
+        "think": "Plans prepare teams to respond calmly and effectively during emergencies, protecting brand reputation.",
+        "output": "Crisis plans keep messaging clear and minimize reputational harm."
+    },
+    {
+        "id": 539,
+        "topic": "business",
+        "question": "Why is agility a competitive advantage for modern businesses?",
+        "think": "Agile businesses pivot quickly to capture opportunities and minimize losses from unexpected changes.",
+        "output": "Agility means faster responses and better adaptation."
+    },
+    {
+        "id": 540,
+        "topic": "business",
+        "question": "How do companies measure the effectiveness of innovation?",
+        "think": "Track new product revenue, time to market, idea generation, and ROI on R&D spend.",
+        "output": "Measure innovation by output, speed, and impact on growth."
+    },
+    {
+        "id": 541,
+        "topic": "business",
+        "question": "What is the importance of succession planning in leadership continuity?",
+        "think": "Succession planning ensures that leadership transitions are smooth, minimizing disruption and preserving institutional knowledge.",
+        "output": "It keeps businesses stable when key leaders depart."
+    },
+    {
+        "id": 542,
+        "topic": "business",
+        "question": "How do companies use brand storytelling to connect with customers?",
+        "think": "Stories create emotional bonds, making brands memorable and human. Relatable stories inspire loyalty and engagement.",
+        "output": "Storytelling makes brands relatable and memorable."
+    },
+    {
+        "id": 543,
+        "topic": "business",
+        "question": "Why is benchmarking against industry standards important?",
+        "think": "Benchmarking reveals gaps, motivates improvement, and helps set realistic targets based on best-in-class performance.",
+        "output": "It drives continuous improvement and competitiveness."
+    },
+    {
+        "id": 544,
+        "topic": "business",
+        "question": "How can businesses promote knowledge sharing internally?",
+        "think": "Encourage open communication, reward sharing, use digital tools, and break down silos between departments.",
+        "output": "Internal knowledge sharing improves efficiency and innovation."
+    },
+    {
+        "id": 545,
+        "topic": "business",
+        "question": "What are the challenges of implementing corporate sustainability?",
+        "think": "Sustainability can conflict with short-term profit, require upfront investment, and demand cultural change.",
+        "output": "Balance long-term benefits with costs and engage teams to succeed."
+    },
+    {
+        "id": 546,
+        "topic": "business",
+        "question": "How do organizations foster a learning culture?",
+        "think": "Support ongoing training, allow time for development, and reward curiosity and experimentation.",
+        "output": "A learning culture drives innovation and adaptability."
+    },
+    {
+        "id": 547,
+        "topic": "business",
+        "question": "Why is effective onboarding critical for employee retention?",
+        "think": "Good onboarding sets expectations, builds engagement, and reduces early turnover by supporting new hires.",
+        "output": "Strong onboarding boosts retention and productivity."
+    },
+    {
+        "id": 548,
+        "topic": "business",
+        "question": "How does remote work impact real estate strategy for companies?",
+        "think": "Remote work reduces the need for office space and can lower overhead, leading to new workplace models.",
+        "output": "Remote work enables cost savings and more flexible real estate planning."
+    },
+    {
+        "id": 549,
+        "topic": "business",
+        "question": "What is the benefit of regular product portfolio reviews?",
+        "think": "Reviews identify underperformers, highlight growth areas, and guide investment to the most promising products.",
+        "output": "Portfolio reviews focus resources for better returns."
+    },
+    {
+        "id": 550,
+        "topic": "business",
+        "question": "How do companies balance innovation and operational efficiency?",
+        "think": "Balance comes from dedicating resources to both, streamlining core operations while experimenting with new ideas.",
+        "output": "Efficient operations fund and enable ongoing innovation."
+    },
+    {
+        "id": 551,
+        "topic": "business",
+        "question": "Why are customer personas important in product development?",
+        "think": "Personas clarify user needs, ensuring products solve real problems and appeal to target segments.",
+        "output": "Personas guide design and feature decisions."
+    },
+    {
+        "id": 552,
+        "topic": "business",
+        "question": "How does social responsibility influence brand reputation?",
+        "think": "Responsible actions earn customer trust and media attention, boosting positive perceptions.",
+        "output": "Social responsibility strengthens brand and attracts loyal customers."
+    },
+    {
+        "id": 553,
+        "topic": "business",
+        "question": "How do businesses manage multi-channel customer service?",
+        "think": "Coordinate teams and technology to provide consistent support across phone, email, chat, and social media.",
+        "output": "Multi-channel support meets customers where they are."
+    },
+    {
+        "id": 554,
+        "topic": "business",
+        "question": "Why is agility vital for digital transformation success?",
+        "think": "Rapid tech shifts require businesses to test, adapt, and roll out digital solutions quickly.",
+        "output": "Agility lets firms capitalize on digital opportunities."
+    },
+    {
+        "id": 555,
+        "topic": "business",
+        "question": "How can companies encourage ethical behavior among employees?",
+        "think": "Set a clear code of conduct, lead by example, provide training, and reward ethical actions.",
+        "output": "Ethics programs and leadership drive ethical behavior."
+    },
+    {
+        "id": 556,
+        "topic": "business",
+        "question": "How does international expansion affect financial management?",
+        "think": "Global operations complicate tax, currency, and compliance, requiring specialized financial skills and systems.",
+        "output": "International growth needs robust, flexible finance management."
+    },
+    {
+        "id": 557,
+        "topic": "business",
+        "question": "What is the value of long-term strategic partnerships?",
+        "think": "Long-term partners build trust, share knowledge, and invest in joint success over time.",
+        "output": "Strategic partnerships deliver lasting competitive advantages."
+    },
+    {
+        "id": 558,
+        "topic": "business",
+        "question": "Why is open innovation important for established companies?",
+        "think": "Open innovation brings in external ideas, speeds up R&D, and helps firms keep pace with market change.",
+        "output": "Openness unlocks fresh thinking and new growth."
+    },
+    {
+        "id": 559,
+        "topic": "business",
+        "question": "How do companies balance customization and standardization?",
+        "think": "Customization pleases clients, but standardization cuts costs. The right balance depends on market and strategy.",
+        "output": "Balance unique needs with efficiency for best results."
+    },
+    {
+        "id": 560,
+        "topic": "business",
+        "question": "How do businesses develop effective sales enablement strategies?",
+        "think": "Provide training, tools, and content to help sales teams engage customers and close deals efficiently.",
+        "output": "Sales enablement empowers reps and drives revenue."
+    },
+    {
+        "id": 561,
+        "topic": "business",
+        "question": "How can companies use predictive analytics to forecast demand?",
+        "think": "Predictive analytics analyzes historical sales, seasonality, and market signals to predict future demand and optimize inventory.",
+        "output": "It helps reduce stockouts, overstock, and improves planning accuracy."
+    },
+    {
+        "id": 562,
+        "topic": "business",
+        "question": "Why is transparent communication essential during layoffs?",
+        "think": "Honest, timely updates maintain trust, reduce rumors, and support those affected. Transparency preserves morale and reputation.",
+        "output": "Open communication eases transitions and protects company image."
+    },
+    {
+        "id": 563,
+        "topic": "business",
+        "question": "What are the main risks of entering emerging markets?",
+        "think": "Risks include political instability, unclear regulations, currency fluctuations, and unpredictable demand.",
+        "output": "Emerging markets offer growth but demand careful risk management."
+    },
+    {
+        "id": 564,
+        "topic": "business",
+        "question": "How does employee empowerment boost innovation?",
+        "think": "Empowered employees take initiative, propose new ideas, and drive change. Autonomy supports creative problem-solving.",
+        "output": "Empowerment fuels creative thinking and innovation."
+    },
+    {
+        "id": 565,
+        "topic": "business",
+        "question": "How do companies leverage customer advocacy programs?",
+        "think": "Advocacy programs turn happy customers into brand promoters who provide testimonials and referrals.",
+        "output": "Advocates amplify marketing and build trust."
+    },
+    {
+        "id": 566,
+        "topic": "business",
+        "question": "Why is financial discipline important for startups?",
+        "think": "Disciplined spending extends runway, enables strategic investment, and reassures investors.",
+        "output": "Financial discipline keeps startups alive and growing."
+    },
+    {
+        "id": 567,
+        "topic": "business",
+        "question": "How does a digital-first strategy transform business models?",
+        "think": "Digital-first means prioritizing online channels, automation, and data-driven decisions for faster, more scalable growth.",
+        "output": "It opens new markets and streamlines operations."
+    },
+    {
+        "id": 568,
+        "topic": "business",
+        "question": "What is the impact of mentorship programs on employee retention?",
+        "think": "Mentorship increases satisfaction, skills, and career growth, making employees more likely to stay.",
+        "output": "Mentorship strengthens loyalty and reduces turnover."
+    },
+    {
+        "id": 569,
+        "topic": "business",
+        "question": "How do companies manage intellectual property (IP) risks?",
+        "think": "Register IP, monitor for infringement, and take legal action when necessary to protect assets.",
+        "output": "Proactive IP management defends innovations and reputation."
+    },
+    {
+        "id": 570,
+        "topic": "business",
+        "question": "How does agile methodology enhance project delivery?",
+        "think": "Agile emphasizes quick iterations, customer feedback, and adaptability—leading to faster, better outcomes.",
+        "output": "Agile speeds delivery and ensures products fit user needs."
+    },
+    {
+        "id": 571,
+        "topic": "business",
+        "question": "Why is market segmentation crucial for effective advertising?",
+        "think": "Segmentation targets ads to specific groups, raising relevance, conversion, and return on ad spend.",
+        "output": "Segmented ads perform better and waste less budget."
+    },
+    {
+        "id": 572,
+        "topic": "business",
+        "question": "How do businesses build high-performing teams?",
+        "think": "Hire diverse talent, set clear goals, foster trust, and support ongoing development.",
+        "output": "High-performing teams combine skill, clarity, and collaboration."
+    },
+    {
+        "id": 573,
+        "topic": "business",
+        "question": "What are the benefits of a decentralized organizational structure?",
+        "think": "Decentralization gives teams autonomy, speeds up decisions, and boosts adaptability in dynamic markets.",
+        "output": "Decentralized structures empower teams and increase flexibility."
+    },
+    {
+        "id": 574,
+        "topic": "business",
+        "question": "How can companies create a culture of continuous feedback?",
+        "think": "Encourage open dialogue, give frequent, specific feedback, and reward growth. Leaders must model the behavior.",
+        "output": "Continuous feedback accelerates learning and performance."
+    },
+    {
+        "id": 575,
+        "topic": "business",
+        "question": "Why is sustainability reporting important for investors?",
+        "think": "Investors want to understand long-term risks and impacts. Reporting on sustainability builds trust and transparency.",
+        "output": "Sustainability reports attract responsible investment."
+    },
+    {
+        "id": 576,
+        "topic": "business",
+        "question": "How do organizations ensure regulatory compliance in digital marketing?",
+        "think": "Follow data privacy laws, get consent for communications, and provide opt-outs. Train teams and monitor campaigns.",
+        "output": "Compliant marketing avoids legal risk and builds customer trust."
+    },
+    {
+        "id": 577,
+        "topic": "business",
+        "question": "How does emotional intelligence impact leadership effectiveness?",
+        "think": "Leaders with EQ handle stress, build rapport, and resolve conflicts, boosting morale and productivity.",
+        "output": "Emotional intelligence creates stronger, more resilient leaders."
+    },
+    {
+        "id": 578,
+        "topic": "business",
+        "question": "Why is strategic agility key in uncertain markets?",
+        "think": "Strategic agility lets businesses pivot quickly, capitalize on change, and stay ahead of shifting trends.",
+        "output": "Agility enables businesses to thrive in uncertainty."
+    },
+    {
+        "id": 579,
+        "topic": "business",
+        "question": "How do businesses leverage partnerships for international expansion?",
+        "think": "Local partners provide market knowledge, networks, and credibility—making entry faster and less risky.",
+        "output": "Partnerships smooth entry and accelerate global growth."
+    },
+    {
+        "id": 580,
+        "topic": "business",
+        "question": "How does a strong customer support system drive loyalty?",
+        "think": "Timely, helpful support resolves issues and builds trust, making customers more likely to return and refer others.",
+        "output": "Excellent support turns buyers into loyal fans."
+    },
+    {
+        "id": 581,
+        "topic": "business",
+        "question": "Why is adaptability crucial for businesses facing digital disruption?",
+        "think": "Rapid tech changes can make old models obsolete. Adaptable businesses survive by evolving products and processes quickly.",
+        "output": "Adaptability helps companies stay relevant and competitive."
+    },
+    {
+        "id": 582,
+        "topic": "business",
+        "question": "How do companies use customer segmentation to personalize offerings?",
+        "think": "Segmenting customers by behavior, demographics, or needs enables tailored products and targeted marketing.",
+        "output": "Personalization improves relevance and boosts conversions."
+    },
+    {
+        "id": 583,
+        "topic": "business",
+        "question": "What is the impact of remote work on employee engagement?",
+        "think": "Remote work can increase flexibility but may hinder connection and engagement if not managed well.",
+        "output": "Engagement requires extra focus on communication and culture remotely."
+    },
+    {
+        "id": 584,
+        "topic": "business",
+        "question": "How do businesses benefit from open-source software?",
+        "think": "Open-source reduces costs, speeds up development, and encourages innovation through shared community input.",
+        "output": "Open-source tools lower expenses and foster rapid progress."
+    },
+    {
+        "id": 585,
+        "topic": "business",
+        "question": "Why is proactive customer service a differentiator?",
+        "think": "Proactive service solves problems before they escalate, impressing customers and building loyalty.",
+        "output": "Proactive support creates memorable, positive customer experiences."
+    },
+    {
+        "id": 586,
+        "topic": "business",
+        "question": "How do companies manage cash flow during periods of rapid growth?",
+        "think": "Tight controls, accurate forecasts, and strategic investments ensure growth doesn't outpace available funds.",
+        "output": "Disciplined cash management keeps growth sustainable."
+    },
+    {
+        "id": 587,
+        "topic": "business",
+        "question": "What are the benefits of continuous learning for organizations?",
+        "think": "Continuous learning keeps skills fresh, enables innovation, and helps companies respond to change.",
+        "output": "Ongoing learning powers growth and future-readiness."
+    },
+    {
+        "id": 588,
+        "topic": "business",
+        "question": "How does brand equity influence market positioning?",
+        "think": "Strong brand equity allows premium pricing and greater customer loyalty, making market positioning more defensible.",
+        "output": "High brand equity sets you apart and justifies higher prices."
+    },
+    {
+        "id": 589,
+        "topic": "business",
+        "question": "Why is goal setting important for high-performing teams?",
+        "think": "Goals provide clarity, focus, and motivation, keeping teams aligned and accountable.",
+        "output": "Goal setting drives team performance and success."
+    },
+    {
+        "id": 590,
+        "topic": "business",
+        "question": "How do companies foster innovation in highly regulated industries?",
+        "think": "They focus on compliant creativity, invest in R&D, and work closely with regulators to test and launch new ideas.",
+        "output": "Innovation thrives when rules are understood and navigated wisely."
+    },
+    {
+        "id": 591,
+        "topic": "business",
+        "question": "What is the role of design thinking in customer experience?",
+        "think": "Design thinking starts with empathy, creating solutions that fit real user needs and improve satisfaction.",
+        "output": "It ensures products and services delight customers."
+    },
+    {
+        "id": 592,
+        "topic": "business",
+        "question": "How can businesses manage reputational risk in the digital age?",
+        "think": "Monitor online sentiment, respond quickly to issues, and maintain transparency to prevent crises.",
+        "output": "Proactive management protects reputation and trust."
+    },
+    {
+        "id": 593,
+        "topic": "business",
+        "question": "Why is financial agility important for SMEs?",
+        "think": "Small and medium businesses face fast-changing conditions. Agility allows quick pivots and better survival odds.",
+        "output": "Financial agility helps SMEs adapt and stay solvent."
+    },
+    {
+        "id": 594,
+        "topic": "business",
+        "question": "How do companies create a strong remote team culture?",
+        "think": "Intentional rituals, regular communication, and virtual team-building foster connection despite distance.",
+        "output": "Strong culture keeps remote teams engaged and united."
+    },
+    {
+        "id": 595,
+        "topic": "business",
+        "question": "What is the value of business incubators for startups?",
+        "think": "Incubators provide mentorship, resources, and networking, helping startups avoid common pitfalls and grow faster.",
+        "output": "Incubators accelerate startup success and learning."
+    },
+    {
+        "id": 596,
+        "topic": "business",
+        "question": "How does risk appetite shape business strategy?",
+        "think": "Risk appetite determines how aggressively a company pursues new opportunities or innovations.",
+        "output": "Clear risk appetite guides boldness and caution in strategy."
+    },
+    {
+        "id": 597,
+        "topic": "business",
+        "question": "Why is operational transparency important for customers?",
+        "think": "Customers value honesty and want to understand how things work. Transparency builds trust and reduces misunderstandings.",
+        "output": "Open operations reassure customers and build loyalty."
+    },
+    {
+        "id": 598,
+        "topic": "business",
+        "question": "How do businesses use market research to enter new markets?",
+        "think": "They study customer needs, competition, regulations, and demand to shape tailored entry strategies.",
+        "output": "Market research de-risks expansion and clarifies where to compete."
+    },
+    {
+        "id": 599,
+        "topic": "business",
+        "question": "How can businesses prevent knowledge loss during staff turnover?",
+        "think": "Document processes, encourage mentoring, and use knowledge management tools to capture critical info.",
+        "output": "Knowledge sharing keeps expertise alive as teams change."
+    },
+    {
+        "id": 600,
+        "topic": "business",
+        "question": "What is the impact of customer-centric digital transformation?",
+        "think": "Customer-centric changes focus tech investments on user experience, increasing loyalty and growth.",
+        "output": "Digital transformation boosts results when it starts with customer needs."
     }
 ]

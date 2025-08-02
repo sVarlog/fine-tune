@@ -47,6 +47,14 @@ def run_generation_and_print(model, tokenizer, messages, label=None):
                 if seq_ids and last_tokens[-len(seq_ids):] == seq_ids:
                     return True
             return False
+        
+    print("== DEBUG: Special tokens In run_generation_and_print ==")
+    print("additional_special_tokens:", getattr(tokenizer, "additional_special_tokens", None))
+    print("<think> token ID:", tokenizer.convert_tokens_to_ids("<think>"))
+    print("</think> token ID:", tokenizer.convert_tokens_to_ids("</think>"))
+    print("<output> token ID:", tokenizer.convert_tokens_to_ids("<output>"))
+    print("</output> token ID:", tokenizer.convert_tokens_to_ids("</output>"))
+    print("bos_token_id:", tokenizer.bos_token_id, "eos_token_id:", tokenizer.eos_token_id)
 
     # 2) Build the prompt
     prompt_text, tokenized = format_and_tokenize(
@@ -384,7 +392,7 @@ def train_model(model, tokenizer, dataset, output_dir):
     # 3) Configure Trainer
     training_args = TrainingArguments(
         output_dir=output_dir,
-        per_device_train_batch_size=8,
+        per_device_train_batch_size=6,
         gradient_accumulation_steps=4,
         num_train_epochs=12,
         learning_rate=1e-4,
@@ -426,8 +434,8 @@ def train_model(model, tokenizer, dataset, output_dir):
 def test_training():
     from peft import PeftModel
 
-    BASE_MODEL = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
-    OUTPUT_DIR = "output/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B/training-9"
+    BASE_MODEL = MODEL_NAME
+    OUTPUT_DIR = f"output/{MODEL_NAME}/training-5"
 
     log("Loading base model and tokenizer for testing...")
 
@@ -469,6 +477,14 @@ def main():
 
     log("Loading tokenizer and adding special tags")
     tokenizer = load_and_prepare_tokenizer(output_dir)
+
+    print("== DEBUG: Special tokens ==")
+    print("additional_special_tokens:", getattr(tokenizer, "additional_special_tokens", None))
+    print("<think> token ID:", tokenizer.convert_tokens_to_ids("<think>"))
+    print("</think> token ID:", tokenizer.convert_tokens_to_ids("</think>"))
+    print("<output> token ID:", tokenizer.convert_tokens_to_ids("<output>"))
+    print("</output> token ID:", tokenizer.convert_tokens_to_ids("</output>"))
+    print("bos_token_id:", tokenizer.bos_token_id, "eos_token_id:", tokenizer.eos_token_id)
 
     log("Saving chat template to tokenizer")
     save_chat_jinja2(tokenizer, output_dir)

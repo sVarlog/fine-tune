@@ -3,8 +3,8 @@ import os
 
 # Base model name
 # MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B" 
-# MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
-MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B" 
+MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+# MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B" 
 # Base model path
 BASE_MODEL_PATH = MODEL_NAME
 
