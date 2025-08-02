@@ -47,14 +47,6 @@ def run_generation_and_print(model, tokenizer, messages, label=None):
                 if seq_ids and last_tokens[-len(seq_ids):] == seq_ids:
                     return True
             return False
-        
-    print("== DEBUG: Special tokens In run_generation_and_print ==")
-    print("additional_special_tokens:", getattr(tokenizer, "additional_special_tokens", None))
-    print("<think> token ID:", tokenizer.convert_tokens_to_ids("<think>"))
-    print("</think> token ID:", tokenizer.convert_tokens_to_ids("</think>"))
-    print("<output> token ID:", tokenizer.convert_tokens_to_ids("<output>"))
-    print("</output> token ID:", tokenizer.convert_tokens_to_ids("</output>"))
-    print("bos_token_id:", tokenizer.bos_token_id, "eos_token_id:", tokenizer.eos_token_id)
 
     # 2) Build the prompt
     prompt_text, tokenized = format_and_tokenize(
@@ -157,27 +149,36 @@ def load_and_prepare_tokenizer(output_dir: Path):
     return tokenizer
 
 def tokenize_function(ex, tokenizer):
-    # Build the assistant response string
+    # Build assistant reply string
     if ex.get("think"):
         response = f"<think>{ex['think']}</think><output>{ex['output']}</output>"
     else:
         response = f"<output>{ex['output']}</output>"
 
-    # Messages with system prompt + user question + assistant response
     messages = [
         {"role": "system",    "content": SYSTEM_PROMPT},
         {"role": "user",      "content": ex["question"]},
         {"role": "assistant", "content": response}
     ]
 
-    # Format + tokenize
-    _, tokenized = format_and_tokenize(messages, tokenizer)
+    formatted_text, tokenized = format_and_tokenize(messages, tokenizer)
+    input_ids = tokenized["input_ids"]
 
-    # Create labels masking pads
-    tokenized["labels"] = [
-        tok_id if tok_id != tokenizer.pad_token_id else -100
-        for tok_id in tokenized["input_ids"]
-    ]
+    # Find index where assistant message starts
+    assistant_tag = "<|im_start|><|assistant|>\n"
+    assistant_start_idx = formatted_text.find(assistant_tag)
+    if assistant_start_idx == -1:
+        raise ValueError("Could not find assistant tag in formatted_text!")
+
+    # Count tokens up to assistant start
+    prefix_text = formatted_text[:assistant_start_idx + len(assistant_tag)]
+    prefix_tokens = tokenizer(prefix_text, add_special_tokens=False)["input_ids"]
+    label_start = len(prefix_tokens)
+
+    # Mask labels: -100 for non-assistant tokens, real id for assistant reply
+    labels = [-100] * label_start + input_ids[label_start:]
+
+    tokenized["labels"] = labels
     return tokenized
 
 def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generation_prompt=False):
@@ -394,7 +395,7 @@ def train_model(model, tokenizer, dataset, output_dir):
         output_dir=output_dir,
         per_device_train_batch_size=6,
         gradient_accumulation_steps=4,
-        num_train_epochs=12,
+        num_train_epochs=10,
         learning_rate=1e-4,
         warmup_ratio=0.05,
         logging_dir=f"{output_dir}/logs",
@@ -418,7 +419,7 @@ def train_model(model, tokenizer, dataset, output_dir):
         args=training_args,
         train_dataset=dataset,
         data_collator=causal_collator,
-        callbacks=[EvalCallback(tokenizer, interval=20)],
+        callbacks=[EvalCallback(tokenizer, interval=40)],
     )
 
     log("Trainer instance created successfully.")
@@ -435,7 +436,7 @@ def test_training():
     from peft import PeftModel
 
     BASE_MODEL = MODEL_NAME
-    OUTPUT_DIR = f"output/{MODEL_NAME}/training-5"
+    OUTPUT_DIR = f"output/{MODEL_NAME}/training-2"
 
     log("Loading base model and tokenizer for testing...")
 
@@ -502,8 +503,8 @@ def main():
     log("Training model")
     train_model(model, tokenizer, dataset, output_dir)
 
-    # log('Testing training with a small dataset')
-    # test_training()
+    log('Testing training with a small dataset')
+    test_training()
 
 if __name__ == "__main__":
     main()
