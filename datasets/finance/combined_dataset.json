@@ -1,0 +1,737 @@
+[
+  {
+    "id": 1,
+    "topic": "finance",
+    "question": "How can financial literacy be improved globally?",
+    "think": "How can financial literacy be improved globally? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can financial literacy be improved globally? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 2,
+    "topic": "finance",
+    "question": "How can AI be used to optimize financial forecasting?",
+    "think": "How can AI be used to optimize financial forecasting? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can AI be used to optimize financial forecasting? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 3,
+    "topic": "finance",
+    "question": "How can blockchain technology enhance financial security?",
+    "think": "How can blockchain technology enhance financial security? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can blockchain technology enhance financial security? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 4,
+    "topic": "finance",
+    "question": "How can ethical investing impact global markets?",
+    "think": "How can ethical investing impact global markets? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can ethical investing impact global markets? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 5,
+    "topic": "finance",
+    "question": "How can financial institutions ensure data privacy?",
+    "think": "How can financial institutions ensure data privacy? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can financial institutions ensure data privacy? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 6,
+    "topic": "finance",
+    "question": "How can fintech startups disrupt traditional banking?",
+    "think": "How can fintech startups disrupt traditional banking? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can fintech startups disrupt traditional banking? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 7,
+    "topic": "finance",
+    "question": "How can financial inclusion be achieved in developing countries?",
+    "think": "How can financial inclusion be achieved in developing countries? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can financial inclusion be achieved in developing countries? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 8,
+    "topic": "finance",
+    "question": "How can AI detect fraud in financial transactions?",
+    "think": "How can AI detect fraud in financial transactions? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can AI detect fraud in financial transactions? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 9,
+    "topic": "finance",
+    "question": "How can sustainable finance address climate change?",
+    "think": "How can sustainable finance address climate change? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can sustainable finance address climate change? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 10,
+    "topic": "finance",
+    "question": "How can financial education reduce economic inequality?",
+    "think": "How can financial education reduce economic inequality? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can financial education reduce economic inequality? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 11,
+    "topic": "finance",
+    "question": "How can machine learning improve stock market predictions?",
+    "think": "How can machine learning improve stock market predictions? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can machine learning improve stock market predictions? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 12,
+    "topic": "finance",
+    "question": "How can financial advisors leverage AI tools?",
+    "think": "How can financial advisors leverage AI tools? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can financial advisors leverage AI tools? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 13,
+    "topic": "finance",
+    "question": "How can global financial systems adapt to cryptocurrency?",
+    "think": "How can global financial systems adapt to cryptocurrency? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can global financial systems adapt to cryptocurrency? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 14,
+    "topic": "finance",
+    "question": "How can financial planning tools benefit small businesses?",
+    "think": "How can financial planning tools benefit small businesses? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can financial planning tools benefit small businesses? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 15,
+    "topic": "finance",
+    "question": "How can financial regulations keep up with technological advancements?",
+    "think": "How can financial regulations keep up with technological advancements? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "How can financial regulations keep up with technological advancements? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 16,
+    "topic": "finance",
+    "question": "Why is financial literacy important for economic growth?",
+    "think": "Why is financial literacy important for economic growth? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why is financial literacy important for economic growth? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 17,
+    "topic": "finance",
+    "question": "Why do financial markets react to geopolitical events?",
+    "think": "Why do financial markets react to geopolitical events? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why do financial markets react to geopolitical events? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 18,
+    "topic": "finance",
+    "question": "Why is blockchain considered revolutionary in finance?",
+    "think": "Why is blockchain considered revolutionary in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why is blockchain considered revolutionary in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 19,
+    "topic": "finance",
+    "question": "Why should ethical investing be prioritized?",
+    "think": "Why should ethical investing be prioritized? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why should ethical investing be prioritized? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 20,
+    "topic": "finance",
+    "question": "Why is data privacy critical in financial services?",
+    "think": "Why is data privacy critical in financial services? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why is data privacy critical in financial services? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 21,
+    "topic": "finance",
+    "question": "Why are fintech startups gaining popularity?",
+    "think": "Why are fintech startups gaining popularity? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why are fintech startups gaining popularity? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 22,
+    "topic": "finance",
+    "question": "Why is financial inclusion a global challenge?",
+    "think": "Why is financial inclusion a global challenge? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why is financial inclusion a global challenge? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 23,
+    "topic": "finance",
+    "question": "Why is fraud detection essential in financial systems?",
+    "think": "Why is fraud detection essential in financial systems? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why is fraud detection essential in financial systems? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 24,
+    "topic": "finance",
+    "question": "Why is sustainable finance gaining traction?",
+    "think": "Why is sustainable finance gaining traction? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why is sustainable finance gaining traction? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 25,
+    "topic": "finance",
+    "question": "Why is financial education necessary for individuals?",
+    "think": "Why is financial education necessary for individuals? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why is financial education necessary for individuals? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 26,
+    "topic": "finance",
+    "question": "Why do stock market predictions often fail?",
+    "think": "Why do stock market predictions often fail? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why do stock market predictions often fail? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 27,
+    "topic": "finance",
+    "question": "Why should financial advisors adopt AI tools?",
+    "think": "Why should financial advisors adopt AI tools? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why should financial advisors adopt AI tools? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 28,
+    "topic": "finance",
+    "question": "Why is cryptocurrency controversial in global finance?",
+    "think": "Why is cryptocurrency controversial in global finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why is cryptocurrency controversial in global finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 29,
+    "topic": "finance",
+    "question": "Why do small businesses struggle with financial planning?",
+    "think": "Why do small businesses struggle with financial planning? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why do small businesses struggle with financial planning? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 30,
+    "topic": "finance",
+    "question": "Why are financial regulations slow to adapt to technology?",
+    "think": "Why are financial regulations slow to adapt to technology? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Why are financial regulations slow to adapt to technology? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 31,
+    "topic": "finance",
+    "question": "Where can financial literacy programs be implemented effectively?",
+    "think": "Where can financial literacy programs be implemented effectively? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where can financial literacy programs be implemented effectively? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 32,
+    "topic": "finance",
+    "question": "Where are blockchain applications most impactful in finance?",
+    "think": "Where are blockchain applications most impactful in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where are blockchain applications most impactful in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 33,
+    "topic": "finance",
+    "question": "Where should ethical investing be promoted?",
+    "think": "Where should ethical investing be promoted? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where should ethical investing be promoted? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 34,
+    "topic": "finance",
+    "question": "Where can financial institutions improve data privacy?",
+    "think": "Where can financial institutions improve data privacy? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where can financial institutions improve data privacy? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 35,
+    "topic": "finance",
+    "question": "Where are fintech startups thriving globally?",
+    "think": "Where are fintech startups thriving globally? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where are fintech startups thriving globally? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 36,
+    "topic": "finance",
+    "question": "Where is financial inclusion most needed?",
+    "think": "Where is financial inclusion most needed? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where is financial inclusion most needed? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 37,
+    "topic": "finance",
+    "question": "Where can AI improve fraud detection in finance?",
+    "think": "Where can AI improve fraud detection in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where can AI improve fraud detection in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 38,
+    "topic": "finance",
+    "question": "Where can sustainable finance make the biggest difference?",
+    "think": "Where can sustainable finance make the biggest difference? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where can sustainable finance make the biggest difference? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 39,
+    "topic": "finance",
+    "question": "Where should financial education be prioritized?",
+    "think": "Where should financial education be prioritized? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where should financial education be prioritized? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 40,
+    "topic": "finance",
+    "question": "Where are stock market predictions most accurate?",
+    "think": "Where are stock market predictions most accurate? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where are stock market predictions most accurate? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 41,
+    "topic": "finance",
+    "question": "Where can financial advisors benefit from AI tools?",
+    "think": "Where can financial advisors benefit from AI tools? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where can financial advisors benefit from AI tools? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 42,
+    "topic": "finance",
+    "question": "Where is cryptocurrency adoption highest?",
+    "think": "Where is cryptocurrency adoption highest? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where is cryptocurrency adoption highest? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 43,
+    "topic": "finance",
+    "question": "Where can small businesses access financial planning resources?",
+    "think": "Where can small businesses access financial planning resources? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where can small businesses access financial planning resources? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 44,
+    "topic": "finance",
+    "question": "Where are financial regulations most outdated?",
+    "think": "Where are financial regulations most outdated? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where are financial regulations most outdated? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 45,
+    "topic": "finance",
+    "question": "Where can financial systems adapt to technological advancements?",
+    "think": "Where can financial systems adapt to technological advancements? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Where can financial systems adapt to technological advancements? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 46,
+    "topic": "finance",
+    "question": "When should financial literacy be taught in schools?",
+    "think": "When should financial literacy be taught in schools? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When should financial literacy be taught in schools? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 47,
+    "topic": "finance",
+    "question": "When is blockchain technology most useful in finance?",
+    "think": "When is blockchain technology most useful in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When is blockchain technology most useful in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 48,
+    "topic": "finance",
+    "question": "When should ethical investing be considered?",
+    "think": "When should ethical investing be considered? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When should ethical investing be considered? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 49,
+    "topic": "finance",
+    "question": "When is data privacy most at risk in financial services?",
+    "think": "When is data privacy most at risk in financial services? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When is data privacy most at risk in financial services? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 50,
+    "topic": "finance",
+    "question": "When do fintech startups face the most challenges?",
+    "think": "When do fintech startups face the most challenges? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When do fintech startups face the most challenges? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 51,
+    "topic": "finance",
+    "question": "When is financial inclusion most critical?",
+    "think": "When is financial inclusion most critical? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When is financial inclusion most critical? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 52,
+    "topic": "finance",
+    "question": "When should AI be used for fraud detection in finance?",
+    "think": "When should AI be used for fraud detection in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When should AI be used for fraud detection in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 53,
+    "topic": "finance",
+    "question": "When is sustainable finance most impactful?",
+    "think": "When is sustainable finance most impactful? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When is sustainable finance most impactful? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 54,
+    "topic": "finance",
+    "question": "When should financial education be introduced to individuals?",
+    "think": "When should financial education be introduced to individuals? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When should financial education be introduced to individuals? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 55,
+    "topic": "finance",
+    "question": "When are stock market predictions most reliable?",
+    "think": "When are stock market predictions most reliable? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When are stock market predictions most reliable? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 56,
+    "topic": "finance",
+    "question": "When should financial advisors adopt AI tools?",
+    "think": "When should financial advisors adopt AI tools? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When should financial advisors adopt AI tools? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 57,
+    "topic": "finance",
+    "question": "When will cryptocurrency become mainstream in finance?",
+    "think": "When will cryptocurrency become mainstream in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When will cryptocurrency become mainstream in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 58,
+    "topic": "finance",
+    "question": "When should small businesses focus on financial planning?",
+    "think": "When should small businesses focus on financial planning? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When should small businesses focus on financial planning? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 59,
+    "topic": "finance",
+    "question": "When will financial regulations catch up with technology?",
+    "think": "When will financial regulations catch up with technology? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When will financial regulations catch up with technology? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 60,
+    "topic": "finance",
+    "question": "When should financial systems adapt to technological advancements?",
+    "think": "When should financial systems adapt to technological advancements? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "When should financial systems adapt to technological advancements? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 61,
+    "topic": "finance",
+    "question": "Is financial literacy improving globally?",
+    "think": "Is financial literacy improving globally? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is financial literacy improving globally? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 62,
+    "topic": "finance",
+    "question": "Is blockchain technology secure for financial transactions?",
+    "think": "Is blockchain technology secure for financial transactions? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is blockchain technology secure for financial transactions? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 63,
+    "topic": "finance",
+    "question": "Is ethical investing profitable?",
+    "think": "Is ethical investing profitable? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is ethical investing profitable? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 64,
+    "topic": "finance",
+    "question": "Is data privacy a priority for financial institutions?",
+    "think": "Is data privacy a priority for financial institutions? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is data privacy a priority for financial institutions? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 65,
+    "topic": "finance",
+    "question": "Is fintech disrupting traditional banking?",
+    "think": "Is fintech disrupting traditional banking? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is fintech disrupting traditional banking? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 66,
+    "topic": "finance",
+    "question": "Is financial inclusion achievable worldwide?",
+    "think": "Is financial inclusion achievable worldwide? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is financial inclusion achievable worldwide? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 67,
+    "topic": "finance",
+    "question": "Is AI effective in detecting financial fraud?",
+    "think": "Is AI effective in detecting financial fraud? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is AI effective in detecting financial fraud? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 68,
+    "topic": "finance",
+    "question": "Is sustainable finance the future of global markets?",
+    "think": "Is sustainable finance the future of global markets? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is sustainable finance the future of global markets? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 69,
+    "topic": "finance",
+    "question": "Is financial education accessible to everyone?",
+    "think": "Is financial education accessible to everyone? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is financial education accessible to everyone? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 70,
+    "topic": "finance",
+    "question": "Is stock market prediction reliable with AI?",
+    "think": "Is stock market prediction reliable with AI? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is stock market prediction reliable with AI? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 71,
+    "topic": "finance",
+    "question": "Is cryptocurrency a threat to traditional finance?",
+    "think": "Is cryptocurrency a threat to traditional finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is cryptocurrency a threat to traditional finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 72,
+    "topic": "finance",
+    "question": "Is financial planning essential for small businesses?",
+    "think": "Is financial planning essential for small businesses? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is financial planning essential for small businesses? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 73,
+    "topic": "finance",
+    "question": "Is financial regulation keeping pace with technology?",
+    "think": "Is financial regulation keeping pace with technology? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is financial regulation keeping pace with technology? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 74,
+    "topic": "finance",
+    "question": "Is global finance adapting to technological advancements?",
+    "think": "Is global finance adapting to technological advancements? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is global finance adapting to technological advancements? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 75,
+    "topic": "finance",
+    "question": "Is financial security improving with new technologies?",
+    "think": "Is financial security improving with new technologies? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Is financial security improving with new technologies? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 76,
+    "topic": "finance",
+    "question": "Are financial literacy programs effective?",
+    "think": "Are financial literacy programs effective? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are financial literacy programs effective? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 77,
+    "topic": "finance",
+    "question": "Are blockchain applications scalable in finance?",
+    "think": "Are blockchain applications scalable in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are blockchain applications scalable in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 78,
+    "topic": "finance",
+    "question": "Are ethical investments growing in popularity?",
+    "think": "Are ethical investments growing in popularity? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are ethical investments growing in popularity? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 79,
+    "topic": "finance",
+    "question": "Are financial institutions prioritizing data privacy?",
+    "think": "Are financial institutions prioritizing data privacy? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are financial institutions prioritizing data privacy? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 80,
+    "topic": "finance",
+    "question": "Are fintech startups sustainable?",
+    "think": "Are fintech startups sustainable? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are fintech startups sustainable? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 81,
+    "topic": "finance",
+    "question": "Are financial inclusion efforts successful?",
+    "think": "Are financial inclusion efforts successful? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are financial inclusion efforts successful? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 82,
+    "topic": "finance",
+    "question": "Are AI tools reliable for fraud detection in finance?",
+    "think": "Are AI tools reliable for fraud detection in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are AI tools reliable for fraud detection in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 83,
+    "topic": "finance",
+    "question": "Are sustainable finance initiatives impactful?",
+    "think": "Are sustainable finance initiatives impactful? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are sustainable finance initiatives impactful? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 84,
+    "topic": "finance",
+    "question": "Are financial education programs accessible?",
+    "think": "Are financial education programs accessible? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are financial education programs accessible? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 85,
+    "topic": "finance",
+    "question": "Are stock market predictions improving with AI?",
+    "think": "Are stock market predictions improving with AI? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are stock market predictions improving with AI? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 86,
+    "topic": "finance",
+    "question": "Are cryptocurrencies replacing traditional currencies?",
+    "think": "Are cryptocurrencies replacing traditional currencies? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are cryptocurrencies replacing traditional currencies? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 87,
+    "topic": "finance",
+    "question": "Are small businesses benefiting from financial planning tools?",
+    "think": "Are small businesses benefiting from financial planning tools? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are small businesses benefiting from financial planning tools? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 88,
+    "topic": "finance",
+    "question": "Are financial regulations adapting to technology?",
+    "think": "Are financial regulations adapting to technology? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are financial regulations adapting to technology? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 89,
+    "topic": "finance",
+    "question": "Are global financial systems evolving with technology?",
+    "think": "Are global financial systems evolving with technology? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are global financial systems evolving with technology? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 90,
+    "topic": "finance",
+    "question": "Are financial security measures effective?",
+    "think": "Are financial security measures effective? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Are financial security measures effective? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 91,
+    "topic": "finance",
+    "question": "Who is responsible for improving financial literacy?",
+    "think": "Who is responsible for improving financial literacy? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who is responsible for improving financial literacy? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 92,
+    "topic": "finance",
+    "question": "Who benefits most from blockchain technology in finance?",
+    "think": "Who benefits most from blockchain technology in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who benefits most from blockchain technology in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 93,
+    "topic": "finance",
+    "question": "Who should promote ethical investing?",
+    "think": "Who should promote ethical investing? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who should promote ethical investing? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 94,
+    "topic": "finance",
+    "question": "Who ensures data privacy in financial institutions?",
+    "think": "Who ensures data privacy in financial institutions? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who ensures data privacy in financial institutions? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 95,
+    "topic": "finance",
+    "question": "Who are the leaders in fintech innovation?",
+    "think": "Who are the leaders in fintech innovation? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who are the leaders in fintech innovation? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 96,
+    "topic": "finance",
+    "question": "Who is driving financial inclusion globally?",
+    "think": "Who is driving financial inclusion globally? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who is driving financial inclusion globally? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 97,
+    "topic": "finance",
+    "question": "Who develops AI tools for fraud detection in finance?",
+    "think": "Who develops AI tools for fraud detection in finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who develops AI tools for fraud detection in finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 98,
+    "topic": "finance",
+    "question": "Who funds sustainable finance initiatives?",
+    "think": "Who funds sustainable finance initiatives? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who funds sustainable finance initiatives? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 99,
+    "topic": "finance",
+    "question": "Who provides financial education to underserved communities?",
+    "think": "Who provides financial education to underserved communities? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who provides financial education to underserved communities? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 100,
+    "topic": "finance",
+    "question": "Who uses AI for stock market predictions?",
+    "think": "Who uses AI for stock market predictions? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who uses AI for stock market predictions? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 101,
+    "topic": "finance",
+    "question": "Who regulates cryptocurrency in global finance?",
+    "think": "Who regulates cryptocurrency in global finance? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who regulates cryptocurrency in global finance? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 102,
+    "topic": "finance",
+    "question": "Who supports small businesses with financial planning?",
+    "think": "Who supports small businesses with financial planning? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who supports small businesses with financial planning? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 103,
+    "topic": "finance",
+    "question": "Who updates financial regulations for new technologies?",
+    "think": "Who updates financial regulations for new technologies? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who updates financial regulations for new technologies? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 104,
+    "topic": "finance",
+    "question": "Who leads global finance in technological advancements?",
+    "think": "Who leads global finance in technological advancements? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who leads global finance in technological advancements? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  },
+  {
+    "id": 105,
+    "topic": "finance",
+    "question": "Who ensures financial security in the digital age?",
+    "think": "Who ensures financial security in the digital age? This question involves multiple perspectives and needs a thorough breakdown of key components. Start by identifying the core idea, then explore its implications across strategy, execution, and results. Consider industry examples or common logic to support reasoning.",
+    "output": "Who ensures financial security in the digital age? requires thoughtful consideration, but a balanced, well-supported decision often yields the best outcome."
+  }
+]

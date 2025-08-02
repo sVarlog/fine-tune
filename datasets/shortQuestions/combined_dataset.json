@@ -1,0 +1,345 @@
+[
+  {
+    "id": 1,
+    "topic": "shortQuestions",
+    "question": "What is the capital of France?",
+    "think": "Paris is the capital city of France.",
+    "output": "Paris"
+  },
+  {
+    "id": 2,
+    "topic": "shortQuestions",
+    "question": "What is the largest desert in the world?",
+    "think": "The Sahara is the largest hot desert.",
+    "output": "Sahara"
+  },
+  {
+    "id": 3,
+    "topic": "shortQuestions",
+    "question": "What is the longest river in the world?",
+    "think": "The Nile is considered the longest river.",
+    "output": "Nile"
+  },
+  {
+    "id": 4,
+    "topic": "shortQuestions",
+    "question": "What is the highest mountain in the world?",
+    "think": "Mount Everest is the highest mountain.",
+    "output": "Mount Everest"
+  },
+  {
+    "id": 5,
+    "topic": "shortQuestions",
+    "question": "What is the smallest country in the world?",
+    "think": "Vatican City is the smallest country.",
+    "output": "Vatican City"
+  },
+  {
+    "id": 6,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Japan?",
+    "think": "Tokyo is the capital city of Japan.",
+    "output": "Tokyo"
+  },
+  {
+    "id": 7,
+    "topic": "shortQuestions",
+    "question": "What is the largest ocean in the world?",
+    "think": "The Pacific Ocean is the largest ocean.",
+    "output": "Pacific Ocean"
+  },
+  {
+    "id": 8,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Australia?",
+    "think": "Canberra is the capital city of Australia.",
+    "output": "Canberra"
+  },
+  {
+    "id": 9,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Canada?",
+    "think": "Ottawa is the capital city of Canada.",
+    "output": "Ottawa"
+  },
+  {
+    "id": 10,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Germany?",
+    "think": "Berlin is the capital city of Germany.",
+    "output": "Berlin"
+  },
+  {
+    "id": 11,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Italy?",
+    "think": "Rome is the capital city of Italy.",
+    "output": "Rome"
+  },
+  {
+    "id": 12,
+    "topic": "shortQuestions",
+    "question": "What is the capital of China?",
+    "think": "Beijing is the capital city of China.",
+    "output": "Beijing"
+  },
+  {
+    "id": 13,
+    "topic": "shortQuestions",
+    "question": "What is the capital of India?",
+    "think": "New Delhi is the capital city of India.",
+    "output": "New Delhi"
+  },
+  {
+    "id": 14,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Brazil?",
+    "think": "Brasília is the capital city of Brazil.",
+    "output": "Brasília"
+  },
+  {
+    "id": 15,
+    "topic": "shortQuestions",
+    "question": "What is the capital of South Africa?",
+    "think": "Pretoria is one of South Africa's capitals.",
+    "output": "Pretoria"
+  },
+  {
+    "id": 16,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Egypt?",
+    "think": "Cairo is the capital city of Egypt.",
+    "output": "Cairo"
+  },
+  {
+    "id": 17,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Mexico?",
+    "think": "Mexico City is the capital city of Mexico.",
+    "output": "Mexico City"
+  },
+  {
+    "id": 18,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Argentina?",
+    "think": "Buenos Aires is the capital city of Argentina.",
+    "output": "Buenos Aires"
+  },
+  {
+    "id": 19,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Spain?",
+    "think": "Madrid is the capital city of Spain.",
+    "output": "Madrid"
+  },
+  {
+    "id": 20,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Portugal?",
+    "think": "Lisbon is the capital city of Portugal.",
+    "output": "Lisbon"
+  },
+  {
+    "id": 21,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Greece?",
+    "think": "Athens is the capital city of Greece.",
+    "output": "Athens"
+  },
+  {
+    "id": 22,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Turkey?",
+    "think": "Ankara is the capital city of Turkey.",
+    "output": "Ankara"
+  },
+  {
+    "id": 23,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Saudi Arabia?",
+    "think": "Riyadh is the capital city of Saudi Arabia.",
+    "output": "Riyadh"
+  },
+  {
+    "id": 24,
+    "topic": "shortQuestions",
+    "question": "What is the capital of the United Kingdom?",
+    "think": "London is the capital city of the UK.",
+    "output": "London"
+  },
+  {
+    "id": 25,
+    "topic": "shortQuestions",
+    "question": "What is the capital of the United States?",
+    "think": "Washington, D.C. is the capital city of the US.",
+    "output": "Washington, D.C."
+  },
+  {
+    "id": 26,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Indonesia?",
+    "think": "Jakarta is the capital city of Indonesia.",
+    "output": "Jakarta"
+  },
+  {
+    "id": 27,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Thailand?",
+    "think": "Bangkok is the capital city of Thailand.",
+    "output": "Bangkok"
+  },
+  {
+    "id": 28,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Vietnam?",
+    "think": "Hanoi is the capital city of Vietnam.",
+    "output": "Hanoi"
+  },
+  {
+    "id": 29,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Malaysia?",
+    "think": "Kuala Lumpur is the capital city of Malaysia.",
+    "output": "Kuala Lumpur"
+  },
+  {
+    "id": 30,
+    "topic": "shortQuestions",
+    "question": "What is the capital of the Philippines?",
+    "think": "Manila is the capital city of the Philippines.",
+    "output": "Manila"
+  },
+  {
+    "id": 31,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Pakistan?",
+    "think": "Islamabad is the capital city of Pakistan.",
+    "output": "Islamabad"
+  },
+  {
+    "id": 32,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Afghanistan?",
+    "think": "Kabul is the capital city of Afghanistan.",
+    "output": "Kabul"
+  },
+  {
+    "id": 33,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Nepal?",
+    "think": "Kathmandu is the capital city of Nepal.",
+    "output": "Kathmandu"
+  },
+  {
+    "id": 34,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Bangladesh?",
+    "think": "Dhaka is the capital city of Bangladesh.",
+    "output": "Dhaka"
+  },
+  {
+    "id": 35,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Sri Lanka?",
+    "think": "Colombo is the capital city of Sri Lanka.",
+    "output": "Colombo"
+  },
+  {
+    "id": 36,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Myanmar?",
+    "think": "Naypyidaw is the capital city of Myanmar.",
+    "output": "Naypyidaw"
+  },
+  {
+    "id": 37,
+    "topic": "shortQuestions",
+    "question": "What is the capital of South Korea?",
+    "think": "Seoul is the capital city of South Korea.",
+    "output": "Seoul"
+  },
+  {
+    "id": 38,
+    "topic": "shortQuestions",
+    "question": "What is the capital of North Korea?",
+    "think": "Pyongyang is the capital city of North Korea.",
+    "output": "Pyongyang"
+  },
+  {
+    "id": 39,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Mongolia?",
+    "think": "Ulaanbaatar is the capital city of Mongolia.",
+    "output": "Ulaanbaatar"
+  },
+  {
+    "id": 40,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Kazakhstan?",
+    "think": "Astana is the capital city of Kazakhstan.",
+    "output": "Astana"
+  },
+  {
+    "id": 41,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Uzbekistan?",
+    "think": "Tashkent is the capital city of Uzbekistan.",
+    "output": "Tashkent"
+  },
+  {
+    "id": 42,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Turkmenistan?",
+    "think": "Ashgabat is the capital city of Turkmenistan.",
+    "output": "Ashgabat"
+  },
+  {
+    "id": 43,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Kyrgyzstan?",
+    "think": "Bishkek is the capital city of Kyrgyzstan.",
+    "output": "Bishkek"
+  },
+  {
+    "id": 44,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Tajikistan?",
+    "think": "Dushanbe is the capital city of Tajikistan.",
+    "output": "Dushanbe"
+  },
+  {
+    "id": 45,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Iran?",
+    "think": "Tehran is the capital city of Iran.",
+    "output": "Tehran"
+  },
+  {
+    "id": 46,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Iraq?",
+    "think": "Baghdad is the capital city of Iraq.",
+    "output": "Baghdad"
+  },
+  {
+    "id": 47,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Syria?",
+    "think": "Damascus is the capital city of Syria.",
+    "output": "Damascus"
+  },
+  {
+    "id": 48,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Jordan?",
+    "think": "Amman is the capital city of Jordan.",
+    "output": "Amman"
+  },
+  {
+    "id": 49,
+    "topic": "shortQuestions",
+    "question": "What is the capital of Lebanon?",
+    "think": "Beirut is the capital city of Lebanon.",
+    "output": "Beirut"
+  }
+]
