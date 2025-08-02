@@ -142,27 +142,28 @@ def load_and_prepare_tokenizer():
     tokenizer.add_special_tokens(special_tokens)
     return tokenizer
 
-def tokenize_function(example, tokenizer):
-    prompt = example["question"]
-    response = example["response"]
+def tokenize_function(ex, tokenizer):
+    # Build the assistant response string
+    if ex.get("think"):
+        response = f"<think>{ex['think']}</think><output>{ex['output']}</output>"
+    else:
+        response = f"<output>{ex['output']}</output>"
 
-    assert "<think>" in response and "</think>" in response
-    assert "<output>" in response and "</output>" in response
-
+    # Messages with system prompt + user question + assistant response
     messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": prompt},
+        {"role": "system",    "content": SYSTEM_PROMPT},
+        {"role": "user",      "content": ex["question"]},
         {"role": "assistant", "content": response}
     ]
 
+    # Format + tokenize
     _, tokenized = format_and_tokenize(messages, tokenizer)
 
-    # Everything is list[int], safe to copy
+    # Create labels masking pads
     tokenized["labels"] = [
         tok_id if tok_id != tokenizer.pad_token_id else -100
         for tok_id in tokenized["input_ids"]
     ]
-
     return tokenized
 
 def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generation_prompt=False):
@@ -186,18 +187,26 @@ def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generatio
 
 def load_and_tokenize_dataset(tokenizer):
     assert os.path.exists(DATA_PATH), f"Data file not found at {DATA_PATH}"
-    
+
+    # 1) Load the flattened JSONL into a HuggingFace dataset
     dataset = load_dataset("json", data_files=DATA_PATH, split="train")
-    dataset = dataset.map(lambda x: tokenize_function(x, tokenizer), remove_columns=["question", "response"])
+
+    # 2) Tokenize & build labels
+    dataset = dataset.map(
+        lambda ex: tokenize_function(ex, tokenizer),
+        remove_columns=["id", "topic", "question", "think", "output"]
+    )
+
+    # 3) Debug prints if you like
+    print("\nChat template preview:\n")
+    print("-" * 50)
     print(tokenizer.chat_template[:200])
-
-    print("---------------")
-
-    # Print some debug info
+    print("-" * 50)
+    print("\nSample decoded inputs:\n")
+    print("-" * 50)
     print(tokenizer.decode(dataset[0]["input_ids"]))
+    print("-" * 50)
 
-    print("---------------")
-    
     return dataset
 
 def load_model_and_prepare_for_qora(tokenizer):
@@ -426,30 +435,30 @@ def test_training():
         )
 
 def main():
-    # log("Preparing output directory")
-    # output_dir = prepare_output_dir()
+    log("Preparing output directory")
+    output_dir = prepare_output_dir()
 
-    # log("Loading tokenizer and adding special tags")
-    # tokenizer = load_and_prepare_tokenizer()
+    log("Loading tokenizer and adding special tags")
+    tokenizer = load_and_prepare_tokenizer()
 
-    # log("Saving chat template to tokenizer")
-    # save_chat_jinja2(tokenizer, output_dir)
+    log("Saving chat template to tokenizer")
+    save_chat_jinja2(tokenizer, output_dir)
 
-    # log("Loading and tokenizing dataset")
-    # dataset = load_and_tokenize_dataset(tokenizer)
+    log("Loading and tokenizing dataset")
+    dataset = load_and_tokenize_dataset(tokenizer)
 
-    # log("Loading model and applying LoRA")
-    # model = load_model_and_prepare_for_qora(tokenizer)
+    log("Loading model and applying LoRA")
+    model = load_model_and_prepare_for_qora(tokenizer)
 
-    # print("=== Final Chat Template ===")
-    # print(tokenizer.chat_template)
-    # print("===========================")
+    print("=== Final Chat Template ===")
+    print(tokenizer.chat_template)
+    print("===========================")
 
-    # log("Training model")
-    # train_model(model, tokenizer, dataset, output_dir)
+    log("Training model")
+    train_model(model, tokenizer, dataset, output_dir)
 
-    log('Testing training with a small dataset')
-    test_training()
+    # log('Testing training with a small dataset')
+    # test_training()
 
 if __name__ == "__main__":
     main()
