@@ -1,41 +1,85 @@
-#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
-set -e  # Exit immediately if a command exits with a non-zero status
+#
+# convert_to_gguf.sh
+#
+# Usage:
+#   ./convert_to_gguf.sh [--outtype <q4_0|q8_0>] [--model-dir <merged-models/deepseek-merged>]
+#   bash scripts/convert_to_gguf.sh --outtype <q8_0> --model-dir <merged-models/deepseek-merged>
+#
 
-echo "🔄 Converting merged model to GGUF..."
+# Default parameters:
+OUTTYPE="q8_0"
+MERGED_MODEL_BASE="merged-models/deepseek-merged"
 
-# Base merged model path
-MERGED_MODEL_DIR="merged-models/deepseek-merged"
+# Helper: print usage
+usage() {
+  echo "Usage: $0 [--outtype <q4_0|q8_0>] [--model-dir <path>]"
+  echo
+  echo "  --outtype    quant type for GGUF (default: $OUTTYPE)"
+  echo "  --model-dir  merged‐model root (default: $MERGED_MODEL_BASE)"
+  exit 1
+}
 
-# Ensure the base merged model directory exists
-mkdir -p "$MERGED_MODEL_DIR"
+# Parse flags
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --outtype)
+      OUTTYPE="$2"; shift 2;;
+    --model-dir)
+      MERGED_MODEL_BASE="$2"; shift 2;;
+    -h|--help)
+      usage;;
+    *)
+      echo "Unknown option: $1"; usage;;
+  esac
+done
 
-# Find the latest merging directory
-latest_merging_dir=$(ls "$MERGED_MODEL_DIR" | grep "merging-" | sort -V | tail -n 1)
-if [ -z "$latest_merging_dir" ]; then
-  echo "❌ No merging directories found in $MERGED_MODEL_DIR." >&2
+# Locate latest merging-*
+if [[ ! -d "$MERGED_MODEL_BASE" ]]; then
+  echo "❌ Merged models base directory not found: $MERGED_MODEL_BASE" >&2
   exit 1
 fi
 
-GGUF_OUTPUT_DIR="$MERGED_MODEL_DIR/$latest_merging_dir/gguf-output"
-
-# Ensure output directory exists
-mkdir -p "$GGUF_OUTPUT_DIR"
-
-# Generate unique output file name
-OUTPUT_FILE="$GGUF_OUTPUT_DIR/deepseek-q4.gguf"
-if [ -f "$OUTPUT_FILE" ]; then
-  suffix=$(date +%Y%m%d%H%M%S)
-  OUTPUT_FILE="$GGUF_OUTPUT_DIR/deepseek-q4-$suffix.gguf"
+# Use sort -V to handle numeric suffixes correctly
+latest=$(find "$MERGED_MODEL_BASE" -maxdepth 1 -type d -name 'merging-*' | sort -V | tail -n1)
+if [[ -z "$latest" ]]; then
+  echo "❌ No 'merging-*' directories found under $MERGED_MODEL_BASE" >&2
+  exit 1
 fi
 
-# Conversion command
-if python tools/llama/transformers-to-gguf.py \
-  "$MERGED_MODEL_DIR/$latest_merging_dir" \
-  --outfile "$OUTPUT_FILE" \
-  --outtype q8_0; then
-  echo "✅ Conversion done. File saved as:"
-  echo "   $OUTPUT_FILE"
+echo "🔄 Converting merged model in: $latest (type=$OUTTYPE)"
+
+GGUF_DIR="$latest/gguf-output"
+mkdir -p "$GGUF_DIR"
+
+# Build the output filename
+base_name="deepseek-${OUTTYPE}.gguf"
+outfile="$GGUF_DIR/$base_name"
+
+if [[ -f "$outfile" ]]; then
+  timestamp=$(date +'%Y%m%dT%H%M%S')
+  outfile="$GGUF_DIR/deepseek-${OUTTYPE}-${timestamp}.gguf"
+fi
+
+# Locate the conversion script in your repo
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+CONVERTER="${REPO_ROOT}/tools/llama/convert_hf_to_gguf.py"
+
+if [[ ! -f "$CONVERTER" ]]; then
+  echo "❌ Converter not found at $CONVERTER" >&2
+  exit 1
+fi
+
+# Finally, run it
+echo "➡️  Running: python \"$CONVERTER\" …"
+if python "$CONVERTER" "$latest" \
+     --outfile "$outfile" \
+     --outtype "$OUTTYPE"; then
+  echo "✅ Conversion successful!"
+  echo "   Saved to: $outfile"
 else
   echo "❌ Conversion failed." >&2
   exit 1

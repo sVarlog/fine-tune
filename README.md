@@ -1,185 +1,111 @@
-# 🧠 LLM Fine-Tuning, Merging, and GGUF Conversion
+# 🧠 LLM Fine-Tuning, Merging & GGUF Conversion
 
-This project allows you to fine-tune LLMs like DeepSeek/Qwen using QLoRA, merge LoRA adapters into base models, and convert the merged model to GGUF format for use with llama.cpp.
+This repo shows how to:
+
+1. **Fine-tune** a base LLM (e.g. Qwen/DeepSeek) with QLoRA
+2. **Merge** the resulting LoRA adapter into the base model
+3. **Convert** the merged model into GGUF (for `llama.cpp` / local inference)
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Layout
 
 ```
-scripts/
-├── train.py              # Fine-tune using QLoRA
-├── merge_adapter.py      # Merge LoRA into base model
-├── convert_to_gguf.sh    # Convert to GGUF format
-tools/llama/              # Local copy of llama.cpp Python
-├── convert_hf_to_gguf_update.py
-├── convert_llama_ggml_to_gguf.py
-├── convert_lora_to_gguf.py
-├── transformers-to-gguf.py
-config/
-├── config.py             # Centralized configuration for paths and settings
-├── lora_config.json      # Configuration for LoRA fine-tuning
-datasets/
-├── ai/
-│   ├── questions.json
-│   └── dataset.jsonl
-├── business/
-├── finance/
-├── ethics/
-├── ...                   # Other domains
-├── data.jsonl            # Combined dataset built from all folders
-├── build_dataset.py      # Merges all datasets dynamically
-merged-models/
-├── deepseek-merged/      # Directory for merged models
-output/
-├── deepseek-ai/          # Directory for training outputs
+.
+├── config/
+│   ├── config.py            # Central paths & constants
+│   └── lora_config.json     # LoRA hyperparameters
+├── datasets/
+│   ├── ai/
+│   │   └── dataset.jsonl
+│   ├── build_dataset.py     # Collate domain files into data.jsonl
+│   └── data.jsonl           # Combined training data
+├── merged-models/
+│   └── deepseek-merged/     # Merged model outputs
+├── output/
+│   └── deepseek-ai/         # QLoRA training runs
+├── scripts/
+│   ├── train.py             # QLoRA fine-tuning
+│   ├── merge_adapter.py     # Merge adapter → base model
+│   └── convert_to_gguf.sh   # GGUF conversion wrapper
+└── tools/
+    └── llama/               # `transformers-to-gguf.py` & helpers
 ```
 
 ---
 
-## 🚀 Usage
+## 🚀 Quickstart
 
-### 1. Build the training dataset
+### 1. Build your dataset
 
 ```bash
 python datasets/build_dataset.py
 ```
 
-This will merge all `dataset.jsonl` files from domain folders into `datasets/data.jsonl`.
+This pulls in every `dataset.jsonl` under `datasets/*` and writes `datasets/data.jsonl`.
 
-### 2. Train the model
+### 2. Train with QLoRA
 
 ```bash
-docker-compose up trainer
+python scripts/train.py
 ```
 
-Ensure `datasets/data.jsonl` and `config/lora_config.json` exist.
+Outputs checkpoints under `output/deepseek-ai/TRAINING-N/checkpoint-M/`.  
+Special/chat tokens, `tokenizer.json`, `vocab.json`, `merges.txt`, and your `chat_template.jinja` are saved there.
 
-### 3. Merge adapter with base model
+### 3. Merge LoRA into the base
 
 ```bash
 python scripts/merge_adapter.py
 ```
 
-Paths like `BASE_MODEL_PATH`, `ADAPTER_PATH`, and `MERGED_MODEL_PATH` are managed in `config/config.py`.
+-   Picks the **last** `training-*` / `checkpoint-*`
+-   Reads the adapter’s added embedding rows (via `adapter_model.safetensors`)
+-   Resizes the HF base model to match
+-   Merges & unloads LoRA weights
+-   Saves under `merged-models/deepseek-merged/merging-K/`
+-   Copies across your **full** trained-tokenizer artifacts:
+    -   `tokenizer.json`
+    -   `vocab.json`
+    -   `merges.txt`
+    -   `special_tokens_map.json`
+    -   `chat_template.jinja`
 
 ### 4. Convert to GGUF
 
 ```bash
-bash scripts/convert_to_gguf.sh
+bash scripts/convert_to_gguf.sh --outtype q8_0
 ```
 
-Output file will be saved to the latest merging directory:
-
-```
-merged-models/deepseek-merged/merging-n/gguf-output/deepseek-q4.gguf
-```
-
-If a file with the same name already exists, a unique suffix will be added to the filename to avoid overwriting.
+-   Locates the latest `merged-models/.../merging-K/`
+-   Runs `transformers-to-gguf.py` → emits `*.gguf` in `merging-K/gguf-output/`
 
 ---
 
-## 👁️ Dataset Format
+## 📝 Why copy _all_ tokenizer files?
 
-Each training sample follows a strict reasoning-output structure:
+When you added custom special/chat tokens and a Jinja template:
 
-```json
-{
-    "question": "Why is transparency important in AI?",
-    "response": "<think>Transparency helps detect bias, improve trust, and enable accountability...</think><output>Transparency is key to ethical and trustworthy AI systems.</output>"
-}
-```
+-   **`tokenizer.json`** holds your merges + special tokens + chat_template
+-   **`vocab.json`** + **`merges.txt`** define your BPE vocabulary
+-   **`special_tokens_map.json`** maps names → IDs
+-   **`chat_template.jinja`** is your prompt-format template
 
--   `<think>` contains structured reasoning
--   `<output>` gives a short, clear final answer
-
-This format enforces consistency and helps reduce hallucinations. It is designed for use in structured UI output and instruction-following agents.
-
-### Domains Covered
-
--   AI
--   Business
--   Finance
--   Ethics
--   Global Trends
--   Marketing
--   Productivity
--   Psychology
--   Strategy
--   Tech
-
-Each folder contains:
-
--   `questions.json` - raw questions
--   `dataset.jsonl` - generated training pairs
+By shipping them alongside the merged model, you preserve _exactly_ the same tokenization and chat layout your fine-tune used.
 
 ---
 
-## 🛠️ Docker
+## 🛠 Fine-Tuning Tips
 
-This project uses `nvidia/cuda` and supports training inside Docker with GPU acceleration via Docker Compose.
-
-### Volumes
-
-Ensure the Hugging Face cache and project code are mounted correctly:
-
-```yaml
-volumes:
-    - C:/Users/pc/.cache/huggingface:/root/.cache/huggingface
-    - ./:/workspace
-```
-
-### If Model Is Not Found:
-
-1. Check that `docker-compose.yml` maps your cache directory.
-2. Share the host drive in Docker Desktop settings.
-3. Manually download the model using:
-
-```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from config.config import BASE_MODEL_PATH
-
-model = AutoModelForCausalLM.from_pretrained(BASE_MODEL_PATH)
-tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL_PATH)
-```
-
----
-
-## 📆 Recommended Fine-Tuning Config (RTX 5090)
-
-| Model Size | Epochs | Batch Size | Accum. Steps | Learning Rate | Notes                      |
-| ---------- | ------ | ---------- | ------------ | ------------- | -------------------------- |
-| 7B         | 3-5    | 2-4        | 16           | 1e-4 – 2e-4   | Fast, fits with QLoRA      |
-| 32B        | 2-4    | 1-2        | 16           | 1e-4          | Use `bf16` + checkpointing |
-
-Make sure to monitor GPU memory and training loss with long context windows.
-
----
-
-## 📆 Requirements (if running outside Docker)
-
-```bash
-pip install -r requirements.txt
-```
-
-If using local `transformers-to-gguf.py`, install:
-
-```bash
-pip install ./tools/llama/gguf-py
-```
-
----
-
-## ✨ Contributing
-
-Feel free to extend domain coverage or add new response formats. This repo is designed to be modular and extensible for future agent-like assistants.
+-   Use small batches (2–4) with gradient accumulation 16–32
+-   Train for 3–5 epochs on ~2–3K samples to start
+-   Monitor loss & generations via the built-in eval callback
 
 ---
 
 ## 🎉 Results
 
-Trained models show reduced hallucinations and maintain structure across multiple domains with `<think>` and `<output>` response blocks.
-
-For structured UI generation, this format helps ensure alignment and response reliability.
+-   Adapter merging “just worked” once we resized embeddings and carried over the custom tokenizer.
+-   Downstream GGUF conversion now sees the proper `tokenizer.model` alongside JSON/BPE files.
 
 ---

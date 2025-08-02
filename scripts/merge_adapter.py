@@ -1,53 +1,102 @@
-from transformers import AutoTokenizer, AutoModelForCausalLM
-from peft import PeftModel
+import json
+import shutil
 from pathlib import Path
-import json, os
-from config.config import BASE_MODEL_PATH, MERGED_MODEL_PATH, ADAPTER_PATH, ALLOWED_KEYS
 
-def log(title):
-    print(f"\n🔧 {title}\n{'=' * 60}")
+import safetensors.torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import PeftModel
 
-log("Cleaning adapter_config.json...")
+# ───────────────────────────────────────────────────────────────────────────────
+# Configuration
+# ───────────────────────────────────────────────────────────────────────────────
+BASE_MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+ADAPTER_ROOT    = Path("output") / BASE_MODEL_NAME
+OUTPUT_ROOT     = Path("merged-models") / "deepseek-merged"
 
-config_path = ADAPTER_PATH / "adapter_config.json"
-assert config_path.exists(), f"❌ adapter_config.json not found at {config_path}"
-with open(config_path) as f:
-    cfg = json.load(f)
+# ───────────────────────────────────────────────────────────────────────────────
+# Helpers
+# ───────────────────────────────────────────────────────────────────────────────
+def log(msg):
+    print(f"\n🔧 {msg}\n{'=' * 60}")
 
-cleaned_cfg = {k: v for k, v in cfg.items() if k in ALLOWED_KEYS}
-with open(config_path, "w") as f:
-    json.dump(cleaned_cfg, f, indent=2)
+def find_latest_checkpoint(root: Path) -> Path:
+    """Return the path to the last ‘checkpoint-N’ under the last ‘training-M’ dir."""
+    trainings = sorted(
+        [d for d in root.iterdir() if d.is_dir() and d.name.startswith("training-")],
+        key=lambda d: int(d.name.split("-", 1)[1])
+    )
+    if not trainings:
+        raise FileNotFoundError(f"No training-* dirs under {root}")
+    last_training = trainings[-1]
 
-print("✅ adapter_config.json cleaned")
+    checkpoints = sorted(
+        [d for d in last_training.iterdir() if d.is_dir() and d.name.startswith("checkpoint-")],
+        key=lambda d: int(d.name.split("-", 1)[1])
+    )
+    if not checkpoints:
+        raise FileNotFoundError(f"No checkpoint-* dirs under {last_training}")
+    return checkpoints[-1]
 
-log("Loading base model...")
-base_model = AutoModelForCausalLM.from_pretrained(BASE_MODEL_PATH, trust_remote_code=True)
+def get_adapter_vocab_size(checkpoint_dir: Path) -> int:
+    """Peek into the LoRA weights to infer how many embedding rows were added."""
+    weights = safetensors.torch.load_file(
+        str(checkpoint_dir / "adapter_model.safetensors"), device="cpu"
+    )
+    return weights["base_model.model.model.embed_tokens.weight"].shape[0]
 
-log("Loading adapter weights...")
-# Resize token embeddings to match the adapter's vocabulary size
-adapter_tokenizer = AutoTokenizer.from_pretrained(ADAPTER_PATH)
-base_model.resize_token_embeddings(len(adapter_tokenizer))
-model = PeftModel.from_pretrained(base_model, str(ADAPTER_PATH))
+def prepare_output_dir(base: Path) -> Path:
+    """Make a new merging-N folder under OUTPUT_ROOT and return its path."""
+    OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
+    run_id = len(list(OUTPUT_ROOT.glob("merging-*"))) + 1
+    out_dir = OUTPUT_ROOT / f"merging-{run_id}"
+    out_dir.mkdir()
+    return out_dir
 
-log("Merging LoRA into base model...")
-model = model.merge_and_unload()
+# ───────────────────────────────────────────────────────────────────────────────
+# Main flow
+# ───────────────────────────────────────────────────────────────────────────────
+def main():
+    log(f"Finding latest checkpoint in {ADAPTER_ROOT}")
+    ckpt = find_latest_checkpoint(ADAPTER_ROOT)
 
-log("Saving merged model...")
-# Base merged model path
-merged_model_dir = Path("merged-models/deepseek-merged")
+    log(f"Loading base model `{BASE_MODEL_NAME}`")
+    base = AutoModelForCausalLM.from_pretrained(
+        BASE_MODEL_NAME,
+        trust_remote_code=True,
+        device_map="auto"
+    )
 
-# Ensure the base merged model directory exists
-merged_model_dir.mkdir(parents=True, exist_ok=True)
+    log("Inspecting adapter vocabulary size")
+    vocab_size = get_adapter_vocab_size(ckpt)
+    log(f"Adapter added {vocab_size:,} token embeddings")
 
-# Find the next available merging directory
-existing_dirs = [d for d in os.listdir(merged_model_dir) if d.startswith("merging-")]
-next_merging_num = len(existing_dirs) + 1
-MERGED_MODEL_PATH = merged_model_dir / f"merging-{next_merging_num}/"
+    log("Resizing base model embeddings")
+    base.resize_token_embeddings(vocab_size)
 
-# Create the directory
-MERGED_MODEL_PATH.mkdir(parents=True, exist_ok=True)
+    log("Loading & merging LoRA adapter")
+    peft_model = PeftModel.from_pretrained(base, str(ckpt), is_trainable=False)
+    merged     = peft_model.merge_and_unload()
 
-model.save_pretrained(MERGED_MODEL_PATH)
-# AutoTokenizer.from_pretrained(BASE_MODEL_PATH).save_pretrained(MERGED_MODEL_PATH)
-AutoTokenizer.from_pretrained(ADAPTER_PATH).save_pretrained(MERGED_MODEL_PATH)
-print(f"✅ Merged model saved to: {MERGED_MODEL_PATH.resolve()}")
+    out_dir = prepare_output_dir(OUTPUT_ROOT)
+    log(f"Saving merged model to {out_dir}")
+    merged.save_pretrained(out_dir)
+
+    log("Saving fresh base tokenizer")
+    tok = AutoTokenizer.from_pretrained(
+        BASE_MODEL_NAME,
+        trust_remote_code=True,
+        use_fast=True
+    )
+    tok.save_pretrained(out_dir)
+
+    log("Copying training-time tokenizer artifacts")
+    for fn in ("vocab.json", "merges.txt", "special_tokens_map.json", "chat_template.jinja"):
+        src = ckpt.parent / fn
+        if src.exists():
+            shutil.copy(src, out_dir / fn)
+            log(f"  • {fn}")
+
+    print(f"\n✅ Done! Merged model + tokenizer ready at: {out_dir}")
+
+if __name__ == "__main__":
+    main()

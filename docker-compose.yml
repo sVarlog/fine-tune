@@ -9,7 +9,7 @@ services:
             context: .
             dockerfile: Dockerfile
         image: llm-trainer
-        container_name: llm-finetune
+        container_name: LLMForge
         volumes:
             - C:/Users/pc/.cache/huggingface:/root/.cache/huggingface
             - ./:/workspace

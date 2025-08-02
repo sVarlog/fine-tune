@@ -1,7 +1,7 @@
-from pyexpat import features
 import re
 import os
 import json
+import shutil
 from time import time
 import torch
 from pathlib import Path
@@ -10,6 +10,8 @@ from transformers import (
     logging, AutoConfig, AutoTokenizer, AutoModelForCausalLM,
     TrainingArguments, Trainer, TrainerCallback, BitsAndBytesConfig,
 )
+from tokenizers import Tokenizer
+
 from peft import get_peft_model, LoraConfig, prepare_model_for_kbit_training
 from config.config import MODEL_NAME
 
@@ -127,8 +129,11 @@ def prepare_output_dir() -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     return output_dir
 
-def load_and_prepare_tokenizer():
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
+def load_and_prepare_tokenizer(output_dir: Path):
+    tokenizer = AutoTokenizer.from_pretrained(
+        MODEL_NAME, 
+        trust_remote_code=True
+    )
     # register every tag you emit in your template
     special_tokens = {
         "bos_token": "<|im_start|>",
@@ -140,6 +145,7 @@ def load_and_prepare_tokenizer():
         ],
     }
     tokenizer.add_special_tokens(special_tokens)
+
     return tokenizer
 
 def tokenize_function(ex, tokenizer):
@@ -177,7 +183,7 @@ def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generatio
     else:
         tokenized = tokenizer(
             formatted_text,
-            padding="longest",         # or "longest" for dynamic batch-based
+            padding="longest",         
             truncation=True,
             max_length=2048,              # pick appropriate max length
             return_tensors=None,          # ✅ Don't return tensor now
@@ -209,7 +215,7 @@ def load_and_tokenize_dataset(tokenizer):
 
     return dataset
 
-def load_model_and_prepare_for_qora(tokenizer):
+def load_model_and_prepare_for_qora(tokenizer, output_dir: Path):
     start = time()
     log("Loading model config and weights…")
 
@@ -233,7 +239,12 @@ def load_model_and_prepare_for_qora(tokenizer):
         quantization_config=bnb,
     )
 
-    # 3) Resize/tokenizer‐patch
+    # 2.1) Snapshot everything we'll need downstream
+    output_dir.mkdir(parents=True, exist_ok=True)
+    log(f"Saving base model config and tokenizer to {output_dir}")
+    config.save_pretrained(output_dir)
+
+    # 3) Resize & patch
     model.resize_token_embeddings(len(tokenizer))
     model.config.pad_token_id = tokenizer.pad_token_id
 
@@ -241,38 +252,61 @@ def load_model_and_prepare_for_qora(tokenizer):
     log("Preparing model for QLoRA adapters…")
     model = prepare_model_for_kbit_training(model)
 
-    # 5) Sanity‐check your LoRA targets & load the adapter config
+    # 5) Load your LoRA config, wrap with PEFT…
     assert os.path.exists(LORA_CONFIG_PATH), "Missing LoRA config"
     log(f"Checking LoRA config at {LORA_CONFIG_PATH}…")
     lora_cfg = check_lora_modules(model, LORA_CONFIG_PATH)
-
-    # 6) Wrap with LoRA
     log("Applying LoRA adapters…")
     model = get_peft_model(model, lora_cfg)
 
-    # 7) Monkey‐patch generation defaults
-    model.generation_config.do_sample     = False
-    model.generation_config.temperature   = 1.0
-    model.generation_config.top_p         = 1.0
-    model.generation_config.top_k         = 0
-    model.config.use_cache                = False
+    # 6) Monkey-patch generation defaults
+    model.generation_config.do_sample   = False
+    model.generation_config.temperature = 1.0
+    model.generation_config.top_p       = 1.0
+    model.generation_config.top_k       = 0
+    model.config.use_cache              = False
 
     end = time()
     log(f"✅ Model & LoRA ready in {end - start:.2f}s")
-
     return model
+
 
 def save_chat_jinja2(tokenizer, output_dir: Path):
     template_src = Path("templates/chat_template.jinja")
     assert template_src.exists(), f"Template missing at: {template_src}"
 
+    # 1) add the chat template to your tokenizer
     with open(template_src, "r", encoding="utf-8") as f:
         template_text = f.read()
-
     tokenizer.chat_template = template_text
-    tokenizer.init_kwargs["chat_template"] = template_text  # ✅ ensures it's saved
+    tokenizer.init_kwargs["chat_template"] = template_text
 
+    # 2) save the HF tokenizer (this writes tokenizer.json and tokenizer_config.json)
     tokenizer.save_pretrained(output_dir)
+
+    # 3) now open the *fast* tokenizer to dump vocab + merges
+    fast_tok = Tokenizer.from_file(str(output_dir / "tokenizer.json"))
+    bpe = fast_tok.model  # this is a tokenizers.models.BPE
+
+    # Option A) Let `.save()` do it for you, into a dedicated subfolder:
+    bpe_folder = output_dir / "bpe-tokenizer"
+    bpe_folder.mkdir(exist_ok=True)
+    bpe.save(str(bpe_folder))  # writes bpe-tokenizer/vocab.json & bpe-tokenizer/merges.txt
+
+    # Move them up one level if you like:
+    (bpe_folder / "vocab.json").rename(output_dir / "vocab.json")
+    (bpe_folder / "merges.txt").rename(output_dir / "merges.txt")
+    bpe_folder.rmdir()  # remove the now-empty subfolder
+
+    # Option B) (more explicit) manually dump:
+    # with open(output_dir/"vocab.json", "w", encoding="utf-8") as vf:
+    #     json.dump(bpe.get_vocab(), vf, ensure_ascii=False)
+    # with open(output_dir/"merges.txt", "w", encoding="utf-8") as mf:
+    #     for a, b in bpe.get_merges():
+    #         mf.write(f"{a} {b}\n")
+
+    print(f"✅ Chat template + vocab/merges dumped to {output_dir}")
+
 
 def is_structured_output(text: str) -> bool:
     # Extract only the assistant block (between <|im_start|>assistant and <|im_end|>)
@@ -390,9 +424,6 @@ def train_model(model, tokenizer, dataset, output_dir):
     model.save_pretrained(output_dir)
     log("Model saved successfully.")
 
-    tokenizer.save_pretrained(output_dir)
-    log("Tokenizer saved successfully.")
-
 
 def test_training():
     from peft import PeftModel
@@ -439,7 +470,7 @@ def main():
     output_dir = prepare_output_dir()
 
     log("Loading tokenizer and adding special tags")
-    tokenizer = load_and_prepare_tokenizer()
+    tokenizer = load_and_prepare_tokenizer(output_dir)
 
     log("Saving chat template to tokenizer")
     save_chat_jinja2(tokenizer, output_dir)
@@ -448,7 +479,7 @@ def main():
     dataset = load_and_tokenize_dataset(tokenizer)
 
     log("Loading model and applying LoRA")
-    model = load_model_and_prepare_for_qora(tokenizer)
+    model = load_model_and_prepare_for_qora(tokenizer, output_dir)
 
     print("=== Final Chat Template ===")
     print(tokenizer.chat_template)
