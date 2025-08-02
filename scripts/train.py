@@ -384,10 +384,10 @@ def train_model(model, tokenizer, dataset, output_dir):
     # 3) Configure Trainer
     training_args = TrainingArguments(
         output_dir=output_dir,
-        per_device_train_batch_size=2,
-        gradient_accumulation_steps=16,
-        max_steps=20,
-        learning_rate=2e-4,
+        per_device_train_batch_size=8,
+        gradient_accumulation_steps=4,
+        num_train_epochs=12,
+        learning_rate=1e-4,
         warmup_ratio=0.05,
         logging_dir=f"{output_dir}/logs",
         logging_steps=10,
@@ -402,8 +402,6 @@ def train_model(model, tokenizer, dataset, output_dir):
         ddp_find_unused_parameters=False,
         dataloader_pin_memory=True,
         dataloader_num_workers=2,
-        # you can still force batched lengths to multiple of 8 here,
-        # but tokenizer.pad(…, pad_to_multiple_of=8) handles it.
     )
 
     log("Creating Trainer instance...")
