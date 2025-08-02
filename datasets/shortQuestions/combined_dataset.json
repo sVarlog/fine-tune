@@ -1,345 +1,2452 @@
 [
-  {
-    "id": 1,
-    "topic": "shortQuestions",
-    "question": "What is the capital of France?",
-    "think": "Paris is the capital city of France.",
-    "output": "Paris"
-  },
-  {
-    "id": 2,
-    "topic": "shortQuestions",
-    "question": "What is the largest desert in the world?",
-    "think": "The Sahara is the largest hot desert.",
-    "output": "Sahara"
-  },
-  {
-    "id": 3,
-    "topic": "shortQuestions",
-    "question": "What is the longest river in the world?",
-    "think": "The Nile is considered the longest river.",
-    "output": "Nile"
-  },
-  {
-    "id": 4,
-    "topic": "shortQuestions",
-    "question": "What is the highest mountain in the world?",
-    "think": "Mount Everest is the highest mountain.",
-    "output": "Mount Everest"
-  },
-  {
-    "id": 5,
-    "topic": "shortQuestions",
-    "question": "What is the smallest country in the world?",
-    "think": "Vatican City is the smallest country.",
-    "output": "Vatican City"
-  },
-  {
-    "id": 6,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Japan?",
-    "think": "Tokyo is the capital city of Japan.",
-    "output": "Tokyo"
-  },
-  {
-    "id": 7,
-    "topic": "shortQuestions",
-    "question": "What is the largest ocean in the world?",
-    "think": "The Pacific Ocean is the largest ocean.",
-    "output": "Pacific Ocean"
-  },
-  {
-    "id": 8,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Australia?",
-    "think": "Canberra is the capital city of Australia.",
-    "output": "Canberra"
-  },
-  {
-    "id": 9,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Canada?",
-    "think": "Ottawa is the capital city of Canada.",
-    "output": "Ottawa"
-  },
-  {
-    "id": 10,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Germany?",
-    "think": "Berlin is the capital city of Germany.",
-    "output": "Berlin"
-  },
-  {
-    "id": 11,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Italy?",
-    "think": "Rome is the capital city of Italy.",
-    "output": "Rome"
-  },
-  {
-    "id": 12,
-    "topic": "shortQuestions",
-    "question": "What is the capital of China?",
-    "think": "Beijing is the capital city of China.",
-    "output": "Beijing"
-  },
-  {
-    "id": 13,
-    "topic": "shortQuestions",
-    "question": "What is the capital of India?",
-    "think": "New Delhi is the capital city of India.",
-    "output": "New Delhi"
-  },
-  {
-    "id": 14,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Brazil?",
-    "think": "Brasília is the capital city of Brazil.",
-    "output": "Brasília"
-  },
-  {
-    "id": 15,
-    "topic": "shortQuestions",
-    "question": "What is the capital of South Africa?",
-    "think": "Pretoria is one of South Africa's capitals.",
-    "output": "Pretoria"
-  },
-  {
-    "id": 16,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Egypt?",
-    "think": "Cairo is the capital city of Egypt.",
-    "output": "Cairo"
-  },
-  {
-    "id": 17,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Mexico?",
-    "think": "Mexico City is the capital city of Mexico.",
-    "output": "Mexico City"
-  },
-  {
-    "id": 18,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Argentina?",
-    "think": "Buenos Aires is the capital city of Argentina.",
-    "output": "Buenos Aires"
-  },
-  {
-    "id": 19,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Spain?",
-    "think": "Madrid is the capital city of Spain.",
-    "output": "Madrid"
-  },
-  {
-    "id": 20,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Portugal?",
-    "think": "Lisbon is the capital city of Portugal.",
-    "output": "Lisbon"
-  },
-  {
-    "id": 21,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Greece?",
-    "think": "Athens is the capital city of Greece.",
-    "output": "Athens"
-  },
-  {
-    "id": 22,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Turkey?",
-    "think": "Ankara is the capital city of Turkey.",
-    "output": "Ankara"
-  },
-  {
-    "id": 23,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Saudi Arabia?",
-    "think": "Riyadh is the capital city of Saudi Arabia.",
-    "output": "Riyadh"
-  },
-  {
-    "id": 24,
-    "topic": "shortQuestions",
-    "question": "What is the capital of the United Kingdom?",
-    "think": "London is the capital city of the UK.",
-    "output": "London"
-  },
-  {
-    "id": 25,
-    "topic": "shortQuestions",
-    "question": "What is the capital of the United States?",
-    "think": "Washington, D.C. is the capital city of the US.",
-    "output": "Washington, D.C."
-  },
-  {
-    "id": 26,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Indonesia?",
-    "think": "Jakarta is the capital city of Indonesia.",
-    "output": "Jakarta"
-  },
-  {
-    "id": 27,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Thailand?",
-    "think": "Bangkok is the capital city of Thailand.",
-    "output": "Bangkok"
-  },
-  {
-    "id": 28,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Vietnam?",
-    "think": "Hanoi is the capital city of Vietnam.",
-    "output": "Hanoi"
-  },
-  {
-    "id": 29,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Malaysia?",
-    "think": "Kuala Lumpur is the capital city of Malaysia.",
-    "output": "Kuala Lumpur"
-  },
-  {
-    "id": 30,
-    "topic": "shortQuestions",
-    "question": "What is the capital of the Philippines?",
-    "think": "Manila is the capital city of the Philippines.",
-    "output": "Manila"
-  },
-  {
-    "id": 31,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Pakistan?",
-    "think": "Islamabad is the capital city of Pakistan.",
-    "output": "Islamabad"
-  },
-  {
-    "id": 32,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Afghanistan?",
-    "think": "Kabul is the capital city of Afghanistan.",
-    "output": "Kabul"
-  },
-  {
-    "id": 33,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Nepal?",
-    "think": "Kathmandu is the capital city of Nepal.",
-    "output": "Kathmandu"
-  },
-  {
-    "id": 34,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Bangladesh?",
-    "think": "Dhaka is the capital city of Bangladesh.",
-    "output": "Dhaka"
-  },
-  {
-    "id": 35,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Sri Lanka?",
-    "think": "Colombo is the capital city of Sri Lanka.",
-    "output": "Colombo"
-  },
-  {
-    "id": 36,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Myanmar?",
-    "think": "Naypyidaw is the capital city of Myanmar.",
-    "output": "Naypyidaw"
-  },
-  {
-    "id": 37,
-    "topic": "shortQuestions",
-    "question": "What is the capital of South Korea?",
-    "think": "Seoul is the capital city of South Korea.",
-    "output": "Seoul"
-  },
-  {
-    "id": 38,
-    "topic": "shortQuestions",
-    "question": "What is the capital of North Korea?",
-    "think": "Pyongyang is the capital city of North Korea.",
-    "output": "Pyongyang"
-  },
-  {
-    "id": 39,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Mongolia?",
-    "think": "Ulaanbaatar is the capital city of Mongolia.",
-    "output": "Ulaanbaatar"
-  },
-  {
-    "id": 40,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Kazakhstan?",
-    "think": "Astana is the capital city of Kazakhstan.",
-    "output": "Astana"
-  },
-  {
-    "id": 41,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Uzbekistan?",
-    "think": "Tashkent is the capital city of Uzbekistan.",
-    "output": "Tashkent"
-  },
-  {
-    "id": 42,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Turkmenistan?",
-    "think": "Ashgabat is the capital city of Turkmenistan.",
-    "output": "Ashgabat"
-  },
-  {
-    "id": 43,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Kyrgyzstan?",
-    "think": "Bishkek is the capital city of Kyrgyzstan.",
-    "output": "Bishkek"
-  },
-  {
-    "id": 44,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Tajikistan?",
-    "think": "Dushanbe is the capital city of Tajikistan.",
-    "output": "Dushanbe"
-  },
-  {
-    "id": 45,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Iran?",
-    "think": "Tehran is the capital city of Iran.",
-    "output": "Tehran"
-  },
-  {
-    "id": 46,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Iraq?",
-    "think": "Baghdad is the capital city of Iraq.",
-    "output": "Baghdad"
-  },
-  {
-    "id": 47,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Syria?",
-    "think": "Damascus is the capital city of Syria.",
-    "output": "Damascus"
-  },
-  {
-    "id": 48,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Jordan?",
-    "think": "Amman is the capital city of Jordan.",
-    "output": "Amman"
-  },
-  {
-    "id": 49,
-    "topic": "shortQuestions",
-    "question": "What is the capital of Lebanon?",
-    "think": "Beirut is the capital city of Lebanon.",
-    "output": "Beirut"
-  }
+    {
+        "id": 1,
+        "topic": "shortQuestions",
+        "question": "What is the capital of France?",
+        "think": "Paris is the capital city of France.",
+        "output": "Paris"
+    },
+    {
+        "id": 2,
+        "topic": "shortQuestions",
+        "question": "What is the largest desert in the world?",
+        "think": "The Sahara is the largest hot desert.",
+        "output": "Sahara"
+    },
+    {
+        "id": 3,
+        "topic": "shortQuestions",
+        "question": "What is the longest river in the world?",
+        "think": "The Nile is considered the longest river.",
+        "output": "Nile"
+    },
+    {
+        "id": 4,
+        "topic": "shortQuestions",
+        "question": "What is the highest mountain in the world?",
+        "think": "Mount Everest is the highest mountain.",
+        "output": "Mount Everest"
+    },
+    {
+        "id": 5,
+        "topic": "shortQuestions",
+        "question": "What is the smallest country in the world?",
+        "think": "Vatican City is the smallest country.",
+        "output": "Vatican City"
+    },
+    {
+        "id": 6,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Japan?",
+        "think": "Tokyo is the capital city of Japan.",
+        "output": "Tokyo"
+    },
+    {
+        "id": 7,
+        "topic": "shortQuestions",
+        "question": "What is the largest ocean in the world?",
+        "think": "The Pacific Ocean is the largest ocean.",
+        "output": "Pacific Ocean"
+    },
+    {
+        "id": 8,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Australia?",
+        "think": "Canberra is the capital city of Australia.",
+        "output": "Canberra"
+    },
+    {
+        "id": 9,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Canada?",
+        "think": "Ottawa is the capital city of Canada.",
+        "output": "Ottawa"
+    },
+    {
+        "id": 10,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Germany?",
+        "think": "Berlin is the capital city of Germany.",
+        "output": "Berlin"
+    },
+    {
+        "id": 11,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Italy?",
+        "think": "Rome is the capital city of Italy.",
+        "output": "Rome"
+    },
+    {
+        "id": 12,
+        "topic": "shortQuestions",
+        "question": "What is the capital of China?",
+        "think": "Beijing is the capital city of China.",
+        "output": "Beijing"
+    },
+    {
+        "id": 13,
+        "topic": "shortQuestions",
+        "question": "What is the capital of India?",
+        "think": "New Delhi is the capital city of India.",
+        "output": "New Delhi"
+    },
+    {
+        "id": 14,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Brazil?",
+        "think": "Brasília is the capital city of Brazil.",
+        "output": "Brasília"
+    },
+    {
+        "id": 15,
+        "topic": "shortQuestions",
+        "question": "What is the capital of South Africa?",
+        "think": "Pretoria is one of South Africa's capitals.",
+        "output": "Pretoria"
+    },
+    {
+        "id": 16,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Egypt?",
+        "think": "Cairo is the capital city of Egypt.",
+        "output": "Cairo"
+    },
+    {
+        "id": 17,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Mexico?",
+        "think": "Mexico City is the capital city of Mexico.",
+        "output": "Mexico City"
+    },
+    {
+        "id": 18,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Argentina?",
+        "think": "Buenos Aires is the capital city of Argentina.",
+        "output": "Buenos Aires"
+    },
+    {
+        "id": 19,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Spain?",
+        "think": "Madrid is the capital city of Spain.",
+        "output": "Madrid"
+    },
+    {
+        "id": 20,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Portugal?",
+        "think": "Lisbon is the capital city of Portugal.",
+        "output": "Lisbon"
+    },
+    {
+        "id": 21,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Greece?",
+        "think": "Athens is the capital city of Greece.",
+        "output": "Athens"
+    },
+    {
+        "id": 22,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Turkey?",
+        "think": "Ankara is the capital city of Turkey.",
+        "output": "Ankara"
+    },
+    {
+        "id": 23,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Saudi Arabia?",
+        "think": "Riyadh is the capital city of Saudi Arabia.",
+        "output": "Riyadh"
+    },
+    {
+        "id": 24,
+        "topic": "shortQuestions",
+        "question": "What is the capital of the United Kingdom?",
+        "think": "London is the capital city of the UK.",
+        "output": "London"
+    },
+    {
+        "id": 25,
+        "topic": "shortQuestions",
+        "question": "What is the capital of the United States?",
+        "think": "Washington, D.C. is the capital city of the US.",
+        "output": "Washington, D.C."
+    },
+    {
+        "id": 26,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Indonesia?",
+        "think": "Jakarta is the capital city of Indonesia.",
+        "output": "Jakarta"
+    },
+    {
+        "id": 27,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Thailand?",
+        "think": "Bangkok is the capital city of Thailand.",
+        "output": "Bangkok"
+    },
+    {
+        "id": 28,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Vietnam?",
+        "think": "Hanoi is the capital city of Vietnam.",
+        "output": "Hanoi"
+    },
+    {
+        "id": 29,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Malaysia?",
+        "think": "Kuala Lumpur is the capital city of Malaysia.",
+        "output": "Kuala Lumpur"
+    },
+    {
+        "id": 30,
+        "topic": "shortQuestions",
+        "question": "What is the capital of the Philippines?",
+        "think": "Manila is the capital city of the Philippines.",
+        "output": "Manila"
+    },
+    {
+        "id": 31,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Pakistan?",
+        "think": "Islamabad is the capital city of Pakistan.",
+        "output": "Islamabad"
+    },
+    {
+        "id": 32,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Afghanistan?",
+        "think": "Kabul is the capital city of Afghanistan.",
+        "output": "Kabul"
+    },
+    {
+        "id": 33,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Nepal?",
+        "think": "Kathmandu is the capital city of Nepal.",
+        "output": "Kathmandu"
+    },
+    {
+        "id": 34,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Bangladesh?",
+        "think": "Dhaka is the capital city of Bangladesh.",
+        "output": "Dhaka"
+    },
+    {
+        "id": 35,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Sri Lanka?",
+        "think": "Colombo is the capital city of Sri Lanka.",
+        "output": "Colombo"
+    },
+    {
+        "id": 36,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Myanmar?",
+        "think": "Naypyidaw is the capital city of Myanmar.",
+        "output": "Naypyidaw"
+    },
+    {
+        "id": 37,
+        "topic": "shortQuestions",
+        "question": "What is the capital of South Korea?",
+        "think": "Seoul is the capital city of South Korea.",
+        "output": "Seoul"
+    },
+    {
+        "id": 38,
+        "topic": "shortQuestions",
+        "question": "What is the capital of North Korea?",
+        "think": "Pyongyang is the capital city of North Korea.",
+        "output": "Pyongyang"
+    },
+    {
+        "id": 39,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Mongolia?",
+        "think": "Ulaanbaatar is the capital city of Mongolia.",
+        "output": "Ulaanbaatar"
+    },
+    {
+        "id": 40,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Kazakhstan?",
+        "think": "Astana is the capital city of Kazakhstan.",
+        "output": "Astana"
+    },
+    {
+        "id": 41,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Uzbekistan?",
+        "think": "Tashkent is the capital city of Uzbekistan.",
+        "output": "Tashkent"
+    },
+    {
+        "id": 42,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Turkmenistan?",
+        "think": "Ashgabat is the capital city of Turkmenistan.",
+        "output": "Ashgabat"
+    },
+    {
+        "id": 43,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Kyrgyzstan?",
+        "think": "Bishkek is the capital city of Kyrgyzstan.",
+        "output": "Bishkek"
+    },
+    {
+        "id": 44,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Tajikistan?",
+        "think": "Dushanbe is the capital city of Tajikistan.",
+        "output": "Dushanbe"
+    },
+    {
+        "id": 45,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Iran?",
+        "think": "Tehran is the capital city of Iran.",
+        "output": "Tehran"
+    },
+    {
+        "id": 46,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Iraq?",
+        "think": "Baghdad is the capital city of Iraq.",
+        "output": "Baghdad"
+    },
+    {
+        "id": 47,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Syria?",
+        "think": "Damascus is the capital city of Syria.",
+        "output": "Damascus"
+    },
+    {
+        "id": 48,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Jordan?",
+        "think": "Amman is the capital city of Jordan.",
+        "output": "Amman"
+    },
+    {
+        "id": 49,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Lebanon?",
+        "think": "Beirut is the capital city of Lebanon.",
+        "output": "Beirut"
+    },
+    {
+        "id": 50,
+        "topic": "shortQuestions",
+        "question": "Who wrote the play 'Romeo and Juliet'?",
+        "think": "William Shakespeare wrote many famous plays, including 'Romeo and Juliet'.",
+        "output": "William Shakespeare"
+    },
+    {
+        "id": 51,
+        "topic": "shortQuestions",
+        "question": "What is the chemical symbol for gold?",
+        "think": "Gold's symbol on the periodic table is 'Au'.",
+        "output": "Au"
+    },
+    {
+        "id": 52,
+        "topic": "shortQuestions",
+        "question": "What is the speed of light in vacuum (km/s)?",
+        "think": "The speed of light in vacuum is about 299,792 kilometers per second.",
+        "output": "299,792 km/s"
+    },
+    {
+        "id": 53,
+        "topic": "shortQuestions",
+        "question": "Which organ pumps blood through the body?",
+        "think": "The heart is the organ responsible for pumping blood.",
+        "output": "Heart"
+    },
+    {
+        "id": 54,
+        "topic": "shortQuestions",
+        "question": "What is the largest planet in our solar system?",
+        "think": "Jupiter is the largest planet in the solar system.",
+        "output": "Jupiter"
+    },
+    {
+        "id": 55,
+        "topic": "shortQuestions",
+        "question": "What is the main language spoken in Brazil?",
+        "think": "Brazil's official language is Portuguese.",
+        "output": "Portuguese"
+    },
+    {
+        "id": 56,
+        "topic": "shortQuestions",
+        "question": "How many sides does a hexagon have?",
+        "think": "A hexagon has six sides.",
+        "output": "Six"
+    },
+    {
+        "id": 57,
+        "topic": "shortQuestions",
+        "question": "What gas do plants absorb from the atmosphere?",
+        "think": "Plants absorb carbon dioxide for photosynthesis.",
+        "output": "Carbon dioxide"
+    },
+    {
+        "id": 58,
+        "topic": "shortQuestions",
+        "question": "Who is the founder of Microsoft?",
+        "think": "Bill Gates co-founded Microsoft with Paul Allen.",
+        "output": "Bill Gates"
+    },
+    {
+        "id": 59,
+        "topic": "shortQuestions",
+        "question": "Which country is famous for the Eiffel Tower?",
+        "think": "The Eiffel Tower is a famous landmark in France.",
+        "output": "France"
+    },
+    {
+        "id": 60,
+        "topic": "shortQuestions",
+        "question": "What element has the atomic number 1?",
+        "think": "Hydrogen is the first element on the periodic table.",
+        "output": "Hydrogen"
+    },
+    {
+        "id": 61,
+        "topic": "shortQuestions",
+        "question": "What is the freezing point of water in Celsius?",
+        "think": "Water freezes at 0 degrees Celsius.",
+        "output": "0°C"
+    },
+    {
+        "id": 62,
+        "topic": "shortQuestions",
+        "question": "What is the largest mammal in the world?",
+        "think": "The blue whale is the largest mammal on Earth.",
+        "output": "Blue whale"
+    },
+    {
+        "id": 63,
+        "topic": "shortQuestions",
+        "question": "Who discovered gravity?",
+        "think": "Sir Isaac Newton formulated the law of gravity.",
+        "output": "Isaac Newton"
+    },
+    {
+        "id": 64,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Poland?",
+        "think": "Warsaw is the capital city of Poland.",
+        "output": "Warsaw"
+    },
+    {
+        "id": 65,
+        "topic": "shortQuestions",
+        "question": "What is the boiling point of water in Celsius?",
+        "think": "Water boils at 100 degrees Celsius.",
+        "output": "100°C"
+    },
+    {
+        "id": 66,
+        "topic": "shortQuestions",
+        "question": "How many legs does a spider have?",
+        "think": "Spiders are arachnids with eight legs.",
+        "output": "Eight"
+    },
+    {
+        "id": 67,
+        "topic": "shortQuestions",
+        "question": "Which bird is known for mimicking human speech?",
+        "think": "The parrot is famous for mimicking sounds and speech.",
+        "output": "Parrot"
+    },
+    {
+        "id": 68,
+        "topic": "shortQuestions",
+        "question": "What is the tallest animal in the world?",
+        "think": "The giraffe is the tallest animal on land.",
+        "output": "Giraffe"
+    },
+    {
+        "id": 69,
+        "topic": "shortQuestions",
+        "question": "What is the square root of 81?",
+        "think": "The number which, when multiplied by itself, gives 81 is 9.",
+        "output": "9"
+    },
+    {
+        "id": 70,
+        "topic": "shortQuestions",
+        "question": "What is the national sport of Japan?",
+        "think": "Sumo wrestling is considered the national sport of Japan.",
+        "output": "Sumo wrestling"
+    },
+    {
+        "id": 71,
+        "topic": "shortQuestions",
+        "question": "What is the largest island in the world?",
+        "think": "Greenland is recognized as the world's largest island.",
+        "output": "Greenland"
+    },
+    {
+        "id": 72,
+        "topic": "shortQuestions",
+        "question": "Which instrument has 88 keys?",
+        "think": "A standard piano has 88 keys.",
+        "output": "Piano"
+    },
+    {
+        "id": 73,
+        "topic": "shortQuestions",
+        "question": "What is the most abundant gas in Earth's atmosphere?",
+        "think": "Nitrogen makes up about 78% of Earth's atmosphere.",
+        "output": "Nitrogen"
+    },
+    {
+        "id": 74,
+        "topic": "shortQuestions",
+        "question": "Which continent is the Sahara Desert located on?",
+        "think": "The Sahara Desert is located in Africa.",
+        "output": "Africa"
+    },
+    {
+        "id": 75,
+        "topic": "shortQuestions",
+        "question": "What is the hardest natural substance on Earth?",
+        "think": "Diamond is the hardest naturally occurring substance.",
+        "output": "Diamond"
+    },
+    {
+        "id": 76,
+        "topic": "shortQuestions",
+        "question": "Who invented the telephone?",
+        "think": "Alexander Graham Bell is credited with inventing the telephone.",
+        "output": "Alexander Graham Bell"
+    },
+    {
+        "id": 77,
+        "topic": "shortQuestions",
+        "question": "Which planet has the most moons?",
+        "think": "Saturn has the highest confirmed number of moons.",
+        "output": "Saturn"
+    },
+    {
+        "id": 78,
+        "topic": "shortQuestions",
+        "question": "How many colors are there in a rainbow?",
+        "think": "A rainbow typically has seven colors.",
+        "output": "Seven"
+    },
+    {
+        "id": 79,
+        "topic": "shortQuestions",
+        "question": "Who was the first person to step on the moon?",
+        "think": "Neil Armstrong was the first human to walk on the moon in 1969.",
+        "output": "Neil Armstrong"
+    },
+    {
+        "id": 80,
+        "topic": "shortQuestions",
+        "question": "What is the largest organ in the human body?",
+        "think": "The skin is the largest human organ.",
+        "output": "Skin"
+    },
+    {
+        "id": 81,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in guacamole?",
+        "think": "Guacamole is made primarily from avocados.",
+        "output": "Avocado"
+    },
+    {
+        "id": 82,
+        "topic": "shortQuestions",
+        "question": "What does DNA stand for?",
+        "think": "DNA stands for deoxyribonucleic acid.",
+        "output": "Deoxyribonucleic acid"
+    },
+    {
+        "id": 83,
+        "topic": "shortQuestions",
+        "question": "What is the tallest mountain in Africa?",
+        "think": "Mount Kilimanjaro is the highest mountain in Africa.",
+        "output": "Mount Kilimanjaro"
+    },
+    {
+        "id": 84,
+        "topic": "shortQuestions",
+        "question": "Who painted the ceiling of the Sistine Chapel?",
+        "think": "Michelangelo painted the Sistine Chapel's ceiling.",
+        "output": "Michelangelo"
+    },
+    {
+        "id": 85,
+        "topic": "shortQuestions",
+        "question": "How many bones are there in the adult human body?",
+        "think": "An adult human body has 206 bones.",
+        "output": "206"
+    },
+    {
+        "id": 86,
+        "topic": "shortQuestions",
+        "question": "What is the currency of Japan?",
+        "think": "The currency of Japan is the yen.",
+        "output": "Yen"
+    },
+    {
+        "id": 87,
+        "topic": "shortQuestions",
+        "question": "Which country invented paper?",
+        "think": "Paper was invented in ancient China.",
+        "output": "China"
+    },
+    {
+        "id": 88,
+        "topic": "shortQuestions",
+        "question": "Who is known as the 'Father of Computers'?",
+        "think": "Charles Babbage is often called the 'Father of Computers'.",
+        "output": "Charles Babbage"
+    },
+    {
+        "id": 89,
+        "topic": "shortQuestions",
+        "question": "What is the name of the longest bone in the human body?",
+        "think": "The femur is the longest bone in the human body.",
+        "output": "Femur"
+    },
+    {
+        "id": 90,
+        "topic": "shortQuestions",
+        "question": "What does HTTP stand for?",
+        "think": "HTTP means Hypertext Transfer Protocol.",
+        "output": "Hypertext Transfer Protocol"
+    },
+    {
+        "id": 91,
+        "topic": "shortQuestions",
+        "question": "Which country gifted the Statue of Liberty to the USA?",
+        "think": "France gave the Statue of Liberty to the United States.",
+        "output": "France"
+    },
+    {
+        "id": 92,
+        "topic": "shortQuestions",
+        "question": "What is the hottest planet in our solar system?",
+        "think": "Venus is hotter than Mercury due to its thick atmosphere.",
+        "output": "Venus"
+    },
+    {
+        "id": 93,
+        "topic": "shortQuestions",
+        "question": "Who discovered penicillin?",
+        "think": "Alexander Fleming discovered penicillin in 1928.",
+        "output": "Alexander Fleming"
+    },
+    {
+        "id": 94,
+        "topic": "shortQuestions",
+        "question": "Which animal is known as the 'King of the Jungle'?",
+        "think": "The lion is referred to as the 'King of the Jungle'.",
+        "output": "Lion"
+    },
+    {
+        "id": 95,
+        "topic": "shortQuestions",
+        "question": "What is the main gas found in the air we breathe?",
+        "think": "The main component of air is nitrogen.",
+        "output": "Nitrogen"
+    },
+    {
+        "id": 96,
+        "topic": "shortQuestions",
+        "question": "What is the process by which plants make their food?",
+        "think": "Photosynthesis is how plants produce their food.",
+        "output": "Photosynthesis"
+    },
+    {
+        "id": 97,
+        "topic": "shortQuestions",
+        "question": "What is the world's largest ocean?",
+        "think": "The Pacific Ocean is the world's largest.",
+        "output": "Pacific Ocean"
+    },
+    {
+        "id": 98,
+        "topic": "shortQuestions",
+        "question": "Who is the author of 'Harry Potter'?",
+        "think": "J.K. Rowling wrote the 'Harry Potter' series.",
+        "output": "J.K. Rowling"
+    },
+    {
+        "id": 99,
+        "topic": "shortQuestions",
+        "question": "How many strings does a standard guitar have?",
+        "think": "A standard guitar has six strings.",
+        "output": "Six"
+    },
+    {
+        "id": 100,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Norway?",
+        "think": "Oslo is the capital city of Norway.",
+        "output": "Oslo"
+    },
+    {
+        "id": 101,
+        "topic": "shortQuestions",
+        "question": "Who invented the light bulb?",
+        "think": "Thomas Edison is widely credited for inventing the light bulb.",
+        "output": "Thomas Edison"
+    },
+    {
+        "id": 102,
+        "topic": "shortQuestions",
+        "question": "Which planet is closest to the Sun?",
+        "think": "Mercury is the closest planet to the Sun.",
+        "output": "Mercury"
+    },
+    {
+        "id": 103,
+        "topic": "shortQuestions",
+        "question": "What is the most common blood type in humans?",
+        "think": "Type O is the most common human blood group.",
+        "output": "O"
+    },
+    {
+        "id": 104,
+        "topic": "shortQuestions",
+        "question": "How many teeth does an adult human usually have?",
+        "think": "An adult usually has 32 teeth.",
+        "output": "32"
+    },
+    {
+        "id": 105,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Sweden?",
+        "think": "Stockholm is the capital city of Sweden.",
+        "output": "Stockholm"
+    },
+    {
+        "id": 106,
+        "topic": "shortQuestions",
+        "question": "Which country is known as the Land of the Rising Sun?",
+        "think": "Japan is famously called the Land of the Rising Sun.",
+        "output": "Japan"
+    },
+    {
+        "id": 107,
+        "topic": "shortQuestions",
+        "question": "How many players are there on a basketball team (on court)?",
+        "think": "Each basketball team has five players on the court.",
+        "output": "Five"
+    },
+    {
+        "id": 108,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Ukraine?",
+        "think": "Kyiv is the capital city of Ukraine.",
+        "output": "Kyiv"
+    },
+    {
+        "id": 109,
+        "topic": "shortQuestions",
+        "question": "What is the process of a caterpillar becoming a butterfly called?",
+        "think": "The process is called metamorphosis.",
+        "output": "Metamorphosis"
+    },
+    {
+        "id": 110,
+        "topic": "shortQuestions",
+        "question": "Who is the Greek god of the sea?",
+        "think": "Poseidon is the god of the sea in Greek mythology.",
+        "output": "Poseidon"
+    },
+    {
+        "id": 111,
+        "topic": "shortQuestions",
+        "question": "Which vitamin do we get from sunlight?",
+        "think": "Sunlight helps our bodies make vitamin D.",
+        "output": "Vitamin D"
+    },
+    {
+        "id": 112,
+        "topic": "shortQuestions",
+        "question": "What is the currency of the United Kingdom?",
+        "think": "The British pound sterling is the UK currency.",
+        "output": "Pound sterling"
+    },
+    {
+        "id": 113,
+        "topic": "shortQuestions",
+        "question": "Which element is represented by 'O' in the periodic table?",
+        "think": "'O' stands for oxygen.",
+        "output": "Oxygen"
+    },
+    {
+        "id": 114,
+        "topic": "shortQuestions",
+        "question": "Who is the famous detective created by Arthur Conan Doyle?",
+        "think": "Sherlock Holmes is Doyle's most famous detective.",
+        "output": "Sherlock Holmes"
+    },
+    {
+        "id": 115,
+        "topic": "shortQuestions",
+        "question": "What is the largest city in the USA by population?",
+        "think": "New York City is the most populous US city.",
+        "output": "New York City"
+    },
+    {
+        "id": 116,
+        "topic": "shortQuestions",
+        "question": "How many hearts does an octopus have?",
+        "think": "An octopus has three hearts.",
+        "output": "Three"
+    },
+    {
+        "id": 117,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in sushi?",
+        "think": "Rice is the essential ingredient in sushi.",
+        "output": "Rice"
+    },
+    {
+        "id": 118,
+        "topic": "shortQuestions",
+        "question": "Who was the first President of the United States?",
+        "think": "George Washington was America's first president.",
+        "output": "George Washington"
+    },
+    {
+        "id": 119,
+        "topic": "shortQuestions",
+        "question": "Which gas is essential for human respiration?",
+        "think": "Oxygen is required for us to breathe.",
+        "output": "Oxygen"
+    },
+    {
+        "id": 120,
+        "topic": "shortQuestions",
+        "question": "How many colors are there in the flag of France?",
+        "think": "France's flag has three colors: blue, white, and red.",
+        "output": "Three"
+    },
+    {
+        "id": 121,
+        "topic": "shortQuestions",
+        "question": "Which famous scientist developed the theory of relativity?",
+        "think": "Albert Einstein is known for the theory of relativity.",
+        "output": "Albert Einstein"
+    },
+    {
+        "id": 122,
+        "topic": "shortQuestions",
+        "question": "What is the currency of Switzerland?",
+        "think": "Switzerland uses the Swiss franc.",
+        "output": "Swiss franc"
+    },
+    {
+        "id": 123,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'Pride and Prejudice'?",
+        "think": "Jane Austen is the author of 'Pride and Prejudice'.",
+        "output": "Jane Austen"
+    },
+    {
+        "id": 124,
+        "topic": "shortQuestions",
+        "question": "What is the main gas found in balloons?",
+        "think": "Helium is often used in party balloons.",
+        "output": "Helium"
+    },
+    {
+        "id": 125,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Finland?",
+        "think": "Helsinki is the capital city of Finland.",
+        "output": "Helsinki"
+    },
+    {
+        "id": 126,
+        "topic": "shortQuestions",
+        "question": "Which animal is the largest living land mammal?",
+        "think": "The African elephant is the largest living land mammal.",
+        "output": "African elephant"
+    },
+    {
+        "id": 127,
+        "topic": "shortQuestions",
+        "question": "Who painted 'Starry Night'?",
+        "think": "Vincent van Gogh painted 'Starry Night'.",
+        "output": "Vincent van Gogh"
+    },
+    {
+        "id": 128,
+        "topic": "shortQuestions",
+        "question": "What is the process of water turning into vapor called?",
+        "think": "The process is called evaporation.",
+        "output": "Evaporation"
+    },
+    {
+        "id": 129,
+        "topic": "shortQuestions",
+        "question": "How many degrees are in a right angle?",
+        "think": "A right angle is 90 degrees.",
+        "output": "90"
+    },
+    {
+        "id": 130,
+        "topic": "shortQuestions",
+        "question": "Which country has the maple leaf on its flag?",
+        "think": "Canada's flag features a maple leaf.",
+        "output": "Canada"
+    },
+    {
+        "id": 131,
+        "topic": "shortQuestions",
+        "question": "Who is the main character in the video game series 'The Legend of Zelda'?",
+        "think": "Link is the main protagonist in 'The Legend of Zelda'.",
+        "output": "Link"
+    },
+    {
+        "id": 132,
+        "topic": "shortQuestions",
+        "question": "What is the largest internal organ in the human body?",
+        "think": "The liver is the largest internal organ.",
+        "output": "Liver"
+    },
+    {
+        "id": 133,
+        "topic": "shortQuestions",
+        "question": "How many continents are there on Earth?",
+        "think": "There are seven continents: Africa, Antarctica, Asia, Europe, North America, Oceania, and South America.",
+        "output": "Seven"
+    },
+    {
+        "id": 134,
+        "topic": "shortQuestions",
+        "question": "What is the smallest unit of life?",
+        "think": "The cell is considered the smallest unit of life.",
+        "output": "Cell"
+    },
+    {
+        "id": 135,
+        "topic": "shortQuestions",
+        "question": "Who directed the movie 'Jurassic Park'?",
+        "think": "Steven Spielberg directed 'Jurassic Park'.",
+        "output": "Steven Spielberg"
+    },
+    {
+        "id": 136,
+        "topic": "shortQuestions",
+        "question": "What is the tallest building in the world (as of 2024)?",
+        "think": "Burj Khalifa in Dubai is the tallest building.",
+        "output": "Burj Khalifa"
+    },
+    {
+        "id": 137,
+        "topic": "shortQuestions",
+        "question": "Which continent is Australia part of?",
+        "think": "Australia is both a country and a continent.",
+        "output": "Australia"
+    },
+    {
+        "id": 138,
+        "topic": "shortQuestions",
+        "question": "What is the freezing point of water in Fahrenheit?",
+        "think": "Water freezes at 32 degrees Fahrenheit.",
+        "output": "32°F"
+    },
+    {
+        "id": 139,
+        "topic": "shortQuestions",
+        "question": "What do bees collect from flowers?",
+        "think": "Bees collect nectar from flowers.",
+        "output": "Nectar"
+    },
+    {
+        "id": 140,
+        "topic": "shortQuestions",
+        "question": "Which ocean is the Bermuda Triangle located in?",
+        "think": "The Bermuda Triangle is located in the Atlantic Ocean.",
+        "output": "Atlantic Ocean"
+    },
+    {
+        "id": 141,
+        "topic": "shortQuestions",
+        "question": "Who wrote the novel '1984'?",
+        "think": "George Orwell wrote '1984'.",
+        "output": "George Orwell"
+    },
+    {
+        "id": 142,
+        "topic": "shortQuestions",
+        "question": "How many wings does a bee have?",
+        "think": "A bee has four wings.",
+        "output": "Four"
+    },
+    {
+        "id": 143,
+        "topic": "shortQuestions",
+        "question": "What is the national flower of Japan?",
+        "think": "The cherry blossom is Japan's national flower.",
+        "output": "Cherry blossom"
+    },
+    {
+        "id": 144,
+        "topic": "shortQuestions",
+        "question": "What is the basic unit of currency in Russia?",
+        "think": "The ruble is the basic unit of currency in Russia.",
+        "output": "Ruble"
+    },
+    {
+        "id": 145,
+        "topic": "shortQuestions",
+        "question": "Which planet is known for its rings?",
+        "think": "Saturn is famous for its prominent ring system.",
+        "output": "Saturn"
+    },
+    {
+        "id": 146,
+        "topic": "shortQuestions",
+        "question": "What is the most widely spoken language in the world?",
+        "think": "Mandarin Chinese has the most native speakers globally.",
+        "output": "Mandarin Chinese"
+    },
+    {
+        "id": 147,
+        "topic": "shortQuestions",
+        "question": "Which chess piece moves in an L-shape?",
+        "think": "The knight moves in an L-shape in chess.",
+        "output": "Knight"
+    },
+    {
+        "id": 148,
+        "topic": "shortQuestions",
+        "question": "What is the name of the galaxy that contains our Solar System?",
+        "think": "The Milky Way contains our Solar System.",
+        "output": "Milky Way"
+    },
+    {
+        "id": 149,
+        "topic": "shortQuestions",
+        "question": "Who was the first woman to win a Nobel Prize?",
+        "think": "Marie Curie was the first woman to win a Nobel Prize.",
+        "output": "Marie Curie"
+    },
+    {
+        "id": 150,
+        "topic": "shortQuestions",
+        "question": "Which instrument measures atmospheric pressure?",
+        "think": "A barometer is used to measure atmospheric pressure.",
+        "output": "Barometer"
+    },
+    {
+        "id": 151,
+        "topic": "shortQuestions",
+        "question": "What is the currency of India?",
+        "think": "The Indian rupee is India's currency.",
+        "output": "Rupee"
+    },
+    {
+        "id": 152,
+        "topic": "shortQuestions",
+        "question": "Who was the first man in space?",
+        "think": "Yuri Gagarin was the first human in space.",
+        "output": "Yuri Gagarin"
+    },
+    {
+        "id": 153,
+        "topic": "shortQuestions",
+        "question": "How many planets are in our solar system?",
+        "think": "There are eight planets in the solar system.",
+        "output": "Eight"
+    },
+    {
+        "id": 154,
+        "topic": "shortQuestions",
+        "question": "Who is the Greek goddess of wisdom?",
+        "think": "Athena is the goddess of wisdom in Greek mythology.",
+        "output": "Athena"
+    },
+    {
+        "id": 155,
+        "topic": "shortQuestions",
+        "question": "What is the most spoken language in Africa?",
+        "think": "Swahili is among the most widely spoken languages in Africa.",
+        "output": "Swahili"
+    },
+    {
+        "id": 156,
+        "topic": "shortQuestions",
+        "question": "Which element is needed for healthy bones?",
+        "think": "Calcium is essential for bone health.",
+        "output": "Calcium"
+    },
+    {
+        "id": 157,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Hungary?",
+        "think": "Budapest is the capital city of Hungary.",
+        "output": "Budapest"
+    },
+    {
+        "id": 158,
+        "topic": "shortQuestions",
+        "question": "Who is the main character in 'Moby Dick'?",
+        "think": "Captain Ahab is the main character in 'Moby Dick'.",
+        "output": "Captain Ahab"
+    },
+    {
+        "id": 159,
+        "topic": "shortQuestions",
+        "question": "What is the largest desert on Earth?",
+        "think": "The Antarctic Desert is the largest by area.",
+        "output": "Antarctic Desert"
+    },
+    {
+        "id": 160,
+        "topic": "shortQuestions",
+        "question": "What is the longest bone in the human body?",
+        "think": "The femur is the longest bone.",
+        "output": "Femur"
+    },
+    {
+        "id": 161,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of the Netherlands?",
+        "think": "Amsterdam is the capital of the Netherlands.",
+        "output": "Amsterdam"
+    },
+    {
+        "id": 162,
+        "topic": "shortQuestions",
+        "question": "Which country is known as the 'Land of a Thousand Lakes'?",
+        "think": "Finland is famous for its thousands of lakes.",
+        "output": "Finland"
+    },
+    {
+        "id": 163,
+        "topic": "shortQuestions",
+        "question": "Which continent is the country of Egypt located on?",
+        "think": "Egypt is located in Africa.",
+        "output": "Africa"
+    },
+    {
+        "id": 164,
+        "topic": "shortQuestions",
+        "question": "Who is the famous physicist who developed the three laws of motion?",
+        "think": "Isaac Newton developed the laws of motion.",
+        "output": "Isaac Newton"
+    },
+    {
+        "id": 165,
+        "topic": "shortQuestions",
+        "question": "What is the process by which plants release oxygen?",
+        "think": "Plants release oxygen during photosynthesis.",
+        "output": "Photosynthesis"
+    },
+    {
+        "id": 166,
+        "topic": "shortQuestions",
+        "question": "How many players are on a soccer team (on the field)?",
+        "think": "A soccer team has 11 players on the field.",
+        "output": "11"
+    },
+    {
+        "id": 167,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Denmark?",
+        "think": "Copenhagen is the capital city of Denmark.",
+        "output": "Copenhagen"
+    },
+    {
+        "id": 168,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Catcher in the Rye'?",
+        "think": "J.D. Salinger wrote 'The Catcher in the Rye'.",
+        "output": "J.D. Salinger"
+    },
+    {
+        "id": 169,
+        "topic": "shortQuestions",
+        "question": "What is the boiling point of water in Fahrenheit?",
+        "think": "Water boils at 212°F.",
+        "output": "212°F"
+    },
+    {
+        "id": 170,
+        "topic": "shortQuestions",
+        "question": "What is the smallest bone in the human body?",
+        "think": "The stapes, or stirrup bone, is the smallest bone.",
+        "output": "Stapes"
+    },
+    {
+        "id": 171,
+        "topic": "shortQuestions",
+        "question": "Which ocean is the smallest?",
+        "think": "The Arctic Ocean is the smallest ocean.",
+        "output": "Arctic Ocean"
+    },
+    {
+        "id": 172,
+        "topic": "shortQuestions",
+        "question": "Who is known as the 'Father of Geometry'?",
+        "think": "Euclid is often called the Father of Geometry.",
+        "output": "Euclid"
+    },
+    {
+        "id": 173,
+        "topic": "shortQuestions",
+        "question": "Which is the highest waterfall in the world?",
+        "think": "Angel Falls in Venezuela is the highest waterfall.",
+        "output": "Angel Falls"
+    },
+    {
+        "id": 174,
+        "topic": "shortQuestions",
+        "question": "Who invented the World Wide Web?",
+        "think": "Tim Berners-Lee invented the World Wide Web.",
+        "output": "Tim Berners-Lee"
+    },
+    {
+        "id": 175,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Switzerland?",
+        "think": "Bern is the capital city of Switzerland.",
+        "output": "Bern"
+    },
+    {
+        "id": 176,
+        "topic": "shortQuestions",
+        "question": "Which metal has the chemical symbol 'Fe'?",
+        "think": "'Fe' is the chemical symbol for iron.",
+        "output": "Iron"
+    },
+    {
+        "id": 177,
+        "topic": "shortQuestions",
+        "question": "Who is the author of 'The Hobbit'?",
+        "think": "J.R.R. Tolkien wrote 'The Hobbit'.",
+        "output": "J.R.R. Tolkien"
+    },
+    {
+        "id": 178,
+        "topic": "shortQuestions",
+        "question": "What is the largest land carnivore?",
+        "think": "The polar bear is the largest land carnivore.",
+        "output": "Polar bear"
+    },
+    {
+        "id": 179,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of South Korea?",
+        "think": "Seoul is the capital city of South Korea.",
+        "output": "Seoul"
+    },
+    {
+        "id": 180,
+        "topic": "shortQuestions",
+        "question": "How many chromosomes does a human have?",
+        "think": "Humans have 46 chromosomes in each cell.",
+        "output": "46"
+    },
+    {
+        "id": 181,
+        "topic": "shortQuestions",
+        "question": "Which gas do humans exhale?",
+        "think": "Humans exhale carbon dioxide.",
+        "output": "Carbon dioxide"
+    },
+    {
+        "id": 182,
+        "topic": "shortQuestions",
+        "question": "What is the largest lake in Africa?",
+        "think": "Lake Victoria is the largest lake in Africa.",
+        "output": "Lake Victoria"
+    },
+    {
+        "id": 183,
+        "topic": "shortQuestions",
+        "question": "Who developed the polio vaccine?",
+        "think": "Jonas Salk developed the first effective polio vaccine.",
+        "output": "Jonas Salk"
+    },
+    {
+        "id": 184,
+        "topic": "shortQuestions",
+        "question": "How many letters are in the English alphabet?",
+        "think": "The English alphabet has 26 letters.",
+        "output": "26"
+    },
+    {
+        "id": 185,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in bread?",
+        "think": "Flour is the primary ingredient in bread.",
+        "output": "Flour"
+    },
+    {
+        "id": 186,
+        "topic": "shortQuestions",
+        "question": "Who was the second President of the United States?",
+        "think": "John Adams was the second US President.",
+        "output": "John Adams"
+    },
+    {
+        "id": 187,
+        "topic": "shortQuestions",
+        "question": "Which planet is known for its Great Red Spot?",
+        "think": "Jupiter has a Great Red Spot, a giant storm.",
+        "output": "Jupiter"
+    },
+    {
+        "id": 188,
+        "topic": "shortQuestions",
+        "question": "What is the main language spoken in Egypt?",
+        "think": "Arabic is the official language of Egypt.",
+        "output": "Arabic"
+    },
+    {
+        "id": 189,
+        "topic": "shortQuestions",
+        "question": "Who invented the steam engine?",
+        "think": "James Watt improved and popularized the steam engine.",
+        "output": "James Watt"
+    },
+    {
+        "id": 190,
+        "topic": "shortQuestions",
+        "question": "What is the hottest continent on Earth?",
+        "think": "Africa is generally considered the hottest continent.",
+        "output": "Africa"
+    },
+    {
+        "id": 191,
+        "topic": "shortQuestions",
+        "question": "Which country hosted the 2016 Summer Olympics?",
+        "think": "Brazil hosted the 2016 Summer Olympics in Rio de Janeiro.",
+        "output": "Brazil"
+    },
+    {
+        "id": 192,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Canada?",
+        "think": "Ottawa is the capital city of Canada.",
+        "output": "Ottawa"
+    },
+    {
+        "id": 193,
+        "topic": "shortQuestions",
+        "question": "Which animal is known as man's best friend?",
+        "think": "Dogs are commonly called man's best friend.",
+        "output": "Dog"
+    },
+    {
+        "id": 194,
+        "topic": "shortQuestions",
+        "question": "What do you call an animal that eats only plants?",
+        "think": "An animal that eats only plants is a herbivore.",
+        "output": "Herbivore"
+    },
+    {
+        "id": 195,
+        "topic": "shortQuestions",
+        "question": "Which scientist is famous for the laws of inheritance?",
+        "think": "Gregor Mendel is known for his work on inheritance.",
+        "output": "Gregor Mendel"
+    },
+    {
+        "id": 196,
+        "topic": "shortQuestions",
+        "question": "Who is the lead singer of the band Queen?",
+        "think": "Freddie Mercury was the lead singer of Queen.",
+        "output": "Freddie Mercury"
+    },
+    {
+        "id": 197,
+        "topic": "shortQuestions",
+        "question": "What is the hardest rock?",
+        "think": "Diamond is the hardest natural rock or mineral.",
+        "output": "Diamond"
+    },
+    {
+        "id": 198,
+        "topic": "shortQuestions",
+        "question": "Which river is the longest in Europe?",
+        "think": "The Volga River is the longest river in Europe.",
+        "output": "Volga"
+    },
+    {
+        "id": 199,
+        "topic": "shortQuestions",
+        "question": "What is the national flower of the Netherlands?",
+        "think": "The tulip is the national flower of the Netherlands.",
+        "output": "Tulip"
+    },
+    {
+        "id": 200,
+        "topic": "shortQuestions",
+        "question": "Which city is known as the City of Love?",
+        "think": "Paris is often called the City of Love.",
+        "output": "Paris"
+    },
+    {
+        "id": 201,
+        "topic": "shortQuestions",
+        "question": "Who discovered electricity?",
+        "think": "Benjamin Franklin is famously associated with the discovery of electricity.",
+        "output": "Benjamin Franklin"
+    },
+    {
+        "id": 202,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in hummus?",
+        "think": "Chickpeas are the main ingredient in hummus.",
+        "output": "Chickpeas"
+    },
+    {
+        "id": 203,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Australia?",
+        "think": "Canberra is the capital of Australia.",
+        "output": "Canberra"
+    },
+    {
+        "id": 204,
+        "topic": "shortQuestions",
+        "question": "Which animal can change its color for camouflage?",
+        "think": "The chameleon is known for its color-changing ability.",
+        "output": "Chameleon"
+    },
+    {
+        "id": 205,
+        "topic": "shortQuestions",
+        "question": "How many zeros are in one million?",
+        "think": "One million has six zeros.",
+        "output": "Six"
+    },
+    {
+        "id": 206,
+        "topic": "shortQuestions",
+        "question": "Which continent is the Amazon Rainforest located in?",
+        "think": "The Amazon Rainforest is in South America.",
+        "output": "South America"
+    },
+    {
+        "id": 207,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Great Gatsby'?",
+        "think": "F. Scott Fitzgerald wrote 'The Great Gatsby'.",
+        "output": "F. Scott Fitzgerald"
+    },
+    {
+        "id": 208,
+        "topic": "shortQuestions",
+        "question": "What is the tallest building in the United States?",
+        "think": "One World Trade Center is currently the tallest building in the US.",
+        "output": "One World Trade Center"
+    },
+    {
+        "id": 209,
+        "topic": "shortQuestions",
+        "question": "Which planet is famous for its rings?",
+        "think": "Saturn is well known for its rings.",
+        "output": "Saturn"
+    },
+    {
+        "id": 210,
+        "topic": "shortQuestions",
+        "question": "What is the chemical symbol for sodium?",
+        "think": "Na is the symbol for sodium on the periodic table.",
+        "output": "Na"
+    },
+    {
+        "id": 211,
+        "topic": "shortQuestions",
+        "question": "What is the largest volcano on Earth?",
+        "think": "Mauna Loa in Hawaii is the largest volcano by volume and area.",
+        "output": "Mauna Loa"
+    },
+    {
+        "id": 212,
+        "topic": "shortQuestions",
+        "question": "Who was the famous nurse during the Crimean War?",
+        "think": "Florence Nightingale was a pioneering nurse during the Crimean War.",
+        "output": "Florence Nightingale"
+    },
+    {
+        "id": 213,
+        "topic": "shortQuestions",
+        "question": "Which continent is the Sahara Desert located on?",
+        "think": "The Sahara Desert is found in Africa.",
+        "output": "Africa"
+    },
+    {
+        "id": 214,
+        "topic": "shortQuestions",
+        "question": "What is the smallest planet in the solar system?",
+        "think": "Mercury is the smallest planet in our solar system.",
+        "output": "Mercury"
+    },
+    {
+        "id": 215,
+        "topic": "shortQuestions",
+        "question": "Who is known as the 'Queen of Pop'?",
+        "think": "Madonna is often called the 'Queen of Pop'.",
+        "output": "Madonna"
+    },
+    {
+        "id": 216,
+        "topic": "shortQuestions",
+        "question": "How many elements are there in the periodic table (as of 2024)?",
+        "think": "There are 118 confirmed chemical elements.",
+        "output": "118"
+    },
+    {
+        "id": 217,
+        "topic": "shortQuestions",
+        "question": "Who invented the airplane?",
+        "think": "The Wright brothers invented and flew the first airplane.",
+        "output": "Wright brothers"
+    },
+    {
+        "id": 218,
+        "topic": "shortQuestions",
+        "question": "Which country is known as the Land of the Midnight Sun?",
+        "think": "Norway is called the Land of the Midnight Sun due to summer daylight.",
+        "output": "Norway"
+    },
+    {
+        "id": 219,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Persistence of Memory'?",
+        "think": "Salvador Dalí painted 'The Persistence of Memory'.",
+        "output": "Salvador Dalí"
+    },
+    {
+        "id": 220,
+        "topic": "shortQuestions",
+        "question": "What is the currency of China?",
+        "think": "China uses the yuan (renminbi) as its currency.",
+        "output": "Yuan"
+    },
+    {
+        "id": 221,
+        "topic": "shortQuestions",
+        "question": "What is the tallest animal in the world?",
+        "think": "The giraffe is the tallest living animal.",
+        "output": "Giraffe"
+    },
+    {
+        "id": 222,
+        "topic": "shortQuestions",
+        "question": "Which gas is most abundant in the Earth's atmosphere?",
+        "think": "Nitrogen is the most abundant atmospheric gas.",
+        "output": "Nitrogen"
+    },
+    {
+        "id": 223,
+        "topic": "shortQuestions",
+        "question": "Who is the Greek god of the sun?",
+        "think": "Helios is the sun god in Greek mythology.",
+        "output": "Helios"
+    },
+    {
+        "id": 224,
+        "topic": "shortQuestions",
+        "question": "Which element has the atomic number 6?",
+        "think": "Carbon has atomic number 6 on the periodic table.",
+        "output": "Carbon"
+    },
+    {
+        "id": 225,
+        "topic": "shortQuestions",
+        "question": "What is the largest island in the Mediterranean Sea?",
+        "think": "Sicily is the largest island in the Mediterranean.",
+        "output": "Sicily"
+    },
+    {
+        "id": 226,
+        "topic": "shortQuestions",
+        "question": "Who was the first woman in space?",
+        "think": "Valentina Tereshkova was the first woman in space.",
+        "output": "Valentina Tereshkova"
+    },
+    {
+        "id": 227,
+        "topic": "shortQuestions",
+        "question": "Which element has the chemical symbol 'K'?",
+        "think": "'K' is the symbol for potassium.",
+        "output": "Potassium"
+    },
+    {
+        "id": 228,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'To Kill a Mockingbird'?",
+        "think": "Harper Lee wrote 'To Kill a Mockingbird'.",
+        "output": "Harper Lee"
+    },
+    {
+        "id": 229,
+        "topic": "shortQuestions",
+        "question": "What is the fastest aquatic animal?",
+        "think": "The sailfish is considered the fastest aquatic animal.",
+        "output": "Sailfish"
+    },
+    {
+        "id": 230,
+        "topic": "shortQuestions",
+        "question": "How many time zones are there in the world?",
+        "think": "There are 24 standard time zones.",
+        "output": "24"
+    },
+    {
+        "id": 231,
+        "topic": "shortQuestions",
+        "question": "What is the main language spoken in Egypt?",
+        "think": "The main language in Egypt is Arabic.",
+        "output": "Arabic"
+    },
+    {
+        "id": 232,
+        "topic": "shortQuestions",
+        "question": "Who discovered radioactivity?",
+        "think": "Henri Becquerel discovered radioactivity.",
+        "output": "Henri Becquerel"
+    },
+    {
+        "id": 233,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Pakistan?",
+        "think": "Islamabad is the capital of Pakistan.",
+        "output": "Islamabad"
+    },
+    {
+        "id": 234,
+        "topic": "shortQuestions",
+        "question": "Which country is famous for the maple leaf?",
+        "think": "Canada is symbolized by the maple leaf.",
+        "output": "Canada"
+    },
+    {
+        "id": 235,
+        "topic": "shortQuestions",
+        "question": "Who invented the printing press?",
+        "think": "Johannes Gutenberg invented the movable-type printing press.",
+        "output": "Johannes Gutenberg"
+    },
+    {
+        "id": 236,
+        "topic": "shortQuestions",
+        "question": "What is the hardest mineral on the Mohs scale?",
+        "think": "Diamond ranks as the hardest mineral.",
+        "output": "Diamond"
+    },
+    {
+        "id": 237,
+        "topic": "shortQuestions",
+        "question": "Which planet is known as Earth's twin?",
+        "think": "Venus is called Earth's twin due to its similar size and mass.",
+        "output": "Venus"
+    },
+    {
+        "id": 238,
+        "topic": "shortQuestions",
+        "question": "What is the currency of Mexico?",
+        "think": "Mexico uses the peso as its currency.",
+        "output": "Peso"
+    },
+    {
+        "id": 239,
+        "topic": "shortQuestions",
+        "question": "Who is the famous artist known for Cubism?",
+        "think": "Pablo Picasso was a pioneer of Cubism.",
+        "output": "Pablo Picasso"
+    },
+    {
+        "id": 240,
+        "topic": "shortQuestions",
+        "question": "What is the tallest waterfall in the world?",
+        "think": "Angel Falls in Venezuela is the tallest waterfall.",
+        "output": "Angel Falls"
+    },
+    {
+        "id": 241,
+        "topic": "shortQuestions",
+        "question": "How many days are there in a leap year?",
+        "think": "A leap year has 366 days.",
+        "output": "366"
+    },
+    {
+        "id": 242,
+        "topic": "shortQuestions",
+        "question": "Which organ removes waste from the blood?",
+        "think": "The kidneys remove waste from the blood.",
+        "output": "Kidneys"
+    },
+    {
+        "id": 243,
+        "topic": "shortQuestions",
+        "question": "Who composed the Four Seasons?",
+        "think": "Antonio Vivaldi composed The Four Seasons.",
+        "output": "Antonio Vivaldi"
+    },
+    {
+        "id": 244,
+        "topic": "shortQuestions",
+        "question": "Which element is needed for breathing?",
+        "think": "Oxygen is essential for breathing.",
+        "output": "Oxygen"
+    },
+    {
+        "id": 245,
+        "topic": "shortQuestions",
+        "question": "Who was the first person to reach the South Pole?",
+        "think": "Roald Amundsen was the first to reach the South Pole.",
+        "output": "Roald Amundsen"
+    },
+    {
+        "id": 246,
+        "topic": "shortQuestions",
+        "question": "Which river flows through London?",
+        "think": "The River Thames flows through London.",
+        "output": "Thames"
+    },
+    {
+        "id": 247,
+        "topic": "shortQuestions",
+        "question": "What is the smallest planet in our solar system?",
+        "think": "Mercury is the smallest planet in the solar system.",
+        "output": "Mercury"
+    },
+    {
+        "id": 248,
+        "topic": "shortQuestions",
+        "question": "Which gas is used to fill balloons?",
+        "think": "Helium is commonly used to fill balloons.",
+        "output": "Helium"
+    },
+    {
+        "id": 249,
+        "topic": "shortQuestions",
+        "question": "What is the largest continent?",
+        "think": "Asia is the largest continent by area.",
+        "output": "Asia"
+    },
+    {
+        "id": 250,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Ireland?",
+        "think": "Dublin is the capital city of Ireland.",
+        "output": "Dublin"
+    },
+    {
+        "id": 251,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Odyssey'?",
+        "think": "Homer is credited with writing 'The Odyssey'.",
+        "output": "Homer"
+    },
+    {
+        "id": 252,
+        "topic": "shortQuestions",
+        "question": "Which organ in the human body produces insulin?",
+        "think": "The pancreas produces insulin.",
+        "output": "Pancreas"
+    },
+    {
+        "id": 253,
+        "topic": "shortQuestions",
+        "question": "How many stripes are on the US flag?",
+        "think": "The United States flag has 13 stripes.",
+        "output": "13"
+    },
+    {
+        "id": 254,
+        "topic": "shortQuestions",
+        "question": "What is the currency of South Africa?",
+        "think": "The South African rand is the currency.",
+        "output": "Rand"
+    },
+    {
+        "id": 255,
+        "topic": "shortQuestions",
+        "question": "Who discovered America?",
+        "think": "Christopher Columbus is credited with discovering America in 1492.",
+        "output": "Christopher Columbus"
+    },
+    {
+        "id": 256,
+        "topic": "shortQuestions",
+        "question": "Which planet is farthest from the Sun?",
+        "think": "Neptune is the planet farthest from the Sun.",
+        "output": "Neptune"
+    },
+    {
+        "id": 257,
+        "topic": "shortQuestions",
+        "question": "Who is the current President of France (as of 2024)?",
+        "think": "Emmanuel Macron is the President of France as of 2024.",
+        "output": "Emmanuel Macron"
+    },
+    {
+        "id": 258,
+        "topic": "shortQuestions",
+        "question": "Which animal is known for its black and white stripes?",
+        "think": "The zebra is known for black and white stripes.",
+        "output": "Zebra"
+    },
+    {
+        "id": 259,
+        "topic": "shortQuestions",
+        "question": "What is the chemical formula for table salt?",
+        "think": "Table salt's chemical formula is NaCl.",
+        "output": "NaCl"
+    },
+    {
+        "id": 260,
+        "topic": "shortQuestions",
+        "question": "Who is the author of 'War and Peace'?",
+        "think": "Leo Tolstoy wrote 'War and Peace'.",
+        "output": "Leo Tolstoy"
+    },
+    {
+        "id": 261,
+        "topic": "shortQuestions",
+        "question": "What is the highest mountain in North America?",
+        "think": "Denali (Mount McKinley) is the highest in North America.",
+        "output": "Denali"
+    },
+    {
+        "id": 262,
+        "topic": "shortQuestions",
+        "question": "What is the largest bone in the human body?",
+        "think": "The femur is the largest bone.",
+        "output": "Femur"
+    },
+    {
+        "id": 263,
+        "topic": "shortQuestions",
+        "question": "How many seconds are in a minute?",
+        "think": "There are 60 seconds in a minute.",
+        "output": "60"
+    },
+    {
+        "id": 264,
+        "topic": "shortQuestions",
+        "question": "Who was the famous scientist with the theory of evolution?",
+        "think": "Charles Darwin is known for the theory of evolution.",
+        "output": "Charles Darwin"
+    },
+    {
+        "id": 265,
+        "topic": "shortQuestions",
+        "question": "What is the main language spoken in Argentina?",
+        "think": "Spanish is the main language in Argentina.",
+        "output": "Spanish"
+    },
+    {
+        "id": 266,
+        "topic": "shortQuestions",
+        "question": "Which continent has the most countries?",
+        "think": "Africa has the largest number of countries.",
+        "output": "Africa"
+    },
+    {
+        "id": 267,
+        "topic": "shortQuestions",
+        "question": "Who is the main character in 'The Adventures of Tom Sawyer'?",
+        "think": "Tom Sawyer is the protagonist of the book.",
+        "output": "Tom Sawyer"
+    },
+    {
+        "id": 268,
+        "topic": "shortQuestions",
+        "question": "What is the boiling point of water in Kelvin?",
+        "think": "Water boils at 373.15 Kelvin.",
+        "output": "373.15 K"
+    },
+    {
+        "id": 269,
+        "topic": "shortQuestions",
+        "question": "Which planet is the third from the Sun?",
+        "think": "Earth is the third planet from the Sun.",
+        "output": "Earth"
+    },
+    {
+        "id": 270,
+        "topic": "shortQuestions",
+        "question": "What is the tallest tree species in the world?",
+        "think": "The coast redwood (Sequoia sempervirens) is the tallest tree species.",
+        "output": "Coast redwood"
+    },
+    {
+        "id": 271,
+        "topic": "shortQuestions",
+        "question": "How many squares are there on a chessboard?",
+        "think": "A standard chessboard has 64 squares.",
+        "output": "64"
+    },
+    {
+        "id": 272,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Last Supper'?",
+        "think": "Leonardo da Vinci painted 'The Last Supper'.",
+        "output": "Leonardo da Vinci"
+    },
+    {
+        "id": 273,
+        "topic": "shortQuestions",
+        "question": "Which country is the largest producer of coffee?",
+        "think": "Brazil is the largest coffee producer.",
+        "output": "Brazil"
+    },
+    {
+        "id": 274,
+        "topic": "shortQuestions",
+        "question": "Which country is known for tulips and windmills?",
+        "think": "The Netherlands is famous for tulips and windmills.",
+        "output": "Netherlands"
+    },
+    {
+        "id": 275,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in South America?",
+        "think": "Brazil is the largest country in South America.",
+        "output": "Brazil"
+    },
+    {
+        "id": 276,
+        "topic": "shortQuestions",
+        "question": "Who was the first human to travel into space?",
+        "think": "Yuri Gagarin was the first human in space.",
+        "output": "Yuri Gagarin"
+    },
+    {
+        "id": 277,
+        "topic": "shortQuestions",
+        "question": "How many planets are there in the solar system?",
+        "think": "There are eight recognized planets in the solar system.",
+        "output": "Eight"
+    },
+    {
+        "id": 278,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Turkey?",
+        "think": "Ankara is the capital of Turkey.",
+        "output": "Ankara"
+    },
+    {
+        "id": 279,
+        "topic": "shortQuestions",
+        "question": "Which bird is the largest living species?",
+        "think": "The ostrich is the largest living bird species.",
+        "output": "Ostrich"
+    },
+    {
+        "id": 280,
+        "topic": "shortQuestions",
+        "question": "Who is the author of 'The Divine Comedy'?",
+        "think": "Dante Alighieri wrote 'The Divine Comedy'.",
+        "output": "Dante Alighieri"
+    },
+    {
+        "id": 281,
+        "topic": "shortQuestions",
+        "question": "What is the basic unit of currency in the United States?",
+        "think": "The dollar is the basic unit of currency in the US.",
+        "output": "Dollar"
+    },
+    {
+        "id": 282,
+        "topic": "shortQuestions",
+        "question": "What is the chemical symbol for iron?",
+        "think": "'Fe' is the symbol for iron on the periodic table.",
+        "output": "Fe"
+    },
+    {
+        "id": 283,
+        "topic": "shortQuestions",
+        "question": "Which mountain range is Mount Everest part of?",
+        "think": "Mount Everest is part of the Himalayas.",
+        "output": "Himalayas"
+    },
+    {
+        "id": 284,
+        "topic": "shortQuestions",
+        "question": "Who was the first woman to win a Nobel Prize?",
+        "think": "Marie Curie was the first woman Nobel laureate.",
+        "output": "Marie Curie"
+    },
+    {
+        "id": 285,
+        "topic": "shortQuestions",
+        "question": "How many degrees are in a circle?",
+        "think": "There are 360 degrees in a circle.",
+        "output": "360"
+    },
+    {
+        "id": 286,
+        "topic": "shortQuestions",
+        "question": "Which famous scientist formulated the laws of motion?",
+        "think": "Isaac Newton formulated the three laws of motion.",
+        "output": "Isaac Newton"
+    },
+    {
+        "id": 287,
+        "topic": "shortQuestions",
+        "question": "What is the smallest prime number?",
+        "think": "The smallest prime number is 2.",
+        "output": "2"
+    },
+    {
+        "id": 288,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in chocolate?",
+        "think": "Cocoa beans are the main ingredient in chocolate.",
+        "output": "Cocoa beans"
+    },
+    {
+        "id": 289,
+        "topic": "shortQuestions",
+        "question": "Who invented the telephone?",
+        "think": "Alexander Graham Bell invented the telephone.",
+        "output": "Alexander Graham Bell"
+    },
+    {
+        "id": 290,
+        "topic": "shortQuestions",
+        "question": "What is the largest mammal in the ocean?",
+        "think": "The blue whale is the largest ocean mammal.",
+        "output": "Blue whale"
+    },
+    {
+        "id": 291,
+        "topic": "shortQuestions",
+        "question": "Who wrote the play 'Hamlet'?",
+        "think": "William Shakespeare wrote 'Hamlet'.",
+        "output": "William Shakespeare"
+    },
+    {
+        "id": 292,
+        "topic": "shortQuestions",
+        "question": "Which element has the chemical symbol 'O'?",
+        "think": "'O' is the symbol for oxygen.",
+        "output": "Oxygen"
+    },
+    {
+        "id": 293,
+        "topic": "shortQuestions",
+        "question": "What is the national sport of Canada?",
+        "think": "Ice hockey is considered the national sport of Canada.",
+        "output": "Ice hockey"
+    },
+    {
+        "id": 294,
+        "topic": "shortQuestions",
+        "question": "What is the boiling point of water at sea level in Celsius?",
+        "think": "Water boils at 100 degrees Celsius at sea level.",
+        "output": "100°C"
+    },
+    {
+        "id": 295,
+        "topic": "shortQuestions",
+        "question": "Who is the Greek goddess of love and beauty?",
+        "think": "Aphrodite is the Greek goddess of love and beauty.",
+        "output": "Aphrodite"
+    },
+    {
+        "id": 296,
+        "topic": "shortQuestions",
+        "question": "How many Olympic rings are there?",
+        "think": "There are five Olympic rings.",
+        "output": "Five"
+    },
+    {
+        "id": 297,
+        "topic": "shortQuestions",
+        "question": "Which country is known for inventing pizza?",
+        "think": "Italy is famous for inventing pizza.",
+        "output": "Italy"
+    },
+    {
+        "id": 298,
+        "topic": "shortQuestions",
+        "question": "What is the largest ocean on Earth?",
+        "think": "The Pacific Ocean is the largest ocean on Earth.",
+        "output": "Pacific Ocean"
+    },
+    {
+        "id": 299,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Starry Night'?",
+        "think": "Vincent van Gogh painted 'The Starry Night'.",
+        "output": "Vincent van Gogh"
+    },
+    {
+        "id": 300,
+        "topic": "shortQuestions",
+        "question": "Who was the first President of the United States?",
+        "think": "George Washington was America's first president.",
+        "output": "George Washington"
+    },
+    {
+        "id": 301,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in paella?",
+        "think": "Paella is a Spanish dish made primarily with rice.",
+        "output": "Rice"
+    },
+    {
+        "id": 302,
+        "topic": "shortQuestions",
+        "question": "How many stars are on the flag of the United States?",
+        "think": "The US flag has 50 stars, one for each state.",
+        "output": "50"
+    },
+    {
+        "id": 303,
+        "topic": "shortQuestions",
+        "question": "What is the scientific name for the process by which plants make food?",
+        "think": "Photosynthesis is how plants make food from sunlight.",
+        "output": "Photosynthesis"
+    },
+    {
+        "id": 304,
+        "topic": "shortQuestions",
+        "question": "Which scientist is famous for the theory of evolution by natural selection?",
+        "think": "Charles Darwin developed the theory of evolution by natural selection.",
+        "output": "Charles Darwin"
+    },
+    {
+        "id": 305,
+        "topic": "shortQuestions",
+        "question": "What is the longest river in South America?",
+        "think": "The Amazon River is the longest in South America.",
+        "output": "Amazon"
+    },
+    {
+        "id": 306,
+        "topic": "shortQuestions",
+        "question": "Who is the famous artist known for the painting 'Guernica'?",
+        "think": "Pablo Picasso painted 'Guernica'.",
+        "output": "Pablo Picasso"
+    },
+    {
+        "id": 307,
+        "topic": "shortQuestions",
+        "question": "How many stripes are there on the French flag?",
+        "think": "The French flag has three vertical stripes.",
+        "output": "Three"
+    },
+    {
+        "id": 308,
+        "topic": "shortQuestions",
+        "question": "Which organ is responsible for filtering blood in the human body?",
+        "think": "The kidneys filter blood to remove waste.",
+        "output": "Kidneys"
+    },
+    {
+        "id": 309,
+        "topic": "shortQuestions",
+        "question": "What is the capital of Portugal?",
+        "think": "Lisbon is the capital city of Portugal.",
+        "output": "Lisbon"
+    },
+    {
+        "id": 310,
+        "topic": "shortQuestions",
+        "question": "Who invented the World Wide Web?",
+        "think": "Tim Berners-Lee invented the World Wide Web.",
+        "output": "Tim Berners-Lee"
+    },
+    {
+        "id": 311,
+        "topic": "shortQuestions",
+        "question": "Which element is a noble gas: Helium, Oxygen, or Hydrogen?",
+        "think": "Helium is a noble gas.",
+        "output": "Helium"
+    },
+    {
+        "id": 312,
+        "topic": "shortQuestions",
+        "question": "What is the largest city in Russia?",
+        "think": "Moscow is the largest city in Russia.",
+        "output": "Moscow"
+    },
+    {
+        "id": 313,
+        "topic": "shortQuestions",
+        "question": "How many weeks are there in a year?",
+        "think": "There are 52 weeks in a standard year.",
+        "output": "52"
+    },
+    {
+        "id": 314,
+        "topic": "shortQuestions",
+        "question": "Who is known as the 'King of Pop'?",
+        "think": "Michael Jackson is known as the 'King of Pop'.",
+        "output": "Michael Jackson"
+    },
+    {
+        "id": 315,
+        "topic": "shortQuestions",
+        "question": "Which fruit is the main ingredient in guacamole?",
+        "think": "Avocado is the main ingredient in guacamole.",
+        "output": "Avocado"
+    },
+    {
+        "id": 316,
+        "topic": "shortQuestions",
+        "question": "Who wrote the play 'Macbeth'?",
+        "think": "William Shakespeare wrote 'Macbeth'.",
+        "output": "William Shakespeare"
+    },
+    {
+        "id": 317,
+        "topic": "shortQuestions",
+        "question": "What color do you get when you mix blue and yellow?",
+        "think": "Blue and yellow mixed make green.",
+        "output": "Green"
+    },
+    {
+        "id": 318,
+        "topic": "shortQuestions",
+        "question": "What is the most populous country in the world?",
+        "think": "China has the largest population in the world.",
+        "output": "China"
+    },
+    {
+        "id": 319,
+        "topic": "shortQuestions",
+        "question": "Which mountain is known as the 'Roof of the World'?",
+        "think": "Mount Everest is often called the 'Roof of the World'.",
+        "output": "Mount Everest"
+    },
+    {
+        "id": 320,
+        "topic": "shortQuestions",
+        "question": "What is the main language spoken in Austria?",
+        "think": "German is the main language spoken in Austria.",
+        "output": "German"
+    },
+    {
+        "id": 321,
+        "topic": "shortQuestions",
+        "question": "Which instrument is known as the 'king of instruments'?",
+        "think": "The pipe organ is known as the king of instruments.",
+        "output": "Pipe organ"
+    },
+    {
+        "id": 322,
+        "topic": "shortQuestions",
+        "question": "Who painted the 'Mona Lisa'?",
+        "think": "Leonardo da Vinci painted the 'Mona Lisa'.",
+        "output": "Leonardo da Vinci"
+    },
+    {
+        "id": 323,
+        "topic": "shortQuestions",
+        "question": "How many teeth does an adult human have?",
+        "think": "An adult human usually has 32 teeth.",
+        "output": "32"
+    },
+    {
+        "id": 324,
+        "topic": "shortQuestions",
+        "question": "Which sea is the saltiest body of water on Earth?",
+        "think": "The Dead Sea is the saltiest large body of water.",
+        "output": "Dead Sea"
+    },
+    {
+        "id": 325,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of New Zealand?",
+        "think": "Wellington is the capital city of New Zealand.",
+        "output": "Wellington"
+    },
+    {
+        "id": 326,
+        "topic": "shortQuestions",
+        "question": "Who is the author of 'The Lord of the Rings'?",
+        "think": "J.R.R. Tolkien wrote 'The Lord of the Rings'.",
+        "output": "J.R.R. Tolkien"
+    },
+    {
+        "id": 327,
+        "topic": "shortQuestions",
+        "question": "What is the primary gas found in Earth's atmosphere?",
+        "think": "Nitrogen is the most abundant gas in Earth's atmosphere.",
+        "output": "Nitrogen"
+    },
+    {
+        "id": 328,
+        "topic": "shortQuestions",
+        "question": "What is the currency of Brazil?",
+        "think": "The Brazilian real is the currency of Brazil.",
+        "output": "Real"
+    },
+    {
+        "id": 329,
+        "topic": "shortQuestions",
+        "question": "Which blood type is known as the universal donor?",
+        "think": "O negative is considered the universal donor blood type.",
+        "output": "O negative"
+    },
+    {
+        "id": 330,
+        "topic": "shortQuestions",
+        "question": "Which city hosted the first modern Olympic Games?",
+        "think": "Athens hosted the first modern Olympics in 1896.",
+        "output": "Athens"
+    },
+    {
+        "id": 331,
+        "topic": "shortQuestions",
+        "question": "Who was the first human to walk on the moon?",
+        "think": "Neil Armstrong was the first person on the moon.",
+        "output": "Neil Armstrong"
+    },
+    {
+        "id": 332,
+        "topic": "shortQuestions",
+        "question": "What is the fastest land animal?",
+        "think": "The cheetah is the fastest animal on land.",
+        "output": "Cheetah"
+    },
+    {
+        "id": 333,
+        "topic": "shortQuestions",
+        "question": "Who painted the 'Sistine Chapel ceiling'?",
+        "think": "Michelangelo painted the ceiling of the Sistine Chapel.",
+        "output": "Michelangelo"
+    },
+    {
+        "id": 334,
+        "topic": "shortQuestions",
+        "question": "How many continents are there?",
+        "think": "There are seven continents on Earth.",
+        "output": "Seven"
+    },
+    {
+        "id": 335,
+        "topic": "shortQuestions",
+        "question": "What is the largest mammal on land?",
+        "think": "The African elephant is the largest land mammal.",
+        "output": "African elephant"
+    },
+    {
+        "id": 336,
+        "topic": "shortQuestions",
+        "question": "Which ocean borders the east coast of the United States?",
+        "think": "The Atlantic Ocean borders the US east coast.",
+        "output": "Atlantic Ocean"
+    },
+    {
+        "id": 337,
+        "topic": "shortQuestions",
+        "question": "Who is the founder of Facebook?",
+        "think": "Mark Zuckerberg founded Facebook.",
+        "output": "Mark Zuckerberg"
+    },
+    {
+        "id": 338,
+        "topic": "shortQuestions",
+        "question": "What is the largest desert in Africa?",
+        "think": "The Sahara is Africa's largest desert.",
+        "output": "Sahara"
+    },
+    {
+        "id": 339,
+        "topic": "shortQuestions",
+        "question": "What is the basic unit of life?",
+        "think": "The cell is the basic unit of life.",
+        "output": "Cell"
+    },
+    {
+        "id": 340,
+        "topic": "shortQuestions",
+        "question": "Who was the first woman to win two Nobel Prizes?",
+        "think": "Marie Curie was the first woman to win two Nobel Prizes.",
+        "output": "Marie Curie"
+    },
+    {
+        "id": 341,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in traditional Japanese miso soup?",
+        "think": "Miso paste is the main ingredient in miso soup.",
+        "output": "Miso paste"
+    },
+    {
+        "id": 342,
+        "topic": "shortQuestions",
+        "question": "What does 'www' stand for in website addresses?",
+        "think": "'www' stands for World Wide Web.",
+        "output": "World Wide Web"
+    },
+    {
+        "id": 343,
+        "topic": "shortQuestions",
+        "question": "Which animal is known as the 'Ship of the Desert'?",
+        "think": "The camel is called the 'Ship of the Desert'.",
+        "output": "Camel"
+    },
+    {
+        "id": 344,
+        "topic": "shortQuestions",
+        "question": "Who invented the light bulb?",
+        "think": "Thomas Edison invented the light bulb.",
+        "output": "Thomas Edison"
+    },
+    {
+        "id": 345,
+        "topic": "shortQuestions",
+        "question": "What is the largest volcano in the solar system?",
+        "think": "Olympus Mons on Mars is the largest known volcano.",
+        "output": "Olympus Mons"
+    },
+    {
+        "id": 346,
+        "topic": "shortQuestions",
+        "question": "How many chambers does the human heart have?",
+        "think": "The human heart has four chambers.",
+        "output": "Four"
+    },
+    {
+        "id": 347,
+        "topic": "shortQuestions",
+        "question": "What is the freezing point of water in Fahrenheit?",
+        "think": "Water freezes at 32 degrees Fahrenheit.",
+        "output": "32°F"
+    },
+    {
+        "id": 348,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'Crime and Punishment'?",
+        "think": "Fyodor Dostoevsky wrote 'Crime and Punishment'.",
+        "output": "Fyodor Dostoevsky"
+    },
+    {
+        "id": 349,
+        "topic": "shortQuestions",
+        "question": "Which is the largest lake in North America?",
+        "think": "Lake Superior is the largest lake in North America.",
+        "output": "Lake Superior"
+    },
+    {
+        "id": 350,
+        "topic": "shortQuestions",
+        "question": "Who is known as the 'Father of Modern Physics'?",
+        "think": "Albert Einstein is often called the Father of Modern Physics.",
+        "output": "Albert Einstein"
+    }
 ]
