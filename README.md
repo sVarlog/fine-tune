@@ -109,3 +109,22 @@ By shipping them alongside the merged model, you preserve _exactly_ the same tok
 -   Downstream GGUF conversion now sees the proper `tokenizer.model` alongside JSON/BPE files.
 
 ---
+
+<!-- Third-Party Code -->
+
+## 🛠️ Third-Party Code
+
+We include parts of the [llama.cpp](https://github.com/ggml-org/llama.cpp) project under its MIT license:
+
+```bash
+Copyright (c) 2023-2024 The ggml authors
+Copyright (c) 2023 Georgi Gerganov
+```
+
+### Those files are included verbatim from llama.cpp and are subject to the same MIT terms:
+
+-   `tools/llama/convert_hf_to_gguf.py`
+-   `tools/llama/convert_hf_to_gguf_update.py`
+-   `tools/llama/convert_llama_ggml_to_gguf.py`
+-   `tools/llama/convert_lora_to_gguf.py`
+-   `tools/llama/gguf-py/gguf/*`
