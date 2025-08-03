@@ -21,7 +21,7 @@ DATA_PATH = "datasets/data.jsonl"
 OUTPUT_BASE_DIR = Path(f"output/{MODEL_NAME}")
 LORA_CONFIG_PATH = "config/lora_config.json"
 
-def run_generation_and_print(model, tokenizer, messages, label=None):
+def run_generation_and_print(model, tokenizer, messages, label=None, return_response=False):
     from transformers import StoppingCriteriaList, StoppingCriteria
 
     # 1) Define our criteria
@@ -70,11 +70,10 @@ def run_generation_and_print(model, tokenizer, messages, label=None):
     with torch.no_grad():
         output = model.generate(
             **inputs,
-            max_new_tokens=256,
-            do_sample=False,
+            max_new_tokens=200,
             use_cache=False,
-            temperature=1.0,
-            top_p=1.0,
+            temperature=0.7, 
+            top_p=0.9,
             repetition_penalty=1.2,
             stopping_criteria=stoppers,
             eos_token_id=tokenizer.eos_token_id,
@@ -83,9 +82,13 @@ def run_generation_and_print(model, tokenizer, messages, label=None):
     # 6) Decode & print
     decoded = tokenizer.decode(output[0], skip_special_tokens=False)
     header = f"\n🧪 {label}:\n" if label else "\n🧪 Generation:\n"
+    out_str = header + decoded + "\n"
     print(header + decoded + "\n")
     print("Is structured output:", is_structured_output(decoded))
     print("-" * 60)
+
+    if return_response:
+        return out_str
 
 def check_lora_modules(model, lora_config_path: str):
     """
@@ -200,6 +203,43 @@ def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generatio
         )
     return formatted_text, tokenized
 
+def debug_dataset(dataset, tokenizer: AutoTokenizer):
+    # Debug/audit: Check and print <think>...</think><output>...</output> presence
+    missing_format = 0
+    print("\nFirst 10 assistant responses in dataset:")
+    for i in range(min(10, len(dataset))):
+        # Find the assistant's response in the full prompt (after assistant tag)
+        decoded = tokenizer.decode(dataset[i]["input_ids"], skip_special_tokens=False)
+        assistant_tag = "<|im_start|><|assistant|>\n"
+        assistant_start = decoded.find(assistant_tag)
+        assistant_resp = decoded[assistant_start + len(assistant_tag):] if assistant_start != -1 else ""
+        print(f"\n--- Sample #{i+1} ---\n{assistant_resp.strip()}\n")
+
+        # Audit for both tags
+        if "<think>" not in assistant_resp or "</think>" not in assistant_resp or "<output>" not in assistant_resp or "</output>" not in assistant_resp:
+            print(f"❗ Sample #{i+1} is missing one or more required tags!")
+            missing_format += 1
+
+    if missing_format == 0:
+        print("\n✅ All first 10 samples contain both <think> and <output> tags.")
+    else:
+        print(f"\n❌ {missing_format} of the first 10 samples are missing tags.")
+
+    # Audit ALL samples:
+    total_missing = 0
+    for idx in range(len(dataset)):
+        decoded = tokenizer.decode(dataset[idx]["input_ids"], skip_special_tokens=False)
+        assistant_tag = "<|im_start|><|assistant|>\n"
+        assistant_start = decoded.find(assistant_tag)
+        assistant_resp = decoded[assistant_start + len(assistant_tag):] if assistant_start != -1 else ""
+        if "<think>" not in assistant_resp or "</think>" not in assistant_resp or "<output>" not in assistant_resp or "</output>" not in assistant_resp:
+            total_missing += 1
+
+    if total_missing == 0:
+        print("\n🎉 All samples in dataset contain both <think> and <output> tags.")
+    else:
+        print(f"\n❌ {total_missing} out of {len(dataset)} samples are missing required tags!")
+
 def load_and_tokenize_dataset(tokenizer):
     assert os.path.exists(DATA_PATH), f"Data file not found at {DATA_PATH}"
 
@@ -212,7 +252,6 @@ def load_and_tokenize_dataset(tokenizer):
         remove_columns=["id", "topic", "question", "think", "output"]
     )
 
-    # 3) Debug prints if you like
     print("\nChat template preview:\n")
     print("-" * 50)
     print(tokenizer.chat_template[:200])
@@ -221,6 +260,8 @@ def load_and_tokenize_dataset(tokenizer):
     print("-" * 50)
     print(tokenizer.decode(dataset[0]["input_ids"]))
     print("-" * 50)
+
+    debug_dataset(dataset, tokenizer)
 
     return dataset
 
@@ -297,7 +338,7 @@ def save_chat_jinja2(tokenizer, output_dir: Path):
     fast_tok = Tokenizer.from_file(str(output_dir / "tokenizer.json"))
     bpe = fast_tok.model  # this is a tokenizers.models.BPE
 
-    # Option A) Let `.save()` do it for you, into a dedicated subfolder:
+    # 4) save the BPE tokenizer files
     bpe_folder = output_dir / "bpe-tokenizer"
     bpe_folder.mkdir(exist_ok=True)
     bpe.save(str(bpe_folder))  # writes bpe-tokenizer/vocab.json & bpe-tokenizer/merges.txt
@@ -306,13 +347,6 @@ def save_chat_jinja2(tokenizer, output_dir: Path):
     (bpe_folder / "vocab.json").rename(output_dir / "vocab.json")
     (bpe_folder / "merges.txt").rename(output_dir / "merges.txt")
     bpe_folder.rmdir()  # remove the now-empty subfolder
-
-    # Option B) (more explicit) manually dump:
-    # with open(output_dir/"vocab.json", "w", encoding="utf-8") as vf:
-    #     json.dump(bpe.get_vocab(), vf, ensure_ascii=False)
-    # with open(output_dir/"merges.txt", "w", encoding="utf-8") as mf:
-    #     for a, b in bpe.get_merges():
-    #         mf.write(f"{a} {b}\n")
 
     print(f"✅ Chat template + vocab/merges dumped to {output_dir}")
 
@@ -327,9 +361,12 @@ def is_structured_output(text: str) -> bool:
     return all(tag in assistant_text for tag in ["<think>", "</think>", "<output>", "</output>"])
 
 class EvalCallback(TrainerCallback):
-    def __init__(self, tokenizer, interval):
+    def __init__(self, tokenizer, output_dir, interval):
         self.tokenizer = tokenizer
         self.interval = interval
+        self.output_dir = Path(output_dir)
+        self.logs_dir = self.output_dir / "logs"
+        self.logs_dir.mkdir(exist_ok=True, parents=True)
 
     def on_step_end(self, args, state, control, **kwargs):
         if state.global_step % self.interval != 0:
@@ -341,12 +378,19 @@ class EvalCallback(TrainerCallback):
             {"role": "system",    "content": SYSTEM_PROMPT},
             {"role": "user",      "content": "What is the capital of France?"}
         ]
-        run_generation_and_print(
+
+        output_str = run_generation_and_print(
             kwargs["model"],
             self.tokenizer,
             messages,
-            label=f"Eval @ step {state.global_step}"
+            label=f"Eval @ step {state.global_step}",
+            return_response=True
         )
+
+        # Save to a log file
+        log_file = self.logs_dir / f"callback-{state.global_step}.txt"
+        with open(log_file, "w", encoding="utf-8") as f:
+            f.write(output_str)
 
 def train_model(model, tokenizer, dataset, output_dir):
     log("Configuring training arguments...")
@@ -367,27 +411,46 @@ def train_model(model, tokenizer, dataset, output_dir):
     torch.utils.checkpoint._use_reentrant = False
 
     # 2) Build a small custom collator
-    def causal_collator(features):
-    # 1) Turn each feature’s token IDs back into the full text string
-        texts = [tokenizer.decode(f["input_ids"], skip_special_tokens=False) for f in features]
+    # def causal_collator(features):
+    # # 1) Turn each feature’s token IDs back into the full text string
+    #     texts = [tokenizer.decode(f["input_ids"], skip_special_tokens=False) for f in features]
 
-        # 2) Batch‐tokenize & pad in one go (this avoids the fast‐tokenizer warning)
-        batch = tokenizer(
-            texts,
-            padding="longest",
-            pad_to_multiple_of=8,
-            truncation=False,
-            return_tensors="pt",
-            add_special_tokens=False,
-        )
+    #     # 2) Batch‐tokenize & pad in one go (this avoids the fast‐tokenizer warning)
+    #     batch = tokenizer(
+    #         texts,
+    #         padding="longest",
+    #         pad_to_multiple_of=8,
+    #         truncation=False,
+    #         return_tensors="pt",
+    #         add_special_tokens=False,
+    #     )
 
-        # 3) Create labels from the padded input_ids
-        labels = batch["input_ids"].clone()
-        # 4) Mask out the pad positions so they don’t contribute to loss
-        labels[batch["attention_mask"] == 0] = -100
-        batch["labels"] = labels
+    #     # 3) Create labels from the padded input_ids
+    #     labels = batch["input_ids"].clone()
+    #     # 4) Mask out the pad positions so they don’t contribute to loss
+    #     labels[batch["attention_mask"] == 0] = -100
+    #     batch["labels"] = labels
 
-        return batch
+    #     print("DEBUG: features[0].keys() =", features[0].keys())
+    #     print("DEBUG: input_ids lens:", [len(f["input_ids"]) for f in features])
+    #     print("DEBUG: labels lens:", [len(f["labels"]) for f in features])
+
+    #     return batch
+
+    def pad_collator(features):
+        # Determine max length of input_ids in batch
+        max_len = max(len(f["input_ids"]) for f in features)
+        batch = {k: [] for k in features[0]}
+        
+        for f in features:
+            for k, v in f.items():
+                pad_token = tokenizer.pad_token_id if k != "labels" else -100
+                # Pad to max_len
+                arr = v + [pad_token] * (max_len - len(v))
+                batch[k].append(arr)
+
+        # Convert to tensors
+        return {k: torch.tensor(v) for k, v in batch.items()}
 
     log("Creating causal collator...")
     # 3) Configure Trainer
@@ -396,6 +459,7 @@ def train_model(model, tokenizer, dataset, output_dir):
         per_device_train_batch_size=6,
         gradient_accumulation_steps=4,
         num_train_epochs=10,
+        # max_steps=20,
         learning_rate=1e-4,
         warmup_ratio=0.05,
         logging_dir=f"{output_dir}/logs",
@@ -418,8 +482,8 @@ def train_model(model, tokenizer, dataset, output_dir):
         model=model,
         args=training_args,
         train_dataset=dataset,
-        data_collator=causal_collator,
-        callbacks=[EvalCallback(tokenizer, interval=40)],
+        data_collator=pad_collator,
+        callbacks=[EvalCallback(tokenizer, output_dir, interval=20)],
     )
 
     log("Trainer instance created successfully.")
@@ -436,7 +500,8 @@ def test_training():
     from peft import PeftModel
 
     BASE_MODEL = MODEL_NAME
-    OUTPUT_DIR = f"output/{MODEL_NAME}/training-2"
+    TRAINING_NUM = 7
+    OUTPUT_DIR = f"output/{MODEL_NAME}/training-{TRAINING_NUM}"
 
     log("Loading base model and tokenizer for testing...")
 
@@ -503,8 +568,8 @@ def main():
     log("Training model")
     train_model(model, tokenizer, dataset, output_dir)
 
-    log('Testing training with a small dataset')
-    test_training()
+    # log('Testing training with a small dataset')
+    # test_training()
 
 if __name__ == "__main__":
     main()
