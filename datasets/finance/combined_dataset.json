@@ -1538,5 +1538,215 @@
         "question": "Why is behavioral economics relevant to financial decision-making?",
         "think": "Behavioral economics shows how real people act irrationally, influenced by emotion, framing, and shortcuts—impacting markets and choices.",
         "output": "It explains and predicts real-world financial behavior better than theory alone."
+    },
+    {
+        "id": 221,
+        "topic": "finance",
+        "question": "How do interest rates influence consumer spending?",
+        "think": "Lower rates reduce borrowing costs, encouraging spending and investment; higher rates dampen demand by making loans pricier.",
+        "output": "Interest rates directly affect how much consumers spend and save."
+    },
+    {
+        "id": 222,
+        "topic": "finance",
+        "question": "What is the role of a financial analyst?",
+        "think": "Financial analysts evaluate investments, analyze data, and provide recommendations to help clients make informed decisions.",
+        "output": "They turn complex data into actionable insights for investors."
+    },
+    {
+        "id": 223,
+        "topic": "finance",
+        "question": "How do interest rate changes impact bond prices?",
+        "think": "Bond prices move inversely to interest rates—when rates rise, bond prices fall, and vice versa.",
+        "output": "Interest rate shifts are key drivers of bond market movements."
+    },
+    {
+        "id": 224,
+        "topic": "finance",
+        "question": "What is the significance of the Dow Jones Industrial Average?",
+        "think": "The DJIA tracks 30 major U.S. companies, serving as a barometer for overall market health and investor sentiment.",
+        "output": "It’s a widely followed index reflecting economic trends."
+    },
+    {
+        "id": 225,
+        "topic": "finance",
+        "question": "How do credit default swaps (CDS) work?",
+        "think": "CDS are contracts that transfer credit risk from one party to another, allowing investors to hedge or speculate on defaults.",
+        "output": "CDS can protect against losses but also amplify systemic risk."
+    },
+    {
+        "id": 226,
+        "topic": "finance",
+        "question": "Why is it important to understand the time value of money in finance?",
+        "think": "The time value of money principle states that a dollar today is worth more than a dollar tomorrow due to its earning potential.",
+        "output": "It underpins all financial calculations, from loans to investments."
+    },
+    {
+        "id": 227,
+        "topic": "finance",
+        "question": "How do exchange rates affect international trade?",
+        "think": "Exchange rates determine the cost of imports and exports, influencing trade balances and competitiveness.",
+        "output": "Fluctuating rates can boost or hinder global trade dynamics."
+    },
+    {
+        "id": 228,
+        "topic": "finance",
+        "question": "What is the purpose of a financial audit?",
+        "think": "Audits verify financial statements for accuracy, ensuring compliance with regulations and building trust with stakeholders.",
+        "output": "They enhance transparency and accountability in financial reporting."
+    },
+    {
+        "id": 229,
+        "topic": "finance",
+        "question": "How do stock buybacks affect share prices?",
+        "think": "Buybacks reduce share supply, often boosting prices by signaling confidence and returning cash to shareholders.",
+        "output": "They can enhance shareholder value but may signal lack of growth opportunities."
+    },
+    {
+        "id": 230,
+        "topic": "finance",
+        "question": "What is the role of a financial advisor?",
+        "think": "Financial advisors help clients set goals, create plans, and manage investments to achieve financial security and growth.",
+        "output": "They provide personalized guidance based on individual needs."
+    },
+    {
+        "id": 231,
+        "topic": "finance",
+        "question": "How do interest rates affect mortgage affordability?",
+        "think": "Lower rates reduce monthly payments, making homes more affordable; higher rates increase costs and can dampen demand.",
+        "output": "Interest rates are a key factor in housing market dynamics."
+    },
+    {
+        "id": 232,
+        "topic": "finance",
+        "question": "What is the significance of the Federal Reserve in the U.S. economy?",
+        "think": "The Fed sets monetary policy, regulates banks, and stabilizes the financial system, influencing inflation and employment.",
+        "output": "It plays a crucial role in economic stability and growth."
+    },
+    {
+        "id": 233,
+        "topic": "finance",
+        "question": "How do credit cards impact personal finance?",
+        "think": "Credit cards offer convenience and rewards but can lead to debt if not managed wisely, affecting credit scores.",
+        "output": "Use credit cards responsibly to build credit and avoid high-interest debt."
+    },
+    {
+        "id": 234,
+        "topic": "finance",
+        "question": "What is the purpose of a financial plan?",
+        "think": "A financial plan outlines goals, strategies, and actions to achieve financial security and growth over time.",
+        "output": "It provides a roadmap for managing money effectively."
+    },
+    {
+        "id": 235,
+        "topic": "finance",
+        "question": "How do interest rates influence investment decisions?",
+        "think": "Interest rates affect borrowing costs and returns on savings, guiding where investors allocate funds.",
+        "output": "Lower rates encourage riskier investments; higher rates favor safer assets."
+    },
+    {
+        "id": 236,
+        "topic": "finance",
+        "question": "What is the role of a stock exchange?",
+        "think": "Stock exchanges facilitate the buying and selling of securities, providing a platform for price discovery and liquidity.",
+        "output": "They connect buyers and sellers, ensuring fair and efficient markets."
+    },
+    {
+        "id": 237,
+        "topic": "finance",
+        "question": "How do inflation rates affect purchasing power?",
+        "think": "Higher inflation erodes purchasing power, meaning consumers can buy less with the same amount of money.",
+        "output": "Inflation impacts savings, investments, and cost of living."
+    },
+    {
+        "id": 238,
+        "topic": "finance",
+        "question": "What is the significance of diversification in investment portfolios?",
+        "think": "Diversification spreads risk across different assets, reducing the impact of any single investment’s poor performance.",
+        "output": "It’s a fundamental strategy for managing investment risk."
+    },
+    {
+        "id": 239,
+        "topic": "finance",
+        "question": "How do government bonds work?",
+        "think": "Government bonds are debt securities issued by governments to raise funds, paying interest to investors over time.",
+        "output": "They’re considered low-risk investments backed by government credit."
+    },
+    {
+        "id": 240,
+        "topic": "finance",
+        "question": "What is the purpose of a credit score?",
+        "think": "A credit score assesses an individual’s creditworthiness, influencing loan approvals and interest rates.",
+        "output": "A credit score is crucial for accessing loans and favorable terms."
+    },
+    {
+        "id": 241,
+        "topic": "finance",
+        "question": "How do mutual funds work?",
+        "think": "Mutual funds pool money from many investors to buy a diversified portfolio of stocks, bonds, or other securities.",
+        "output": "They offer diversification and professional management for individual investors."
+    },
+    {
+        "id": 242,
+        "topic": "finance",
+        "question": "What is the role of a financial regulator?",
+        "think": "Financial regulators oversee markets, enforce laws, and protect consumers to ensure fair and transparent financial systems.",
+        "output": "They maintain stability and trust in the financial sector."
+    },
+    {
+        "id": 243,
+        "topic": "finance",
+        "question": "How do interest rates affect the stock market?",
+        "think": "Interest rate changes influence borrowing costs, consumer spending, and corporate profits, impacting stock prices.",
+        "output": "Lower rates often boost stocks; higher rates can lead to declines."
+    },
+    {
+        "id": 244,
+        "topic": "finance",
+        "question": "What is the significance of a company’s earnings report?",
+        "think": "Earnings reports provide insights into a company’s financial health, performance, and future prospects, influencing stock prices.",
+        "output": "They’re key indicators for investors assessing company value."
+    },
+    {
+        "id": 245,
+        "topic": "finance",
+        "question": "How do exchange-traded funds (ETFs) differ from mutual funds?",
+        "think": "ETFs trade like stocks on exchanges, offering flexibility and lower fees than traditional mutual funds.",
+        "output": "ETFs combine diversification with real-time trading advantages."
+    },
+    {
+        "id": 246,
+        "topic": "finance",
+        "question": "What is the purpose of a financial statement?",
+        "think": "Financial statements summarize a company’s financial performance, position, and cash flows, aiding decision-making for investors and managers.",
+        "output": "They provide essential data for evaluating business health."
+    },
+    {
+        "id": 247,
+        "topic": "finance",
+        "question": "How do interest rates impact consumer loans?",
+        "think": "Interest rates determine loan costs; lower rates make borrowing cheaper, while higher rates increase repayment amounts.",
+        "output": "Interest rates directly affect affordability of loans for consumers."
+    },
+    {
+        "id": 248,
+        "topic": "finance",
+        "question": "What is the role of a hedge fund?",
+        "think": "Hedge funds pool capital to pursue high-risk, high-reward strategies, often using leverage and derivatives to maximize returns.",
+        "output": "They aim for absolute returns, regardless of market conditions."
+    },
+    {
+        "id": 249,
+        "topic": "finance",
+        "question": "How do interest rates influence currency values?",
+        "think": "Higher interest rates attract foreign investment, boosting currency value; lower rates can lead to depreciation.",
+        "output": "Interest rates are a key driver of exchange rate movements."
+    },
+    {
+        "id": 250,
+        "topic": "finance",
+        "question": "What is the significance of a company’s market capitalization?",
+        "think": "Market cap reflects a company’s total value based on stock price and shares outstanding, guiding investment decisions.",
+        "output": "Market cap helps assess size and growth potential of companies."
     }
 ]

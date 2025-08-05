@@ -2448,5 +2448,355 @@
         "question": "Who is known as the 'Father of Modern Physics'?",
         "think": "Albert Einstein is often called the Father of Modern Physics.",
         "output": "Albert Einstein"
+    },
+    {
+        "id": 351,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in hummus?",
+        "think": "Chickpeas are the main ingredient in hummus.",
+        "output": "Chickpeas"
+    },
+    {
+        "id": 352,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Egypt?",
+        "think": "Cairo is the capital city of Egypt.",
+        "output": "Cairo"
+    },
+    {
+        "id": 353,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Creation of Adam'?",
+        "think": "Michelangelo painted 'The Creation of Adam'.",
+        "output": "Michelangelo"
+    },
+    {
+        "id": 354,
+        "topic": "shortQuestions",
+        "question": "What is the largest organ in the human body?",
+        "think": "The skin is the largest organ in the human body.",
+        "output": "Skin"
+    },
+    {
+        "id": 355,
+        "topic": "shortQuestions",
+        "question": "Which planet is known for its rings?",
+        "think": "Saturn is famous for its prominent rings.",
+        "output": "Saturn"
+    },
+    {
+        "id": 356,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Greek salad?",
+        "think": "Feta cheese is a key ingredient in Greek salad.",
+        "output": "Feta cheese"
+    },
+    {
+        "id": 357,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'Pride and Prejudice'?",
+        "think": "Jane Austen wrote 'Pride and Prejudice'.",
+        "output": "Jane Austen"
+    },
+    {
+        "id": 358,
+        "topic": "shortQuestions",
+        "question": "What is the largest planet in our solar system?",
+        "think": "Jupiter is the largest planet in the solar system.",
+        "output": "Jupiter"
+    },
+    {
+        "id": 359,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Japan?",
+        "think": "Tokyo is the capital city of Japan.",
+        "output": "Tokyo"
+    },
+    {
+        "id": 360,
+        "topic": "shortQuestions",
+        "question": "Who discovered penicillin?",
+        "think": "Alexander Fleming discovered penicillin.",
+        "output": "Alexander Fleming"
+    },
+    {
+        "id": 361,
+        "topic": "shortQuestions",
+        "question": "What is the chemical symbol for gold?",
+        "think": "'Au' is the chemical symbol for gold.",
+        "output": "Au"
+    },
+    {
+        "id": 362,
+        "topic": "shortQuestions",
+        "question": "Who was the first person to walk on the moon?",
+        "think": "Neil Armstrong was the first person to walk on the moon.",
+        "output": "Neil Armstrong"
+    },
+    {
+        "id": 363,
+        "topic": "shortQuestions",
+        "question": "What is the largest animal on Earth?",
+        "think": "The blue whale is the largest animal on Earth.",
+        "output": "Blue whale"
+    },
+    {
+        "id": 364,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Canada?",
+        "think": "Ottawa is the capital city of Canada.",
+        "output": "Ottawa"
+    },
+    {
+        "id": 365,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Great Gatsby'?",
+        "think": "F. Scott Fitzgerald wrote 'The Great Gatsby'.",
+        "output": "F. Scott Fitzgerald"
+    },
+    {
+        "id": 366,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in sushi?",
+        "think": "Rice is the main ingredient in sushi.",
+        "output": "Rice"
+    },
+    {
+        "id": 367,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Birth of Venus'?",
+        "think": "Sandro Botticelli painted 'The Birth of Venus'.",
+        "output": "Sandro Botticelli"
+    },
+    {
+        "id": 368,
+        "topic": "shortQuestions",
+        "question": "What is the largest continent by area?",
+        "think": "Asia is the largest continent by area.",
+        "output": "Asia"
+    },
+    {
+        "id": 369,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Italy?",
+        "think": "Rome is the capital city of Italy.",
+        "output": "Rome"
+    },
+    {
+        "id": 370,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'To Kill a Mockingbird'?",
+        "think": "'To Kill a Mockingbird' was written by Harper Lee.",
+        "output": "Harper Lee"
+    },
+    {
+        "id": 371,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a Caesar salad?",
+        "think": "Romaine lettuce is the main ingredient in a Caesar salad.",
+        "output": "Romaine lettuce"
+    },
+    {
+        "id": 372,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Last Judgment'?",
+        "think": "Michelangelo painted 'The Last Judgment' on the altar wall of the Sistine Chapel.",
+        "output": "Michelangelo"
+    },
+    {
+        "id": 373,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in the world by area?",
+        "think": "Russia is the largest country in the world by area.",
+        "output": "Russia"
+    },
+    {
+        "id": 374,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Indian curry?",
+        "think": "Spices, particularly turmeric, are key ingredients in Indian curry.",
+        "output": "Spices"
+    },
+    {
+        "id": 375,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Catcher in the Rye'?",
+        "think": "'The Catcher in the Rye' was written by J.D. Salinger.",
+        "output": "J.D. Salinger"
+    },
+    {
+        "id": 376,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Spain?",
+        "think": "Madrid is the capital city of Spain.",
+        "output": "Madrid"
+    },
+    {
+        "id": 377,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Last Supper'?",
+        "think": "Leonardo da Vinci painted 'The Last Supper'.",
+        "output": "Leonardo da Vinci"
+    },
+    {
+        "id": 378,
+        "topic": "shortQuestions",
+        "question": "What is the largest island in the world?",
+        "think": "Greenland is the largest island in the world.",
+        "output": "Greenland"
+    },
+    {
+        "id": 379,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional French ratatouille?",
+        "think": "Vegetables, especially eggplant, zucchini, and tomatoes, are key ingredients in ratatouille.",
+        "output": "Vegetables"
+    },
+    {
+        "id": 380,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Picture of Dorian Gray'?",
+        "think": "'The Picture of Dorian Gray' was written by Oscar Wilde.",
+        "output": "Oscar Wilde"
+    },
+    {
+        "id": 381,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Greece?",
+        "think": "Athens is the capital city of Greece.",
+        "output": "Athens"
+    },
+    {
+        "id": 382,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Birth of Venus'?",
+        "think": "'The Birth of Venus' was painted by Sandro Botticelli.",
+        "output": "Sandro Botticelli"
+    },
+    {
+        "id": 383,
+        "topic": "shortQuestions",
+        "question": "What is the largest desert in the world?",
+        "think": "The Sahara Desert is the largest hot desert in the world.",
+        "output": "Sahara Desert"
+    },
+    {
+        "id": 384,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Greek moussaka?",
+        "think": "Eggplant is a key ingredient in moussaka.",
+        "output": "Eggplant"
+    },
+    {
+        "id": 385,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Odyssey'?",
+        "think": "'The Odyssey' was written by Homer.",
+        "output": "Homer"
+    },
+    {
+        "id": 386,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Sweden?",
+        "think": "Stockholm is the capital city of Sweden.",
+        "output": "Stockholm"
+    },
+    {
+        "id": 387,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Starry Night'?",
+        "think": "'The Starry Night' was painted by Vincent van Gogh.",
+        "output": "Vincent van Gogh"
+    },
+    {
+        "id": 388,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in Africa?",
+        "think": "Algeria is the largest country in Africa by area.",
+        "output": "Algeria"
+    },
+    {
+        "id": 389,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Spanish paella?",
+        "think": "Rice is the main ingredient in paella.",
+        "output": "Rice"
+    },
+    {
+        "id": 390,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Brothers Karamazov'?",
+        "think": "'The Brothers Karamazov' was written by Fyodor Dostoevsky.",
+        "output": "Fyodor Dostoevsky"
+    },
+    {
+        "id": 391,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Norway?",
+        "think": "Oslo is the capital city of Norway.",
+        "output": "Oslo"
+    },
+    {
+        "id": 392,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Last Supper'?",
+        "think": "'The Last Supper' was painted by Leonardo da Vinci.",
+        "output": "Leonardo da Vinci"
+    },
+    {
+        "id": 393,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in South America?",
+        "think": "Brazil is the largest country in South America by area.",
+        "output": "Brazil"
+    },
+    {
+        "id": 394,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Italian risotto?",
+        "think": "Arborio rice is the main ingredient in risotto.",
+        "output": "Arborio rice"
+    },
+    {
+        "id": 395,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Count of Monte Cristo'?",
+        "think": "'The Count of Monte Cristo' was written by Alexandre Dumas.",
+        "output": "Alexandre Dumas"
+    },
+    {
+        "id": 396,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Finland?",
+        "think": "Helsinki is the capital city of Finland.",
+        "output": "Helsinki"
+    },
+    {
+        "id": 397,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Scream'?",
+        "think": "'The Scream' was painted by Edvard Munch.",
+        "output": "Edvard Munch"
+    },
+    {
+        "id": 398,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in Asia?",
+        "think": "Russia is the largest country in Asia by area.",
+        "output": "Russia"
+    },
+    {
+        "id": 399,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Moroccan tagine?",
+        "think": "Lamb or chicken is often the main ingredient in tagine.",
+        "output": "Lamb or chicken"
+    },
+    {
+        "id": 400,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Iliad'?",
+        "think": "'The Iliad' was written by Homer.",
+        "output": "Homer"
     }
 ]
