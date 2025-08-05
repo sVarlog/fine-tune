@@ -21,6 +21,26 @@ DATA_PATH = "datasets/data.jsonl"
 OUTPUT_BASE_DIR = Path(f"output/{MODEL_NAME}")
 LORA_CONFIG_PATH = "config/lora_config.json"
 
+
+class SFTTrainer(Trainer):
+    def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
+        labels = inputs.pop("labels")
+        outputs = model(**inputs)
+        logits = outputs.logits
+        
+        # Shift so that tokens < n predict n
+        shift_logits = logits[..., :-1, :].contiguous()
+        shift_labels = labels[..., 1:].contiguous()
+        
+        # Flatten the tokens
+        loss_fct = torch.nn.CrossEntropyLoss(ignore_index=-100)
+        loss = loss_fct(
+            shift_logits.view(-1, shift_logits.size(-1)),
+            shift_labels.view(-1)
+        )
+        
+        return (loss, outputs) if return_outputs else loss
+
 def run_generation_and_print(model, tokenizer, messages, label=None, return_response=False):
     from transformers import StoppingCriteriaList, StoppingCriteria
 
@@ -57,27 +77,26 @@ def run_generation_and_print(model, tokenizer, messages, label=None, return_resp
 
     # 3) Move inputs to device & compute prompt_length
     inputs = {k: v.to(model.device) for k, v in tokenized.items()}
-    prompt_length = inputs["input_ids"].shape[1]
+
 
     # 4) Assemble stoppers
-    stop_id = tokenizer.convert_tokens_to_ids("</output>")
-    stoppers = StoppingCriteriaList([
-        MaxNewTokensCriteria(start_length=prompt_length, max_new_tokens=256),
-        StopSequenceCriteria([stop_id]),
-    ])
+    stop_sequences = [tokenizer.encode("</output>", add_special_tokens=False)]
 
     # 5) Generate with explicit overrides
-    with torch.no_grad():
-        output = model.generate(
-            **inputs,
-            max_new_tokens=200,
-            use_cache=False,
-            temperature=0.7, 
-            top_p=0.9,
-            repetition_penalty=1.2,
-            stopping_criteria=stoppers,
-            eos_token_id=tokenizer.eos_token_id,
-        )
+    stopping_criteria = StoppingCriteriaList([
+        MaxNewTokensCriteria(inputs["input_ids"].shape[1], 200),
+        StopSequenceCriteria(stop_sequences)
+    ])
+    output = model.generate(
+        **inputs,
+        max_new_tokens=200,
+        temperature=0.7,
+        top_p=0.9,
+        pad_token_id=tokenizer.pad_token_id,
+        eos_token_id=tokenizer.eos_token_id,  # Pass a single int
+        do_sample=True,
+        stopping_criteria=stopping_criteria,
+    )
 
     # 6) Decode & print
     decoded = tokenizer.decode(output[0], skip_special_tokens=False)
@@ -134,55 +153,74 @@ def prepare_output_dir() -> Path:
 
 def load_and_prepare_tokenizer(output_dir: Path):
     tokenizer = AutoTokenizer.from_pretrained(
-        MODEL_NAME, 
-        trust_remote_code=True
+        MODEL_NAME,
+        trust_remote_code=True,
+        add_bos_token=True,
+        add_eos_token=False  # We'll handle this manually
     )
-    # register every tag you emit in your template
-    special_tokens = {
+    
+    # Explicitly add special tokens with proper normalization
+    special_tokens_dict = {
+        "additional_special_tokens": [
+            "<think>", "</think>", 
+            "<output>", "</output>"
+        ],
         "bos_token": "<|im_start|>",
         "eos_token": "<|im_end|>",
-        "pad_token": "<|pad|>",
-        "additional_special_tokens": [
-            "<|system|>", "<|user|>", "<|assistant|>",
-            "<think>", "</think>", "<output>", "</output>"
-        ],
+        "pad_token": "<|pad|>" if tokenizer.pad_token is None else tokenizer.pad_token,
     }
-    tokenizer.add_special_tokens(special_tokens)
-
+    
+    num_added = tokenizer.add_special_tokens(special_tokens_dict)
+    print(f"Added {num_added} special tokens")
+    
+    # Verify tokenization of structure tags
+    test_str = "<think>Test</think><output>Test</output>"
+    test_tokens = tokenizer.tokenize(test_str)
+    print("Tokenization test:", test_tokens)
+    
     return tokenizer
 
 def tokenize_function(ex, tokenizer):
-    # Build assistant reply string
-    if ex.get("think"):
-        response = f"<think>{ex['think']}</think><output>{ex['output']}</output>"
-    else:
-        response = f"<output>{ex['output']}</output>"
-
+    # Build assistant response with required structure
+    response = f"<think>{ex['think']}</think><output>{ex['output']}</output>"
+    
     messages = [
-        {"role": "system",    "content": SYSTEM_PROMPT},
-        {"role": "user",      "content": ex["question"]},
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": ex["question"]},
         {"role": "assistant", "content": response}
     ]
+    
+    # Tokenize entire conversation
+    tokenized = tokenizer.apply_chat_template(
+        messages,
+        tokenize=True,
+        add_generation_prompt=False,
+        return_tensors="pt",
+        max_length=2048,
+        truncation=True
+    )
+    
+    # Create labels mask (only predict assistant response)
+    # Find where assistant response starts
+    token_ids = tokenized.tolist() if hasattr(tokenized, "tolist") else list(tokenized)
+    im_start_id = tokenizer.convert_tokens_to_ids("<|im_start|>")
+    assistant_id = tokenizer.convert_tokens_to_ids("<|assistant|>")
 
-    formatted_text, tokenized = format_and_tokenize(messages, tokenizer)
-    input_ids = tokenized["input_ids"]
-
-    # Find index where assistant message starts
-    assistant_tag = "<|im_start|><|assistant|>\n"
-    assistant_start_idx = formatted_text.find(assistant_tag)
-    if assistant_start_idx == -1:
-        raise ValueError("Could not find assistant tag in formatted_text!")
-
-    # Count tokens up to assistant start
-    prefix_text = formatted_text[:assistant_start_idx + len(assistant_tag)]
-    prefix_tokens = tokenizer(prefix_text, add_special_tokens=False)["input_ids"]
-    label_start = len(prefix_tokens)
-
-    # Mask labels: -100 for non-assistant tokens, real id for assistant reply
-    labels = [-100] * label_start + input_ids[label_start:]
-
-    tokenized["labels"] = labels
-    return tokenized
+    try:
+        im_start_pos = token_ids.index(im_start_id)
+        assistant_pos = token_ids.index(assistant_id, im_start_pos + 1)
+        assistant_start = assistant_pos + 1
+    except ValueError:
+        assistant_start = 0  # fallback if not found
+    
+    labels = torch.full_like(tokenized, -100)  # Ignore all by default
+    labels[assistant_start:] = tokenized[assistant_start:]  # Only compute loss on assistant part
+    
+    return {
+        "input_ids": tokenized,
+        "labels": labels,
+        "attention_mask": torch.ones_like(tokenized)
+    }
 
 def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generation_prompt=False):
     formatted_text = tokenizer.apply_chat_template(
@@ -252,16 +290,23 @@ def load_and_tokenize_dataset(tokenizer):
         remove_columns=["id", "topic", "question", "think", "output"]
     )
 
-    print("\nChat template preview:\n")
-    print("-" * 50)
-    print(tokenizer.chat_template[:200])
-    print("-" * 50)
-    print("\nSample decoded inputs:\n")
-    print("-" * 50)
-    print(tokenizer.decode(dataset[0]["input_ids"]))
-    print("-" * 50)
+    # print("\nChat template preview:\n")
+    # print("-" * 50)
+    # print(tokenizer.chat_template[:200])
+    # print("-" * 50)
+    # print("\nSample decoded inputs:\n")
+    # print("-" * 50)
+    # # print(tokenizer.decode(dataset[0]["input_ids"]))
+    # print("-" * 50)
 
-    debug_dataset(dataset, tokenizer)
+    # sample = dataset[0]
+    # print("Sample input IDs:", sample["input_ids"])
+    # print("Decoded sample:", tokenizer.decode(sample["input_ids"]))
+    # print("Sample labels:", sample["labels"])
+    # print("Masked decoded:", tokenizer.decode([
+    #     id if label != -100 else tokenizer.pad_token_id 
+    #     for id, label in zip(sample["input_ids"], sample["labels"])
+    # ]))
 
     return dataset
 
@@ -371,7 +416,7 @@ class EvalCallback(TrainerCallback):
     def on_step_end(self, args, state, control, **kwargs):
         if state.global_step % self.interval != 0:
             return
-        
+
         log(f"🔬 Running evaluation at step {state.global_step}...")
 
         messages = [
@@ -387,9 +432,17 @@ class EvalCallback(TrainerCallback):
             return_response=True
         )
 
-        # Save to a log file
+        # Get last metrics (if available)
+        log_dict = state.log_history[-1] if state.log_history else {}
+
+        # Format the metrics as a string
+        metrics_str = f"Metrics: {json.dumps(log_dict, indent=2)}\n\n"
+
+        # Combine metrics and LLM output
         log_file = self.logs_dir / f"callback-{state.global_step}.txt"
+
         with open(log_file, "w", encoding="utf-8") as f:
+            f.write(metrics_str)
             f.write(output_str)
 
 def train_model(model, tokenizer, dataset, output_dir):
@@ -410,75 +463,54 @@ def train_model(model, tokenizer, dataset, output_dir):
     model.config.use_cache = False
     torch.utils.checkpoint._use_reentrant = False
 
-    # 2) Build a small custom collator
-    # def causal_collator(features):
-    # # 1) Turn each feature’s token IDs back into the full text string
-    #     texts = [tokenizer.decode(f["input_ids"], skip_special_tokens=False) for f in features]
-
-    #     # 2) Batch‐tokenize & pad in one go (this avoids the fast‐tokenizer warning)
-    #     batch = tokenizer(
-    #         texts,
-    #         padding="longest",
-    #         pad_to_multiple_of=8,
-    #         truncation=False,
-    #         return_tensors="pt",
-    #         add_special_tokens=False,
-    #     )
-
-    #     # 3) Create labels from the padded input_ids
-    #     labels = batch["input_ids"].clone()
-    #     # 4) Mask out the pad positions so they don’t contribute to loss
-    #     labels[batch["attention_mask"] == 0] = -100
-    #     batch["labels"] = labels
-
-    #     print("DEBUG: features[0].keys() =", features[0].keys())
-    #     print("DEBUG: input_ids lens:", [len(f["input_ids"]) for f in features])
-    #     print("DEBUG: labels lens:", [len(f["labels"]) for f in features])
-
-    #     return batch
-
     def pad_collator(features):
-        # Determine max length of input_ids in batch
-        max_len = max(len(f["input_ids"]) for f in features)
+        # Ensure all sequences are 1D lists
+        def flatten1d(x):
+            if hasattr(x, "flatten"):
+                x = x.flatten()
+            if hasattr(x, "tolist"):
+                x = x.tolist()
+            # If still nested, flatten manually
+            if isinstance(x, list) and len(x) > 0 and isinstance(x[0], list):
+                x = [item for sublist in x for item in sublist]
+            return x
+
+        # Find the max length in the batch
+        max_len = max(len(flatten1d(f["input_ids"])) for f in features)
         batch = {k: [] for k in features[0]}
-        
+
         for f in features:
             for k, v in f.items():
                 pad_token = tokenizer.pad_token_id if k != "labels" else -100
-                # Pad to max_len
+                v = flatten1d(v)
                 arr = v + [pad_token] * (max_len - len(v))
                 batch[k].append(arr)
 
         # Convert to tensors
-        return {k: torch.tensor(v) for k, v in batch.items()}
+        return {k: torch.tensor(v, dtype=torch.long if k != "labels" else torch.int64) for k, v in batch.items()}
 
     log("Creating causal collator...")
     # 3) Configure Trainer
     training_args = TrainingArguments(
         output_dir=output_dir,
-        per_device_train_batch_size=6,
-        gradient_accumulation_steps=4,
-        num_train_epochs=10,
-        # max_steps=20,
-        learning_rate=1e-4,
-        warmup_ratio=0.05,
-        logging_dir=f"{output_dir}/logs",
+        per_device_train_batch_size=2,  # Reduce for stability
+        gradient_accumulation_steps=8,
+        num_train_epochs=5,  # Increase epochs
+        learning_rate=1e-5,  # Lower learning rate
+        weight_decay=0.01,
+        warmup_ratio=0.1,
         logging_steps=10,
         save_strategy="epoch",
-        save_total_limit=10,
-        bf16=True,
+        eval_steps=100,
+        fp16=True,
         optim="paged_adamw_8bit",
-        lr_scheduler_type="cosine",
         report_to="none",
-        disable_tqdm=False,
-        gradient_checkpointing=True,
-        ddp_find_unused_parameters=False,
-        dataloader_pin_memory=True,
-        dataloader_num_workers=2,
+        remove_unused_columns=False,  # Important!
+        group_by_length=True,
     )
 
     log("Creating Trainer instance...")
-    trainer = Trainer(
+    trainer = SFTTrainer(
         model=model,
         args=training_args,
         train_dataset=dataset,
@@ -500,7 +532,7 @@ def test_training():
     from peft import PeftModel
 
     BASE_MODEL = MODEL_NAME
-    TRAINING_NUM = 7
+    TRAINING_NUM = 15
     OUTPUT_DIR = f"output/{MODEL_NAME}/training-{TRAINING_NUM}"
 
     log("Loading base model and tokenizer for testing...")
@@ -538,38 +570,38 @@ def test_training():
         )
 
 def main():
-    log("Preparing output directory")
-    output_dir = prepare_output_dir()
+    # log("Preparing output directory")
+    # output_dir = prepare_output_dir()
 
-    log("Loading tokenizer and adding special tags")
-    tokenizer = load_and_prepare_tokenizer(output_dir)
+    # log("Loading tokenizer and adding special tags")
+    # tokenizer = load_and_prepare_tokenizer(output_dir)
 
-    print("== DEBUG: Special tokens ==")
-    print("additional_special_tokens:", getattr(tokenizer, "additional_special_tokens", None))
-    print("<think> token ID:", tokenizer.convert_tokens_to_ids("<think>"))
-    print("</think> token ID:", tokenizer.convert_tokens_to_ids("</think>"))
-    print("<output> token ID:", tokenizer.convert_tokens_to_ids("<output>"))
-    print("</output> token ID:", tokenizer.convert_tokens_to_ids("</output>"))
-    print("bos_token_id:", tokenizer.bos_token_id, "eos_token_id:", tokenizer.eos_token_id)
+    # print("== DEBUG: Special tokens ==")
+    # print("additional_special_tokens:", getattr(tokenizer, "additional_special_tokens", None))
+    # print("<think> token ID:", tokenizer.convert_tokens_to_ids("<think>"))
+    # print("</think> token ID:", tokenizer.convert_tokens_to_ids("</think>"))
+    # print("<output> token ID:", tokenizer.convert_tokens_to_ids("<output>"))
+    # print("</output> token ID:", tokenizer.convert_tokens_to_ids("</output>"))
+    # print("bos_token_id:", tokenizer.bos_token_id, "eos_token_id:", tokenizer.eos_token_id)
 
-    log("Saving chat template to tokenizer")
-    save_chat_jinja2(tokenizer, output_dir)
+    # log("Saving chat template to tokenizer")
+    # save_chat_jinja2(tokenizer, output_dir)
 
-    log("Loading and tokenizing dataset")
-    dataset = load_and_tokenize_dataset(tokenizer)
+    # log("Loading and tokenizing dataset")
+    # dataset = load_and_tokenize_dataset(tokenizer)
 
-    log("Loading model and applying LoRA")
-    model = load_model_and_prepare_for_qora(tokenizer, output_dir)
+    # log("Loading model and applying LoRA")
+    # model = load_model_and_prepare_for_qora(tokenizer, output_dir)
 
-    print("=== Final Chat Template ===")
-    print(tokenizer.chat_template)
-    print("===========================")
+    # print("=== Final Chat Template ===")
+    # print(tokenizer.chat_template)
+    # print("===========================")
 
-    log("Training model")
-    train_model(model, tokenizer, dataset, output_dir)
+    # log("Training model")
+    # train_model(model, tokenizer, dataset, output_dir)
 
-    # log('Testing training with a small dataset')
-    # test_training()
+    log('Testing training with a small dataset')
+    test_training()
 
 if __name__ == "__main__":
     main()
