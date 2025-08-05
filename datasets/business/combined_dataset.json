@@ -4198,5 +4198,180 @@
         "question": "What is the impact of customer-centric digital transformation?",
         "think": "Customer-centric changes focus tech investments on user experience, increasing loyalty and growth.",
         "output": "Digital transformation boosts results when it starts with customer needs."
+    },
+    {
+        "id": 601,
+        "topic": "business",
+        "question": "How do companies use data visualization to drive decision-making?",
+        "think": "Visualizing data reveals patterns and insights quickly, enabling faster, more informed decisions.",
+        "output": "Data visualization clarifies complex information for better choices."
+    },
+    {
+        "id": 602,
+        "topic": "business",
+        "question": "Why is it important to align marketing and sales teams?",
+        "think": "Alignment ensures consistent messaging, shared goals, and smoother handoffs, improving conversion rates.",
+        "output": "Aligned teams drive better results and customer experiences."
+    },
+    {
+        "id": 603,
+        "topic": "business",
+        "question": "How can businesses leverage influencer partnerships?",
+        "think": "Influencers amplify reach and credibility, connecting brands with engaged audiences in authentic ways.",
+        "output": "Influencer partnerships enhance visibility and trust."
+    },
+    {
+        "id": 604,
+        "topic": "business",
+        "question": "What is the role of corporate governance in business success?",
+        "think": "Good governance ensures accountability, ethical behavior, and strategic oversight—key for long-term performance.",
+        "output": "Strong governance builds trust and guides sustainable growth."
+    },
+    {
+        "id": 605,
+        "topic": "business",
+        "question": "How do companies manage supply chain disruptions effectively?",
+        "think": "Diversify suppliers, build inventory buffers, and use technology to monitor risks and respond quickly.",
+        "output": "Proactive supply chain management minimizes disruption impact."
+    },
+    {
+        "id": 606,
+        "topic": "business",
+        "question": "Why is customer feedback essential for product development?",
+        "think": "Feedback reveals what works, what doesn’t, and what customers want next—guiding improvements and innovation.",
+        "output": "Customer input shapes products that truly meet needs."
+    },
+    {
+        "id": 607,
+        "topic": "business",
+        "question": "How does a strong value proposition differentiate a business?",
+        "think": "A clear value proposition explains why customers should choose you over competitors, driving preference and loyalty.",
+        "output": "[A strong value proposition sets you apart in a crowded market.]"
+    },
+    {
+        "id": 608,
+        "topic": "business",
+        "question": "What is the importance of crisis management training for employees?",
+        "think": "Training prepares employees to respond effectively during crises, minimizing damage and maintaining operations.",
+        "output": "Crisis training builds resilience and quick response capabilities."
+    },
+    {
+        "id": 609,
+        "topic": "business",
+        "question": "How do companies use customer journey mapping?",
+        "think": "Mapping visualizes the customer experience, identifying pain points and opportunities for improvement.",
+        "output": "Journey maps enhance understanding and drive better experiences."
+    },
+    {
+        "id": 610,
+        "topic": "business",
+        "question": "Why is it important to measure employee satisfaction regularly?",
+        "think": "Regular surveys gauge morale, identify issues, and inform retention strategies, keeping teams engaged.",
+        "output": "Measuring satisfaction helps maintain a motivated workforce."
+    },
+    {
+        "id": 611,
+        "topic": "business",
+        "question": "How do companies ensure data security in cloud computing?",
+        "think": "Implement strong encryption, access controls, and regular audits to protect sensitive information in the cloud.",
+        "output": "Data security measures build trust and protect assets."
+    },
+    {
+        "id": 612,
+        "topic": "business",
+        "question": "What is the role of corporate social responsibility (CSR) in brand loyalty?",
+        "think": "CSR initiatives resonate with customers' values, enhancing loyalty and attracting socially conscious consumers.",
+        "output": "CSR strengthens brand loyalty and attracts like-minded customers."
+    },
+    {
+        "id": 613,
+        "topic": "business",
+        "question": "How do businesses use A/B testing to optimize marketing campaigns?",
+        "think": "A/B testing compares variations to see which performs better, refining messaging and maximizing ROI.",
+        "output": "A/B testing improves campaign effectiveness through data-driven decisions."
+    },
+    {
+        "id": 614,
+        "topic": "business",
+        "question": "Why is it important to have a clear mission statement?",
+        "think": "A clear mission guides decisions, aligns teams, and communicates purpose to customers and stakeholders.",
+        "output": "A clear mission unites teams and clarifies direction."
+    },
+    {
+        "id": 615,
+        "topic": "business",
+        "question": "How do companies manage cross-functional collaboration?",
+        "think": "Foster open communication, set shared goals, and use collaborative tools to break down silos between departments.",
+        "output": "Cross-functional collaboration drives innovation and efficiency."
+    },
+    {
+        "id": 616,
+        "topic": "business",
+        "question": "What is the impact of automation on workforce productivity?",
+        "think": "Automation handles repetitive tasks, freeing employees for higher-value work and boosting overall productivity.",
+        "output": "Automation enhances efficiency and allows focus on strategic tasks."
+    },
+    {
+        "id": 617,
+        "topic": "business",
+        "question": "How do companies use customer lifetime value (CLV) in strategy?",
+        "think": "CLV helps prioritize high-value customers, guiding marketing spend and retention efforts for maximum profitability.",
+        "output": "CLV informs investment in customer relationships."
+    },
+    {
+        "id": 618,
+        "topic": "business",
+        "question": "Why is it important to have a diverse leadership team?",
+        "think": "Diverse leaders bring varied perspectives, driving better decision-making and innovation across the organization.",
+        "output": "Diversity in leadership enhances creativity and problem-solving."
+    },
+    {
+        "id": 619,
+        "topic": "business",
+        "question": "How do businesses use social media for brand engagement?",
+        "think": "Social media connects brands with customers, enabling real-time interaction, feedback, and community building.",
+        "output": "Social media fosters engagement and strengthens brand loyalty."
+    },
+    {
+        "id": 620,
+        "topic": "business",
+        "question": "What is the role of risk management in strategic planning?",
+        "think": "Risk management identifies potential threats, allowing businesses to develop strategies that mitigate risks while pursuing opportunities.",
+        "output": "Effective risk management supports informed decision-making."
+    },
+    {
+        "id": 621,
+        "topic": "business",
+        "question": "How do companies measure the success of their digital marketing efforts?",
+        "think": "Track metrics like conversion rates, engagement, and ROI to evaluate digital marketing performance.",
+        "output": "Data-driven insights guide future marketing strategies."
+    },
+    {
+        "id": 622,
+        "topic": "business",
+        "question": "Why is it important to have a customer-centric culture?",
+        "think": "A customer-centric culture prioritizes user needs, leading to better products, services, and loyalty.",
+        "output": "Customer focus drives satisfaction and long-term success."
+    },
+    {
+        "id": 623,
+        "topic": "business",
+        "question": "How do businesses use competitive analysis to inform strategy?",
+        "think": "Competitive analysis reveals strengths, weaknesses, and market gaps, guiding strategic positioning and differentiation.",
+        "output": "Understanding competitors shapes effective business strategies."
+    },
+    {
+        "id": 624,
+        "topic": "business",
+        "question": "What is the impact of employee well-being on organizational performance?",
+        "think": "Well-being boosts morale, reduces absenteeism, and enhances productivity, leading to better overall performance.",
+        "output": "Investing in well-being pays off in higher engagement and results."
+    },
+    {
+        "id": 625,
+        "topic": "business",
+        "question": "How do companies leverage big data for competitive advantage?",
+        "think": "Big data analytics uncovers insights into customer behavior, market trends, and operational efficiency.",
+        "output": "Data-driven decisions enhance competitiveness and innovation."
     }
 ]
