@@ -34,6 +34,28 @@ This repo shows how to:
 
 ---
 
+## 📖 Datasets
+
+This project uses domain-specific datasets under `datasets/*`. Each dataset should have a `dataset.jsonl` file with structured training data.
+
+There are currently 2715+ questions, 13 topics, including:
+
+-   AI
+-   Business
+-   Ethics
+-   Finance
+-   Format
+-   Geography
+-   Global trends
+-   Marketing
+-   Productivity
+-   Psychology
+-   Short questions
+-   Strategy
+-   Tech
+
+## You can add your own datasets by creating a new folder under `datasets/` and adding a `dataset.jsonl` file with your training examples.
+
 ## 🚀 Quickstart
 
 ### 1. Build your dataset
