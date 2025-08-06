@@ -2798,5 +2798,229 @@
         "question": "Who wrote 'The Iliad'?",
         "think": "'The Iliad' was written by Homer.",
         "output": "Homer"
+    },
+    {
+        "id": 401,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Belgium?",
+        "think": "Brussels is the capital city of Belgium.",
+        "output": "Brussels"
+    },
+    {
+        "id": 402,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Persistence of Memory'?",
+        "think": "'The Persistence of Memory' was painted by Salvador Dalí.",
+        "output": "Salvador Dalí"
+    },
+    {
+        "id": 403,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in Europe?",
+        "think": "Russia is the largest country in Europe by area.",
+        "output": "Russia"
+    },
+    {
+        "id": 404,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Thai green curry?",
+        "think": "Green curry paste, often made with green chilies, is the main ingredient.",
+        "output": "Green curry paste"
+    },
+    {
+        "id": 405,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'War and Peace'?",
+        "think": "'War and Peace' was written by Leo Tolstoy.",
+        "output": "Leo Tolstoy"
+    },
+    {
+        "id": 406,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Poland?",
+        "think": "Warsaw is the capital city of Poland.",
+        "output": "Warsaw"
+    },
+    {
+        "id": 407,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Starry Night'?",
+        "think": "'The Starry Night' was painted by Vincent van Gogh.",
+        "output": "Vincent van Gogh"
+    },
+    {
+        "id": 408,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in North America?",
+        "think": "Canada is the largest country in North America by area.",
+        "output": "Canada"
+    },
+    {
+        "id": 409,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Vietnamese pho?",
+        "think": "Rice noodles are the main ingredient in pho.",
+        "output": "Rice noodles"
+    },
+    {
+        "id": 410,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Divine Comedy'?",
+        "think": "'The Divine Comedy' was written by Dante Alighieri.",
+        "output": "Dante Alighieri"
+    },
+    {
+        "id": 411,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Hungary?",
+        "think": "Budapest is the capital city of Hungary.",
+        "output": "Budapest"
+    },
+    {
+        "id": 412,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Persistence of Memory'?",
+        "think": "'The Persistence of Memory' was painted by Salvador Dalí.",
+        "output": "Salvador Dalí"
+    },
+    {
+        "id": 413,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in Australia?",
+        "think": "Australia is the largest country in Australia.",
+        "output": "Australia"
+    },
+    {
+        "id": 414,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Japanese ramen?",
+        "think": "Wheat noodles are the main ingredient in ramen.",
+        "output": "Wheat noodles"
+    },
+    {
+        "id": 415,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Picture of Dorian Gray'?",
+        "think": "'The Picture of Dorian Gray' was written by Oscar Wilde.",
+        "output": "Oscar Wilde"
+    },
+    {
+        "id": 416,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Switzerland?",
+        "think": "Bern is the capital city of Switzerland.",
+        "output": "Bern"
+    },
+    {
+        "id": 417,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Kiss'?",
+        "think": "'The Kiss' was painted by Gustav Klimt.",
+        "output": "Gustav Klimt"
+    },
+    {
+        "id": 418,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in Oceania?",
+        "think": "Australia is the largest country in Oceania.",
+        "output": "Australia"
+    },
+    {
+        "id": 419,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Korean kimchi?",
+        "think": "Napa cabbage is a key ingredient in kimchi.",
+        "output": "Napa cabbage"
+    },
+    {
+        "id": 420,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Metamorphosis'?",
+        "think": "'The Metamorphosis' was written by Franz Kafka.",
+        "output": "Franz Kafka"
+    },
+    {
+        "id": 421,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Ireland?",
+        "think": "Dublin is the capital city of Ireland.",
+        "output": "Dublin"
+    },
+    {
+        "id": 422,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Persistence of Memory'?",
+        "think": "'The Persistence of Memory' was painted by Salvador Dalí.",
+        "output": "Salvador Dalí"
+    },
+    {
+        "id": 423,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in the Middle East?",
+        "think": "Saudi Arabia is the largest country in the Middle East by area.",
+        "output": "Saudi Arabia"
+    },
+    {
+        "id": 424,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Indian biryani?",
+        "think": "Basmati rice is a key ingredient in biryani.",
+        "output": "Basmati rice"
+    },
+    {
+        "id": 425,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Stranger'?",
+        "think": "'The Stranger' was written by Albert Camus.",
+        "output": "Albert Camus"
+    },
+    {
+        "id": 426,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Austria?",
+        "think": "Vienna is the capital city of Austria.",
+        "output": "Vienna"
+    },
+    {
+        "id": 427,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Kiss'?",
+        "think": "'The Kiss' was painted by Gustav Klimt.",
+        "output": "Gustav Klimt"
+    },
+    {
+        "id": 428,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in South Asia?",
+        "think": "India is the largest country in South Asia by area.",
+        "output": "India"
+    },
+    {
+        "id": 429,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Chinese dumpling?",
+        "think": "Wheat flour is the main ingredient in dumpling wrappers.",
+        "output": "Wheat flour"
+    },
+    {
+        "id": 430,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Trial'?",
+        "think": "'The Trial' was written by Franz Kafka.",
+        "output": "Franz Kafka"
+    },
+    {
+        "id": 431,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Denmark?",
+        "think": "Copenhagen is the capital city of Denmark.",
+        "output": "Copenhagen"
+    },
+    {
+        "id": 432,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Kiss'?",
+        "think": "'The Kiss' was painted by Gustav Klimt.",
+        "output": "Gustav Klimt"
     }
 ]

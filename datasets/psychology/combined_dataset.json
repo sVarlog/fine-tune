@@ -1,730 +1,982 @@
 [
-  {
-    "id": 1,
-    "topic": "psychology",
-    "question": "How can psychological theories improve mental health treatment?",
-    "think": "How can psychological theories improve mental health treatment? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can psychological theories improve mental health treatment? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 2,
-    "topic": "psychology",
-    "question": "How can cognitive behavioral therapy address anxiety disorders?",
-    "think": "How can cognitive behavioral therapy address anxiety disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can cognitive behavioral therapy address anxiety disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 3,
-    "topic": "psychology",
-    "question": "How can mindfulness practices enhance emotional well-being?",
-    "think": "How can mindfulness practices enhance emotional well-being? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can mindfulness practices enhance emotional well-being? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 4,
-    "topic": "psychology",
-    "question": "How can psychological research inform educational strategies?",
-    "think": "How can psychological research inform educational strategies? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can psychological research inform educational strategies? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 5,
-    "topic": "psychology",
-    "question": "How can social psychology explain group behavior?",
-    "think": "How can social psychology explain group behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can social psychology explain group behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 6,
-    "topic": "psychology",
-    "question": "How can developmental psychology support child growth?",
-    "think": "How can developmental psychology support child growth? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can developmental psychology support child growth? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 7,
-    "topic": "psychology",
-    "question": "How can positive psychology improve workplace morale?",
-    "think": "How can positive psychology improve workplace morale? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can positive psychology improve workplace morale? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 8,
-    "topic": "psychology",
-    "question": "How can neuropsychology help understand brain disorders?",
-    "think": "How can neuropsychology help understand brain disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can neuropsychology help understand brain disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 9,
-    "topic": "psychology",
-    "question": "How can psychological assessments identify personality traits?",
-    "think": "How can psychological assessments identify personality traits? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can psychological assessments identify personality traits? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 10,
-    "topic": "psychology",
-    "question": "How can psychology explain decision-making processes?",
-    "think": "How can psychology explain decision-making processes? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can psychology explain decision-making processes? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 11,
-    "topic": "psychology",
-    "question": "How can psychological resilience be developed?",
-    "think": "How can psychological resilience be developed? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can psychological resilience be developed? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 12,
-    "topic": "psychology",
-    "question": "How can psychology address the stigma around mental health?",
-    "think": "How can psychology address the stigma around mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can psychology address the stigma around mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 13,
-    "topic": "psychology",
-    "question": "How can psychological interventions reduce stress?",
-    "think": "How can psychological interventions reduce stress? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can psychological interventions reduce stress? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 14,
-    "topic": "psychology",
-    "question": "How can psychology improve interpersonal relationships?",
-    "think": "How can psychology improve interpersonal relationships? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can psychology improve interpersonal relationships? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 15,
-    "topic": "psychology",
-    "question": "How can psychology support individuals during life transitions?",
-    "think": "How can psychology support individuals during life transitions? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "How can psychology support individuals during life transitions? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 16,
-    "topic": "psychology",
-    "question": "Why is psychological research important for society?",
-    "think": "Why is psychological research important for society? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is psychological research important for society? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 17,
-    "topic": "psychology",
-    "question": "Why do cognitive biases affect decision-making?",
-    "think": "Why do cognitive biases affect decision-making? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why do cognitive biases affect decision-making? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 18,
-    "topic": "psychology",
-    "question": "Why is mindfulness effective for stress reduction?",
-    "think": "Why is mindfulness effective for stress reduction? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is mindfulness effective for stress reduction? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 19,
-    "topic": "psychology",
-    "question": "Why is social psychology relevant in understanding prejudice?",
-    "think": "Why is social psychology relevant in understanding prejudice? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is social psychology relevant in understanding prejudice? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 20,
-    "topic": "psychology",
-    "question": "Why is developmental psychology crucial for parenting?",
-    "think": "Why is developmental psychology crucial for parenting? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is developmental psychology crucial for parenting? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 21,
-    "topic": "psychology",
-    "question": "Why is positive psychology gaining popularity?",
-    "think": "Why is positive psychology gaining popularity? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is positive psychology gaining popularity? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 22,
-    "topic": "psychology",
-    "question": "Why is neuropsychology essential for brain health?",
-    "think": "Why is neuropsychology essential for brain health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is neuropsychology essential for brain health? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 23,
-    "topic": "psychology",
-    "question": "Why are psychological assessments valuable for self-awareness?",
-    "think": "Why are psychological assessments valuable for self-awareness? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why are psychological assessments valuable for self-awareness? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 24,
-    "topic": "psychology",
-    "question": "Why is resilience important for mental health?",
-    "think": "Why is resilience important for mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is resilience important for mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 25,
-    "topic": "psychology",
-    "question": "Why is addressing mental health stigma necessary?",
-    "think": "Why is addressing mental health stigma necessary? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is addressing mental health stigma necessary? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 26,
-    "topic": "psychology",
-    "question": "Why are psychological interventions effective for anxiety?",
-    "think": "Why are psychological interventions effective for anxiety? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why are psychological interventions effective for anxiety? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 27,
-    "topic": "psychology",
-    "question": "Why is psychology important for building relationships?",
-    "think": "Why is psychology important for building relationships? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is psychology important for building relationships? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 28,
-    "topic": "psychology",
-    "question": "Why is psychological support critical during crises?",
-    "think": "Why is psychological support critical during crises? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is psychological support critical during crises? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 29,
-    "topic": "psychology",
-    "question": "Why is psychology essential for understanding human behavior?",
-    "think": "Why is psychology essential for understanding human behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is psychology essential for understanding human behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 30,
-    "topic": "psychology",
-    "question": "Why is psychological education important for schools?",
-    "think": "Why is psychological education important for schools? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Why is psychological education important for schools? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 31,
-    "topic": "psychology",
-    "question": "Where can psychological theories be applied effectively?",
-    "think": "Where can psychological theories be applied effectively? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can psychological theories be applied effectively? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 32,
-    "topic": "psychology",
-    "question": "Where is cognitive behavioral therapy most impactful?",
-    "think": "Where is cognitive behavioral therapy most impactful? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where is cognitive behavioral therapy most impactful? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 33,
-    "topic": "psychology",
-    "question": "Where can mindfulness practices be integrated?",
-    "think": "Where can mindfulness practices be integrated? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can mindfulness practices be integrated? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 34,
-    "topic": "psychology",
-    "question": "Where can psychological research improve social policies?",
-    "think": "Where can psychological research improve social policies? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can psychological research improve social policies? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 35,
-    "topic": "psychology",
-    "question": "Where can social psychology explain cultural differences?",
-    "think": "Where can social psychology explain cultural differences? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can social psychology explain cultural differences? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 36,
-    "topic": "psychology",
-    "question": "Where can developmental psychology support education?",
-    "think": "Where can developmental psychology support education? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can developmental psychology support education? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 37,
-    "topic": "psychology",
-    "question": "Where can positive psychology enhance workplace productivity?",
-    "think": "Where can positive psychology enhance workplace productivity? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can positive psychology enhance workplace productivity? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 38,
-    "topic": "psychology",
-    "question": "Where can neuropsychology address neurological disorders?",
-    "think": "Where can neuropsychology address neurological disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can neuropsychology address neurological disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 39,
-    "topic": "psychology",
-    "question": "Where can psychological assessments be used?",
-    "think": "Where can psychological assessments be used? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can psychological assessments be used? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 40,
-    "topic": "psychology",
-    "question": "Where can psychology explain decision-making challenges?",
-    "think": "Where can psychology explain decision-making challenges? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can psychology explain decision-making challenges? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 41,
-    "topic": "psychology",
-    "question": "Where can resilience training be implemented?",
-    "think": "Where can resilience training be implemented? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can resilience training be implemented? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 42,
-    "topic": "psychology",
-    "question": "Where can psychology reduce mental health stigma?",
-    "think": "Where can psychology reduce mental health stigma? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can psychology reduce mental health stigma? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 43,
-    "topic": "psychology",
-    "question": "Where can psychological interventions be most effective?",
-    "think": "Where can psychological interventions be most effective? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can psychological interventions be most effective? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 44,
-    "topic": "psychology",
-    "question": "Where can psychology improve communication skills?",
-    "think": "Where can psychology improve communication skills? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can psychology improve communication skills? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 45,
-    "topic": "psychology",
-    "question": "Where can psychology support individuals during transitions?",
-    "think": "Where can psychology support individuals during transitions? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can psychology support individuals during transitions? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 46,
-    "topic": "psychology",
-    "question": "Where can psychology address societal issues?",
-    "think": "Where can psychology address societal issues? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Where can psychology address societal issues? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 47,
-    "topic": "psychology",
-    "question": "When should psychological theories be taught?",
-    "think": "When should psychological theories be taught? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When should psychological theories be taught? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 48,
-    "topic": "psychology",
-    "question": "When is cognitive behavioral therapy most effective?",
-    "think": "When is cognitive behavioral therapy most effective? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When is cognitive behavioral therapy most effective? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 49,
-    "topic": "psychology",
-    "question": "When should mindfulness practices be introduced?",
-    "think": "When should mindfulness practices be introduced? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When should mindfulness practices be introduced? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 50,
-    "topic": "psychology",
-    "question": "When is psychological research most needed?",
-    "think": "When is psychological research most needed? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When is psychological research most needed? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 51,
-    "topic": "psychology",
-    "question": "When is social psychology relevant for understanding behavior?",
-    "think": "When is social psychology relevant for understanding behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When is social psychology relevant for understanding behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 52,
-    "topic": "psychology",
-    "question": "When should developmental psychology be applied?",
-    "think": "When should developmental psychology be applied? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When should developmental psychology be applied? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 53,
-    "topic": "psychology",
-    "question": "When is positive psychology most impactful?",
-    "think": "When is positive psychology most impactful? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When is positive psychology most impactful? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 54,
-    "topic": "psychology",
-    "question": "When should neuropsychology be prioritized?",
-    "think": "When should neuropsychology be prioritized? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When should neuropsychology be prioritized? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 55,
-    "topic": "psychology",
-    "question": "When are psychological assessments most useful?",
-    "think": "When are psychological assessments most useful? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When are psychological assessments most useful? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 56,
-    "topic": "psychology",
-    "question": "When is resilience training necessary?",
-    "think": "When is resilience training necessary? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When is resilience training necessary? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 57,
-    "topic": "psychology",
-    "question": "When should mental health stigma be addressed?",
-    "think": "When should mental health stigma be addressed? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When should mental health stigma be addressed? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 58,
-    "topic": "psychology",
-    "question": "When are psychological interventions most effective?",
-    "think": "When are psychological interventions most effective? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When are psychological interventions most effective? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 59,
-    "topic": "psychology",
-    "question": "When should psychology be used to improve relationships?",
-    "think": "When should psychology be used to improve relationships? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When should psychology be used to improve relationships? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 60,
-    "topic": "psychology",
-    "question": "When is psychological support critical for individuals?",
-    "think": "When is psychological support critical for individuals? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When is psychological support critical for individuals? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 61,
-    "topic": "psychology",
-    "question": "When should psychology be integrated into education?",
-    "think": "When should psychology be integrated into education? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "When should psychology be integrated into education? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 62,
-    "topic": "psychology",
-    "question": "Is psychological research advancing human understanding?",
-    "think": "Is psychological research advancing human understanding? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is psychological research advancing human understanding? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 63,
-    "topic": "psychology",
-    "question": "Is cognitive behavioral therapy effective for all disorders?",
-    "think": "Is cognitive behavioral therapy effective for all disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is cognitive behavioral therapy effective for all disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 64,
-    "topic": "psychology",
-    "question": "Is mindfulness suitable for everyone?",
-    "think": "Is mindfulness suitable for everyone? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is mindfulness suitable for everyone? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 65,
-    "topic": "psychology",
-    "question": "Is social psychology explaining societal trends?",
-    "think": "Is social psychology explaining societal trends? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is social psychology explaining societal trends? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 66,
-    "topic": "psychology",
-    "question": "Is developmental psychology improving parenting techniques?",
-    "think": "Is developmental psychology improving parenting techniques? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is developmental psychology improving parenting techniques? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 67,
-    "topic": "psychology",
-    "question": "Is positive psychology beneficial for workplaces?",
-    "think": "Is positive psychology beneficial for workplaces? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is positive psychology beneficial for workplaces? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 68,
-    "topic": "psychology",
-    "question": "Is neuropsychology addressing brain health challenges?",
-    "think": "Is neuropsychology addressing brain health challenges? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is neuropsychology addressing brain health challenges? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 69,
-    "topic": "psychology",
-    "question": "Is psychological assessment reliable?",
-    "think": "Is psychological assessment reliable? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is psychological assessment reliable? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 70,
-    "topic": "psychology",
-    "question": "Is resilience training effective for mental health?",
-    "think": "Is resilience training effective for mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is resilience training effective for mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 71,
-    "topic": "psychology",
-    "question": "Is addressing mental health stigma impactful?",
-    "think": "Is addressing mental health stigma impactful? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is addressing mental health stigma impactful? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 72,
-    "topic": "psychology",
-    "question": "Is psychological intervention reducing anxiety?",
-    "think": "Is psychological intervention reducing anxiety? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is psychological intervention reducing anxiety? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 73,
-    "topic": "psychology",
-    "question": "Is psychology improving communication skills?",
-    "think": "Is psychology improving communication skills? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is psychology improving communication skills? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 74,
-    "topic": "psychology",
-    "question": "Is psychological support necessary during crises?",
-    "think": "Is psychological support necessary during crises? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is psychological support necessary during crises? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 75,
-    "topic": "psychology",
-    "question": "Is psychology essential for understanding human behavior?",
-    "think": "Is psychology essential for understanding human behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Is psychology essential for understanding human behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 76,
-    "topic": "psychology",
-    "question": "Are psychological theories applicable to real-world problems?",
-    "think": "Are psychological theories applicable to real-world problems? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are psychological theories applicable to real-world problems? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 77,
-    "topic": "psychology",
-    "question": "Are cognitive behavioral therapy techniques adaptable?",
-    "think": "Are cognitive behavioral therapy techniques adaptable? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are cognitive behavioral therapy techniques adaptable? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 78,
-    "topic": "psychology",
-    "question": "Are mindfulness practices improving emotional health?",
-    "think": "Are mindfulness practices improving emotional health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are mindfulness practices improving emotional health? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 79,
-    "topic": "psychology",
-    "question": "Are psychological research findings influencing policies?",
-    "think": "Are psychological research findings influencing policies? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are psychological research findings influencing policies? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 80,
-    "topic": "psychology",
-    "question": "Are social psychology studies explaining prejudice?",
-    "think": "Are social psychology studies explaining prejudice? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are social psychology studies explaining prejudice? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 81,
-    "topic": "psychology",
-    "question": "Are developmental psychology methods enhancing education?",
-    "think": "Are developmental psychology methods enhancing education? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are developmental psychology methods enhancing education? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 82,
-    "topic": "psychology",
-    "question": "Are positive psychology strategies boosting morale?",
-    "think": "Are positive psychology strategies boosting morale? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are positive psychology strategies boosting morale? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 83,
-    "topic": "psychology",
-    "question": "Are neuropsychology treatments addressing disorders?",
-    "think": "Are neuropsychology treatments addressing disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are neuropsychology treatments addressing disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 84,
-    "topic": "psychology",
-    "question": "Are psychological assessments identifying traits accurately?",
-    "think": "Are psychological assessments identifying traits accurately? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are psychological assessments identifying traits accurately? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 85,
-    "topic": "psychology",
-    "question": "Are resilience programs improving mental health?",
-    "think": "Are resilience programs improving mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are resilience programs improving mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 86,
-    "topic": "psychology",
-    "question": "Are mental health stigma campaigns effective?",
-    "think": "Are mental health stigma campaigns effective? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are mental health stigma campaigns effective? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 87,
-    "topic": "psychology",
-    "question": "Are psychological interventions reducing stress?",
-    "think": "Are psychological interventions reducing stress? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are psychological interventions reducing stress? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 88,
-    "topic": "psychology",
-    "question": "Are psychology techniques improving relationships?",
-    "think": "Are psychology techniques improving relationships? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are psychology techniques improving relationships? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 89,
-    "topic": "psychology",
-    "question": "Are psychological support systems helping individuals?",
-    "think": "Are psychological support systems helping individuals? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Are psychological support systems helping individuals? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 90,
-    "topic": "psychology",
-    "question": "Who conducts psychological research for societal benefit?",
-    "think": "Who conducts psychological research for societal benefit? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who conducts psychological research for societal benefit? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 91,
-    "topic": "psychology",
-    "question": "Who develops cognitive behavioral therapy techniques?",
-    "think": "Who develops cognitive behavioral therapy techniques? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who develops cognitive behavioral therapy techniques? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 92,
-    "topic": "psychology",
-    "question": "Who integrates mindfulness practices into daily life?",
-    "think": "Who integrates mindfulness practices into daily life? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who integrates mindfulness practices into daily life? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 93,
-    "topic": "psychology",
-    "question": "Who studies social psychology to understand group dynamics?",
-    "think": "Who studies social psychology to understand group dynamics? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who studies social psychology to understand group dynamics? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 94,
-    "topic": "psychology",
-    "question": "Who applies developmental psychology to child growth?",
-    "think": "Who applies developmental psychology to child growth? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who applies developmental psychology to child growth? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 95,
-    "topic": "psychology",
-    "question": "Who uses positive psychology to improve workplace culture?",
-    "think": "Who uses positive psychology to improve workplace culture? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who uses positive psychology to improve workplace culture? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 96,
-    "topic": "psychology",
-    "question": "Who practices neuropsychology to address brain disorders?",
-    "think": "Who practices neuropsychology to address brain disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who practices neuropsychology to address brain disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 97,
-    "topic": "psychology",
-    "question": "Who designs psychological assessments for self-awareness?",
-    "think": "Who designs psychological assessments for self-awareness? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who designs psychological assessments for self-awareness? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 98,
-    "topic": "psychology",
-    "question": "Who teaches resilience training for mental health?",
-    "think": "Who teaches resilience training for mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who teaches resilience training for mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 99,
-    "topic": "psychology",
-    "question": "Who advocates for reducing mental health stigma?",
-    "think": "Who advocates for reducing mental health stigma? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who advocates for reducing mental health stigma? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 100,
-    "topic": "psychology",
-    "question": "Who implements psychological interventions for anxiety?",
-    "think": "Who implements psychological interventions for anxiety? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who implements psychological interventions for anxiety? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 101,
-    "topic": "psychology",
-    "question": "Who uses psychology to improve communication skills?",
-    "think": "Who uses psychology to improve communication skills? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who uses psychology to improve communication skills? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 102,
-    "topic": "psychology",
-    "question": "Who provides psychological support during crises?",
-    "think": "Who provides psychological support during crises? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who provides psychological support during crises? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 103,
-    "topic": "psychology",
-    "question": "Who applies psychology to understand human behavior?",
-    "think": "Who applies psychology to understand human behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who applies psychology to understand human behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
-  },
-  {
-    "id": 104,
-    "topic": "psychology",
-    "question": "Who integrates psychology into educational systems?",
-    "think": "Who integrates psychology into educational systems? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
-    "output": "Who integrates psychology into educational systems? depends on context, but understanding the core concepts can lead to more informed decisions."
-  }
+    {
+        "id": 1,
+        "topic": "psychology",
+        "question": "How can psychological theories improve mental health treatment?",
+        "think": "How can psychological theories improve mental health treatment? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can psychological theories improve mental health treatment? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 2,
+        "topic": "psychology",
+        "question": "How can cognitive behavioral therapy address anxiety disorders?",
+        "think": "How can cognitive behavioral therapy address anxiety disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can cognitive behavioral therapy address anxiety disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 3,
+        "topic": "psychology",
+        "question": "How can mindfulness practices enhance emotional well-being?",
+        "think": "How can mindfulness practices enhance emotional well-being? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can mindfulness practices enhance emotional well-being? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 4,
+        "topic": "psychology",
+        "question": "How can psychological research inform educational strategies?",
+        "think": "How can psychological research inform educational strategies? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can psychological research inform educational strategies? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 5,
+        "topic": "psychology",
+        "question": "How can social psychology explain group behavior?",
+        "think": "How can social psychology explain group behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can social psychology explain group behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 6,
+        "topic": "psychology",
+        "question": "How can developmental psychology support child growth?",
+        "think": "How can developmental psychology support child growth? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can developmental psychology support child growth? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 7,
+        "topic": "psychology",
+        "question": "How can positive psychology improve workplace morale?",
+        "think": "How can positive psychology improve workplace morale? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can positive psychology improve workplace morale? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 8,
+        "topic": "psychology",
+        "question": "How can neuropsychology help understand brain disorders?",
+        "think": "How can neuropsychology help understand brain disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can neuropsychology help understand brain disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 9,
+        "topic": "psychology",
+        "question": "How can psychological assessments identify personality traits?",
+        "think": "How can psychological assessments identify personality traits? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can psychological assessments identify personality traits? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 10,
+        "topic": "psychology",
+        "question": "How can psychology explain decision-making processes?",
+        "think": "How can psychology explain decision-making processes? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can psychology explain decision-making processes? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 11,
+        "topic": "psychology",
+        "question": "How can psychological resilience be developed?",
+        "think": "How can psychological resilience be developed? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can psychological resilience be developed? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 12,
+        "topic": "psychology",
+        "question": "How can psychology address the stigma around mental health?",
+        "think": "How can psychology address the stigma around mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can psychology address the stigma around mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 13,
+        "topic": "psychology",
+        "question": "How can psychological interventions reduce stress?",
+        "think": "How can psychological interventions reduce stress? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can psychological interventions reduce stress? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 14,
+        "topic": "psychology",
+        "question": "How can psychology improve interpersonal relationships?",
+        "think": "How can psychology improve interpersonal relationships? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can psychology improve interpersonal relationships? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 15,
+        "topic": "psychology",
+        "question": "How can psychology support individuals during life transitions?",
+        "think": "How can psychology support individuals during life transitions? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "How can psychology support individuals during life transitions? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 16,
+        "topic": "psychology",
+        "question": "Why is psychological research important for society?",
+        "think": "Why is psychological research important for society? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is psychological research important for society? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 17,
+        "topic": "psychology",
+        "question": "Why do cognitive biases affect decision-making?",
+        "think": "Why do cognitive biases affect decision-making? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why do cognitive biases affect decision-making? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 18,
+        "topic": "psychology",
+        "question": "Why is mindfulness effective for stress reduction?",
+        "think": "Why is mindfulness effective for stress reduction? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is mindfulness effective for stress reduction? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 19,
+        "topic": "psychology",
+        "question": "Why is social psychology relevant in understanding prejudice?",
+        "think": "Why is social psychology relevant in understanding prejudice? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is social psychology relevant in understanding prejudice? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 20,
+        "topic": "psychology",
+        "question": "Why is developmental psychology crucial for parenting?",
+        "think": "Why is developmental psychology crucial for parenting? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is developmental psychology crucial for parenting? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 21,
+        "topic": "psychology",
+        "question": "Why is positive psychology gaining popularity?",
+        "think": "Why is positive psychology gaining popularity? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is positive psychology gaining popularity? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 22,
+        "topic": "psychology",
+        "question": "Why is neuropsychology essential for brain health?",
+        "think": "Why is neuropsychology essential for brain health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is neuropsychology essential for brain health? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 23,
+        "topic": "psychology",
+        "question": "Why are psychological assessments valuable for self-awareness?",
+        "think": "Why are psychological assessments valuable for self-awareness? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why are psychological assessments valuable for self-awareness? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 24,
+        "topic": "psychology",
+        "question": "Why is resilience important for mental health?",
+        "think": "Why is resilience important for mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is resilience important for mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 25,
+        "topic": "psychology",
+        "question": "Why is addressing mental health stigma necessary?",
+        "think": "Why is addressing mental health stigma necessary? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is addressing mental health stigma necessary? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 26,
+        "topic": "psychology",
+        "question": "Why are psychological interventions effective for anxiety?",
+        "think": "Why are psychological interventions effective for anxiety? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why are psychological interventions effective for anxiety? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 27,
+        "topic": "psychology",
+        "question": "Why is psychology important for building relationships?",
+        "think": "Why is psychology important for building relationships? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is psychology important for building relationships? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 28,
+        "topic": "psychology",
+        "question": "Why is psychological support critical during crises?",
+        "think": "Why is psychological support critical during crises? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is psychological support critical during crises? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 29,
+        "topic": "psychology",
+        "question": "Why is psychology essential for understanding human behavior?",
+        "think": "Why is psychology essential for understanding human behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is psychology essential for understanding human behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 30,
+        "topic": "psychology",
+        "question": "Why is psychological education important for schools?",
+        "think": "Why is psychological education important for schools? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Why is psychological education important for schools? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 31,
+        "topic": "psychology",
+        "question": "Where can psychological theories be applied effectively?",
+        "think": "Where can psychological theories be applied effectively? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can psychological theories be applied effectively? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 32,
+        "topic": "psychology",
+        "question": "Where is cognitive behavioral therapy most impactful?",
+        "think": "Where is cognitive behavioral therapy most impactful? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where is cognitive behavioral therapy most impactful? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 33,
+        "topic": "psychology",
+        "question": "Where can mindfulness practices be integrated?",
+        "think": "Where can mindfulness practices be integrated? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can mindfulness practices be integrated? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 34,
+        "topic": "psychology",
+        "question": "Where can psychological research improve social policies?",
+        "think": "Where can psychological research improve social policies? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can psychological research improve social policies? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 35,
+        "topic": "psychology",
+        "question": "Where can social psychology explain cultural differences?",
+        "think": "Where can social psychology explain cultural differences? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can social psychology explain cultural differences? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 36,
+        "topic": "psychology",
+        "question": "Where can developmental psychology support education?",
+        "think": "Where can developmental psychology support education? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can developmental psychology support education? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 37,
+        "topic": "psychology",
+        "question": "Where can positive psychology enhance workplace productivity?",
+        "think": "Where can positive psychology enhance workplace productivity? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can positive psychology enhance workplace productivity? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 38,
+        "topic": "psychology",
+        "question": "Where can neuropsychology address neurological disorders?",
+        "think": "Where can neuropsychology address neurological disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can neuropsychology address neurological disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 39,
+        "topic": "psychology",
+        "question": "Where can psychological assessments be used?",
+        "think": "Where can psychological assessments be used? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can psychological assessments be used? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 40,
+        "topic": "psychology",
+        "question": "Where can psychology explain decision-making challenges?",
+        "think": "Where can psychology explain decision-making challenges? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can psychology explain decision-making challenges? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 41,
+        "topic": "psychology",
+        "question": "Where can resilience training be implemented?",
+        "think": "Where can resilience training be implemented? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can resilience training be implemented? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 42,
+        "topic": "psychology",
+        "question": "Where can psychology reduce mental health stigma?",
+        "think": "Where can psychology reduce mental health stigma? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can psychology reduce mental health stigma? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 43,
+        "topic": "psychology",
+        "question": "Where can psychological interventions be most effective?",
+        "think": "Where can psychological interventions be most effective? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can psychological interventions be most effective? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 44,
+        "topic": "psychology",
+        "question": "Where can psychology improve communication skills?",
+        "think": "Where can psychology improve communication skills? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can psychology improve communication skills? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 45,
+        "topic": "psychology",
+        "question": "Where can psychology support individuals during transitions?",
+        "think": "Where can psychology support individuals during transitions? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can psychology support individuals during transitions? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 46,
+        "topic": "psychology",
+        "question": "Where can psychology address societal issues?",
+        "think": "Where can psychology address societal issues? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Where can psychology address societal issues? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 47,
+        "topic": "psychology",
+        "question": "When should psychological theories be taught?",
+        "think": "When should psychological theories be taught? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When should psychological theories be taught? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 48,
+        "topic": "psychology",
+        "question": "When is cognitive behavioral therapy most effective?",
+        "think": "When is cognitive behavioral therapy most effective? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When is cognitive behavioral therapy most effective? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 49,
+        "topic": "psychology",
+        "question": "When should mindfulness practices be introduced?",
+        "think": "When should mindfulness practices be introduced? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When should mindfulness practices be introduced? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 50,
+        "topic": "psychology",
+        "question": "When is psychological research most needed?",
+        "think": "When is psychological research most needed? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When is psychological research most needed? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 51,
+        "topic": "psychology",
+        "question": "When is social psychology relevant for understanding behavior?",
+        "think": "When is social psychology relevant for understanding behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When is social psychology relevant for understanding behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 52,
+        "topic": "psychology",
+        "question": "When should developmental psychology be applied?",
+        "think": "When should developmental psychology be applied? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When should developmental psychology be applied? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 53,
+        "topic": "psychology",
+        "question": "When is positive psychology most impactful?",
+        "think": "When is positive psychology most impactful? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When is positive psychology most impactful? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 54,
+        "topic": "psychology",
+        "question": "When should neuropsychology be prioritized?",
+        "think": "When should neuropsychology be prioritized? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When should neuropsychology be prioritized? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 55,
+        "topic": "psychology",
+        "question": "When are psychological assessments most useful?",
+        "think": "When are psychological assessments most useful? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When are psychological assessments most useful? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 56,
+        "topic": "psychology",
+        "question": "When is resilience training necessary?",
+        "think": "When is resilience training necessary? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When is resilience training necessary? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 57,
+        "topic": "psychology",
+        "question": "When should mental health stigma be addressed?",
+        "think": "When should mental health stigma be addressed? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When should mental health stigma be addressed? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 58,
+        "topic": "psychology",
+        "question": "When are psychological interventions most effective?",
+        "think": "When are psychological interventions most effective? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When are psychological interventions most effective? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 59,
+        "topic": "psychology",
+        "question": "When should psychology be used to improve relationships?",
+        "think": "When should psychology be used to improve relationships? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When should psychology be used to improve relationships? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 60,
+        "topic": "psychology",
+        "question": "When is psychological support critical for individuals?",
+        "think": "When is psychological support critical for individuals? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When is psychological support critical for individuals? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 61,
+        "topic": "psychology",
+        "question": "When should psychology be integrated into education?",
+        "think": "When should psychology be integrated into education? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "When should psychology be integrated into education? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 62,
+        "topic": "psychology",
+        "question": "Is psychological research advancing human understanding?",
+        "think": "Is psychological research advancing human understanding? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is psychological research advancing human understanding? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 63,
+        "topic": "psychology",
+        "question": "Is cognitive behavioral therapy effective for all disorders?",
+        "think": "Is cognitive behavioral therapy effective for all disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is cognitive behavioral therapy effective for all disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 64,
+        "topic": "psychology",
+        "question": "Is mindfulness suitable for everyone?",
+        "think": "Is mindfulness suitable for everyone? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is mindfulness suitable for everyone? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 65,
+        "topic": "psychology",
+        "question": "Is social psychology explaining societal trends?",
+        "think": "Is social psychology explaining societal trends? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is social psychology explaining societal trends? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 66,
+        "topic": "psychology",
+        "question": "Is developmental psychology improving parenting techniques?",
+        "think": "Is developmental psychology improving parenting techniques? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is developmental psychology improving parenting techniques? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 67,
+        "topic": "psychology",
+        "question": "Is positive psychology beneficial for workplaces?",
+        "think": "Is positive psychology beneficial for workplaces? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is positive psychology beneficial for workplaces? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 68,
+        "topic": "psychology",
+        "question": "Is neuropsychology addressing brain health challenges?",
+        "think": "Is neuropsychology addressing brain health challenges? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is neuropsychology addressing brain health challenges? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 69,
+        "topic": "psychology",
+        "question": "Is psychological assessment reliable?",
+        "think": "Is psychological assessment reliable? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is psychological assessment reliable? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 70,
+        "topic": "psychology",
+        "question": "Is resilience training effective for mental health?",
+        "think": "Is resilience training effective for mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is resilience training effective for mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 71,
+        "topic": "psychology",
+        "question": "Is addressing mental health stigma impactful?",
+        "think": "Is addressing mental health stigma impactful? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is addressing mental health stigma impactful? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 72,
+        "topic": "psychology",
+        "question": "Is psychological intervention reducing anxiety?",
+        "think": "Is psychological intervention reducing anxiety? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is psychological intervention reducing anxiety? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 73,
+        "topic": "psychology",
+        "question": "Is psychology improving communication skills?",
+        "think": "Is psychology improving communication skills? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is psychology improving communication skills? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 74,
+        "topic": "psychology",
+        "question": "Is psychological support necessary during crises?",
+        "think": "Is psychological support necessary during crises? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is psychological support necessary during crises? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 75,
+        "topic": "psychology",
+        "question": "Is psychology essential for understanding human behavior?",
+        "think": "Is psychology essential for understanding human behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Is psychology essential for understanding human behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 76,
+        "topic": "psychology",
+        "question": "Are psychological theories applicable to real-world problems?",
+        "think": "Are psychological theories applicable to real-world problems? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are psychological theories applicable to real-world problems? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 77,
+        "topic": "psychology",
+        "question": "Are cognitive behavioral therapy techniques adaptable?",
+        "think": "Are cognitive behavioral therapy techniques adaptable? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are cognitive behavioral therapy techniques adaptable? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 78,
+        "topic": "psychology",
+        "question": "Are mindfulness practices improving emotional health?",
+        "think": "Are mindfulness practices improving emotional health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are mindfulness practices improving emotional health? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 79,
+        "topic": "psychology",
+        "question": "Are psychological research findings influencing policies?",
+        "think": "Are psychological research findings influencing policies? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are psychological research findings influencing policies? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 80,
+        "topic": "psychology",
+        "question": "Are social psychology studies explaining prejudice?",
+        "think": "Are social psychology studies explaining prejudice? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are social psychology studies explaining prejudice? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 81,
+        "topic": "psychology",
+        "question": "Are developmental psychology methods enhancing education?",
+        "think": "Are developmental psychology methods enhancing education? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are developmental psychology methods enhancing education? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 82,
+        "topic": "psychology",
+        "question": "Are positive psychology strategies boosting morale?",
+        "think": "Are positive psychology strategies boosting morale? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are positive psychology strategies boosting morale? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 83,
+        "topic": "psychology",
+        "question": "Are neuropsychology treatments addressing disorders?",
+        "think": "Are neuropsychology treatments addressing disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are neuropsychology treatments addressing disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 84,
+        "topic": "psychology",
+        "question": "Are psychological assessments identifying traits accurately?",
+        "think": "Are psychological assessments identifying traits accurately? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are psychological assessments identifying traits accurately? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 85,
+        "topic": "psychology",
+        "question": "Are resilience programs improving mental health?",
+        "think": "Are resilience programs improving mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are resilience programs improving mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 86,
+        "topic": "psychology",
+        "question": "Are mental health stigma campaigns effective?",
+        "think": "Are mental health stigma campaigns effective? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are mental health stigma campaigns effective? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 87,
+        "topic": "psychology",
+        "question": "Are psychological interventions reducing stress?",
+        "think": "Are psychological interventions reducing stress? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are psychological interventions reducing stress? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 88,
+        "topic": "psychology",
+        "question": "Are psychology techniques improving relationships?",
+        "think": "Are psychology techniques improving relationships? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are psychology techniques improving relationships? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 89,
+        "topic": "psychology",
+        "question": "Are psychological support systems helping individuals?",
+        "think": "Are psychological support systems helping individuals? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Are psychological support systems helping individuals? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 90,
+        "topic": "psychology",
+        "question": "Who conducts psychological research for societal benefit?",
+        "think": "Who conducts psychological research for societal benefit? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who conducts psychological research for societal benefit? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 91,
+        "topic": "psychology",
+        "question": "Who develops cognitive behavioral therapy techniques?",
+        "think": "Who develops cognitive behavioral therapy techniques? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who develops cognitive behavioral therapy techniques? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 92,
+        "topic": "psychology",
+        "question": "Who integrates mindfulness practices into daily life?",
+        "think": "Who integrates mindfulness practices into daily life? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who integrates mindfulness practices into daily life? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 93,
+        "topic": "psychology",
+        "question": "Who studies social psychology to understand group dynamics?",
+        "think": "Who studies social psychology to understand group dynamics? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who studies social psychology to understand group dynamics? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 94,
+        "topic": "psychology",
+        "question": "Who applies developmental psychology to child growth?",
+        "think": "Who applies developmental psychology to child growth? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who applies developmental psychology to child growth? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 95,
+        "topic": "psychology",
+        "question": "Who uses positive psychology to improve workplace culture?",
+        "think": "Who uses positive psychology to improve workplace culture? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who uses positive psychology to improve workplace culture? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 96,
+        "topic": "psychology",
+        "question": "Who practices neuropsychology to address brain disorders?",
+        "think": "Who practices neuropsychology to address brain disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who practices neuropsychology to address brain disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 97,
+        "topic": "psychology",
+        "question": "Who designs psychological assessments for self-awareness?",
+        "think": "Who designs psychological assessments for self-awareness? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who designs psychological assessments for self-awareness? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 98,
+        "topic": "psychology",
+        "question": "Who teaches resilience training for mental health?",
+        "think": "Who teaches resilience training for mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who teaches resilience training for mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 99,
+        "topic": "psychology",
+        "question": "Who advocates for reducing mental health stigma?",
+        "think": "Who advocates for reducing mental health stigma? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who advocates for reducing mental health stigma? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 100,
+        "topic": "psychology",
+        "question": "Who implements psychological interventions for anxiety?",
+        "think": "Who implements psychological interventions for anxiety? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who implements psychological interventions for anxiety? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 101,
+        "topic": "psychology",
+        "question": "Who uses psychology to improve communication skills?",
+        "think": "Who uses psychology to improve communication skills? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who uses psychology to improve communication skills? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 102,
+        "topic": "psychology",
+        "question": "Who provides psychological support during crises?",
+        "think": "Who provides psychological support during crises? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who provides psychological support during crises? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 103,
+        "topic": "psychology",
+        "question": "Who applies psychology to understand human behavior?",
+        "think": "Who applies psychology to understand human behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who applies psychology to understand human behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 104,
+        "topic": "psychology",
+        "question": "Who integrates psychology into educational systems?",
+        "think": "Who integrates psychology into educational systems? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who integrates psychology into educational systems? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 105,
+        "topic": "psychology",
+        "question": "Who conducts psychological research for societal benefit?",
+        "think": "Who conducts psychological research for societal benefit? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who conducts psychological research for societal benefit? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 106,
+        "topic": "psychology",
+        "question": "Who develops cognitive behavioral therapy techniques?",
+        "think": "Who develops cognitive behavioral therapy techniques? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who develops cognitive behavioral therapy techniques? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 107,
+        "topic": "psychology",
+        "question": "Who integrates mindfulness practices into daily life?",
+        "think": "Who integrates mindfulness practices into daily life? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who integrates mindfulness practices into daily life? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 108,
+        "topic": "psychology",
+        "question": "Who studies social psychology to understand group dynamics?",
+        "think": "Who studies social psychology to understand group dynamics? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who studies social psychology to understand group dynamics? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 109,
+        "topic": "psychology",
+        "question": "Who applies developmental psychology to child growth?",
+        "think": "Who applies developmental psychology to child growth? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who applies developmental psychology to child growth? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 110,
+        "topic": "psychology",
+        "question": "Who uses positive psychology to improve workplace culture?",
+        "think": "Who uses positive psychology to improve workplace culture? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who uses positive psychology to improve workplace culture? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 111,
+        "topic": "psychology",
+        "question": "Who practices neuropsychology to address brain disorders?",
+        "think": "Who practices neuropsychology to address brain disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who practices neuropsychology to address brain disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 112,
+        "topic": "psychology",
+        "question": "Who designs psychological assessments for self-awareness?",
+        "think": "Who designs psychological assessments for self-awareness? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who designs psychological assessments for self-awareness? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 113,
+        "topic": "psychology",
+        "question": "Who teaches resilience training for mental health?",
+        "think": "Who teaches resilience training for mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who teaches resilience training for mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 114,
+        "topic": "psychology",
+        "question": "Who advocates for reducing mental health stigma?",
+        "think": "Who advocates for reducing mental health stigma? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who advocates for reducing mental health stigma? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 115,
+        "topic": "psychology",
+        "question": "Who implements psychological interventions for anxiety?",
+        "think": "Who implements psychological interventions for anxiety? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who implements psychological interventions for anxiety? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 116,
+        "topic": "psychology",
+        "question": "Who uses psychology to improve communication skills?",
+        "think": "Who uses psychology to improve communication skills? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who uses psychology to improve communication skills? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 117,
+        "topic": "psychology",
+        "question": "Who provides psychological support during crises?",
+        "think": "Who provides psychological support during crises? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who provides psychological support during crises? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 118,
+        "topic": "psychology",
+        "question": "Who applies psychology to understand human behavior?",
+        "think": "Who applies psychology to understand human behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who applies psychology to understand human behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 119,
+        "topic": "psychology",
+        "question": "Who integrates psychology into educational systems?",
+        "think": "Who integrates psychology into educational systems? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who integrates psychology into educational systems? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 120,
+        "topic": "psychology",
+        "question": "Who conducts psychological research for societal benefit?",
+        "think": "Who conducts psychological research for societal benefit? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who conducts psychological research for societal benefit? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 121,
+        "topic": "psychology",
+        "question": "Who develops cognitive behavioral therapy techniques?",
+        "think": "Who develops cognitive behavioral therapy techniques? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who develops cognitive behavioral therapy techniques? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 122,
+        "topic": "psychology",
+        "question": "Who integrates mindfulness practices into daily life?",
+        "think": "Who integrates mindfulness practices into daily life? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who integrates mindfulness practices into daily life? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 123,
+        "topic": "psychology",
+        "question": "Who studies social psychology to understand group dynamics?",
+        "think": "Who studies social psychology to understand group dynamics? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who studies social psychology to understand group dynamics? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 124,
+        "topic": "psychology",
+        "question": "Who applies developmental psychology to child growth?",
+        "think": "Who applies developmental psychology to child growth? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who applies developmental psychology to child growth? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 125,
+        "topic": "psychology",
+        "question": "Who uses positive psychology to improve workplace culture?",
+        "think": "Who uses positive psychology to improve workplace culture? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who uses positive psychology to improve workplace culture? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 126,
+        "topic": "psychology",
+        "question": "Who practices neuropsychology to address brain disorders?",
+        "think": "Who practices neuropsychology to address brain disorders? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who practices neuropsychology to address brain disorders? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 127,
+        "topic": "psychology",
+        "question": "Who designs psychological assessments for self-awareness?",
+        "think": "Who designs psychological assessments for self-awareness? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who designs psychological assessments for self-awareness? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 128,
+        "topic": "psychology",
+        "question": "Who teaches resilience training for mental health?",
+        "think": "Who teaches resilience training for mental health? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who teaches resilience training for mental health? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 129,
+        "topic": "psychology",
+        "question": "Who advocates for reducing mental health stigma?",
+        "think": "Who advocates for reducing mental health stigma? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who advocates for reducing mental health stigma? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 130,
+        "topic": "psychology",
+        "question": "Who implements psychological interventions for anxiety?",
+        "think": "Who implements psychological interventions for anxiety? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who implements psychological interventions for anxiety? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 131,
+        "topic": "psychology",
+        "question": "Who uses psychology to improve communication skills?",
+        "think": "Who uses psychology to improve communication skills? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who uses psychology to improve communication skills? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 132,
+        "topic": "psychology",
+        "question": "Who provides psychological support during crises?",
+        "think": "Who provides psychological support during crises? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who provides psychological support during crises? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 133,
+        "topic": "psychology",
+        "question": "Who applies psychology to understand human behavior?",
+        "think": "Who applies psychology to understand human behavior? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who applies psychology to understand human behavior? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 134,
+        "topic": "psychology",
+        "question": "Who integrates psychology into educational systems?",
+        "think": "Who integrates psychology into educational systems? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who integrates psychology into educational systems? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 135,
+        "topic": "psychology",
+        "question": "Who conducts psychological research for societal benefit?",
+        "think": "Who conducts psychological research for societal benefit? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who conducts psychological research for societal benefit? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 136,
+        "topic": "psychology",
+        "question": "Who develops cognitive behavioral therapy techniques?",
+        "think": "Who develops cognitive behavioral therapy techniques? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who develops cognitive behavioral therapy techniques? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 137,
+        "topic": "psychology",
+        "question": "Who integrates mindfulness practices into daily life?",
+        "think": "Who integrates mindfulness practices into daily life? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who integrates mindfulness practices into daily life? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 138,
+        "topic": "psychology",
+        "question": "Who studies social psychology to understand group dynamics?",
+        "think": "Who studies social psychology to understand group dynamics? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who studies social psychology to understand group dynamics? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 139,
+        "topic": "psychology",
+        "question": "Who applies developmental psychology to child growth?",
+        "think": "Who applies developmental psychology to child growth? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who applies developmental psychology to child growth? depends on context, but understanding the core concepts can lead to more informed decisions."
+    },
+    {
+        "id": 140,
+        "topic": "psychology",
+        "question": "Who uses positive psychology to improve workplace culture?",
+        "think": "Who uses positive psychology to improve workplace culture? requires exploring theoretical frameworks, practical evidence, and situational contexts. A step-by-step analysis helps uncover underlying mechanisms, benefits, and possible limitations. Examining case studies or data can provide insight into effectiveness and relevance.",
+        "output": "Who uses positive psychology to improve workplace culture? depends on context, but understanding the core concepts can lead to more informed decisions."
+    }
 ]
