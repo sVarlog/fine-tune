@@ -87,16 +87,26 @@ def run_generation_and_print(model, tokenizer, messages, label=None, return_resp
         MaxNewTokensCriteria(inputs["input_ids"].shape[1], 200),
         StopSequenceCriteria(stop_sequences)
     ])
+    # output = model.generate(
+    #     **inputs,
+    #     max_new_tokens=200,
+    #     temperature=0.7,
+    #     top_p=0.9,
+    #     pad_token_id=tokenizer.pad_token_id,
+    #     eos_token_id=tokenizer.eos_token_id,  # Pass a single int
+    #     do_sample=True,
+    #     stopping_criteria=stopping_criteria,
+    # )
     output = model.generate(
         **inputs,
-        max_new_tokens=200,
-        temperature=0.7,
-        top_p=0.9,
+        max_new_tokens=20,
+        do_sample=False,          # <— turn sampling OFF
+        temperature=0.0,          # <— doesn’t matter when do_sample=False
+        num_beams=1,              # <— greedy
         pad_token_id=tokenizer.pad_token_id,
-        eos_token_id=tokenizer.eos_token_id,  # Pass a single int
-        do_sample=True,
-        stopping_criteria=stopping_criteria,
+        eos_token_id=tokenizer.eos_token_id,
     )
+    print("GREEDY:", tokenizer.decode(output[0], skip_special_tokens=False))
 
     # 6) Decode & print
     decoded = tokenizer.decode(output[0], skip_special_tokens=False)
@@ -180,46 +190,83 @@ def load_and_prepare_tokenizer(output_dir: Path):
     
     return tokenizer
 
+def find_token_sequence(token_ids, seq_ids):
+    """Returns index where seq_ids starts in token_ids, or -1 if not found."""
+    for i in range(len(token_ids) - len(seq_ids) + 1):
+        if token_ids[i:i+len(seq_ids)] == seq_ids:
+            return i
+    return -1
+
 def tokenize_function(ex, tokenizer):
-    # Build assistant response with required structure
     response = f"<think>{ex['think']}</think><output>{ex['output']}</output>"
-    
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": ex["question"]},
         {"role": "assistant", "content": response}
     ]
-    
-    # Tokenize entire conversation
-    tokenized = tokenizer.apply_chat_template(
+
+    chat_text = tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=False,
+    )
+    print("CHAT TEMPLATE TEXT:\n", chat_text)
+
+    token_ids = list(tokenizer.apply_chat_template(
         messages,
         tokenize=True,
         add_generation_prompt=False,
-        return_tensors="pt",
+        return_tensors=None,
         max_length=2048,
         truncation=True
-    )
-    
-    # Create labels mask (only predict assistant response)
-    # Find where assistant response starts
-    token_ids = tokenized.tolist() if hasattr(tokenized, "tolist") else list(tokenized)
-    im_start_id = tokenizer.convert_tokens_to_ids("<|im_start|>")
-    assistant_id = tokenizer.convert_tokens_to_ids("<|assistant|>")
+    ))
 
-    try:
-        im_start_pos = token_ids.index(im_start_id)
-        assistant_pos = token_ids.index(assistant_id, im_start_pos + 1)
-        assistant_start = assistant_pos + 1
-    except ValueError:
-        assistant_start = 0  # fallback if not found
-    
-    labels = torch.full_like(tokenized, -100)  # Ignore all by default
-    labels[assistant_start:] = tokenized[assistant_start:]  # Only compute loss on assistant part
-    
+    # Find assistant block as a *sequence* of tokens
+    im_start_id_seq = tokenizer.convert_tokens_to_ids("<|im_start|>")
+    assistant_token_seq = tokenizer.convert_tokens_to_ids("<|assistant|>")
+    im_end_id_seq = tokenizer.convert_tokens_to_ids("<|im_end|>")
+    # If tokens are not single-token, encode as a sequence
+    if isinstance(im_start_id_seq, int): im_start_id_seq = [im_start_id_seq]
+    if isinstance(assistant_token_seq, int): assistant_token_seq = [assistant_token_seq]
+    if isinstance(im_end_id_seq, int): im_end_id_seq = [im_end_id_seq]
+
+    # Encode full sequence for <|im_start|><|assistant|>
+    assistant_marker = tokenizer.encode("<|im_start|><|assistant|>\n", add_special_tokens=False)
+    im_end_marker = tokenizer.encode("<|im_end|>", add_special_tokens=False)
+
+    print('Assistant marker:', assistant_marker)
+
+    # Find last occurrence of assistant_marker
+    start_idx = -1
+    for i in range(len(token_ids) - len(assistant_marker) + 1):
+        if token_ids[i:i+len(assistant_marker)] == assistant_marker:
+            start_idx = i + len(assistant_marker)
+    assert start_idx != -1, "Did not find assistant block as expected"
+
+    # Optionally skip whitespace/newline
+    while start_idx < len(token_ids) and token_ids[start_idx] in [
+        tokenizer.convert_tokens_to_ids("\n"), tokenizer.convert_tokens_to_ids(" ")
+    ]:
+        start_idx += 1
+
+    # Find end (first <|im_end|> after answer start)
+    # im_end_marker may also be multi-token!
+    end_idx = -1
+    for i in range(start_idx, len(token_ids) - len(im_end_marker) + 1):
+        if token_ids[i:i+len(im_end_marker)] == im_end_marker:
+            end_idx = i
+            break
+    if end_idx == -1: end_idx = len(token_ids)
+
+    # Mask everything except answer tokens
+    labels = [-100] * len(token_ids)
+    labels[start_idx:end_idx] = token_ids[start_idx:end_idx]
+    attention_mask = [1] * len(token_ids)
+
     return {
-        "input_ids": tokenized,
+        "input_ids": token_ids,
         "labels": labels,
-        "attention_mask": torch.ones_like(tokenized)
+        "attention_mask": attention_mask,
     }
 
 def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generation_prompt=False):
@@ -228,6 +275,7 @@ def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generatio
         tokenize=False,
         add_generation_prompt=add_generation_prompt
     )
+
     if return_tensors:
         tokenized = tokenizer(formatted_text, return_tensors="pt", add_special_tokens=False)
     else:
@@ -241,72 +289,36 @@ def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generatio
         )
     return formatted_text, tokenized
 
-def debug_dataset(dataset, tokenizer: AutoTokenizer):
-    # Debug/audit: Check and print <think>...</think><output>...</output> presence
-    missing_format = 0
-    print("\nFirst 10 assistant responses in dataset:")
-    for i in range(min(10, len(dataset))):
-        # Find the assistant's response in the full prompt (after assistant tag)
-        decoded = tokenizer.decode(dataset[i]["input_ids"], skip_special_tokens=False)
-        assistant_tag = "<|im_start|><|assistant|>\n"
-        assistant_start = decoded.find(assistant_tag)
-        assistant_resp = decoded[assistant_start + len(assistant_tag):] if assistant_start != -1 else ""
-        print(f"\n--- Sample #{i+1} ---\n{assistant_resp.strip()}\n")
-
-        # Audit for both tags
-        if "<think>" not in assistant_resp or "</think>" not in assistant_resp or "<output>" not in assistant_resp or "</output>" not in assistant_resp:
-            print(f"❗ Sample #{i+1} is missing one or more required tags!")
-            missing_format += 1
-
-    if missing_format == 0:
-        print("\n✅ All first 10 samples contain both <think> and <output> tags.")
-    else:
-        print(f"\n❌ {missing_format} of the first 10 samples are missing tags.")
-
-    # Audit ALL samples:
-    total_missing = 0
-    for idx in range(len(dataset)):
-        decoded = tokenizer.decode(dataset[idx]["input_ids"], skip_special_tokens=False)
-        assistant_tag = "<|im_start|><|assistant|>\n"
-        assistant_start = decoded.find(assistant_tag)
-        assistant_resp = decoded[assistant_start + len(assistant_tag):] if assistant_start != -1 else ""
-        if "<think>" not in assistant_resp or "</think>" not in assistant_resp or "<output>" not in assistant_resp or "</output>" not in assistant_resp:
-            total_missing += 1
-
-    if total_missing == 0:
-        print("\n🎉 All samples in dataset contain both <think> and <output> tags.")
-    else:
-        print(f"\n❌ {total_missing} out of {len(dataset)} samples are missing required tags!")
-
 def load_and_tokenize_dataset(tokenizer):
     assert os.path.exists(DATA_PATH), f"Data file not found at {DATA_PATH}"
 
     # 1) Load the flattened JSONL into a HuggingFace dataset
     dataset = load_dataset("json", data_files=DATA_PATH, split="train")
 
+    # dataset example
+    print("Sample dataset entry:", dataset[0])
+
     # 2) Tokenize & build labels
     dataset = dataset.map(
-        lambda ex: tokenize_function(ex, tokenizer),
-        remove_columns=["id", "topic", "question", "think", "output"]
-    )
+    lambda ex: tokenize_function(ex, tokenizer),
+    remove_columns=["id", "topic", "question", "think", "output"],
+    batched=False
+)
 
-    # print("\nChat template preview:\n")
-    # print("-" * 50)
-    # print(tokenizer.chat_template[:200])
-    # print("-" * 50)
-    # print("\nSample decoded inputs:\n")
-    # print("-" * 50)
-    # # print(tokenizer.decode(dataset[0]["input_ids"]))
-    # print("-" * 50)
+    print(f"Dataset loaded with {len(dataset)} examples.")
+    print("Sample tokenized example:", dataset[0])
+    
+    print('-----------------------------')
+    labels = dataset[0]['labels']
+    input_ids = dataset[0]['input_ids']
+    print(tokenizer.decode([t for t in labels if t != -100], skip_special_tokens=False))
+    print(tokenizer.decode(input_ids, skip_special_tokens=False))
 
-    # sample = dataset[0]
-    # print("Sample input IDs:", sample["input_ids"])
-    # print("Decoded sample:", tokenizer.decode(sample["input_ids"]))
-    # print("Sample labels:", sample["labels"])
-    # print("Masked decoded:", tokenizer.decode([
-    #     id if label != -100 else tokenizer.pad_token_id 
-    #     for id, label in zip(sample["input_ids"], sample["labels"])
-    # ]))
+    print('\n--- Token/Label Alignment Table ---')
+    for i, (iid, lbl) in enumerate(zip(input_ids, labels)):
+        tok = tokenizer.decode([iid])
+        print(f"{i:3d} | token: {tok:16} | label: {lbl}")
+    print('-----------------------------------')
 
     return dataset
 
@@ -421,7 +433,8 @@ class EvalCallback(TrainerCallback):
 
         messages = [
             {"role": "system",    "content": SYSTEM_PROMPT},
-            {"role": "user",      "content": "What is the capital of France?"}
+            # {"role": "user",      "content": "What is the capital of France?"}
+            {"role": "user",      "content": "2+2?"},
         ]
 
         output_str = run_generation_and_print(
@@ -491,22 +504,38 @@ def train_model(model, tokenizer, dataset, output_dir):
 
     log("Creating causal collator...")
     # 3) Configure Trainer
+    # training_args = TrainingArguments(
+    #     output_dir=output_dir,
+    #     per_device_train_batch_size=1,  # Reduce for stability
+    #     gradient_accumulation_steps=8,
+    #     # num_train_epochs=5,  # Increase epochs
+    #     max_steps=50,  # Limit steps for quick testing
+    #     learning_rate=1e-3,  # Lower learning rate
+    #     weight_decay=0.01,
+    #     warmup_ratio=0.1,
+    #     logging_steps=10,
+    #     save_strategy="epoch",
+    #     eval_steps=100,
+    #     fp16=True,
+    #     optim="paged_adamw_8bit",
+    #     report_to="none",
+    #     remove_unused_columns=False,  # Important!
+    #     group_by_length=True,
+    # )
+
+    # Overfit config:
     training_args = TrainingArguments(
         output_dir=output_dir,
-        per_device_train_batch_size=2,  # Reduce for stability
-        gradient_accumulation_steps=8,
-        num_train_epochs=5,  # Increase epochs
-        learning_rate=1e-5,  # Lower learning rate
-        weight_decay=0.01,
-        warmup_ratio=0.1,
+        per_device_train_batch_size=1,
+        gradient_accumulation_steps=1,    # ← No accumulation
+        max_steps=100,                    # ← More optimizer steps
+        learning_rate=2e-3,
+        weight_decay=0.0,                 # ← Turn off decay
+        warmup_steps=0,                   # ← No warmup
         logging_steps=10,
-        save_strategy="epoch",
-        eval_steps=100,
-        fp16=True,
-        optim="paged_adamw_8bit",
-        report_to="none",
-        remove_unused_columns=False,  # Important!
-        group_by_length=True,
+        fp16=False,                       # ← Easier debugging
+        optim="adamw_torch",              # ← Simpler optimizer
+        remove_unused_columns=False,
     )
 
     log("Creating Trainer instance...")
@@ -515,7 +544,7 @@ def train_model(model, tokenizer, dataset, output_dir):
         args=training_args,
         train_dataset=dataset,
         data_collator=pad_collator,
-        callbacks=[EvalCallback(tokenizer, output_dir, interval=20)],
+        callbacks=[EvalCallback(tokenizer, output_dir, interval=25)],
     )
 
     log("Trainer instance created successfully.")
@@ -532,8 +561,19 @@ def test_training():
     from peft import PeftModel
 
     BASE_MODEL = MODEL_NAME
-    TRAINING_NUM = 15
-    OUTPUT_DIR = f"output/{MODEL_NAME}/training-{TRAINING_NUM}"
+    training_dirs = [
+        d for d in os.listdir(OUTPUT_BASE_DIR)
+        if d.startswith("training-") and os.path.isdir(os.path.join(OUTPUT_BASE_DIR, d))
+    ]
+    if not training_dirs:
+        TRAINING_NUM = 1
+        OUTPUT_DIR = OUTPUT_BASE_DIR / f"training-{TRAINING_NUM}"
+        print(f"No training-N directories found. Creating {OUTPUT_DIR} for testing.")
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    else:
+        nums = [int(d.split('-')[1]) for d in training_dirs if d.split('-')[1].isdigit()]
+        TRAINING_NUM = max(nums)
+        OUTPUT_DIR = OUTPUT_BASE_DIR / f"training-{TRAINING_NUM}"
 
     log("Loading base model and tokenizer for testing...")
 
@@ -549,11 +589,12 @@ def test_training():
     model = PeftModel.from_pretrained(model, OUTPUT_DIR, is_trainable=False)
 
     examples = [
-        "What is the capital of France?",
-        "Who wrote 'To Kill a Mockingbird'?",
-        "Explain the theory of relativity in simple terms.",
-        "What is the boiling point of water?",
-        "How do airplanes fly?"
+        "2+2?",
+        # "What is the capital of France?",
+        # "Who wrote 'To Kill a Mockingbird'?",
+        # "Explain the theory of relativity in simple terms.",
+        # "What is the boiling point of water?",
+        # "How do airplanes fly?"
     ]
 
     for i, question in enumerate(examples, start=1):
@@ -570,35 +611,34 @@ def test_training():
         )
 
 def main():
-    # log("Preparing output directory")
-    # output_dir = prepare_output_dir()
+    log("Preparing output directory")
+    output_dir = prepare_output_dir()
 
-    # log("Loading tokenizer and adding special tags")
-    # tokenizer = load_and_prepare_tokenizer(output_dir)
+    log("Loading tokenizer and adding special tags")
+    tokenizer = load_and_prepare_tokenizer(output_dir)
 
-    # print("== DEBUG: Special tokens ==")
-    # print("additional_special_tokens:", getattr(tokenizer, "additional_special_tokens", None))
-    # print("<think> token ID:", tokenizer.convert_tokens_to_ids("<think>"))
-    # print("</think> token ID:", tokenizer.convert_tokens_to_ids("</think>"))
-    # print("<output> token ID:", tokenizer.convert_tokens_to_ids("<output>"))
-    # print("</output> token ID:", tokenizer.convert_tokens_to_ids("</output>"))
-    # print("bos_token_id:", tokenizer.bos_token_id, "eos_token_id:", tokenizer.eos_token_id)
+    log("Debugging special tokens")
+    # debugging special tokens
+    for tag in ["<think>", "</think>", "<output>", "</output>"]:
+        tok = tokenizer.tokenize(tag)
+        tid = tokenizer.convert_tokens_to_ids(tag)
+        print(f"{tag}: tokens={tok} id={tid}")
 
-    # log("Saving chat template to tokenizer")
-    # save_chat_jinja2(tokenizer, output_dir)
+    log("Saving chat template to tokenizer")
+    save_chat_jinja2(tokenizer, output_dir)
 
-    # log("Loading and tokenizing dataset")
-    # dataset = load_and_tokenize_dataset(tokenizer)
+    log("Loading and tokenizing dataset")
+    dataset = load_and_tokenize_dataset(tokenizer)
 
-    # log("Loading model and applying LoRA")
-    # model = load_model_and_prepare_for_qora(tokenizer, output_dir)
+    log("Loading model and applying LoRA")
+    model = load_model_and_prepare_for_qora(tokenizer, output_dir)
 
-    # print("=== Final Chat Template ===")
-    # print(tokenizer.chat_template)
-    # print("===========================")
+    print("=== Final Chat Template ===")
+    print(tokenizer.chat_template)
+    print("===========================")
 
-    # log("Training model")
-    # train_model(model, tokenizer, dataset, output_dir)
+    log("Training model")
+    train_model(model, tokenizer, dataset, output_dir)
 
     log('Testing training with a small dataset')
     test_training()
