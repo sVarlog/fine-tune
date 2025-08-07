@@ -20,7 +20,7 @@ SYSTEM_PROMPT = "You are a structured assistant. Respond in exactly two parts us
 DATA_PATH = "datasets/data.jsonl"
 OUTPUT_BASE_DIR = Path(f"output/{MODEL_NAME}")
 LORA_CONFIG_PATH = "config/lora_config.json"
-
+ASSISTANT_OPEN = "<|im_start|><|assistant|>\n"
 
 class SFTTrainer(Trainer):
     def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
@@ -72,7 +72,12 @@ def run_generation_and_print(model, tokenizer, messages, label=None, return_resp
     prompt_text, tokenized = format_and_tokenize(
         messages, tokenizer, return_tensors=True, add_generation_prompt=True
     )
-    if not prompt_text.strip().endswith("<|im_start|><|assistant|>"):
+
+    # Debug: show raw repr so you can see escaped characters
+    print("PROMPT_TEXT repr:", repr(prompt_text))
+    print("PROMPT_TEXT (visible):\n", prompt_text)
+
+    if not prompt_text.strip().endswith(ASSISTANT_OPEN):
         print("⚠️ Generation prompt is not correctly appended.")
 
     # 3) Move inputs to device & compute prompt_length
@@ -80,33 +85,38 @@ def run_generation_and_print(model, tokenizer, messages, label=None, return_resp
 
 
     # 4) Assemble stoppers
-    stop_sequences = [tokenizer.encode("</output>", add_special_tokens=False)]
+    # stop_sequences = [tokenizer.encode("</output>", add_special_tokens=False)]
+
+    ids = tokenized["input_ids"][0].tolist()
+    # find both sequences
+    def find_seq(ids, seq):
+        for i in range(len(ids)-len(seq)+1):
+            if ids[i:i+len(seq)] == seq:
+                return i
+        return -1
+
+    s_nl = tokenizer.encode("<|im_start|><|assistant|>\n", add_special_tokens=False)
+    s_no = tokenizer.encode("<|im_start|><|assistant|>", add_special_tokens=False)
+    pos_with_nl = find_seq(ids, s_nl)
+    pos_no_nl = find_seq(ids, s_no)
+    print("pos_with_nl:", pos_with_nl, "pos_no_nl:", pos_no_nl)
+    print("last 50 tokens near end:", ids[-50:], tokenizer.convert_ids_to_tokens(ids[-50:]))
 
     # 5) Generate with explicit overrides
-    stopping_criteria = StoppingCriteriaList([
-        MaxNewTokensCriteria(inputs["input_ids"].shape[1], 200),
-        StopSequenceCriteria(stop_sequences)
-    ])
-    # output = model.generate(
-    #     **inputs,
-    #     max_new_tokens=200,
-    #     temperature=0.7,
-    #     top_p=0.9,
-    #     pad_token_id=tokenizer.pad_token_id,
-    #     eos_token_id=tokenizer.eos_token_id,  # Pass a single int
-    #     do_sample=True,
-    #     stopping_criteria=stopping_criteria,
-    # )
+    # stopping_criteria = StoppingCriteriaList([
+    #     MaxNewTokensCriteria(inputs["input_ids"].shape[1], 200),
+    #     StopSequenceCriteria(stop_sequences)
+    # ])
     output = model.generate(
         **inputs,
-        max_new_tokens=20,
-        do_sample=False,          # <— turn sampling OFF
-        temperature=0.0,          # <— doesn’t matter when do_sample=False
-        num_beams=1,              # <— greedy
+        do_sample=False,               # greedy
+        max_new_tokens=64,
+        stopping_criteria=StoppingCriteriaList([
+            StopSequenceCriteria(tokenizer.encode("</output>", add_special_tokens=False))
+        ]),
         pad_token_id=tokenizer.pad_token_id,
         eos_token_id=tokenizer.eos_token_id,
     )
-    print("GREEDY:", tokenizer.decode(output[0], skip_special_tokens=False))
 
     # 6) Decode & print
     decoded = tokenizer.decode(output[0], skip_special_tokens=False)
@@ -198,69 +208,70 @@ def find_token_sequence(token_ids, seq_ids):
     return -1
 
 def tokenize_function(ex, tokenizer):
+    """
+    Build the chat prompt, then create
+      • input_ids
+      • labels   – mask is 0 everywhere **except** the assistant span
+      • attention_mask
+    The assistant span now includes the closing <|im_end|> tag so that
+    *any* token emitted after </output> is penalised.
+    """
+    # ------------------------------------------------------------------
+    # 1│  Assemble the message list
+    # ------------------------------------------------------------------
     response = f"<think>{ex['think']}</think><output>{ex['output']}</output>"
     messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": ex["question"]},
-        {"role": "assistant", "content": response}
+        {"role": "system",    "content": SYSTEM_PROMPT},
+        {"role": "user",      "content": ex["question"]},
+        {"role": "assistant", "content": response},
     ]
 
-    chat_text = tokenizer.apply_chat_template(
+    # ------------------------------------------------------------------
+    # 2│  Tokenise with the chat template
+    # ------------------------------------------------------------------
+    token_ids = tokenizer.apply_chat_template(
         messages,
-        tokenize=False,
-        add_generation_prompt=False,
+        tokenize   = True,
+        add_generation_prompt = False,
+        return_tensors = None,
+        max_length = 2048,
+        truncation = True,
     )
-    print("CHAT TEMPLATE TEXT:\n", chat_text)
+    # NOTE: `apply_chat_template(..., tokenize=True)` already returns a list[int]
 
-    token_ids = list(tokenizer.apply_chat_template(
-        messages,
-        tokenize=True,
-        add_generation_prompt=False,
-        return_tensors=None,
-        max_length=2048,
-        truncation=True
-    ))
+    # ------------------------------------------------------------------
+    # 3│  Locate the assistant block
+    # ------------------------------------------------------------------
+    assistant_marker = tokenizer.encode(ASSISTANT_OPEN, add_special_tokens=False)
 
-    # Find assistant block as a *sequence* of tokens
-    im_start_id_seq = tokenizer.convert_tokens_to_ids("<|im_start|>")
-    assistant_token_seq = tokenizer.convert_tokens_to_ids("<|assistant|>")
-    im_end_id_seq = tokenizer.convert_tokens_to_ids("<|im_end|>")
-    # If tokens are not single-token, encode as a sequence
-    if isinstance(im_start_id_seq, int): im_start_id_seq = [im_start_id_seq]
-    if isinstance(assistant_token_seq, int): assistant_token_seq = [assistant_token_seq]
-    if isinstance(im_end_id_seq, int): im_end_id_seq = [im_end_id_seq]
-
-    # Encode full sequence for <|im_start|><|assistant|>
-    assistant_marker = tokenizer.encode("<|im_start|><|assistant|>\n", add_special_tokens=False)
     im_end_marker = tokenizer.encode("<|im_end|>", add_special_tokens=False)
 
-    print('Assistant marker:', assistant_marker)
+    # -- 3 a │ start of assistant answer (after the marker) -------------
+    start_idx = find_token_sequence(token_ids, assistant_marker)
+    assert start_idx != -1, "❌ Could not find assistant marker in tokens"
 
-    # Find last occurrence of assistant_marker
-    start_idx = -1
-    for i in range(len(token_ids) - len(assistant_marker) + 1):
-        if token_ids[i:i+len(assistant_marker)] == assistant_marker:
-            start_idx = i + len(assistant_marker)
-    assert start_idx != -1, "Did not find assistant block as expected"
-
-    # Optionally skip whitespace/newline
-    while start_idx < len(token_ids) and token_ids[start_idx] in [
-        tokenizer.convert_tokens_to_ids("\n"), tokenizer.convert_tokens_to_ids(" ")
-    ]:
+    # Skip possible whitespace/new‐line right after the marker
+    newlines = {tokenizer.convert_tokens_to_ids("\n"), tokenizer.convert_tokens_to_ids(" ")}
+    while start_idx < len(token_ids) and token_ids[start_idx] in newlines:
         start_idx += 1
 
-    # Find end (first <|im_end|> after answer start)
-    # im_end_marker may also be multi-token!
+    # -- 3 b │ end of assistant answer (closing <|im_end|>) -------------
     end_idx = -1
     for i in range(start_idx, len(token_ids) - len(im_end_marker) + 1):
-        if token_ids[i:i+len(im_end_marker)] == im_end_marker:
+        if token_ids[i : i + len(im_end_marker)] == im_end_marker:
             end_idx = i
             break
-    if end_idx == -1: end_idx = len(token_ids)
+    if end_idx == -1:
+        end_idx = len(token_ids)            # fallback – shouldn’t happen
 
-    # Mask everything except answer tokens
+    end_idx += len(im_end_marker)           # <<< NEW  include <|im_end|>
+
+    # ------------------------------------------------------------------
+    # 4│  Build label + attention_mask tensors
+    # ------------------------------------------------------------------
     labels = [-100] * len(token_ids)
-    labels[start_idx:end_idx] = token_ids[start_idx:end_idx]
+    labels[start_idx:end_idx] = token_ids[start_idx:end_idx]   # supervise ENTIRE span
+
     attention_mask = [1] * len(token_ids)
 
     return {
@@ -269,24 +280,41 @@ def tokenize_function(ex, tokenizer):
         "attention_mask": attention_mask,
     }
 
-def format_and_tokenize(messages, tokenizer, return_tensors=False, add_generation_prompt=False):
+def format_and_tokenize(messages, tokenizer, return_tensors=False,
+                        add_generation_prompt=False):
     formatted_text = tokenizer.apply_chat_template(
         messages,
         tokenize=False,
         add_generation_prompt=add_generation_prompt
     )
 
+    # If we want to force the model to begin with <think>, append it here,
+    # but only AFTER verifying formatted_text already ends with ASSISTANT_OPEN.
+    if add_generation_prompt:
+        # make sure the template produced the assistant-open tag
+        if not formatted_text.endswith(ASSISTANT_OPEN):
+            print("⚠️ formatted_text does NOT end with ASSISTANT_OPEN")
+            print("formatted_text tail repr:", repr(formatted_text[-200:]))
+            print("ASSISTANT_OPEN repr:    ", repr(ASSISTANT_OPEN))
+        else:
+            # optional: force the model to start with <think> to stabilize output
+            # (uncomment the next line if you want to force it)
+            # formatted_text = formatted_text + "<think>"
+            pass
+
     if return_tensors:
-        tokenized = tokenizer(formatted_text, return_tensors="pt", add_special_tokens=False)
+        tokenized = tokenizer(formatted_text, return_tensors="pt",
+                              add_special_tokens=False)
     else:
         tokenized = tokenizer(
             formatted_text,
-            padding="longest",         
+            padding="longest",
             truncation=True,
-            max_length=2048,              # pick appropriate max length
-            return_tensors=None,          # ✅ Don't return tensor now
+            max_length=2048,
+            return_tensors=None,
             add_special_tokens=False,
         )
+
     return formatted_text, tokenized
 
 def load_and_tokenize_dataset(tokenizer):
@@ -311,14 +339,14 @@ def load_and_tokenize_dataset(tokenizer):
     print('-----------------------------')
     labels = dataset[0]['labels']
     input_ids = dataset[0]['input_ids']
-    print(tokenizer.decode([t for t in labels if t != -100], skip_special_tokens=False))
-    print(tokenizer.decode(input_ids, skip_special_tokens=False))
+    # print(tokenizer.decode([t for t in labels if t != -100], skip_special_tokens=False))
+    # print(tokenizer.decode(input_ids, skip_special_tokens=False))
 
-    print('\n--- Token/Label Alignment Table ---')
-    for i, (iid, lbl) in enumerate(zip(input_ids, labels)):
-        tok = tokenizer.decode([iid])
-        print(f"{i:3d} | token: {tok:16} | label: {lbl}")
-    print('-----------------------------------')
+    # print('\n--- Token/Label Alignment Table ---')
+    # for i, (iid, lbl) in enumerate(zip(input_ids, labels)):
+    #     tok = tokenizer.decode([iid])
+    #     print(f"{i:3d} | token: {tok:16} | label: {lbl}")
+    # print('-----------------------------------')
 
     return dataset
 
@@ -409,13 +437,11 @@ def save_chat_jinja2(tokenizer, output_dir: Path):
 
 
 def is_structured_output(text: str) -> bool:
-    # Extract only the assistant block (between <|im_start|>assistant and <|im_end|>)
-    match = re.search(r"<\|im_start\|>assistant\s*(.*?)<\|im_end\|>", text, re.DOTALL)
-    if not match:
+    m = re.search(r"<\|im_start\|><\|assistant\|>\s*(.*?)<\|im_end\|>", text, re.DOTALL)
+    if not m:
         return False
-
-    assistant_text = match.group(1)
-    return all(tag in assistant_text for tag in ["<think>", "</think>", "<output>", "</output>"])
+    assistant_text = m.group(1)
+    return all(tag in assistant_text for tag in ("<think>", "</think>", "<output>", "</output>"))
 
 class EvalCallback(TrainerCallback):
     def __init__(self, tokenizer, output_dir, interval):
@@ -504,38 +530,23 @@ def train_model(model, tokenizer, dataset, output_dir):
 
     log("Creating causal collator...")
     # 3) Configure Trainer
-    # training_args = TrainingArguments(
-    #     output_dir=output_dir,
-    #     per_device_train_batch_size=1,  # Reduce for stability
-    #     gradient_accumulation_steps=8,
-    #     # num_train_epochs=5,  # Increase epochs
-    #     max_steps=50,  # Limit steps for quick testing
-    #     learning_rate=1e-3,  # Lower learning rate
-    #     weight_decay=0.01,
-    #     warmup_ratio=0.1,
-    #     logging_steps=10,
-    #     save_strategy="epoch",
-    #     eval_steps=100,
-    #     fp16=True,
-    #     optim="paged_adamw_8bit",
-    #     report_to="none",
-    #     remove_unused_columns=False,  # Important!
-    #     group_by_length=True,
-    # )
-
-    # Overfit config:
     training_args = TrainingArguments(
         output_dir=output_dir,
-        per_device_train_batch_size=1,
-        gradient_accumulation_steps=1,    # ← No accumulation
-        max_steps=100,                    # ← More optimizer steps
-        learning_rate=2e-3,
-        weight_decay=0.0,                 # ← Turn off decay
-        warmup_steps=0,                   # ← No warmup
+        per_device_train_batch_size=2,
+        gradient_accumulation_steps=8,  # reduce from 32
+        num_train_epochs=3,
+        learning_rate=2e-5,             # much lower than 5e-4
+        weight_decay=0.01,
+        warmup_ratio=0.03,
         logging_steps=10,
-        fp16=False,                       # ← Easier debugging
-        optim="adamw_torch",              # ← Simpler optimizer
+        save_strategy="epoch",
+        eval_steps=100,
+        fp16=True,
+        optim="paged_adamw_8bit",
+        report_to="none",
         remove_unused_columns=False,
+        group_by_length=True,
+        lr_scheduler_type="cosine",
     )
 
     log("Creating Trainer instance...")
@@ -544,7 +555,7 @@ def train_model(model, tokenizer, dataset, output_dir):
         args=training_args,
         train_dataset=dataset,
         data_collator=pad_collator,
-        callbacks=[EvalCallback(tokenizer, output_dir, interval=25)],
+        callbacks=[EvalCallback(tokenizer, output_dir, interval=10)],
     )
 
     log("Trainer instance created successfully.")
@@ -617,18 +628,19 @@ def main():
     log("Loading tokenizer and adding special tags")
     tokenizer = load_and_prepare_tokenizer(output_dir)
 
-    log("Debugging special tokens")
-    # debugging special tokens
-    for tag in ["<think>", "</think>", "<output>", "</output>"]:
-        tok = tokenizer.tokenize(tag)
-        tid = tokenizer.convert_tokens_to_ids(tag)
-        print(f"{tag}: tokens={tok} id={tid}")
+    s_nl = tokenizer.encode("<|im_start|><|assistant|>\n", add_special_tokens=False)
+    s_no = tokenizer.encode("<|im_start|><|assistant|>", add_special_tokens=False)
+    print("assistant open with-newline ids:", s_nl, tokenizer.convert_ids_to_tokens(s_nl))
+    print("assistant open no-newline ids:  ", s_no, tokenizer.convert_ids_to_tokens(s_no))
 
     log("Saving chat template to tokenizer")
     save_chat_jinja2(tokenizer, output_dir)
 
     log("Loading and tokenizing dataset")
     dataset = load_and_tokenize_dataset(tokenizer)
+
+    stop_ids = tokenizer.encode("</output>", add_special_tokens=False)
+    print("stop ids:", stop_ids, tokenizer.convert_ids_to_tokens(stop_ids))
 
     log("Loading model and applying LoRA")
     model = load_model_and_prepare_for_qora(tokenizer, output_dir)
