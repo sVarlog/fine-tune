@@ -3022,5 +3022,131 @@
         "question": "Who painted 'The Kiss'?",
         "think": "'The Kiss' was painted by Gustav Klimt.",
         "output": "Gustav Klimt"
+    },
+    {
+        "id": 433,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in Central America?",
+        "think": "Nicaragua is the largest country in Central America by area.",
+        "output": "Nicaragua"
+    },
+    {
+        "id": 434,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Russian borscht?",
+        "think": "Beetroot is the main ingredient in borscht.",
+        "output": "Beetroot"
+    },
+    {
+        "id": 435,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Old Man and the Sea'?",
+        "think": "'The Old Man and the Sea' was written by Ernest Hemingway.",
+        "output": "Ernest Hemingway"
+    },
+    {
+        "id": 436,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Portugal?",
+        "think": "Lisbon is the capital city of Portugal.",
+        "output": "Lisbon"
+    },
+    {
+        "id": 437,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Persistence of Memory'?",
+        "think": "'The Persistence of Memory' was painted by Salvador Dalí.",
+        "output": "Salvador Dalí"
+    },
+    {
+        "id": 438,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in the Caribbean?",
+        "think": "Cuba is the largest country in the Caribbean by area.",
+        "output": "Cuba"
+    },
+    {
+        "id": 439,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Lebanese tabbouleh?",
+        "think": "Parsley is a key ingredient in tabbouleh.",
+        "output": "Parsley"
+    },
+    {
+        "id": 440,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Picture of Dorian Gray'?",
+        "think": "'The Picture of Dorian Gray' was written by Oscar Wilde.",
+        "output": "Oscar Wilde"
+    },
+    {
+        "id": 441,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Turkey?",
+        "think": "Ankara is the capital city of Turkey.",
+        "output": "Ankara"
+    },
+    {
+        "id": 442,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Kiss'?",
+        "think": "'The Kiss' was painted by Gustav Klimt.",
+        "output": "Gustav Klimt"
+    },
+    {
+        "id": 443,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in Southeast Asia?",
+        "think": "Indonesia is the largest country in Southeast Asia by area.",
+        "output": "Indonesia"
+    },
+    {
+        "id": 444,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Filipino adobo?",
+        "think": "Chicken or pork is often the main ingredient in adobo.",
+        "output": "Chicken or pork"
+    },
+    {
+        "id": 445,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Catcher in the Rye'?",
+        "think": "'The Catcher in the Rye' was written by J.D. Salinger.",
+        "output": "J.D. Salinger"
+    },
+    {
+        "id": 446,
+        "topic": "shortQuestions",
+        "question": "What is the capital city of Malaysia?",
+        "think": "Kuala Lumpur is the capital city of Malaysia.",
+        "output": "Kuala Lumpur"
+    },
+    {
+        "id": 447,
+        "topic": "shortQuestions",
+        "question": "Who painted 'The Persistence of Memory'?",
+        "think": "'The Persistence of Memory' was painted by Salvador Dalí.",
+        "output": "Salvador Dalí"
+    },
+    {
+        "id": 448,
+        "topic": "shortQuestions",
+        "question": "What is the largest country in the Arctic region?",
+        "think": "Greenland is the largest country in the Arctic region by area.",
+        "output": "Greenland"
+    },
+    {
+        "id": 449,
+        "topic": "shortQuestions",
+        "question": "What is the main ingredient in a traditional Ethiopian injera?",
+        "think": "Teff flour is the main ingredient in injera.",
+        "output": "Teff flour"
+    },
+    {
+        "id": 450,
+        "topic": "shortQuestions",
+        "question": "Who wrote 'The Metamorphosis'?",
+        "think": "'The Metamorphosis' was written by Franz Kafka.",
+        "output": "Franz Kafka"
     }
 ]
