@@ -25,7 +25,10 @@ def create_structure_from_json():
                 content_types = [content_types]
 
             for ctype in content_types:
-                file_path = os.path.join(subcat_path, f"{ctype}.json")
+                # Naming format: category.subcategory.contenttype.json
+                filename = f"{category}.{subcat}.{ctype}.json"
+                file_path = os.path.join(subcat_path, filename)
+
                 if not os.path.exists(file_path):
                     with open(file_path, "w", encoding="utf-8") as f:
                         json.dump([], f, ensure_ascii=False, indent=2)
