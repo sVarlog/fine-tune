@@ -4373,5 +4373,40 @@
         "question": "How do companies leverage big data for competitive advantage?",
         "think": "Big data analytics uncovers insights into customer behavior, market trends, and operational efficiency.",
         "output": "Data-driven decisions enhance competitiveness and innovation."
+    },
+    {
+        "id": 626,
+        "topic": "business",
+        "question": "How can companies use AI to improve customer service?",
+        "think": "AI can analyze customer interactions to identify pain points and streamline support processes. I'll explore how AI chatbots and analytics enhance service quality.",
+        "output": "AI improves customer service by providing personalized support, automating responses, and analyzing feedback to drive continuous improvement."
+    },
+    {
+        "id": 627,
+        "topic": "business",
+        "question": "What are the benefits of adopting a remote work policy?",
+        "think": "Remote work can increase flexibility and job satisfaction. I'll assess its impact on productivity, talent acquisition, and employee well-being.",
+        "output": "Adopting remote work policies can lead to higher employee satisfaction, access to a broader talent pool, and potential cost savings on office space."
+    },
+    {
+        "id": 628,
+        "topic": "business",
+        "question": "How do companies use customer feedback to drive product innovation?",
+        "think": "Customer feedback is crucial for identifying pain points and opportunities. I'll explore how businesses can effectively gather and implement feedback.",
+        "output": "Leveraging customer feedback leads to products that better meet user needs, driving innovation and loyalty."
+    },
+    {
+        "id": 629,
+        "topic": "business",
+        "question": "What strategies can businesses use to enhance employee engagement?",
+        "think": "Employee engagement is key to productivity. I'll discuss strategies like recognition programs, career development, and work-life balance initiatives.",
+        "output": "Enhancing employee engagement through recognition, development opportunities, and a positive work environment boosts morale and performance."
+    },
+    {
+        "id": 630,
+        "topic": "business",
+        "question": "How can companies effectively manage change during digital transformation?",
+        "think": "Change management is critical for successful digital transformation. I'll explore best practices for guiding teams through transitions.",
+        "output": "Effective change management ensures smooth transitions, minimizes resistance, and maximizes the benefits of digital initiatives."
     }
 ]

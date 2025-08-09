@@ -6,6 +6,7 @@ import os
 # MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
 MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B" 
 # MODEL_NAME = "deepseek-ai/DeepSeek-LLM-7B-Base" 
+# MODEL_NAME = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 # Base model path
 BASE_MODEL_PATH = MODEL_NAME
 

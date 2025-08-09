@@ -1,0 +1,1352 @@
+[
+    {
+        "id": 1,
+        "topic": "ai.business_applications",
+        "question": "What are the highest-ROI AI use cases for an SMB ecommerce store in its first year of AI adoption?",
+        "think": null,
+        "output": "Start with narrow, data-rich workflows that directly touch revenue or cost:\n1) Search & merchandising: use learning-to-rank or vector search to improve product discovery. KPI: search-to-cart rate, AOV, revenue per search.\n2) Email/SMS lifecycle automation: predict churn/next-best-action for welcome, abandon, win‑back. KPI: incremental revenue lift via holdout tests.\n3) Dynamic recommendations: “frequently bought together” and session-based “you might like”. KPI: attach rate, recommendation CTR, AOV.\n4) Fraud screening at checkout: supervised model + rules for edge cases. KPI: chargeback rate, false positive rate.\n5) Support deflection: retrieval‑augmented chatbot for policies, order tracking, returns. KPI: deflection %, CSAT, first response time.\n\nGuardrails: run A/B tests with clear success thresholds; build simple pipelines (ETL → feature store → model → inference) and avoid bespoke one-off models at the start.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 2,
+        "topic": "ai.business_applications",
+        "question": "How would you prove that an AI support assistant is delivering real value and not just moving tickets around?",
+        "think": null,
+        "output": "Design a robust evaluation with four elements:\n- Randomized controlled trial: route a statistically significant slice of tickets to the assistant and hold back a matched control.\n- Business outcomes: measure resolution rate, time-to-first-response, handle time, re-open rate, CSAT; compute cost per resolved ticket.\n- Quality audit: weekly human audit on a stratified sample for accuracy, policy compliance, tone; track severity-weighted error rate.\n- Persistence check: verify that gains persist after novelty by running for ≥6 weeks.\n\nSuccess criteria example: +20% resolution rate at ≤90% of baseline cost/resolution, no increase in severity‑2+ errors, and neutral-to-positive CSAT. If any guardrail fails, automatically roll back the feature flag and analyze error clusters.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 3,
+        "topic": "ai.business_applications",
+        "question": "What data do you need to build a next‑best‑action recommender for a B2B SaaS trial funnel?",
+        "think": null,
+        "output": "Minimum viable signals:\n- User profile & firmographics: role, company size, industry, plan, region.\n- Product telemetry: features used, depth (events/session), recency/frequency, time to aha‑moment.\n- Marketing source & content: campaign, asset touched, UTM.\n- Sales interactions: emails, calls, meeting outcomes (if PLG+sales assist).\n- Outcomes labels: conversion, expansion, churn; timestamps.\n\nPipeline sketch: (1) clean & join via user_id/account_id; (2) derive sessionized features and time-to-event; (3) train a ranking model (e.g., XGBoost/LTR) that scores actions (invite teammate, import data, integrate SSO) per user; (4) expose via API to in‑app coach and CRM playbooks. KPIs: conversion lift vs random/baseline, time-to-pay, and negative signals (support load).",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 4,
+        "topic": "ai.business_applications",
+        "question": "How do you balance precision vs recall in an AI fraud model without alienating good customers?",
+        "think": null,
+        "output": "Use a two-stage strategy:\n1) Primary model tuned for high recall (catch more fraud) but route uncertain cases to step 2.\n2) Secondary review: lightweight rules + human review on a small fraction (top 5–10% risk) to protect precision.\n\nExperience guardrails: real-time soft blocks (step‑up auth, alternative payment) instead of hard declines; fast appeal path; allowlist post‑verification. Optimize expected value: weigh false positives by estimated lifetime value + friction cost, not just count. Track by segment (geo, device, payment method) to avoid localized harm. Periodically recalibrate thresholds with cost-sensitive metrics (Fβ, AUCPR) and business loss curves.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 5,
+        "topic": "ai.business_applications",
+        "question": "What’s a pragmatic roadmap for introducing AI into a legacy back‑office process with many manual steps?",
+        "think": null,
+        "output": "Three phases:\nPhase 1 — Assist (weeks): add extraction/auto-fill (OCR+LLM) and validation checks to reduce keystrokes by 30–40%. Keep humans finalizing.\nPhase 2 — Orchestrate (1–2 quarters): formalize the workflow as a state machine; models propose actions, rules enforce policy, humans handle exceptions.\nPhase 3 — Automate (2–4 quarters): straight‑through processing for clean cases; human-in-the-loop only for exceptions > defined risk score.\n\nChange management: measure time-on-task and error rate per step; invest in playbooks and shadowing; tie success to SLAs (turnaround, backlog) and employee NPS. Avoid big‑bang rewrites; start with the 2–3 heaviest steps first.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 6,
+        "topic": "ai.business_applications",
+        "question": "How should a mid‑market retailer evaluate vendors for AI personalization?",
+        "think": null,
+        "output": "Score vendors across five axes:\n(1) Uplift proof: credible A/Bs on comparable catalogs; willingness to run a 4–6 week bake‑off with holdouts.\n(2) Data gravity: connectors for your CDP, POS, web/app; edge cases like store returns; data ownership and export guarantees.\n(3) Controls: business rules (don’t recommend OOS), cold‑start behavior, diversity controls, seasonal constraints.\n(4) Operations: latency <150ms P95, SLA, traffic throttling, fallbacks.\n(5) Governance: explainability at segment level, bias checks, incident response, privacy posture.\n\nTotal cost: model + integration + experimentation; demand transparent pricing per 1k recommendations and service tiers.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 7,
+        "topic": "ai.business_applications",
+        "question": "What is a realistic KPI tree for an AI-powered merchandising system?",
+        "think": null,
+        "output": "Top goal: incremental gross profit.\nDrivers →\n- Discovery efficiency: search CTR, result relevance@k, zero‑result rate\n- Conversion levers: add‑to‑cart rate, rec CTR, attach rate\n- Margin mix: margin‑weighted recommendation rate, discount dependence\n- Stock health: days of supply, OOS rate, stale inventory turnover\n- Customer experience: return rate, CSAT, page latency\n\nEvaluation methodology: always-on holdout at 5–10% traffic; report weekly deltas with confidence intervals; drill by device, geo, and new/returning cohorts. Stop shipping vanity metrics (clicks) disconnected from profit.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 8,
+        "topic": "ai.business_applications",
+        "question": "How would you design an RFP to replace a rules-based lead scoring system with ML?",
+        "think": null,
+        "output": "Key sections:\n- Problem & data: current rules, available features, leakage risks, label definition (SQL of ‘qualified’), expected volumes.\n- Outcome: uplift vs rules; target lift in qualified pipeline per rep; fairness constraints (no protected-attribute proxies).\n- Technical: model classes allowed, feature store, retraining cadence, inference latency, drift detection.\n- Experimentation: require a 6–8 week shadow phase + A/B by segment.\n- Handover: documentation, feature lineage, rollback plan, model cards.\n- Commercials: pricing by seats/events, success fees linked to qualified pipeline uplift.\n\nReject vague “AI magic”; force vendors to specify exact evaluation design and data contracts.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 9,
+        "topic": "ai.business_applications",
+        "question": "Where does RAG make business sense over fine‑tuning for internal knowledge assistants?",
+        "think": null,
+        "output": "Choose RAG when content changes frequently, is proprietary, and answers must cite sources. Typical fits: policy lookup, product docs, SOPs, legal clauses. Benefits: freshness, traceability, smaller base model. Fine‑tuning helps when answers require style/format or domain reasoning not present in retrieval, or when queries are repetitive and templated.\n\nHybrid: fine‑tune for style & tool-use; use RAG for facts. Governance: require source‑attribution and reference confidence; add guardrails for hallucination (answer only if confidence > τ, otherwise “I don’t know”).",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 10,
+        "topic": "ai.business_applications",
+        "question": "How do you prevent prompt‑injection from compromising a customer‑support RAG agent connected to Jira and CRM?",
+        "think": null,
+        "output": "Mitigations:\n- Strict tool schemas + allowlists; never pass model text directly into commands.\n- System and tool prompts that ignore user instructions about system role.\n- Retrieval whitelist from approved corpora; strip/normalize HTML; chunk with semantic filters to avoid including prompts in docs.\n- Response policy: cite sources; if none above confidence τ, refuse.\n- Monitor & blocklist: detect instruction‑like patterns in retrieved text (e.g., “ignore previous instructions”).\n\nTest with an adversarial red-team set before production; log all tool calls for forensic review.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 11,
+        "topic": "ai.business_applications",
+        "question": "What’s a sensible approach to forecast demand with limited historical data for a DTC launch?",
+        "think": null,
+        "output": "Use a hierarchical, data‑light strategy:\n- Start with a simple Bayesian model using expert priors (seasonality from analogous products, marketing spend, price point).\n- Incorporate early telemetry (site traffic, email signups, waitlist conversions) as leading indicators.\n- Update weekly with a Kalman/Particle filter as orders arrive.\n- Run scenario bands (best/base/worst) and size safety stock accordingly.\n\nDon’t overfit with deep nets on 8 weeks of data; uncertainty handling and decision usefulness matter more than MAPE at this stage.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 12,
+        "topic": "ai.business_applications",
+        "question": "How do you size the impact of AI-driven dynamic pricing without harming brand perception?",
+        "think": null,
+        "output": "Design guardrails:\n- Price floor/ceiling by segment; avoid rapid swings (>10% per 24h) and keep relative parity across similar SKUs.\n- Transparent messaging (“limited-time price” vs opaque fluctuations).\n- Shadow test first: compute counterfactual revenue/margin using historical traffic; then limited A/B in low-sensitivity segments.\n\nMeasure: incremental gross profit, price fairness complaints, competitor monitoring, and long-term NPS. If fairness complaints rise > threshold, slow the cadence or reduce amplitude.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 13,
+        "topic": "ai.business_applications",
+        "question": "What should an MLOps stack look like for a lean team (<5 engineers) running 3–5 models in production?",
+        "think": null,
+        "output": "Keep it boring and observable:\n- Data: managed warehouse + lightweight feature store (e.g., Feast or SQL views).\n- Training: scheduled jobs in CI with versioned configs; model registry.\n- Inference: one stateless service per model with REST; autoscale.\n- Monitoring: input drift, performance metrics, latency, cost per 1k calls.\n- Rollbacks: blue/green or canary with traffic splitting; feature flags.\n\nDocument contracts (schemas, SLAs) and define an on-call rotation with runbooks. Resist premature Kubernetes if a PaaS suffices.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 14,
+        "topic": "ai.business_applications",
+        "question": "How do you handle cold start for recommendations when you add a new product category?",
+        "think": null,
+        "output": "Use blended strategies:\n- Content-based similarity (attributes, text embeddings) to find analogs.\n- Popularity priors within the parent category to avoid zero exposure.\n- Exploration budget (ε-greedy/Thompson) to gather clicks quickly.\n- Merchandising rules to prevent the same few items from monopolizing slots.\nEvaluate by short-term CTR but also medium-term sales dispersion and return rate to ensure quality, not just clicks.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 15,
+        "topic": "ai.business_applications",
+        "question": "What’s the right way to estimate AI ROI for invoice processing automation?",
+        "think": null,
+        "output": "Compute a full P&L, not just labor saved:\nSavings = (time saved per invoice × wage + overhead) × volume × straight‑through %\nCosts = vendor + inference + implementation + QA/review + change management\nBenefits beyond cost: reduced cycle time (early‑pay discounts), fewer errors/chargebacks, audit readiness.\n\nRun a 4–6 week pilot across a representative sample of vendors/invoice formats; include exception handling time. Require ≥30% cost per invoice reduction with stable quality before rollout.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 16,
+        "topic": "ai.business_applications",
+        "question": "How do you design guardrails for a sales email generator so it doesn’t violate compliance or send spammy messages?",
+        "think": null,
+        "output": "Controls:\n- Hard constraints: no claims about features not released; no prohibited words; enforce unsubscribe footer; limit sends/user/day.\n- Context filters: only reference case studies when firmographic match exists; require source links for claims.\n- Human-in-the-loop: approvals on first 50 emails per rep; sample audits thereafter.\n- Reputation checks: domain warm-up, bounce rate, spam complaint rate, seed inbox placement.\n\nKPIs: reply rate and positive outcome rate, not just send volume. Roll back if spam complaints exceed threshold.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 17,
+        "topic": "ai.business_applications",
+        "question": "How can a small B2B startup use AI to shorten the sales cycle without annoying prospects?",
+        "think": null,
+        "output": "Use AI to increase relevance, not volume:\n- Lead research: summarize account news, extract pain points from public signals.\n- Persona-tuned messaging: draft concise, value-first emails with proof points.\n- Meeting prep: auto-generate discovery questions and ROI calculators.\n- Follow-ups: action summaries with next steps post-call.\n- Proposal tailoring: build one-pager aligned to stakeholder incentives.\n\nMeasure: days-to-close, # touches to first meeting, and proposal win rate. Keep opt-outs easy and respect frequency caps.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 18,
+        "topic": "ai.business_applications",
+        "question": "How do you create a feedback loop that keeps a support bot from drifting into low-quality answers over time?",
+        "think": null,
+        "output": "Implement continuous learning with safeguards:\n- Route low-confidence queries to humans; capture resolution as training pairs.\n- Weekly retraining window with capped data from the past N weeks to avoid catastrophic forgetting.\n- Regression eval against a frozen benchmark set; ship only if ≥ baseline on accuracy/deflection.\n- Label noise control: require dual-review on contentious topics; downweight tickets with conflicting resolutions.\n- Telemetry: monitor new intents growth and escalate to content team when doc gaps drive repeated failures.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 19,
+        "topic": "ai.business_applications",
+        "question": "What organizational pitfalls kill AI projects even with technically good models?",
+        "think": null,
+        "output": "Common failure modes: unclear owner; misaligned success metrics; lack of process change; over-customization; no maintenance budget; and security reviews arriving post‑build. Fix by assigning a product owner, defining business KPIs and guardrails up front, embedding change management, and budgeting for 12–18 months of run costs (infra + people).",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 20,
+        "topic": "ai.business_applications",
+        "question": "When should a company prefer vendor models via API vs building in-house?",
+        "think": null,
+        "output": "Prefer API when: you need speed to value; workload is standard (OCR, transcription, generic chat); data is limited; or compliance allows external processing. Build in‑house when: data advantage is strong; latency/cost at scale favors self‑hosting; or IP/controls are strategic. Hybrid: prototype on API, shift the 20% of traffic that drives 80% of cost to an internal model once volumes justify it. Always model total cost of ownership including headcount and ops.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 21,
+        "topic": "ai.business_applications",
+        "question": "How do you structure an A/B test for an AI recommendation widget so that it measures incremental revenue, not just clicks?",
+        "think": null,
+        "output": "Design the test on the *page level* with revenue attribution:\n- Randomize users into control (no widget) vs treatment (widget) with stable assignment.\n- Attribute revenue to sessions where the widget was visible; include viewable impressions only.\n- Guard against novelty by running ≥4 weeks to cover cycles.\n- Include a 'ghost' measurement of clicks that would have happened anyway (last-click bias).\n\nPrimary metric: incremental revenue/user or per 1k views. Secondary: AOV, attach rate, return rate of items sold via recs.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 22,
+        "topic": "ai.business_applications",
+        "question": "What’s an effective approach to detect and mitigate data leakage when training lead-scoring models?",
+        "think": null,
+        "output": "Checklist:\n- Time-based split aligned with sales cycle; no future signals leaking into training (e.g., downstream CRM fields).\n- Freeze labels using a cut-off window (e.g., 60 days after lead creation).\n- Feature review: remove proxies for the label (e.g., 'demo_scheduled' if that's in the definition of qualified).\n- Validation: simulate on purely prospective data.\n- Monitoring: post-deployment drift checks and win-rate calibration by decile.\n\nMitigation: enforce feature whitelists and automated leak detection (mutual information vs time).",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 23,
+        "topic": "ai.business_applications",
+        "question": "How do you design a human review workflow for AI document extraction that scales without becoming a bottleneck?",
+        "think": null,
+        "output": "Tiered QA:\n- Confidence thresholds route items: high → straight-through; medium → quick glance; low → detailed review.\n- Smart UI: highlight uncertain fields, show side-by-side source snippets.\n- Sampling: random audits on high-confidence batches to detect silent failures.\n- Metrics: review time per doc, correction rate by field, reviewer agreement.\n\nContinuously retrain on corrected fields; prioritize fields with highest correction cost × volume.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 24,
+        "topic": "ai.business_applications",
+        "question": "What makes a good success metric for an AI-powered search relevance project on a content site?",
+        "think": null,
+        "output": "Blend offline and online:\n- Offline: NDCG@k and MRR on a curated judgment set.\n- Online: search-to-content-engagement (scroll depth/time), search-to-subscribe (if applicable), and zero-result rate.\n- Qual: periodic human eval on difficult queries; query clustering to see which intents regress.\n\nAvoid optimizing only on CTR; it can regress user satisfaction and monetize poorly.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 25,
+        "topic": "ai.business_applications",
+        "question": "How can AI improve warranty claims processing for a hardware company?",
+        "think": null,
+        "output": "Use a triad:\n- Classification: route claims (defect categories) with confidence scores.\n- Evidence extraction: OCR invoices, serials, logs; detect missing evidence and request it proactively.\n- Fraud signals: anomaly detection on claim frequency, device history, geo patterns.\n\nKPIs: cycle time to decision, false approval rate, and customer NPS. Start with an assistive tool for agents; move to auto-approval for clean segments once error rates are low.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 26,
+        "topic": "ai.business_applications",
+        "question": "How should a fintech startup approach explainability for its credit decisioning model?",
+        "think": null,
+        "output": "Layered approach:\n- Global: feature importance and segmented partial dependence to understand drivers.\n- Local: SHAP/LIME-style reasons for each decision exposed to ops staff and, where required, customers.\n- Policy: define adverse action reason codes mapped to interpretable features.\n- Governance: model risk docs, challenger models, periodic bias audits by protected classes.\n\nDon’t expose raw SHAP noise to end users; translate to human language and actionable steps.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 27,
+        "topic": "ai.business_applications",
+        "question": "What’s a lean way to build a voice-of-customer (VoC) analysis pipeline with LLMs?",
+        "think": null,
+        "output": "Steps:\n1) Collect: support tickets, NPS verbatims, app reviews; normalize PII.\n2) Segment: topic clustering + sentiment; weight by revenue or segment importance.\n3) Summarize: weekly briefs with top 5 themes, sample quotes, trend deltas.\n4) Close the loop: open owners + due dates for top issues; track time-to-resolution.\n\nEvaluate usefulness by adoption: did product or ops teams change anything due to the insights?",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 28,
+        "topic": "ai.business_applications",
+        "question": "How do you avoid 'automation surprise' when deploying AI into an operations team?",
+        "think": null,
+        "output": "Principles: narrate the plan early; demonstrate prototypes; co-design with agents; name clear 'what AI does' vs 'what you do' boundaries; and create a reversible path (kill switch).\n\nMeasure employee NPS, training hours, and error rates before/after. Add an escalation shortcut when AI seems wrong. Make wins visible (time saved, queue cuts) to build trust.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 29,
+        "topic": "ai.business_applications",
+        "question": "What architecture would you use to keep an AI assistant for account managers context-aware across email, CRM, and docs?",
+        "think": null,
+        "output": "Use a context bus pattern:\n- Index email threads, CRM notes, QBR decks into a vector store with identities (account_id, contact_id).\n- A resolver layer builds a short-lived 'context bundle' per query (account timeline, open risks, last actions).\n- A policy layer filters sensitive fields and enforces least privilege.\n- The LLM composes answers with source attributions; tool calls write back structured notes.\n\nCache bundles for minutes to reduce repeated retrieval; invalidate on new events.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 30,
+        "topic": "ai.business_applications",
+        "question": "How do you decide between batch vs real-time inference for a churn prediction model?",
+        "think": null,
+        "output": "Prefer batch when actions occur on a cadence (weekly outreach), features change slowly, and infra cost matters. Prefer real-time when you trigger interventions in-session (discount offers, concierge chat) or when signals are volatile.\n\nHybrid often wins: daily batch for most users + real-time 'hot' path for high-risk spikes (e.g., rage clicks, repeated errors). Evaluate by lift in saved revenue vs infra cost.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 31,
+        "topic": "ai.business_applications",
+        "question": "What governance should surround a generative AI tool that drafts legal clauses for sales?",
+        "think": null,
+        "output": "Controls:\n- Templates locked by legal; model can fill variables and suggest alternative clauses but not invent new obligations.\n- Risk tiering: low-risk NDAs auto-approve; high-risk MSAs require counsel review.\n- Watermark all AI-generated text in drafts for traceability.\n- Logging: retain prompt, sources, and outputs for 2 years.\n- Training data boundaries: no ingestion of customer-confidential documents without consent.\n\nKPI: turnaround time without increase in contract disputes or redlines per deal.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 32,
+        "topic": "ai.business_applications",
+        "question": "Which early warning signals indicate your AI pilot is not generalizing and should not be rolled out?",
+        "think": null,
+        "output": "Red flags: sharp performance drop when traffic shifts to new segments; high variance by channel/geo; failure on long-tail queries; reliance on manual rules creeping up; and incident ticket spikes. If the pilot only works with heavy handholding, you don’t have a product yet—extend pilot or rethink problem framing.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 33,
+        "topic": "ai.business_applications",
+        "question": "How can AI help a subscription media company improve paywall conversion without hurting SEO?",
+        "think": null,
+        "output": "Approach:\n- Predict propensity-to-subscribe and tailor paywall strictness (meter count, preview length).\n- Generate contextual headlines/summaries for social preview while keeping canonical content indexable.\n- Personalize onboarding emails with content bundles mapped to interests.\n\nGuardrails: respect robots and structured data; avoid cloaking. KPI: conversion lift, churn at month 1, organic traffic stability.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 34,
+        "topic": "ai.business_applications",
+        "question": "What’s an ethical way to use AI for outbound recruiting?",
+        "think": null,
+        "output": "Do: summarize candidates’ public portfolios, match skills to role requirements, and draft personalized outreach referencing relevant work. Don’t: infer sensitive attributes or scrape gated data. Provide opt-out and delete on request. Measure response quality, not just volume; keep humans in final screening to avoid proxy bias.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 35,
+        "topic": "ai.business_applications",
+        "question": "How do you keep costs predictable for LLM-based internal tools?",
+        "think": null,
+        "output": "Tactics: cache embeddings and retrieval; use smaller models for classification/routing and reserve large models for generation; set per-user and per-feature quotas; batch non-urgent jobs; and implement cost dashboards (cost per 1k requests, per team). Run monthly cost anomaly detection and alert owners.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 36,
+        "topic": "ai.business_applications",
+        "question": "How should a marketplace use AI to reduce cancellations and returns?",
+        "think": null,
+        "output": "Models:\n- Listing quality checks (blurry/low-light, missing attributes) with guidance to sellers.\n- Mismatch prediction between expectation and item (size/color issues).\n- Buyer-seller sentiment flags for preemptive mediation.\n- Delivery risk scoring to adjust ETA and carrier choice.\n\nMeasure: return rate, cancellation rate, days-to-resolution, and adjusted NPS. Align incentives so sellers adopt fixes (badges, fee discounts).",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 37,
+        "topic": "ai.business_applications",
+        "question": "What is a robust way to evaluate an AI-driven scheduling system for a field-services company?",
+        "think": null,
+        "output": "KPIs: on-time arrival, travel time per job, technician utilization, overtime hours, first-time fix rate. Design: staggered rollout by region; match regions by baseline. Include fairness constraints (avoid overloading top performers). Conduct a 'winter storm' stress test to see how it replans under chaos.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 38,
+        "topic": "ai.business_applications",
+        "question": "How can AI reduce revenue leakage in SaaS billing?",
+        "think": null,
+        "output": "Use anomaly detection on usage events (sudden dips/spikes), missed overage triggers, and un-invoiced accounts. Reconcile CRM → billing → payment → ledger with entity resolution. Add a rules layer for common edge cases (trial conversions without payment method). Estimate recovered ARR and verify with finance.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 39,
+        "topic": "ai.business_applications",
+        "question": "What’s the minimal documentation a small team should maintain for each production model?",
+        "think": null,
+        "output": "A one-page model card: problem statement, data sources, key features, training window, validation method, metrics (with thresholds), bias checks, known failure modes, owners/on-call, rollback plan, and change log. Keep it in the repo and link from dashboards.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 40,
+        "topic": "ai.business_applications",
+        "question": "How can AI optimize procurement and supplier management for a mid-sized manufacturer?",
+        "think": null,
+        "output": "Combine spend classification, supplier risk scoring, and predictive lead times. Use clustering to consolidate tail spend and anomaly detection to flag price variances. Introduce guided buying with compliant catalogs and auto-approval for low-risk items. KPIs: on-time delivery, price variance to benchmark, maverick spend %, and PO cycle time.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 41,
+        "topic": "ai.business_applications",
+        "question": "How do you quantify the impact of AI-driven call summarization on support operations?",
+        "think": null,
+        "output": "Time studies before/after + ticket metadata: handle time reduction, wrap-up time, note completeness score, and re-open rate. Add a blind audit comparing human vs AI summaries for accuracy. Savings are (minutes saved × wage × volume) minus QA overhead; validate no increase in error-induced escalations.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 42,
+        "topic": "ai.business_applications",
+        "question": "How can computer vision reduce defects in a discrete manufacturing line?",
+        "think": null,
+        "output": "Deploy an edge model for visual inspection with active learning loop. Start as assistive (operator confirms) then move to auto-reject for high confidence. Track false rejects and missed defects; integrate with SPC charts. ROI comes from scrap reduction, rework time saved, and warranty claims avoided.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 43,
+        "topic": "ai.business_applications",
+        "question": "What data governance is essential before automating finance reconciliations with AI?",
+        "think": null,
+        "output": "Define golden sources, schema contracts, and reconciliation rules; implement immutable audit logs; map PII and apply masking. Establish exception workflows with dual control and SOX-friendly evidence. Measure aged breaks and time-to-resolution; no auto-posting without passing materiality checks.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 44,
+        "topic": "ai.business_applications",
+        "question": "How should AI support value-based pricing in B2B SaaS?",
+        "think": null,
+        "output": "Model willingness-to-pay using historical discounts, usage intensity, and outcomes achieved. Suggest price bands and discount guardrails per segment. Provide explainable reasons to reps during negotiations. Validate via controlled deal desks and track gross retention and expansion post-change.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 45,
+        "topic": "ai.business_applications",
+        "question": "What’s a scalable approach to multilingual customer support using AI?",
+        "think": null,
+        "output": "Use native-language intent detection + translation fallback. Maintain a canonical knowledge base in one language and store human-verified translations for top intents. Route high-risk conversations to native speakers. KPIs: first-response time, CSAT by language, and escalation rate.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 46,
+        "topic": "ai.business_applications",
+        "question": "How can AI help sales forecast accuracy for a company with inconsistent CRM hygiene?",
+        "think": null,
+        "output": "Start with a baseline model using only reliable signals (stage age, recent activity, deal size). Add textual signals via embeddings from notes/emails. Penalize features with spotty coverage. Provide explainable drivers back to reps to improve hygiene. Measure WAPE and forecast bias by segment.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 47,
+        "topic": "ai.business_applications",
+        "question": "How do you use AI to reduce time-to-resolution for IT tickets?",
+        "think": null,
+        "output": "Cluster tickets to identify recurring root causes; create playbooks and auto-remediation runbooks. Introduce a copilot in the ITSM tool that recommends steps and retrieves config data. Track MTTR, repeat tickets, and automation coverage %. Keep a human approval step for destructive actions.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 48,
+        "topic": "ai.business_applications",
+        "question": "What’s a good strategy to roll out AI-driven SDR email personalization safely?",
+        "think": null,
+        "output": "Begin with structural templates and allow AI to fill only safe fields (pain point, proof point, CTA). Set daily volume caps, human approve the first batch per persona, and monitor reply quality. Use holdouts to measure incremental meetings booked, not just open rate.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 49,
+        "topic": "ai.business_applications",
+        "question": "How can AI reduce inventory holding costs without stockouts?",
+        "think": null,
+        "output": "Use demand forecasting with uncertainty bands; add substitution logic across similar SKUs; coordinate with promotions calendar. Implement service-level targets per SKU class and simulate policies (s,S). Track stockout rate, fill rate, and carrying cost. Review weekly exceptions rather than daily micromanagement.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 50,
+        "topic": "ai.business_applications",
+        "question": "What are effective KPIs for an AI-powered ad creative generator?",
+        "think": null,
+        "output": "Look beyond CTR: use cost per incremental conversion, creative fatigue slope, lift vs house baseline, and asset reusability score. Enforce brand-safety checks and legal copy review. Run multivariate tests with holdout creatives to avoid overfitting to clickbait.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 51,
+        "topic": "ai.business_applications",
+        "question": "How can AI improve field service routing under uncertain job durations?",
+        "think": null,
+        "output": "Predict duration distributions per job type and tech; plan with buffers and allow mid-day re-optimization. Use learning from actuals to refine estimates. KPIs: late arrivals, overtime, idle time, and jobs completed/day.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 52,
+        "topic": "ai.business_applications",
+        "question": "How do you use AI to triage security alerts without missing true positives?",
+        "think": null,
+        "output": "Train a classifier on labeled incidents; enrich with context (asset criticality, user role). Route low-risk alerts to automation playbooks; keep human review for high-risk. Track mean-time-to-detect, false negative rate (via purple team tests), and analyst satisfaction.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 53,
+        "topic": "ai.business_applications",
+        "question": "What guardrails are essential for an AI contract summarizer used by sales ops?",
+        "think": null,
+        "output": "Ensure clause dictionaries with risk tags; highlight deviations from standard terms; link each summary bullet to source paragraph. Require human sign-off for non-standard deals. Log summaries and approvals for audit.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 54,
+        "topic": "ai.business_applications",
+        "question": "How can AI streamline employee onboarding?",
+        "think": null,
+        "output": "Personalize checklists by role and region; answer policy questions via RAG; schedule trainings automatically; detect blockers (missing hardware). Measure time-to-productivity and first-30-day ticket volume.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 55,
+        "topic": "ai.business_applications",
+        "question": "How do you measure uplift from AI-powered cross-sell recommendations in B2B?",
+        "think": null,
+        "output": "Run account-level randomized trials; measure expansion ACV and adoption depth of new modules. Ensure that recommendations respect entitlement and contractual constraints. Report by ICP to avoid masking poor segments.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 56,
+        "topic": "ai.business_applications",
+        "question": "What’s an approach to detect churn risk in usage-based products?",
+        "think": null,
+        "output": "Features: rolling error rate, feature adoption decay, seat utilization gap, and executive sponsor engagement. Interventions: health checks, credits, or solution architects. Validate on out-of-time cohorts and track saved ARR.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 57,
+        "topic": "ai.business_applications",
+        "question": "How can AI help optimize returns processing in retail?",
+        "think": null,
+        "output": "Classify return reasons; detect abuse patterns; suggest repair/resale vs discard; auto-generate labels and nearest drop-off. KPI: cost per return, recovered value %, and time-to-refund.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 58,
+        "topic": "ai.business_applications",
+        "question": "What is an effective way to monitor and control LLM prompt costs in production?",
+        "think": null,
+        "output": "Add per-endpoint budgets and circuit breakers; log token usage by user/team; cache frequent prompts; switch to smaller models for classification tasks; and alert on cost anomalies. Provide per-feature 'cost per action' dashboards for product owners.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 59,
+        "topic": "ai.business_applications",
+        "question": "How can AI enhance procurement contract compliance?",
+        "think": null,
+        "output": "Extract key terms (renewal, SLAs, penalties); set reminders; and detect invoices that violate agreed rates or quantities. Provide a dashboard for supplier performance and compliance breaches. Savings often come from avoided overbilling.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 60,
+        "topic": "ai.business_applications",
+        "question": "How can AI drive upsell inside the product without dark patterns?",
+        "think": null,
+        "output": "Use in-product prompts triggered by verified need states (usage threshold reached, integration missing). Provide transparent value previews and easy dismissal. A/B on revenue per user and support tickets; monitor complaint rates to avoid coercive UX.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 61,
+        "topic": "ai.business_applications",
+        "question": "How do you evaluate the success of an AI-driven knowledge base auto-tagging system?",
+        "think": null,
+        "output": "Measure editor time saved, search precision/recall on a tagged validation set, and downstream impact on support deflection. Track consistency over time and drift when new topics appear.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 62,
+        "topic": "ai.business_applications",
+        "question": "What’s a safe way to let AI draft board updates from disparate data sources?",
+        "think": null,
+        "output": "Lock data sources (finance, product, GTM) with read-only access; define a report skeleton; require human approval for every section; cite each metric to its source query. Keep a changelog per draft and compare to prior month to avoid invented trends.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 63,
+        "topic": "ai.business_applications",
+        "question": "How can a logistics operator use AI to cut empty miles?",
+        "think": null,
+        "output": "Predict lane demand and match backhauls; use constraints for driver hours and depot windows; simulate policies before roll-out. KPI: empty mile %, on-time %, and gross margin per mile.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 64,
+        "topic": "ai.business_applications",
+        "question": "How do you keep a product-ops copilot from leaking confidential roadmap details?",
+        "think": null,
+        "output": "Redact fields labeled confidential at ingestion, enforce row-level security, and use a policy layer that blocks generation of unreleased features unless the user has a specific claim. Add canary phrases to detect leaks in logs.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 65,
+        "topic": "ai.business_applications",
+        "question": "How can AI support quarterly business reviews (QBRs) for CSM teams?",
+        "think": null,
+        "output": "Auto-compile usage, outcomes, and support history; propose goals and risks; surface expansion hypotheses with evidence. Require CSM edit/approval. Measure prep time saved and QBR quality via manager rubrics.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 66,
+        "topic": "ai.business_applications",
+        "question": "What steps help a healthcare provider deploy an AI no‑show predictor ethically?",
+        "think": null,
+        "output": "Assess disparate impact, provide alternative outreach options, and ensure predictions never restrict care. Pilot with opt-out, publish model card, and audit regularly. KPI: reduced no‑shows without worsening access equity.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 67,
+        "topic": "ai.business_applications",
+        "question": "How can AI reduce waste in a meal-kit service?",
+        "think": null,
+        "output": "Forecast demand by recipe; optimize procurement; dynamically substitute similar SKUs when shortages occur; and predict spoilage by warehouse. KPI: food waste %, stockouts, and contribution margin.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 68,
+        "topic": "ai.business_applications",
+        "question": "What process ensures safe auto-generation of product release notes?",
+        "think": null,
+        "output": "Ingest merged PRs with labels; map to user-facing language; require PM/Eng approval; link each bullet to PR IDs. Run toxicity/PII filters. Measure time saved and error rate in corrections.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 69,
+        "topic": "ai.business_applications",
+        "question": "How should a bank roll out an AI copilot for relationship managers?",
+        "think": null,
+        "output": "Start with read-only insights (news, risk signals); add draft emails and call prep; enforce logging and approvals; train on bank-safe templates. KPIs: meeting prep time saved, win rate on cross-sell, compliance incidents (should be zero).",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 70,
+        "topic": "ai.business_applications",
+        "question": "How do you prevent a procurement anomaly detector from spamming false alerts?",
+        "think": null,
+        "output": "Set severity tiers; aggregate near-duplicate anomalies; require contextual evidence; allow snooze/feedback. Track precision via reviewed outcomes and reduce alert volume per $ spend.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 71,
+        "topic": "ai.business_applications",
+        "question": "What is a good starting stack for AI document search over SharePoint/Google Drive?",
+        "think": null,
+        "output": "Connector → chunking with section titles → hybrid retrieval (BM25+vectors) → reranking → citations. Add ACL-aware filtering. Measure answer accuracy via human eval and latency at P95.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 72,
+        "topic": "ai.business_applications",
+        "question": "How can a telco use AI to reduce churn from network outages?",
+        "think": null,
+        "output": "Predict affected customers and proactively credit or message with ETA; prioritize field teams via impact scoring. KPI: churn in affected cohorts vs matched control, inbound support volume reduction.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 73,
+        "topic": "ai.business_applications",
+        "question": "What’s the right way to handle redlines with a genAI contract assistant?",
+        "think": null,
+        "output": "Use clause-by-clause diffs; suggest alternatives from a library with risk tags; never accept changes automatically; escalate high-risk deviations. Track time saved and legal’s satisfaction score.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 74,
+        "topic": "ai.business_applications",
+        "question": "How do you measure model fairness in marketing offer eligibility?",
+        "think": null,
+        "output": "Compare acceptance rates and false negatives across protected groups using demographic parity and equal opportunity tests; run counterfactual simulations. If disparities exist, retrain with reweighting or constraints and document trade-offs.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 75,
+        "topic": "ai.business_applications",
+        "question": "How can AI improve partner management for an indirect sales channel?",
+        "think": null,
+        "output": "Score partners by pipeline quality and enablement gaps; suggest co-marketing plays; generate playbooks by segment. KPI: partner-sourced revenue and time-to-first-deal.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 76,
+        "topic": "ai.business_applications",
+        "question": "What telemetry is essential for safe LLM tool use in finance ops?",
+        "think": null,
+        "output": "Log tool name, parameters, user, timestamp, and outcome; store redacted prompts/outputs; attach approval IDs for high-risk actions. Dashboards should show error clusters and unusual tool sequences.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 77,
+        "topic": "ai.business_applications",
+        "question": "How can AI speed up competitive analysis for PMs without hallucinating facts?",
+        "think": null,
+        "output": "RAG over trusted sources (filings, docs, website, reviews) with strict citation requirement; block speculative claims; generate a comparison table with unknowns explicitly marked. PMs verify before sharing.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 78,
+        "topic": "ai.business_applications",
+        "question": "What’s a practical way to forecast staffing needs for a seasonal support org?",
+        "think": null,
+        "output": "Use time-series with holiday features + product release calendar; simulate scenarios; add handle-time distributions; convert to FTE by shrinkage factors. Validate against last year and track forecast error vs actual staffing.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 79,
+        "topic": "ai.business_applications",
+        "question": "How do you keep a marketing copy generator on-brand across dozens of languages?",
+        "think": null,
+        "output": "Central style guide as prompts + few-shot examples; language-specific constraints; human QA for top markets; back-translation checks. Measure brand compliance score and localization QA throughput.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 80,
+        "topic": "ai.business_applications",
+        "question": "How can AI assist procurement in negotiating better terms?",
+        "think": null,
+        "output": "Summarize supplier performance, benchmark prices, and propose negotiation levers (volume, payment terms, multi-year). Simulate total cost of ownership scenarios. Provide draft emails/contracts with risk notes.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 81,
+        "topic": "ai.business_applications",
+        "question": "What’s the case for using small specialized models alongside a general LLM in business apps?",
+        "think": null,
+        "output": "Small models handle classification/routing cheaply and locally; the LLM focuses on complex generation/reasoning. This cuts cost/latency and improves reliability. Orchestrate with a policy engine and monitor handoff errors.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 82,
+        "topic": "ai.business_applications",
+        "question": "How do you run a privacy-respecting personalization program under strict consent regimes?",
+        "think": null,
+        "output": "Use on-device inference where possible; store only coarse features; respect consent flags at every step; offer 'no personalization' mode with reasonable defaults. Audit regularly and provide transparent controls to users.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 83,
+        "topic": "ai_business_applications",
+        "question": "How can AI-driven sentiment analysis improve quarterly market predictions for retail companies?",
+        "think": null,
+        "output": "By analyzing customer feedback, reviews, and social media posts in real-time, AI can detect shifts in consumer sentiment ahead of sales reports. This enables earlier prediction of revenue trends, allowing companies to adjust inventory, marketing spend, and promotional strategies before quarterly results are finalized.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 84,
+        "topic": "ai_business_applications",
+        "question": "What role can AI play in dynamically adjusting pricing for airline tickets?",
+        "think": null,
+        "output": "AI can monitor booking trends, competitor pricing, seasonal demand, and macroeconomic indicators to adjust ticket prices in real-time. This maximizes occupancy rates while optimizing profit margins, often outperforming static pricing models by responding instantly to market changes.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 85,
+        "topic": "ai_business_applications",
+        "question": "How can AI help detect fraudulent claims in the insurance industry?",
+        "think": null,
+        "output": "By analyzing historical claims data, customer behavior, and anomaly patterns, AI can flag suspicious claims in real-time. It can cross-reference incident descriptions with geolocation, social media activity, and historical fraud markers to prioritize high-risk cases for human review.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 86,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI-powered document processing improve compliance in banking?",
+        "think": null,
+        "output": "AI can extract and validate key data from KYC documents, contracts, and regulatory forms with higher accuracy than manual review. It can automatically flag missing information, detect inconsistencies, and track compliance deadlines to reduce human error and regulatory risk.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 87,
+        "topic": "ai_business_applications",
+        "question": "How can AI assist in forecasting raw material demand for manufacturing companies?",
+        "think": null,
+        "output": "AI can integrate historical sales data, market trends, supplier lead times, and geopolitical factors to forecast raw material needs. This minimizes overstocking, reduces waste, and prevents production delays caused by underestimating demand.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 88,
+        "topic": "ai_business_applications",
+        "question": "What advantages does AI offer in personalizing B2B marketing campaigns?",
+        "think": null,
+        "output": "AI can analyze a company's purchase history, industry trends, and engagement behavior to deliver tailored marketing messages and product recommendations. This personalization increases lead conversion rates and strengthens client relationships.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 89,
+        "topic": "ai_business_applications",
+        "question": "How can AI improve the accuracy of financial risk assessment in lending?",
+        "think": null,
+        "output": "AI can process diverse datasets including credit history, transaction patterns, income volatility, and macroeconomic signals. By identifying subtle risk indicators that traditional scoring models miss, AI can provide more accurate and fair lending decisions.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 90,
+        "topic": "ai_business_applications",
+        "question": "What is the impact of AI in optimizing last-mile delivery for e-commerce businesses?",
+        "think": null,
+        "output": "AI can optimize delivery routes based on traffic data, customer availability, and package priority, reducing fuel costs and improving on-time delivery rates. Predictive models can also forecast delivery delays and proactively notify customers.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 91,
+        "topic": "ai_business_applications",
+        "question": "How can AI-powered knowledge bases reduce customer support costs?",
+        "think": null,
+        "output": "AI-driven knowledge bases can automatically surface the most relevant solutions to customer queries, enabling self-service resolution. This reduces ticket volume for human agents, cuts operational costs, and improves customer satisfaction.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 92,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI help in detecting supply chain vulnerabilities?",
+        "think": null,
+        "output": "AI can analyze supplier performance, delivery timelines, geopolitical risks, and commodity price volatility to detect vulnerabilities. Early warnings allow companies to diversify suppliers or adjust production schedules before disruptions occur.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 93,
+        "topic": "ai_business_applications",
+        "question": "How can AI-driven recruitment tools improve candidate matching?",
+        "think": null,
+        "output": "AI can evaluate candidate resumes, skills, and past experience, then match them against job requirements using contextual understanding. It can also predict cultural fit and potential performance based on historical hiring success data.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 94,
+        "topic": "ai_business_applications",
+        "question": "What benefits does AI bring to automated financial reporting?",
+        "think": null,
+        "output": "AI can consolidate data from multiple systems, perform error checks, and generate compliance-ready reports instantly. This reduces manual reporting effort, improves accuracy, and allows real-time insights for decision-makers.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 95,
+        "topic": "ai_business_applications",
+        "question": "How can AI help predict churn in subscription-based businesses?",
+        "think": null,
+        "output": "AI models can detect early warning signs like reduced engagement, payment delays, or service downgrades. By predicting churn probability, companies can target at-risk customers with retention offers or improved service interventions.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 96,
+        "topic": "ai_business_applications",
+        "question": "What is the role of AI in improving workplace safety in industrial environments?",
+        "think": null,
+        "output": "AI-powered cameras and IoT sensors can detect unsafe worker behaviors, machinery malfunctions, and hazardous environmental conditions in real time, allowing for immediate corrective action.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 97,
+        "topic": "ai_business_applications",
+        "question": "How can AI-powered inventory management reduce waste in perishable goods industries?",
+        "think": null,
+        "output": "AI can forecast demand for perishable products with high precision, dynamically adjusting stock levels to avoid spoilage while ensuring availability for customers.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 98,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI assist in legal document review for corporate mergers?",
+        "think": null,
+        "output": "AI can quickly scan large volumes of legal documents to identify key clauses, obligations, and potential liabilities, reducing review time and improving accuracy in due diligence processes.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 99,
+        "topic": "ai_business_applications",
+        "question": "How can AI enhance cross-selling strategies in retail banking?",
+        "think": null,
+        "output": "AI can analyze transaction history, savings patterns, and customer life events to identify the best timing and product fit for cross-selling, increasing uptake and customer satisfaction.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 100,
+        "topic": "ai_business_applications",
+        "question": "What is the impact of AI in predictive equipment maintenance for manufacturing plants?",
+        "think": null,
+        "output": "AI can use sensor data and historical failure patterns to predict when machinery will require maintenance, preventing costly breakdowns and minimizing downtime.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 101,
+        "topic": "ai_business_applications",
+        "question": "How can AI-driven analytics improve strategic decision-making in multinational corporations?",
+        "think": null,
+        "output": "AI can process vast datasets from different markets, combining internal metrics with external economic, political, and consumer data to identify strategic growth opportunities and risks.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 102,
+        "topic": "ai_business_applications",
+        "question": "What role can AI play in reducing procurement fraud in large organizations?",
+        "think": null,
+        "output": "AI can monitor procurement transactions for unusual pricing, supplier patterns, or repeated small purchases that evade approval thresholds, flagging potential fraud for investigation.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 103,
+        "topic": "ai_business_applications",
+        "question": "How can AI optimize demand forecasting for global supply chains with seasonal fluctuations?",
+        "think": null,
+        "output": "AI can integrate multi-year sales data, regional climate patterns, and economic indicators to model demand for each market. It adapts forecasts dynamically to account for seasonal shifts, enabling precise production scheduling and distribution planning.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 104,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI improve upselling strategies in e-commerce?",
+        "think": null,
+        "output": "AI can analyze browsing behavior, purchase history, and cart patterns to recommend higher-value or complementary products in real-time, increasing average order value without harming customer satisfaction.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 105,
+        "topic": "ai_business_applications",
+        "question": "How can AI help in monitoring competitor activity for market intelligence?",
+        "think": null,
+        "output": "AI can scrape competitor websites, analyze product launches, price changes, and promotional campaigns, then provide actionable insights for strategic adjustments in pricing, marketing, and product development.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 106,
+        "topic": "ai_business_applications",
+        "question": "What benefits does AI bring to dynamic workforce scheduling in retail operations?",
+        "think": null,
+        "output": "AI can predict store traffic patterns, employee availability, and seasonal demand to create optimal schedules that reduce labor costs while maintaining service quality.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 107,
+        "topic": "ai_business_applications",
+        "question": "How can AI-driven translation tools improve cross-border business operations?",
+        "think": null,
+        "output": "AI can provide real-time, context-aware translations for documents, contracts, and meetings, reducing misunderstandings and accelerating international negotiations.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 108,
+        "topic": "ai_business_applications",
+        "question": "What role can AI play in detecting anomalies in financial transactions at scale?",
+        "think": null,
+        "output": "AI can analyze millions of transactions per second, identifying outliers and suspicious patterns that may indicate fraud or compliance breaches, triggering instant alerts for review.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 109,
+        "topic": "ai_business_applications",
+        "question": "How can AI improve personalization in travel booking platforms?",
+        "think": null,
+        "output": "AI can recommend travel packages based on user preferences, past bookings, seasonal pricing, and even predicted interests, increasing booking rates and customer loyalty.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 110,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI reduce energy consumption in large commercial buildings?",
+        "think": null,
+        "output": "AI can optimize heating, cooling, and lighting systems by analyzing occupancy patterns, weather forecasts, and energy pricing, reducing operational costs and carbon footprint.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 111,
+        "topic": "ai_business_applications",
+        "question": "How can AI help track and improve sustainability performance in manufacturing?",
+        "think": null,
+        "output": "AI can monitor resource usage, waste levels, and emissions in real time, generating sustainability reports and suggesting operational changes to meet ESG targets.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 112,
+        "topic": "ai_business_applications",
+        "question": "What is the role of AI in detecting early warning signs of supply chain disruptions?",
+        "think": null,
+        "output": "AI can combine logistics data, weather models, and news feeds to predict potential disruptions such as strikes, natural disasters, or political instability, allowing proactive contingency planning.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 113,
+        "topic": "ai_business_applications",
+        "question": "How can AI-driven chatbots improve B2B sales cycles?",
+        "think": null,
+        "output": "AI chatbots can qualify leads, answer product questions, and schedule demos instantly, reducing response times and accelerating the sales pipeline for complex B2B deals.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 114,
+        "topic": "ai_business_applications",
+        "question": "How can AI assist in predicting default risk in microfinance lending?",
+        "think": null,
+        "output": "AI can assess repayment likelihood by analyzing transaction histories, mobile usage patterns, and community-level economic data, enabling more accurate microloan approvals.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 115,
+        "topic": "ai_business_applications",
+        "question": "What benefits does AI bring to real-time translation in global customer support?",
+        "think": null,
+        "output": "AI can translate customer messages and agent responses instantly across multiple languages, improving resolution times and customer experience without requiring multilingual staff.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 116,
+        "topic": "ai_business_applications",
+        "question": "How can AI optimize ad spend in multi-channel marketing campaigns?",
+        "think": null,
+        "output": "AI can analyze performance metrics across channels, reallocating budget to the highest-ROI campaigns in real time to maximize conversions and minimize wasted spend.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 117,
+        "topic": "ai_business_applications",
+        "question": "What is the impact of AI in enhancing predictive analytics for customer lifetime value?",
+        "think": null,
+        "output": "AI can identify high-value customers early by analyzing transaction frequency, purchase behavior, and engagement signals, enabling tailored retention strategies.",
+        "format_version": "1.1",
+        "difficulty": "5"
+    },
+    {
+        "id": 118,
+        "topic": "ai_business_applications",
+        "question": "How can AI improve decision-making in mergers and acquisitions?",
+        "think": null,
+        "output": "AI can analyze market trends, financial health, and strategic fit of potential targets faster than traditional methods, providing data-driven recommendations for acquisition decisions.",
+        "format_version": "1.1",
+        "difficulty": "4"
+    },
+    {
+        "id": 119,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI assist in predicting employee attrition?",
+        "think": null,
+        "output": "AI can monitor HR data, engagement surveys, and workload patterns to detect early signs of disengagement, allowing HR teams to intervene before valuable staff leave.",
+        "format_version": "1.1",
+        "difficulty": "1"
+    },
+    {
+        "id": 120,
+        "topic": "ai_business_applications",
+        "question": "How can AI-powered analytics improve retail store layout planning?",
+        "think": null,
+        "output": "AI can analyze foot traffic, product interaction data, and sales conversions to design layouts that maximize product exposure and improve customer flow.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 121,
+        "topic": "ai_business_applications",
+        "question": "What role can AI play in detecting insider trading in financial markets?",
+        "think": null,
+        "output": "AI can monitor unusual trading activity, correlate it with news events and corporate actions, and flag patterns consistent with insider information misuse for regulatory review.",
+        "format_version": "1.1",
+        "difficulty": "4"
+    },
+    {
+        "id": 122,
+        "topic": "ai_business_applications",
+        "question": "How can AI enhance real-time risk scoring for online payments?",
+        "think": null,
+        "output": "AI can evaluate payment behavior, device fingerprinting, and geolocation patterns instantly to assign dynamic risk scores, blocking high-risk transactions automatically.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 123,
+        "topic": "ai_business_applications",
+        "question": "How can AI-powered virtual assistants improve enterprise knowledge management?",
+        "think": null,
+        "output": "AI assistants can index company documents, FAQs, and project histories, providing employees with instant, context-aware answers that reduce search time and improve productivity.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 124,
+        "topic": "ai_business_applications",
+        "question": "What role does AI play in enhancing dynamic pricing for airlines?",
+        "think": null,
+        "output": "AI can process real-time booking trends, competitor pricing, and demand forecasts to adjust ticket prices dynamically, optimizing revenue while maintaining competitive positioning.",
+        "format_version": "1.1",
+        "difficulty": "4"
+    },
+    {
+        "id": 125,
+        "topic": "ai_business_applications",
+        "question": "How can AI improve fraud detection in insurance claims?",
+        "think": null,
+        "output": "AI can cross-reference claims with historical data, detect inconsistent patterns, and flag suspicious submissions for investigation, reducing payout losses.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 126,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI assist with contract lifecycle management?",
+        "think": null,
+        "output": "AI can extract key clauses, track renewal dates, and flag compliance risks in contracts, streamlining legal workflows and reducing missed obligations.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 127,
+        "topic": "ai_business_applications",
+        "question": "How can AI-driven sentiment analysis improve brand monitoring?",
+        "think": null,
+        "output": "AI can process social media, reviews, and news content to gauge public sentiment in real time, enabling proactive PR responses and campaign adjustments.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 128,
+        "topic": "ai_business_applications",
+        "question": "What benefits does AI bring to warehouse inventory optimization?",
+        "think": null,
+        "output": "AI can forecast demand, track inventory levels, and recommend replenishment schedules, minimizing stockouts and excess storage costs.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 129,
+        "topic": "ai_business_applications",
+        "question": "How can AI enhance predictive maintenance in industrial equipment?",
+        "think": null,
+        "output": "AI can analyze sensor data to detect early signs of wear or malfunction, scheduling maintenance before costly breakdowns occur.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 130,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI support crisis management in corporations?",
+        "think": null,
+        "output": "AI can model potential crisis scenarios, monitor early warning signals, and recommend response strategies to mitigate damage and maintain continuity.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 131,
+        "topic": "ai_business_applications",
+        "question": "How can AI-driven document summarization benefit legal teams?",
+        "think": null,
+        "output": "AI can condense lengthy legal documents into concise summaries, highlighting critical clauses and risks for faster decision-making.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 132,
+        "topic": "ai_business_applications",
+        "question": "What is the impact of AI in automating customer onboarding for SaaS companies?",
+        "think": null,
+        "output": "AI can tailor onboarding flows based on user profiles, provide guided tutorials, and proactively address likely points of confusion, improving activation rates.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 133,
+        "topic": "ai_business_applications",
+        "question": "How can AI improve decision-making in product portfolio management?",
+        "think": null,
+        "output": "AI can analyze market demand, profitability, and lifecycle data to recommend which products to scale, maintain, or retire, optimizing resource allocation.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 134,
+        "topic": "ai_business_applications",
+        "question": "What role does AI play in automating compliance audits?",
+        "think": null,
+        "output": "AI can scan transactional, operational, and communication data to detect non-compliance risks, producing audit-ready reports in less time.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 135,
+        "topic": "ai_business_applications",
+        "question": "How can AI-powered forecasting improve retail markdown strategies?",
+        "think": null,
+        "output": "AI can predict optimal timing and discount levels for markdowns to maximize sell-through while protecting profit margins.",
+        "format_version": "1.1",
+        "difficulty": "4"
+    },
+    {
+        "id": 136,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI help optimize fleet management for logistics companies?",
+        "think": null,
+        "output": "AI can plan efficient delivery routes, predict maintenance needs, and adjust scheduling based on traffic and weather, reducing operational costs.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 137,
+        "topic": "ai_business_applications",
+        "question": "How can AI assist in predicting consumer trends in the fashion industry?",
+        "think": null,
+        "output": "AI can analyze social media activity, search trends, and purchase data to forecast upcoming styles, helping brands design relevant collections.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 138,
+        "topic": "ai_business_applications",
+        "question": "What benefits does AI bring to real-time translation in multinational project teams?",
+        "think": null,
+        "output": "AI enables seamless communication by translating meeting transcripts, emails, and chat messages instantly, reducing language barriers in collaboration.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 139,
+        "topic": "ai_business_applications",
+        "question": "How can AI improve accuracy in demand planning for perishable goods?",
+        "think": null,
+        "output": "AI can integrate historical sales, seasonal patterns, and weather data to predict demand for perishable items, reducing spoilage and waste.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 140,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI support dynamic resource allocation in consulting firms?",
+        "think": null,
+        "output": "AI can match consultants to projects based on skills, availability, and client needs, optimizing utilization rates and project outcomes.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 141,
+        "topic": "ai_business_applications",
+        "question": "How can AI improve cross-selling strategies in financial services?",
+        "think": null,
+        "output": "AI can identify customer life events, transaction patterns, and investment behavior to recommend relevant additional products or services.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 142,
+        "topic": "ai_business_applications",
+        "question": "What role does AI play in automated dispute resolution for e-commerce?",
+        "think": null,
+        "output": "AI can classify disputes, suggest resolutions based on historical outcomes, and mediate communication between buyers and sellers to speed resolution.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 143,
+        "topic": "ai_business_applications",
+        "question": "How can AI-driven analytics improve decision-making for store expansion?",
+        "think": null,
+        "output": "AI can evaluate location demographics, competitor presence, and sales potential to recommend the most profitable sites for new stores.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 144,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI enhance security in digital identity verification?",
+        "think": null,
+        "output": "AI can detect forged documents, analyze biometric data, and flag suspicious behavior during onboarding, reducing identity fraud risks.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 145,
+        "topic": "ai_business_applications",
+        "question": "How can AI help companies predict the ROI of marketing campaigns before launch?",
+        "think": null,
+        "output": "AI can simulate campaign outcomes by analyzing historical performance, audience profiles, and spending patterns to forecast expected returns.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 146,
+        "topic": "ai_business_applications",
+        "question": "What benefits does AI bring to monitoring workplace safety compliance?",
+        "think": null,
+        "output": "AI can process video feeds and sensor data to detect unsafe behavior, equipment misuse, or hazardous conditions, triggering immediate alerts.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 147,
+        "topic": "ai_business_applications",
+        "question": "How can AI assist in detecting money laundering activities?",
+        "think": null,
+        "output": "AI can identify unusual transaction patterns, link related accounts, and flag behaviors indicative of layering or structuring for AML compliance.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 148,
+        "topic": "ai_business_applications",
+        "question": "What role does AI play in optimizing subscription churn management?",
+        "think": null,
+        "output": "AI can predict churn risk based on engagement metrics, payment history, and customer feedback, enabling targeted retention offers.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    },
+    {
+        "id": 149,
+        "topic": "ai_business_applications",
+        "question": "How can AI-driven simulations improve supply chain resilience testing?",
+        "think": null,
+        "output": "AI can create virtual supply chain models to test responses to disruptions, helping businesses identify vulnerabilities and strengthen contingency plans.",
+        "format_version": "1.1",
+        "difficulty": "2"
+    },
+    {
+        "id": 150,
+        "topic": "ai_business_applications",
+        "question": "In what ways can AI support hyper-personalized loyalty programs?",
+        "think": null,
+        "output": "AI can tailor rewards and offers to individual customer preferences, purchase history, and predicted needs, increasing loyalty program engagement.",
+        "format_version": "1.1",
+        "difficulty": "3"
+    }
+]

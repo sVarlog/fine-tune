@@ -1,0 +1,545 @@
+{
+    "ai": {
+        "business_applications": {
+            "description": "AI applied to business operations, decision-making, automation, and ROI.",
+            "example_questions": [
+                "How can AI reduce manual work in order processing without hurting QA?",
+                "What KPI framework proves ROI for an AI customer-support assistant?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["automation", "ops", "decision support", "ROI"]
+        },
+        "coding_development": {
+            "description": "AI for software engineering: code generation, refactoring, testing, and security.",
+            "example_questions": [
+                "When is AI code generation safe to use in a TypeScript monorepo?",
+                "Design an AI-assisted CI step that blocks insecure dependencies."
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["programming", "devtools", "testing", "security"]
+        },
+        "design_creativity": {
+            "description": "Generative design, creative tools, and AI-assisted ideation.",
+            "example_questions": [
+                "How can designers enforce brand consistency with generative imagery?",
+                "What’s a robust review workflow for AI-generated product mockups?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["genai", "brand", "ux", "creative"]
+        },
+        "education": {
+            "description": "AI in learning: adaptive tutoring, assessment, and curriculum support.",
+            "example_questions": [
+                "Design an adaptive quiz system that keeps student frustration low.",
+                "How do we detect and mitigate AI-enabled plagiarism fairly?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["edtech", "adaptive learning", "assessment"]
+        },
+        "ethics_bias": {
+            "description": "Fairness, accountability, transparency, and bias mitigation in AI systems.",
+            "example_questions": [
+                "Compare DP vs EO as fairness metrics for a hiring model.",
+                "What human-in-the-loop checkpoints reduce harm in content moderation?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["FAT", "governance", "safety", "audit"]
+        },
+        "healthcare": {
+            "description": "Clinical decision support, diagnostics, patient triage, and compliance.",
+            "example_questions": [
+                "What validation steps are required before deploying an AI triage tool?",
+                "How to minimize false negatives in radiology assistance systems?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["clinical", "diagnostics", "regulatory"]
+        },
+        "natural_language_processing": {
+            "description": "NLP tasks: retrieval, summarization, translation, and dialogue systems.",
+            "example_questions": [
+                "How would you design an RAG pipeline with verifiable citations?",
+                "What guardrails prevent prompt injection in a customer chatbot?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["rag", "summarization", "chatbots", "security"]
+        },
+        "research_innovation": {
+            "description": "State-of-the-art models, training methods, evaluation, and scaling.",
+            "example_questions": [
+                "Which evals best detect reasoning regressions after quantization?",
+                "Outline a small-scale ablation to isolate tokenizer effects on output format."
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["sota", "evals", "training", "ablation"]
+        },
+        "robotics_autonomous_systems": {
+            "description": "Perception, planning, control, and safety in autonomous agents.",
+            "example_questions": [
+                "How do you fuse vision and lidar for robust obstacle avoidance?",
+                "What failsafes limit damage from model drift in warehouse robotics?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["perception", "planning", "control", "safety"]
+        }
+    },
+    "business": {
+        "finance_investments": {
+            "description": "Capital allocation, funding, valuation, and investor relations.",
+            "example_questions": [
+                "How would you value a pre-revenue SaaS with strong retention?",
+                "When does venture debt beat equity for a growing startup?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["valuation", "funding", "IR"]
+        },
+        "human_resources": {
+            "description": "Hiring, performance, culture, compensation, and L&D.",
+            "example_questions": [
+                "What’s a fair promo rubric for senior engineers in a flat org?",
+                "Design a sourcing funnel that reduces bias without killing speed."
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["hiring", "perf", "compensation", "culture"]
+        },
+        "innovation_r_and_d": {
+            "description": "Discovery, prototyping, experimentation, and portfolio bets.",
+            "example_questions": [
+                "Set up an innovation accounting framework for deep-tech bets.",
+                "How can you derisk a hardware prototype before scaling?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["r&d", "prototyping", "experimentation"]
+        },
+        "leadership_management": {
+            "description": "Org design, decision-making, communication, and conflict resolution.",
+            "example_questions": [
+                "Which decision framework fits a high-uncertainty roadmap?",
+                "How do you run a blameless postmortem that still drives change?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["org", "process", "decision-making"]
+        },
+        "marketing_branding": {
+            "description": "Positioning, messaging, PR, and category creation.",
+            "example_questions": [
+                "Craft a positioning matrix for a privacy-first analytics tool.",
+                "How do you measure brand lift from a PR campaign credibly?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["positioning", "messaging", "pr"]
+        },
+        "operations_efficiency": {
+            "description": "Process design, SLAs, quality, and cost optimization.",
+            "example_questions": [
+                "Map a fulfillment process that cuts lead time by 30%.",
+                "What metrics catch hidden bottlenecks in back-office ops?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["lean", "throughput", "SLA", "costs"]
+        },
+        "risk_compliance": {
+            "description": "Regulatory obligations, risk frameworks, audits, and incident response.",
+            "example_questions": [
+                "Propose a risk register for a fintech launching in the EU.",
+                "How should incident severity be defined for consistent responses?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["regulation", "audit", "incident-response"]
+        },
+        "sales_customer_relationships": {
+            "description": "Pipeline, qualification, retention, and expansion.",
+            "example_questions": [
+                "Design a MEDDICC-aligned discovery checklist for enterprise sales.",
+                "What signals predict churn early for B2B SaaS?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["sales", "crm", "retention", "expansion"]
+        },
+        "strategy_planning": {
+            "description": "Long-term direction, moats, resource allocation, and roadmapping.",
+            "example_questions": [
+                "How do you build a moat for a commoditized LLM service?",
+                "What’s a sane cadence for revisiting strategic bets?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["moats", "roadmap", "allocation"]
+        },
+        "sustainability_csr": {
+            "description": "ESG, impact measurement, reporting, and sustainable operations.",
+            "example_questions": [
+                "Which ESG disclosures are material for a hardware startup?",
+                "How do you align sustainability targets with unit economics?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["esg", "impact", "reporting"]
+        }
+    },
+    "ethics": {
+        "ai_and_technology_ethics": {
+            "description": "Responsible technology design, deployment, and oversight.",
+            "example_questions": [
+                "What governance model limits dual-use harms in open releases?",
+                "How should consent be handled for synthetic data training?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["ai", "governance", "dual-use", "consent"]
+        },
+        "business_ethics": {
+            "description": "Corporate conduct, conflicts of interest, and fair practices.",
+            "example_questions": [
+                "What’s an ethical escalation path for revenue recognition pressure?",
+                "How do you structure whistleblower protections that actually work?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["governance", "integrity", "whistleblowing"]
+        },
+        "medical_ethics": {
+            "description": "Consent, autonomy, beneficence, and clinical research ethics.",
+            "example_questions": [
+                "When is it ethical to override a patient’s refusal of care?",
+                "What safeguards are required in an adaptive clinical trial?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["consent", "clinical", "research"]
+        },
+        "environmental_ethics": {
+            "description": "Human–environment obligations and intergenerational justice.",
+            "example_questions": [
+                "How should carbon offsets be audited to avoid greenwashing?",
+                "What ethical principles apply to geoengineering trials?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["climate", "sustainability", "justice"]
+        },
+        "data_privacy_and_security": {
+            "description": "Data rights, surveillance limits, breach response, and privacy by design.",
+            "example_questions": [
+                "Design a privacy-by-default onboarding flow for a mobile app.",
+                "What’s a proportionate response to a minor PII breach?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["privacy", "security", "gdpr"]
+        },
+        "research_ethics": {
+            "description": "Integrity, consent, reproducibility, and publication practices.",
+            "example_questions": [
+                "How should authorship be assigned in large multi-lab studies?",
+                "Which checks ensure reproducibility before publication?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["integrity", "reproducibility", "authorship"]
+        },
+        "political_and_governance_ethics": {
+            "description": "Public-sector transparency, corruption prevention, and lobbying limits.",
+            "example_questions": [
+                "Which transparency rules reduce capture in regulatory agencies?",
+                "How do you limit undue influence from lobbyists without chilling speech?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["governance", "transparency", "lobbying"]
+        },
+        "bioethics": {
+            "description": "Genetics, reproductive ethics, enhancement, and end-of-life issues.",
+            "example_questions": [
+                "What safeguards are ethical for embryo editing research?",
+                "When is life-extension research ethically permissible to trial?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["genetics", "enhancement", "end-of-life"]
+        },
+        "media_and_journalism_ethics": {
+            "description": "Accuracy, conflicts, sources, and harm minimization in news.",
+            "example_questions": [
+                "When should outlets publish hacked materials, if ever?",
+                "How to disclose AI-generated content in investigative reporting?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["accuracy", "sources", "disclosure"]
+        },
+        "consumer_rights": {
+            "description": "Fair treatment, truthful marketing, returns, and redress mechanisms.",
+            "example_questions": [
+                "What disclosures are necessary for subscription auto-renewals?",
+                "Design a dispute process that doesn’t penalize low-literacy users."
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["fairness", "disclosure", "redress"]
+        }
+    },
+    "finance": {
+        "personal_finance": {
+            "description": "Budgeting, saving, debt management, insurance, and retirement.",
+            "example_questions": [
+                "How should a 25-year-old balance debt payoff vs investing?",
+                "What’s a simple rule to size emergency funds by risk profile?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["budgeting", "debt", "retirement"]
+        },
+        "corporate_finance": {
+            "description": "Capital structure, cost of capital, cash flow, and performance metrics.",
+            "example_questions": [
+                "When does issuing convertibles make sense for mid-stage SaaS?",
+                "How do you project free cash flow for a subscription business?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["cost-of-capital", "fcf", "structure"]
+        },
+        "investing": {
+            "description": "Asset classes, risk/return, portfolio theory, factor tilts, and crypto.",
+            "example_questions": [
+                "What risks do investors ignore when chasing high dividend yield?",
+                "How would you size a crypto allocation for a conservative portfolio?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["portfolio", "risk", "crypto", "factors"]
+        },
+        "banking_and_payments": {
+            "description": "Banks, fintech, rails, cross-border transfers, and settlement.",
+            "example_questions": [
+                "Compare settlement risk across RTGS and ACH-like systems.",
+                "What controls reduce fraud in instant P2P transfers?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["fintech", "rails", "fraud"]
+        },
+        "risk_management": {
+            "description": "Identification, measurement, hedging, and governance of risks.",
+            "example_questions": [
+                "Design a VAR-plus-scenarios regime for a multi-asset book.",
+                "When is insurance superior to derivatives for hedging tail risk?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["hedging", "var", "governance"]
+        },
+        "macroeconomics": {
+            "description": "Inflation, growth, rates, employment, and policy transmission.",
+            "example_questions": [
+                "How do rate hikes propagate to small business credit supply?",
+                "What indicators lead recessions most reliably?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["inflation", "rates", "cycles"]
+        },
+        "microeconomics": {
+            "description": "Consumer/firm behavior, pricing, incentives, and market structure.",
+            "example_questions": [
+                "When is price discrimination welfare-enhancing?",
+                "How do two-sided networks complicate pricing power?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["incentives", "pricing", "competition"]
+        },
+        "international_finance": {
+            "description": "FX, trade finance, capital flows, and sovereign risk.",
+            "example_questions": [
+                "What drives sudden stops in emerging markets?",
+                "How do currency mismatches amplify crises?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["fx", "flows", "sovereign"]
+        },
+        "taxation": {
+            "description": "Personal, corporate, and cross-border tax principles and planning.",
+            "example_questions": [
+                "When do controlled foreign corporation rules apply?",
+                "How do stock options change effective tax rates for employees?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["personal", "corporate", "intl"]
+        },
+        "sustainable_finance": {
+            "description": "ESG investing, impact measurement, and green instruments.",
+            "example_questions": [
+                "How should green bond proceeds be tracked credibly?",
+                "What metrics prove impact beyond marketing claims?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["esg", "impact", "green-bonds"]
+        }
+    },
+    "geography": {
+        "physical_geography": {
+            "description": "Landforms, climate systems, biomes, and physical processes.",
+            "example_questions": [
+                "Explain rain shadow effects with a real-world example.",
+                "How do ocean currents shape regional climate variability?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["climate", "geomorphology", "biomes"]
+        },
+        "human_geography": {
+            "description": "Population, migration, urbanization, and cultural landscapes.",
+            "example_questions": [
+                "What push–pull factors drive rural-to-urban migration?",
+                "How do megacities reshape regional resource use?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["demography", "urban", "culture"]
+        },
+        "political_geography": {
+            "description": "Borders, sovereignty, conflicts, and geopolitics.",
+            "example_questions": [
+                "What geographic features commonly define stable borders?",
+                "How do resource corridors affect regional power balances?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["borders", "conflict", "geopolitics"]
+        },
+        "economic_geography": {
+            "description": "Trade, industry distribution, transport, and development.",
+            "example_questions": [
+                "Why do certain industries cluster into hubs?",
+                "How do ports and rail shape national trade patterns?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["trade", "industry", "transport"]
+        },
+        "cultural_geography": {
+            "description": "Language, religion, heritage, and cultural diffusion.",
+            "example_questions": [
+                "What drives linguistic diversity hotspots?",
+                "How do religions shape settlement patterns historically?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["language", "religion", "heritage"]
+        },
+        "environmental_geography": {
+            "description": "Ecosystems, conservation, hazards, and climate change impacts.",
+            "example_questions": [
+                "Which biomes are most vulnerable to warming and why?",
+                "How should protected areas be designed for connectivity?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["conservation", "hazards", "climate"]
+        },
+        "cartography_and_gis": {
+            "description": "Mapping, projections, spatial analysis, and visualization.",
+            "example_questions": [
+                "When do equal-area projections matter most?",
+                "Design a GIS workflow to detect illegal deforestation."
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["mapping", "gis", "spatial"]
+        },
+        "regional_studies": {
+            "description": "Comparative analysis of countries/regions across themes.",
+            "example_questions": [
+                "Compare urbanization in Southeast Asia vs Sub-Saharan Africa.",
+                "How has the EU altered trade flows in Central Europe?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["regions", "comparative", "trade"]
+        },
+        "disaster_geography": {
+            "description": "Natural hazards, risk mapping, resilience, and recovery.",
+            "example_questions": [
+                "What data supports flood risk zoning most reliably?",
+                "How should coastal cities prioritize resilience investments?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["hazards", "resilience", "recovery"]
+        },
+        "agricultural_geography": {
+            "description": "Farming systems, food security, and resource constraints.",
+            "example_questions": [
+                "Which irrigation strategies fit arid smallholder regions?",
+                "How do soil types constrain crop selection regionally?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["farming", "food-security", "resources"]
+        }
+    },
+    "marketing": {
+        "digital_marketing": {
+            "description": "SEO, PPC, lifecycle, email, and analytics.",
+            "example_questions": [
+                "What early signals indicate PPC spend is being wasted?",
+                "Design a lifecycle email sequence for a freemium SaaS."
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["seo", "ppc", "lifecycle", "analytics"]
+        },
+        "content_marketing": {
+            "description": "Editorial strategy, formats, distribution, and measurement.",
+            "example_questions": [
+                "How do you pick formats that compound SEO authority?",
+                "Which KPIs best reflect content-led pipeline?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["editorial", "distribution", "measurement"]
+        },
+        "social_media_marketing": {
+            "description": "Platform strategy, community, UGC, and creator partnerships.",
+            "example_questions": [
+                "How should B2B allocate effort across LinkedIn vs X?",
+                "What governance prevents off-brand viral attempts?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["community", "platforms", "ugc", "creators"]
+        },
+        "branding_and_positioning": {
+            "description": "Identity, narrative, category, and differentiation.",
+            "example_questions": [
+                "Craft a category POV for a developer-first AI toolkit.",
+                "How to test if a new tagline actually shifts perception?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["identity", "narrative", "category"]
+        },
+        "market_research": {
+            "description": "Qual/quant research, ICP definition, and pricing research.",
+            "example_questions": [
+                "Design a survey to validate an ICP hypothesis.",
+                "When should you prefer van Westendorp over Gabor–Granger?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["research", "pricing", "icp"]
+        },
+        "advertising": {
+            "description": "Creative strategy, media planning, attribution, and lift.",
+            "example_questions": [
+                "How do you separate creative fatigue from audience saturation?",
+                "What experiments isolate incremental lift across channels?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["creative", "media", "attribution"]
+        },
+        "influencer_marketing": {
+            "description": "Creator selection, contracts, disclosure, and ROI measurement.",
+            "example_questions": [
+                "How should you price a micro-influencer package?",
+                "What disclosures are mandatory for affiliate content?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["creators", "contracts", "roi", "disclosure"]
+        },
+        "product_marketing": {
+            "description": "Go-to-market, launches, sales enablement, and positioning tests.",
+            "example_questions": [
+                "What does a high-signal beta program look like?",
+                "How do you align PMM messaging with sales discovery?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["gtm", "launch", "enablement"]
+        },
+        "customer_experience_cx": {
+            "description": "Onboarding, personalization, support, and journey mapping.",
+            "example_questions": [
+                "Map a first-week onboarding that lifts activation by 20%.",
+                "Which CX metrics predict churn best in self-serve SaaS?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["onboarding", "personalization", "churn"]
+        },
+        "event_marketing": {
+            "description": "Events, webinars, community, sponsorships, and post-event lift.",
+            "example_questions": [
+                "How do you attribute pipeline to a flagship conference?",
+                "What makes a webinar series sustain attendance past novelty?"
+            ],
+            "content_type": ["qa", "reasoning"],
+            "tags": ["events", "webinars", "community", "attribution"]
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "topic": "string",
+    "question": "string",
+    "think": "string or null",
+    "output": "string",
+    "format_version": "1.1",
+    "difficulty": "1 to 5"
+}
